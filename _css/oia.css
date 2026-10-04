@@ -128,8 +128,16 @@ fieldset.questao input { width: 20px; height: 20px; flex: 0 0 20px; margin-top: 
 .dim-barra span { position: absolute; top: 0; bottom: 0; background: var(--ciano); }
 .dim-barra span.b { background: var(--verde-claro); }
 .dim-grau { color: var(--t-ddd); font-size: .95rem; }
-.dicas { margin: 6px 0 0 1.2em; }
-.dicas li { margin-bottom: 6px; }
+.regras { border-left: 4px solid var(--verde); background: var(--caixa2); padding: 10px 14px; margin: 10px 0 16px; }
+.regras ol { margin: 0 0 0 1.3em; }
+.regras li { margin-bottom: 4px; }
+.p-rot { color: var(--ciano); margin: 12px 0 6px; }
+h3.p-dim { font-family: 'Courier New', Courier, monospace; font-size: 1rem; color: var(--forte); margin: 22px 0 4px;
+           border-bottom: 1px solid var(--b-444); padding-bottom: 4px; }
+h3.p-dim span { color: var(--t-aaa); font-weight: normal; }
+.prompt { border: 1px solid var(--b-444); background: var(--caixa2); padding: 10px 12px; margin: 0 0 10px; }
+.prompt p { margin: 0 0 8px; max-width: none; }
+.prompt .copiar { background: var(--caixa); color: var(--ciano); border: 1px solid var(--azul); padding: 6px 12px; cursor: pointer; }
 table.hist { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: .9rem; margin: 6px 0 10px; }
 table.hist th, table.hist td { border-bottom: 1px solid var(--b-333); padding: 4px; text-align: left; overflow-wrap: anywhere; }
 table.hist th { color: var(--t-aaa); font-weight: normal; }

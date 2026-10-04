@@ -44,20 +44,46 @@
              '<div class="dim-grau">' + esc(txt) + ' (' + Math.abs(v) + ' de 5)</div></div>';
     }).join('');
   }
+  /* Prompts: polo forte = Aproveite, polo fraco = Equilibre; equilibrado = 2 de cada polo. */
+  var ultimo = null;
+  function tema() {
+    var s = $('estTema').value, t = s === '*' ? $('estTemaOutro').value.trim() : s;
+    return t || '[o tema da aula]';
+  }
+  function bloco(rotulo, polo) {
+    var t = tema();
+    return '<p class="p-rot">' + rotulo + '</p>' + D.prompts[polo].map(function (x) {
+      return '<div class="prompt"><p>' + esc(x.replace(/\{tema\}/g, t)) + '</p>' +
+             '<button type="button" class="copiar">Copiar</button></div>';
+    }).join('');
+  }
   function dicas(e) {
     return D.dim.map(function (d, k) {
-      var v = e[k], lista;
+      var v = e[k];
       if (Math.abs(v) <= 1) {
-        lista = [D.dicas[d[1]][0], D.dicas[d[2]][0]];
-        return '<p><strong>' + d[1] + ' e ' + d[2] + '</strong> (equilibrado): use um pouco de cada.</p>' +
-               '<ul class="dicas">' + lista.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>';
+        return '<h3 class="p-dim">' + d[1] + ' e ' + d[2] + ' <span>(equilibrado)</span></h3>' +
+               bloco('Mantenha o ' + d[1] + ':', d[1]) + bloco('Mantenha o ' + d[2] + ':', d[2]);
       }
       var p = v > 0 ? d[1] : d[2], o = v > 0 ? d[2] : d[1];
-      var treino = D.dicas[o][0];
-      lista = D.dicas[p].slice(0, 2).concat(['Para treinar o lado ' + o + ': ' + treino.charAt(0).toLowerCase() + treino.slice(1)]);
-      return '<p><strong>' + p + '</strong></p><ul class="dicas">' +
-             lista.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>';
+      return '<h3 class="p-dim">' + p + ' <span>(' + grau(v) + ')</span></h3>' +
+             bloco('Aproveite o seu lado ' + p + ':', p) + bloco('Equilibre: treine o lado ' + o + ':', o);
     }).join('');
+  }
+  function redesenhar() {
+    $('estTemaOutro').hidden = $('estTema').value !== '*';
+    guardar('oia-estilo-tema', $('estTema').value); guardar('oia-estilo-tema-outro', $('estTemaOutro').value);
+    if (ultimo) { $('estDicas').innerHTML = dicas(ultimo); }
+  }
+  function copiar(btn) {
+    var txt = btn.previousElementSibling.textContent;
+    function ok() { btn.textContent = 'Copiado!'; setTimeout(function () { btn.textContent = 'Copiar'; }, 1800); }
+    function velho() {
+      var ta = document.createElement('textarea'); ta.value = txt; ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); ok(); } catch (e) { btn.textContent = 'Selecione e copie'; }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(txt).then(ok, velho); } else { velho(); }
   }
   function curto(v, d) { return (v > 0 ? d[3] : d[4]) + ' ' + Math.abs(v); }
   function historico(h) {
@@ -74,6 +100,7 @@
   }
   function mostrar(e, h) {
     $('estRes').innerHTML = barras(e);
+    ultimo = e;
     $('estDicas').innerHTML = dicas(e);
     $('estHist').innerHTML = historico(h);
     $('resultado').hidden = false;
@@ -148,6 +175,12 @@
     $('btnEstEnviar').addEventListener('click', enviar);
     $('btnEstMeus').addEventListener('click', meus);
     $('estTurma').addEventListener('change', carregarGrupo);
+    $('estTema').value = ler('oia-estilo-tema'); if ($('estTema').selectedIndex < 0) { $('estTema').value = ''; }
+    $('estTemaOutro').value = ler('oia-estilo-tema-outro');
+    $('estTemaOutro').hidden = $('estTema').value !== '*';
+    $('estTema').addEventListener('change', redesenhar);
+    $('estTemaOutro').addEventListener('input', redesenhar);
+    $('estDicas').addEventListener('click', function (ev) { if (ev.target.classList.contains('copiar')) { copiar(ev.target); } });
     contar();
     carregarGrupo();
   });
