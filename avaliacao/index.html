@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Como instalar o site da Oficina IA no celular ou no computador.">
+<meta name="description" content="Avaliação anônima da Oficina IA pelos participantes, no encerramento.">
 <meta name="theme-color" content="#1B2A41">
 <link rel="manifest" href="../manifest.webmanifest">
 <link rel="icon" href="../_icones/favicon.ico" sizes="any">
@@ -15,9 +15,9 @@
   var l; try { l = localStorage.getItem('oia-letra'); } catch (e) {}
   if (l === 'g' || l === 'gg') { document.documentElement.setAttribute('data-letra', l); } })();</script>
 <link rel="stylesheet" href="../_css/oia.css">
-<title>Instalar · Oficina IA nos estudos</title>
+<title>Avaliação · Oficina IA nos estudos</title>
 </head>
-<body data-pagina="instalar">
+<body data-pagina="avaliacao">
 <button class="aba-toggle" id="abaSiteT">Site</button>
 <aside class="aba-painel" id="abaSite">
   <h3>Site</h3>
@@ -482,14 +482,14 @@
   </ol>
   <p class="aba-ref">BONJORNO, J. R. et al. <em>Física Identidade</em>: volume único. São Paulo: Saraiva, 2024 (PNLD).</p>
 </aside>
-<button class="aba-toggle aqui" id="abaInstalarT" aria-current="page">Instalar</button>
+<button class="aba-toggle" id="abaInstalarT">Instalar</button>
 <aside class="aba-painel" id="abaInstalar">
   <h3>Instalar</h3>
   <p>Instale o site no celular ou no computador e abra com um toque, pelo ícone, como um aplicativo.</p>
   <div class="qr-box"><img src="../_icones/oia-qr-instalar.svg" width="170" height="170" alt="QR code que abre https://nidecop-jafb.github.io/oia-oa/instalar/"><div><p>Aponte a câmera do celular para o QR code para abrir o passo a passo.</p><p class="qr-end">nidecop-jafb.github.io/oia-oa/instalar/</p></div></div>
   <a class="aba-btn" href="../instalar/index.html">Instalar no celular ou no computador</a>
 </aside>
-<button class="aba-toggle" id="abaAvaliacaoT">Avaliação</button>
+<button class="aba-toggle aqui" id="abaAvaliacaoT" aria-current="page">Avaliação</button>
 <aside class="aba-painel" id="abaAvaliacao">
   <h3>Avaliação da oficina</h3>
   <p>No fim da oficina, conte para a equipe como foi: leva uns 5 minutos e é anônimo, sem RA e sem nome.</p>
@@ -531,30 +531,104 @@
 </aside>
 <div class="wrap">
 <div class="topo-btns"><a class="inicio-btn" href="../index.html" aria-label="Início" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5.5h4V20"/></svg></a><button class="letra-btn" id="letraMenos" type="button" aria-label="Diminuir a letra" title="Diminuir a letra">A&minus;</button><button class="letra-btn" id="letraMais" type="button" aria-label="Aumentar a letra" title="Aumentar a letra">A+</button><button class="tema-btn" id="temaBtn" type="button" aria-label="Mudar o tema"><svg class="sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v2.5M12 20v2.5M1.5 12h2.5M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg><svg class="lua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg></button></div>
-  <h1>Instalar</h1>
-  <p>Instale o site e abra com um toque, pelo ícone, como um aplicativo.</p>
+  <h1>Avaliação da oficina</h1>
+  <p>A oficina está terminando. Conte para a equipe como foi: as suas respostas ajudam a melhorar as próximas turmas.
+  Leva uns 5 minutos.</p>
+  <p class="nota">A avaliação é <strong>anônima</strong>: não pedimos RA, nome nem e-mail. Nas respostas escritas, não
+  escreva nome nem outro dado pessoal, seu ou de outra pessoa.</p>
+
+  <form id="avaForm" onsubmit="return false;">
   <section>
-  <h2>No celular Android</h2>
-  <ol class="num">
-    <li>Abra o site no Chrome.</li>
-    <li>Toque nos três pontinhos, no canto de cima.</li>
-    <li>Toque em <strong>Instalar app</strong> ou <strong>Adicionar à tela inicial</strong>.</li>
-    <li>O ícone da Oficina IA aparece junto dos outros aplicativos.</li>
-  </ol>
+  <h2>1. Quem é você (sem identificar)</h2>
+  <div class="form-sug">
+    <div class="duas">
+      <div><label for="avaCurso">Curso</label><select id="avaCurso"><option value="">Escolha…</option><option value="Mineração">Mineração</option><option value="Metalurgia">Metalurgia</option><option value="Edificações">Edificações</option><option value="Automação Industrial">Automação Industrial</option><option value="Informática">Informática</option><option value="Outro">Outro</option></select></div>
+      <div><label for="avaAno">Ano</label><select id="avaAno"><option value="">Escolha…</option><option value="1">1.º ano</option><option value="2">2.º ano</option><option value="3">3.º ano</option></select></div>
+      <div><label for="avaSessoes">Sessões que você fez</label><select id="avaSessoes"><option value="">Escolha…</option><option value="1">1 sessão</option><option value="2">2 sessões</option><option value="3+">3 ou mais</option></select></div>
+    </div>
+    <input type="text" id="avaHp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+  </div>
   </section>
   <section>
-  <h2>No iPhone</h2>
-  <ol class="num">
-    <li>Abra o site no Safari.</li>
-    <li>Toque no botão de compartilhar (o quadrado com a seta para cima).</li>
-    <li>Toque em <strong>Adicionar à Tela de Início</strong>.</li>
-    <li>O ícone da Oficina IA aparece junto dos outros aplicativos.</li>
-  </ol>
+  <h2>Satisfação</h2>
+  <p>Dê uma nota de 1 a 5 para cada item.</p>
+  <fieldset class="questao" id="fa-s1"><legend><span class="q-num">01</span> A oficina, no geral</legend>
+    <div class="likert"><label><input type="radio" name="s1" value="1"><span>1</span></label><label><input type="radio" name="s1" value="2"><span>2</span></label><label><input type="radio" name="s1" value="3"><span>3</span></label><label><input type="radio" name="s1" value="4"><span>4</span></label><label><input type="radio" name="s1" value="5"><span>5</span></label></div>
+    <div class="likert-leg"><span>1 = muito ruim</span><span>5 = ótimo</span></div>
+  </fieldset>
+  <fieldset class="questao" id="fa-s2"><legend><span class="q-num">02</span> O ritmo das sessões de 30 min</legend>
+    <div class="likert"><label><input type="radio" name="s2" value="1"><span>1</span></label><label><input type="radio" name="s2" value="2"><span>2</span></label><label><input type="radio" name="s2" value="3"><span>3</span></label><label><input type="radio" name="s2" value="4"><span>4</span></label><label><input type="radio" name="s2" value="5"><span>5</span></label></div>
+    <div class="likert-leg"><span>1 = muito ruim</span><span>5 = ótimo</span></div>
+  </fieldset>
+  <fieldset class="questao" id="fa-s3"><legend><span class="q-num">03</span> O material: o site e o livro digital</legend>
+    <div class="likert"><label><input type="radio" name="s3" value="1"><span>1</span></label><label><input type="radio" name="s3" value="2"><span>2</span></label><label><input type="radio" name="s3" value="3"><span>3</span></label><label><input type="radio" name="s3" value="4"><span>4</span></label><label><input type="radio" name="s3" value="5"><span>5</span></label></div>
+    <div class="likert-leg"><span>1 = muito ruim</span><span>5 = ótimo</span></div>
+  </fieldset>
+  <fieldset class="questao" id="fa-s4"><legend><span class="q-num">04</span> A equipe e a monitoria</legend>
+    <div class="likert"><label><input type="radio" name="s4" value="1"><span>1</span></label><label><input type="radio" name="s4" value="2"><span>2</span></label><label><input type="radio" name="s4" value="3"><span>3</span></label><label><input type="radio" name="s4" value="4"><span>4</span></label><label><input type="radio" name="s4" value="5"><span>5</span></label></div>
+    <div class="likert-leg"><span>1 = muito ruim</span><span>5 = ótimo</span></div>
+  </fieldset>
   </section>
   <section>
-  <h2>No computador</h2>
-  <p>No Chrome ou no Edge, clique no ícone de instalar que aparece no fim da barra de endereço.</p>
+  <h2>Antes e agora</h2>
+  <p>Quanto você sabia e quanto sabe agora, de 1 a 5.</p>
+  <fieldset class="questao" id="fa-a1"><legend><span class="q-num">05</span> Antes da oficina, eu sabia usar IA para estudar Física</legend>
+    <div class="likert"><label><input type="radio" name="a1" value="1"><span>1</span></label><label><input type="radio" name="a1" value="2"><span>2</span></label><label><input type="radio" name="a1" value="3"><span>3</span></label><label><input type="radio" name="a1" value="4"><span>4</span></label><label><input type="radio" name="a1" value="5"><span>5</span></label></div>
+    <div class="likert-leg"><span>1 = nada</span><span>5 = muito bem</span></div>
+  </fieldset>
+  <fieldset class="questao" id="fa-a2"><legend><span class="q-num">06</span> Agora, eu sei usar IA para estudar Física</legend>
+    <div class="likert"><label><input type="radio" name="a2" value="1"><span>1</span></label><label><input type="radio" name="a2" value="2"><span>2</span></label><label><input type="radio" name="a2" value="3"><span>3</span></label><label><input type="radio" name="a2" value="4"><span>4</span></label><label><input type="radio" name="a2" value="5"><span>5</span></label></div>
+    <div class="likert-leg"><span>1 = nada</span><span>5 = muito bem</span></div>
+  </fieldset>
   </section>
+  <section>
+  <h2>O método</h2>
+  <p>Quanto cada parte ajudou você a estudar? Se você não usou, marque Não usei.</p>
+  <fieldset class="questao" id="fa-m1"><legend><span class="q-num">07</span> As 3 etapas da sessão: Antes, Durante e Depois</legend>
+    <div class="likert"><label><input type="radio" name="m1" value="1"><span>1</span></label><label><input type="radio" name="m1" value="2"><span>2</span></label><label><input type="radio" name="m1" value="3"><span>3</span></label><label><input type="radio" name="m1" value="4"><span>4</span></label><label><input type="radio" name="m1" value="5"><span>5</span></label><label class="nu"><input type="radio" name="m1" value="0"><span>Não usei</span></label></div>
+    <div class="likert-leg"><span>1 = não ajudou</span><span>5 = ajudou muito</span></div>
+  </fieldset>
+  <fieldset class="questao" id="fa-m2"><legend><span class="q-num">08</span> O cronômetro da sessão</legend>
+    <div class="likert"><label><input type="radio" name="m2" value="1"><span>1</span></label><label><input type="radio" name="m2" value="2"><span>2</span></label><label><input type="radio" name="m2" value="3"><span>3</span></label><label><input type="radio" name="m2" value="4"><span>4</span></label><label><input type="radio" name="m2" value="5"><span>5</span></label><label class="nu"><input type="radio" name="m2" value="0"><span>Não usei</span></label></div>
+    <div class="likert-leg"><span>1 = não ajudou</span><span>5 = ajudou muito</span></div>
+  </fieldset>
+  <fieldset class="questao" id="fa-m3"><legend><span class="q-num">09</span> Os prompts prontos para a IA</legend>
+    <div class="likert"><label><input type="radio" name="m3" value="1"><span>1</span></label><label><input type="radio" name="m3" value="2"><span>2</span></label><label><input type="radio" name="m3" value="3"><span>3</span></label><label><input type="radio" name="m3" value="4"><span>4</span></label><label><input type="radio" name="m3" value="5"><span>5</span></label><label class="nu"><input type="radio" name="m3" value="0"><span>Não usei</span></label></div>
+    <div class="likert-leg"><span>1 = não ajudou</span><span>5 = ajudou muito</span></div>
+  </fieldset>
+  <fieldset class="questao" id="fa-m4"><legend><span class="q-num">10</span> As dúvidas em áudio</legend>
+    <div class="likert"><label><input type="radio" name="m4" value="1"><span>1</span></label><label><input type="radio" name="m4" value="2"><span>2</span></label><label><input type="radio" name="m4" value="3"><span>3</span></label><label><input type="radio" name="m4" value="4"><span>4</span></label><label><input type="radio" name="m4" value="5"><span>5</span></label><label class="nu"><input type="radio" name="m4" value="0"><span>Não usei</span></label></div>
+    <div class="likert-leg"><span>1 = não ajudou</span><span>5 = ajudou muito</span></div>
+  </fieldset>
+  </section>
+  <section>
+  <h2>Para fechar</h2>
+  <fieldset class="questao" id="fa-continuar"><legend><span class="q-num">11</span> Você vai continuar usando o método nos seus estudos?</legend>
+    <label><input type="radio" name="continuar" value="sim"><span>Sim</span></label>
+    <label><input type="radio" name="continuar" value="talvez"><span>Talvez</span></label>
+    <label><input type="radio" name="continuar" value="nao"><span>Não</span></label>
+  </fieldset>
+  <fieldset class="questao" id="fa-recomenda"><legend><span class="q-num">12</span> Você recomendaria a oficina a um colega?</legend>
+    <label><input type="radio" name="recomenda" value="sim"><span>Sim</span></label>
+    <label><input type="radio" name="recomenda" value="talvez"><span>Talvez</span></label>
+    <label><input type="radio" name="recomenda" value="nao"><span>Não</span></label>
+  </fieldset>
+  <fieldset class="questao"><legend><span class="q-num">13</span> O que mais ajudou você na oficina? <span class="nota">(se quiser)</span></legend>
+    <textarea id="avaAjudou" maxlength="300" aria-label="O que mais ajudou você na oficina?"></textarea>
+  </fieldset>
+  <fieldset class="questao"><legend><span class="q-num">14</span> O que você mudaria na oficina? <span class="nota">(se quiser)</span></legend>
+    <textarea id="avaMudar" maxlength="300" aria-label="O que você mudaria na oficina?"></textarea>
+  </fieldset>
+  </section>
+  <div class="progresso"><span id="avaConta">0/12 respondidas</span>
+    <button type="button" id="btnAvaEnviar">Enviar a avaliação</button></div>
+  <p class="msg-erro" id="avaErro" hidden></p>
+  </form>
+  <div class="msg-ok" id="avaOk" hidden><p><strong>Recebida. Obrigado!</strong> A sua avaliação chegou à equipe da
+  oficina.</p><p class="nota" id="avaFila" hidden>Ela ficou guardada no aparelho e vai ser enviada sozinha quando
+  houver internet. Abra esta página de novo com internet.</p></div>
+<script>window.OIA_COLETA = "https://script.google.com/macros/s/AKfycbxeCb9a0BlRe9LnKuuIw_EjNOnKlEGO_yV4_rzuUWyNbVU4ws_isV-rjjYsl8FZ44nO/exec"; window.OIA_AVA = {"notas": ["s1", "s2", "s3", "s4", "a1", "a2", "m1", "m2", "m3", "m4"], "escolhas": ["continuar", "recomenda"], "grupos": [["Satisfação", "Dê uma nota de 1 a 5 para cada item.", ["muito ruim", "ótimo"], false, [["s1", "A oficina, no geral"], ["s2", "O ritmo das sessões de 30 min"], ["s3", "O material: o site e o livro digital"], ["s4", "A equipe e a monitoria"]]], ["Antes e agora", "Quanto você sabia e quanto sabe agora, de 1 a 5.", ["nada", "muito bem"], false, [["a1", "Antes da oficina, eu sabia usar IA para estudar Física"], ["a2", "Agora, eu sei usar IA para estudar Física"]]], ["O método", "Quanto cada parte ajudou você a estudar? Se você não usou, marque Não usei.", ["não ajudou", "ajudou muito"], true, [["m1", "As 3 etapas da sessão: Antes, Durante e Depois"], ["m2", "O cronômetro da sessão"], ["m3", "Os prompts prontos para a IA"], ["m4", "As dúvidas em áudio"]]]], "opcoes": [["sim", "Sim"], ["talvez", "Talvez"], ["nao", "Não"]], "cursos": ["Mineração", "Metalurgia", "Edificações", "Automação Industrial", "Informática", "Outro"], "anos": [["1", "1.º ano"], ["2", "2.º ano"], ["3", "3.º ano"]], "sessoes": [["1", "1 sessão"], ["2", "2 sessões"], ["3+", "3 ou mais"]], "abertas": [["ajudou", "O que mais ajudou você na oficina?"], ["mudar", "O que você mudaria na oficina?"]]};</script>
+<script src="../_js/oia-avaliacao.js"></script>
   <div class="footer">
     <div class="footer-marcas"><a href="https://ouropreto.ifmg.edu.br/ouropreto" target="_blank" rel="noopener" title="IFMG — Campus Ouro Preto (abre em nova aba)"><svg class="oia-ic" xmlns="http://www.w3.org/2000/svg" viewBox="-36.75 -4 258.5 258.5" role="img" aria-label="Instituto Federal de Minas Gerais"> <title>Instituto Federal de Minas Gerais</title> <circle cx="27" cy="27" r="30" fill="#C8191E"/> <g fill="#32A041"> <rect x="65.5" y="0" width="54" height="54"/> <rect x="131" y="0" width="54" height="54"/> <rect x="0" y="65.5" width="54" height="54"/> <rect x="65.5" y="65.5" width="54" height="54"/> <rect x="0" y="131" width="54" height="54"/> <rect x="65.5" y="131" width="54" height="54"/> <rect x="131" y="131" width="54" height="54"/> <rect x="0" y="196.5" width="54" height="54"/> <rect x="65.5" y="196.5" width="54" height="54"/> </g> </svg></a><svg class="oia-ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="NIDEC — Núcleo de Inovação e Desenvolvimento de Experimentos Científicos"> <title>NIDEC — Núcleo de Inovação e Desenvolvimento de Experimentos Científicos</title> <defs> <linearGradient id="inst-nidec-o1" gradientUnits="userSpaceOnUse" x1="8" y1="100" x2="192" y2="100" gradientTransform="rotate(-30 100 100)"> <stop offset="0" stop-color="#4A1F95"/><stop offset=".38" stop-color="#2C5AA4"/> <stop offset=".70" stop-color="#2CC2A2"/><stop offset="1" stop-color="#2C9E41"/> </linearGradient> <linearGradient id="inst-nidec-o2" gradientUnits="userSpaceOnUse" x1="8" y1="100" x2="192" y2="100" gradientTransform="rotate(-90 100 100)"> <stop offset="0" stop-color="#4A1F95"/><stop offset=".38" stop-color="#2C5AA4"/> <stop offset=".70" stop-color="#2CC2A2"/><stop offset="1" stop-color="#2C9E41"/> </linearGradient> <linearGradient id="inst-nidec-o3" gradientUnits="userSpaceOnUse" x1="8" y1="100" x2="192" y2="100" gradientTransform="rotate(-150 100 100)"> <stop offset="0" stop-color="#4A1F95"/><stop offset=".38" stop-color="#2C5AA4"/> <stop offset=".70" stop-color="#2CC2A2"/><stop offset="1" stop-color="#2C9E41"/> </linearGradient> <radialGradient id="inst-nidec-nucleo" cx="40%" cy="36%" r="70%"> <stop offset="0" stop-color="#A0EBE1"/> <stop offset=".45" stop-color="#2CC8C2"/> <stop offset="1" stop-color="#1E5DA5"/> </radialGradient> </defs> <g fill="none" stroke-width="8"> <g transform="rotate(30 100 100)" stroke="url(#inst-nidec-o1)"> <ellipse cx="100" cy="100" rx="88" ry="31"/> <circle cx="188" cy="100" r="8" fill="url(#inst-nidec-o1)" stroke="none"/> </g> <g transform="rotate(90 100 100)" stroke="url(#inst-nidec-o2)"> <ellipse cx="100" cy="100" rx="88" ry="31"/> <circle cx="12" cy="100" r="8" fill="url(#inst-nidec-o2)" stroke="none"/> </g> <g transform="rotate(150 100 100)" stroke="url(#inst-nidec-o3)"> <ellipse cx="100" cy="100" rx="88" ry="31"/> <circle cx="188" cy="100" r="8" fill="url(#inst-nidec-o3)" stroke="none"/> </g> </g> <circle cx="100" cy="100" r="23" fill="url(#inst-nidec-nucleo)"/> </svg></div>
     <p class="footer-links"><a href="../agradecimentos/index.html">Agradecimentos</a> &middot;

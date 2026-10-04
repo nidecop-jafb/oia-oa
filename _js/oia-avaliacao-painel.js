@@ -1,0 +1,99 @@
+/* oia-avaliacao-painel.js — painel ao vivo da avaliacao (equipe). Gerado por gerar_site_oia.py.
+   A chave da equipe e digitada aqui e fica so na aba do navegador (sessionStorage): nunca vai no site. */
+(function () {
+  var URL_EXEC = window.OIA_COLETA || '', D = window.OIA_AVA || {}, linhas = [], timer = null;
+  function $(id) { return document.getElementById(id); }
+  function esc(s) { var d = document.createElement('div'); d.textContent = String(s == null ? '' : s); return d.innerHTML; }
+  function chave() { try { return sessionStorage.getItem('oia-chave') || ''; } catch (e) { return ''; } }
+  function media(xs) { return xs.length ? xs.reduce(function (a, b) { return a + b; }, 0) / xs.length : 0; }
+  function f1(x) { return x.toFixed(1).replace('.', ','); }
+  function validas() { return linhas.filter(function (l) { return $('avaTeste').checked || !l.teste; }); }
+
+  function barra(rot, xs, cl) {
+    var m = media(xs);
+    return '<div class="ava-item"><p>' + esc(rot) + ' <strong>' + (xs.length ? f1(m) : '–') + '</strong></p>' +
+           '<div class="ava-bar' + (cl || '') + '" role="img" aria-label="' + esc(rot) + ': média ' + f1(m) + ' de 5">' +
+           '<span style="width:' + (m / 5 * 100) + '%"></span></div></div>';
+  }
+  function contagem(rot, ls, campo, opcoes) {
+    var c = {}; ls.forEach(function (l) { c[l[campo]] = (c[l[campo]] || 0) + 1; });
+    return '<p>' + esc(rot) + ': ' + opcoes.map(function (o) { return esc(o[1]) + ' <strong>' + (c[o[0]] || 0) + '</strong>'; })
+      .join(' · ') + '</p>';
+  }
+  function desenhar() {
+    var ls = validas(), n = ls.length, h = '';
+    h += '<p><span class="ava-n">' + n + '</span> resposta' + (n === 1 ? '' : 's') + '</p>';
+    if (!n) { $('avaRes').innerHTML = h + '<p class="nota">Ainda não há respostas.</p>'; return; }
+    D.grupos.forEach(function (g) {
+      h += '<h2>' + esc(g[0]) + '</h2>';
+      if (g[0] === 'Antes e agora') {
+        var a = ls.map(function (l) { return l.notas.a1; }), b = ls.map(function (l) { return l.notas.a2; });
+        h += barra(g[4][0][1], a) + barra(g[4][1][1], b, ' b') +
+             '<p class="ava-sub">Diferença média: <strong>' + (media(b) - media(a) >= 0 ? '+' : '') + f1(media(b) - media(a)) +
+             '</strong> ponto (escala de 1 a 5).</p>';
+        return;
+      }
+      g[4].forEach(function (it) {
+        var xs = ls.map(function (l) { return l.notas[it[0]]; }), usou = xs.filter(function (x) { return x > 0; });
+        h += barra(it[1], usou);
+        if (g[3]) { h += '<p class="ava-sub">Não usei: ' + (xs.length - usou.length) + '</p>'; }
+      });
+    });
+    h += '<h2>Escolhas</h2>' + D.escolhas.map(function (e) { return contagem(e[1], ls, e[0], D.opcoes); }).join('');
+    h += '<h2>Perfil</h2>' + contagem('Curso', ls, 'curso', D.cursos.map(function (c) { return [c, c]; })) +
+         contagem('Ano', ls, 'serie', D.anos) + contagem('Sessões', ls, 'sessoes', D.sessoes);
+    D.abertas.forEach(function (ab) {
+      var t = ls.map(function (l) { return String(l[ab[0]] || '').trim(); }).filter(Boolean);
+      h += '<h2>' + esc(ab[1]) + ' <span class="ava-sub">(' + t.length + ')</span></h2>' +
+           (t.length ? '<ul class="ava-abertas">' + t.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>'
+                     : '<p class="nota">Nenhuma ainda.</p>');
+    });
+    $('avaRes').innerHTML = h;
+  }
+  function carregar() {
+    var k = chave();
+    if (!k) { return; }
+    $('avaStatus').textContent = 'Atualizando…';
+    fetch(URL_EXEC + '?avaliacao_oia=1&chave=' + encodeURIComponent(k)).then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (!res.ok) { throw new Error(res.erro || 'Falha'); }
+        linhas = res.linhas; $('avaChaveBox').hidden = true; $('avaPainel').hidden = false; desenhar();
+        $('avaStatus').textContent = 'Atualizado às ' + new Date().toLocaleTimeString('pt-BR').slice(0, 5) + ' · a cada 30 s';
+      })
+      .catch(function (e) {
+        if (String(e.message).indexOf('Chave') === 0) {
+          try { sessionStorage.removeItem('oia-chave'); } catch (x) { /* nada */ }
+          clearInterval(timer); $('avaPainel').hidden = true; $('avaChaveBox').hidden = false;
+          $('avaChaveErro').textContent = 'Chave inválida.'; $('avaChaveErro').hidden = false; return;
+        }
+        $('avaStatus').textContent = 'Sem conexão agora; tento de novo em 30 s.';
+      });
+  }
+  function entrar() {
+    var k = $('avaChave').value.trim();
+    if (!k) { return; }
+    try { sessionStorage.setItem('oia-chave', k); } catch (e) { /* sem sessionStorage */ }
+    $('avaChaveErro').hidden = true; iniciar();
+  }
+  function iniciar() { clearInterval(timer); carregar(); timer = setInterval(carregar, 30000); }
+  function csv() {
+    var cab = ['recebida', 'curso', 'ano', 'sessoes'].concat(D.notas).concat(['continuar', 'recomenda', 'ajudou', 'mudar', 'teste']);
+    var q = function (v) { v = String(v == null ? '' : v); return /[";\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; };
+    var corpo = validas().map(function (l) {
+      return [l.data, l.curso, l.serie, l.sessoes].concat(D.notas.map(function (k) { return l.notas[k]; }))
+        .concat([l.continuar, l.recomenda, l.ajudou, l.mudar, l.teste ? 'sim' : '']).map(q).join(';');
+    });
+    var blob = new Blob(['﻿' + [cab.join(';')].concat(corpo).join('\r\n')], { type: 'text/csv;charset=utf-8' });
+    var a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+    a.download = 'oia-avaliacao-' + new Date().toISOString().slice(0, 10) + '.csv';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    $('btnAvaChave').addEventListener('click', entrar);
+    $('avaChave').addEventListener('keydown', function (e) { if (e.key === 'Enter') { entrar(); } });
+    $('btnAvaCsv').addEventListener('click', csv);
+    $('btnAvaAtualizar').addEventListener('click', carregar);
+    $('avaTeste').addEventListener('change', desenhar);
+    if (chave()) { iniciar(); }
+  });
+})();
