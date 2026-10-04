@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  icone-ifmg.svg
+  Icone do IFMG — so o simbolo oficial da marca da Rede Federal, sem texto.
+  Briefing: 01_Fisica_Conceitual_1/_planejamento/_pre/PRE-site-icones-ifmg-nidec-2026-09-11.md (aprovado).
+
+  Nao redesenhar: grade 3 colunas x 4 linhas medida em Ifmg_nidec_codafis.png
+  (quadrado 54, passo 65,5; circulo de 60 centrado na 1a celula), cores oficiais
+  verde #32A041 e vermelho #C8191E. Linhas: (circulo,Q,Q) (Q,Q) (Q,Q,Q) (Q,Q).
+  PNGs: icon-ifmg.png (200 px, sites/OAs) e icon-ifmg-600.png (capas LaTeX).
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-36.75 -4 258.5 258.5" width="200" height="200"
+     role="img" aria-label="Instituto Federal de Minas Gerais">
+  <title>Instituto Federal de Minas Gerais</title>
+  <circle cx="27" cy="27" r="30" fill="#C8191E"/>
+  <g fill="#32A041">
+    <rect x="65.5" y="0" width="54" height="54"/>
+    <rect x="131" y="0" width="54" height="54"/>
+    <rect x="0" y="65.5" width="54" height="54"/>
+    <rect x="65.5" y="65.5" width="54" height="54"/>
+    <rect x="0" y="131" width="54" height="54"/>
+    <rect x="65.5" y="131" width="54" height="54"/>
+    <rect x="131" y="131" width="54" height="54"/>
+    <rect x="0" y="196.5" width="54" height="54"/>
+    <rect x="65.5" y="196.5" width="54" height="54"/>
+  </g>
+</svg>
