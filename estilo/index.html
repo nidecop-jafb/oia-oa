@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Mande uma ideia, uma dúvida sobre o site ou algo que ficou confuso, por texto ou áudio.">
+<meta name="description" content="Questionário de estilos de aprendizagem da Oficina IA: o seu perfil e o painel do grupo.">
 <meta name="theme-color" content="#1B2A41">
 <link rel="manifest" href="../manifest.webmanifest">
 <link rel="icon" href="../_icones/favicon.ico" sizes="any">
@@ -15,10 +15,10 @@
   var l; try { l = localStorage.getItem('oia-letra'); } catch (e) {}
   if (l === 'g' || l === 'gg') { document.documentElement.setAttribute('data-letra', l); } })();</script>
 <link rel="stylesheet" href="../_css/oia.css">
-<title>Enviar sugestão · Oficina IA nos estudos</title>
+<title>Estilo de aprendizagem · Oficina IA nos estudos</title>
 </head>
-<body data-pagina="sugestoes">
-<button class="aba-toggle aqui" id="abaSiteT" aria-current="page">Site</button>
+<body data-pagina="estilo">
+<button class="aba-toggle" id="abaSiteT">Site</button>
 <aside class="aba-painel" id="abaSite">
   <h3>Site</h3>
   <p>O endereço do site é <strong>nidecop-jafb.github.io/oia-oa</strong>. Ele abre direto: não pede senha, cadastro nem o seu nome.</p>
@@ -26,7 +26,7 @@
   <p>Funciona no celular e no computador. Para instalar, veja a aba <strong>Instalar</strong>.</p>
   <a class="aba-btn" href="../sugestoes/index.html">Enviar uma sugestão</a>
 </aside>
-<button class="aba-toggle" id="abaEstiloT">Estilo</button>
+<button class="aba-toggle aqui" id="abaEstiloT" aria-current="page">Estilo</button>
 <aside class="aba-painel" id="abaEstilo">
   <h3>Estilo</h3>
   <p>Conhecer o seu estilo de aprendizagem é descobrir como você prefere receber, processar e organizar o que
@@ -148,33 +148,149 @@
 </aside>
 <div class="wrap">
 <div class="topo-btns"><a class="inicio-btn" href="../index.html" aria-label="Início" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5.5h4V20"/></svg></a><button class="letra-btn" id="letraMenos" type="button" aria-label="Diminuir a letra" title="Diminuir a letra">A&minus;</button><button class="letra-btn" id="letraMais" type="button" aria-label="Aumentar a letra" title="Aumentar a letra">A+</button><button class="tema-btn" id="temaBtn" type="button" aria-label="Mudar o tema"><svg class="sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v2.5M12 20v2.5M1.5 12h2.5M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg><svg class="lua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg></button></div>
-  <h1>Enviar sugestão</h1>
-  <p>Teve uma ideia? Algo ficou confuso ou deu erro? Conte para a equipe da oficina, <strong>por texto ou por
-  áudio</strong>. A gente lê tudo e responde na página de <a href="../agradecimentos/index.html">Agradecimentos</a>.</p>
-  <p class="nota">A sugestão é <strong>anônima</strong>: não pedimos nome, e-mail nem telefone. Não escreva
-  nome, e-mail nem outro dado pessoal, seu ou de outra pessoa.</p>
-
-  <div class="form-sug" id="sugForm">
-    <label for="sugTexto">Minha sugestão</label>
-    <textarea id="sugTexto" maxlength="2000" placeholder="Escreva aqui. Se foi um erro, diga em qual página aconteceu."></textarea>
-    <input type="text" id="sugHp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-    <label>Ou grave um áudio (até 2 minutos)</label>
-    <p class="chk"><input type="checkbox" id="chkResp"><span>Estou de acordo em enviar um áudio para a equipe da
-    oficina (se tenho menos de 18 anos, meu responsável sabe).</span></p>
-    <button type="button" id="btnGravar" disabled>Gravar áudio</button>
-    <button type="button" id="btnParar" hidden>Parar</button>
-    <button type="button" id="btnDescartar" hidden>Apagar o áudio</button>
-    <p class="nota" id="gravTempo"></p>
-    <audio id="audioPrev" controls hidden></audio>
-
-    <p class="msg-erro" id="sugErro" hidden></p>
-    <button type="button" id="btnEnviar" class="forte">Enviar sugestão</button>
+  <h1>Estilo de aprendizagem</h1>
+  <div class="intro">
+  <p>Conhecer o seu estilo de aprendizagem é descobrir como você prefere receber, processar e organizar o que
+  estuda. O questionário desta aba, baseado no Índice de Estilos de Aprendizagem de Felder e Soloman, olha para
+  quatro dimensões, cada uma com dois polos:</p>
+  <ul class="dims">
+    <li><strong>Ativo ou Reflexivo</strong> — aprender fazendo e discutindo, ou pensando sozinho primeiro.</li>
+    <li><strong>Sensorial ou Intuitivo</strong> — partir de fatos e exemplos concretos, ou de ideias e teorias.</li>
+    <li><strong>Visual ou Verbal</strong> — lembrar melhor de figuras e gráficos, ou de palavras escritas e faladas.</li>
+    <li><strong>Sequencial ou Global</strong> — avançar passo a passo, ou ver o quadro geral e entender de uma vez.</li>
+  </ul>
+  <p>Ninguém é um polo só: o resultado mostra para que lado você pende hoje, e com que força. Não existe estilo
+  melhor nem pior, e ele não é um rótulo — muda com a prática e com o que você estuda.</p>
+  <p>Com esse retrato, você escolhe estratégias (e usos da IA) que combinam com o seu jeito e treina, de propósito,
+  o polo que usa menos. Ao longo da oficina, responda de novo e acompanhe como o seu perfil muda.</p>
   </div>
-  <p class="msg-ok" id="sugOk" hidden><strong>Recebida. Obrigado!</strong> A sua sugestão chegou à equipe da oficina.
-  A resposta sai na página de <a href="../agradecimentos/index.html">Agradecimentos</a>.</p>
-<script>window.OIA_COLETA = "https://script.google.com/macros/s/AKfycbxeCb9a0BlRe9LnKuuIw_EjNOnKlEGO_yV4_rzuUWyNbVU4ws_isV-rjjYsl8FZ44nO/exec";</script>
-<script src="../_js/oia-sugestao.js"></script>
+
+  <section>
+  <h2>1. Quem é você</h2>
+  <div class="form-sug">
+    <label for="estRA">Seu RA (só os números)</label>
+    <input type="text" id="estRA" inputmode="numeric" autocomplete="off" maxlength="14">
+    <div class="duas">
+      <div><label for="estCurso">Curso</label><select id="estCurso"><option value="">Escolha…</option><option>Mineração</option><option>Metalurgia</option><option>Edificações</option><option>Automação Industrial</option><option>Administração</option><option>Outro curso</option></select></div>
+      <div><label for="estAno">Ano</label><select id="estAno"><option value="">Escolha…</option><option>1.º ano</option><option>2.º ano</option><option>3.º ano</option></select></div>
+    </div>
+    <p class="nota">O RA guarda o seu histórico, para você comparar as respostas ao longo da oficina. Não pedimos
+    nome, e ninguém vê o seu resultado no painel do grupo: lá só aparecem contagens.</p>
+    <button type="button" id="btnEstMeus">Já respondi: ver os meus resultados</button>
+    <p class="msg-erro" id="estErroId" hidden></p>
+  </div>
+  </section>
+
+  <section>
+  <h2>2. Questionário</h2>
+  <p>Em cada pergunta, marque a alternativa que mais combina com você. Se as duas combinarem, fique com a que
+  acontece mais vezes. Não existe resposta certa.</p>
+  <form id="estForm" onsubmit="return false;">
+  <fieldset class="questao" id="fq1"><legend><span class="q-num">01</span> Quando estou aprendendo um assunto novo, gosto de:</legend>
+    <label><input type="radio" name="q1" value="a"><span>primeiro, discuti-lo com outras pessoas.</span></label>
+    <label><input type="radio" name="q1" value="b"><span>primeiro, refletir sobre ele individualmente.</span></label>
+  </fieldset>
+  <fieldset class="questao" id="fq2"><legend><span class="q-num">02</span> Se eu fosse professor(a), preferiria ensinar uma disciplina:</legend>
+    <label><input type="radio" name="q2" value="a"><span>que lide com fatos e situações reais.</span></label>
+    <label><input type="radio" name="q2" value="b"><span>que lide com ideias e teorias.</span></label>
+  </fieldset>
+  <fieldset class="questao" id="fq3"><legend><span class="q-num">03</span> Prefiro obter novas informações por meio de:</legend>
+    <label><input type="radio" name="q3" value="a"><span>figuras, diagramas, gráficos ou mapas.</span></label>
+    <label><input type="radio" name="q3" value="b"><span>instruções escritas ou informações faladas.</span></label>
+  </fieldset>
+  <fieldset class="questao" id="fq4"><legend><span class="q-num">04</span> Quando resolvo problemas de matemática, eu:</legend>
+    <label><input type="radio" name="q4" value="a"><span>normalmente preciso resolvê-los por etapas para então chegar à solução.</span></label>
+    <label><input type="radio" name="q4" value="b"><span>normalmente antevejo a solução, mas às vezes me complico para resolver cada uma das etapas.</span></label>
+  </fieldset>
+  <fieldset class="questao" id="fq5"><legend><span class="q-num">05</span> Em um grupo de estudo, trabalhando um material difícil, eu provavelmente:</legend>
+    <label><input type="radio" name="q5" value="a"><span>tomo a iniciativa e contribuo com ideias.</span></label>
+    <label><input type="radio" name="q5" value="b"><span>assumo uma posição de observador(a) e analiso os fatos.</span></label>
+  </fieldset>
+  <fieldset class="questao" id="fq6"><legend><span class="q-num">06</span> Acho mais fácil aprender:</legend>
+    <label><input type="radio" name="q6" value="a"><span>a partir de experimentos.</span></label>
+    <label><input type="radio" name="q6" value="b"><span>a partir de conceitos.</span></label>
+  </fieldset>
+  <fieldset class="questao" id="fq7"><legend><span class="q-num">07</span> Ao ler um livro:</legend>
+    <label><input type="radio" name="q7" value="a"><span>primeiro observo as figuras e os desenhos.</span></label>
+    <label><input type="radio" name="q7" value="b"><span>primeiro presto atenção no texto escrito.</span></label>
+  </fieldset>
+  <fieldset class="questao" id="fq8"><legend><span class="q-num">08</span> É mais importante para mim que o professor:</legend>
+    <label><input type="radio" name="q8" value="a"><span>apresente a matéria em etapas sequenciais.</span></label>
+    <label><input type="radio" name="q8" value="b"><span>apresente um quadro geral e relacione a matéria com outros assuntos.</span></label>
+  </fieldset>
+  <fieldset class="questao" id="fq9"><legend><span class="q-num">09</span> Nas turmas em que já estudei, eu:</legend>
+    <label><input type="radio" name="q9" value="a"><span>fiz amizade com muitos colegas.</span></label>
+    <label><input type="radio" name="q9" value="b"><span>fui reservado(a) e fiz amizade com alguns colegas.</span></label>
+  </fieldset>
+  <fieldset class="questao" id="fq10"><legend><span class="q-num">10</span> Ao ler textos técnicos ou científicos, prefiro:</legend>
+    <label><input type="radio" name="q10" value="a"><span>algo que me ensine a fazer alguma coisa.</span></label>
+    <label><input type="radio" name="q10" value="b"><span>algo que me apresente novas ideias para pensar.</span></label>
+  </fieldset>
+  <fieldset class="questao" id="fq11"><legend><span class="q-num">11</span> Lembro melhor:</legend>
+    <label><input type="radio" name="q11" value="a"><span>o que vejo.</span></label>
+    <label><input type="radio" name="q11" value="b"><span>o que ouço.</span></label>
+  </fieldset>
+  <fieldset class="questao" id="fq12"><legend><span class="q-num">12</span> Eu aprendo:</legend>
+    <label><input type="radio" name="q12" value="a"><span>num ritmo constante, etapa por etapa.</span></label>
+    <label><input type="radio" name="q12" value="b"><span>em saltos: fico confuso(a) por algum tempo e então, de repente, tenho um estalo e entendo tudo.</span></label>
+  </fieldset>
+  <fieldset class="questao" id="fq13"><legend><span class="q-num">13</span> Prefiro estudar:</legend>
+    <label><input type="radio" name="q13" value="a"><span>em grupo.</span></label>
+    <label><input type="radio" name="q13" value="b"><span>sozinho(a).</span></label>
+  </fieldset>
+  <fieldset class="questao" id="fq14"><legend><span class="q-num">14</span> Prefiro a ideia do:</legend>
+    <label><input type="radio" name="q14" value="a"><span>concreto.</span></label>
+    <label><input type="radio" name="q14" value="b"><span>conceitual.</span></label>
+  </fieldset>
+  <fieldset class="questao" id="fq15"><legend><span class="q-num">15</span> Quando vejo um diagrama ou esquema em uma aula, lembro mais facilmente:</legend>
+    <label><input type="radio" name="q15" value="a"><span>da figura.</span></label>
+    <label><input type="radio" name="q15" value="b"><span>do que o professor disse sobre ela.</span></label>
+  </fieldset>
+  <fieldset class="questao" id="fq16"><legend><span class="q-num">16</span> Quando estou aprendendo um assunto novo, prefiro:</legend>
+    <label><input type="radio" name="q16" value="a"><span>concentrar-me só nesse assunto, aprendendo o máximo possível.</span></label>
+    <label><input type="radio" name="q16" value="b"><span>tentar estabelecer conexões entre esse assunto e outros relacionados a ele.</span></label>
+  </fieldset>
+  <fieldset class="questao" id="fq17"><legend><span class="q-num">17</span> Normalmente sou considerado(a):</legend>
+    <label><input type="radio" name="q17" value="a"><span>extrovertido(a).</span></label>
+    <label><input type="radio" name="q17" value="b"><span>reservado(a).</span></label>
+  </fieldset>
+  <fieldset class="questao" id="fq18"><legend><span class="q-num">18</span> Prefiro disciplinas que enfatizam:</legend>
+    <label><input type="radio" name="q18" value="a"><span>material concreto (fatos, dados).</span></label>
+    <label><input type="radio" name="q18" value="b"><span>material abstrato (conceitos, teorias).</span></label>
+  </fieldset>
+  <fieldset class="questao" id="fq19"><legend><span class="q-num">19</span> Quando alguém me mostra dados, prefiro:</legend>
+    <label><input type="radio" name="q19" value="a"><span>diagramas ou gráficos.</span></label>
+    <label><input type="radio" name="q19" value="b"><span>um texto que resuma os resultados.</span></label>
+  </fieldset>
+  <fieldset class="questao" id="fq20"><legend><span class="q-num">20</span> Quando estou resolvendo um problema, eu:</legend>
+    <label><input type="radio" name="q20" value="a"><span>primeiro penso nas etapas do processo para chegar à solução.</span></label>
+    <label><input type="radio" name="q20" value="b"><span>primeiro penso nas consequências ou nas aplicações da solução.</span></label>
+  </fieldset>
+  </form>
+  <div class="progresso"><span id="estConta">0/20 respondidas</span>
+    <button type="button" id="btnEstEnviar" disabled>Enviar e ver o meu resultado</button></div>
+  <p class="msg-erro" id="estErro" hidden></p>
+  </section>
+
+  <section id="resultado" hidden>
+  <h2>3. O seu resultado</h2>
+  <div id="estRes"></div>
+  <h2>Dicas de estudo com IA</h2>
+  <div id="estDicas"></div>
+  <h2>A sua evolução</h2>
+  <div id="estHist"></div>
+  </section>
+
+  <section id="grupo">
+  <h2>Painel do grupo</h2>
+  <p>Como o grupo se distribui em cada dimensão. Conta só o envio mais recente de cada participante.</p>
+  <div class="form-sug"><label for="estTurma">Turma</label>
+    <select id="estTurma"><option value="">Todas as turmas</option></select></div>
+  <div id="estGrupo"><p class="nota">Carregando…</p></div>
+  </section>
+  <p class="ref">FELDER, R. M.; SOLOMAN, B. A. <em>Index of Learning Styles Questionnaire</em>. Raleigh: North Carolina State University. Versão reduzida (20 itens) e traduzida.</p>
+<script>window.OIA_ESTILO_URL = "https://script.google.com/macros/s/AKfycbwTJpLTj1i72zc5RfPw1JeCVGikjzJD7XpvvqqDTfgmEVBkuV_rxqIOF7yxvToi5aOA/exec"; window.OIA_ESTILO = {"dim": [["AR", "Ativo", "Reflexivo", "At", "Rf"], ["SI", "Sensorial", "Intuitivo", "Se", "In"], ["VV", "Visual", "Verbal", "Vi", "Ve"], ["SG", "Sequencial", "Global", "Sq", "Gl"]], "dicas": {"Ativo": ["Explique o conteúdo em voz alta para um colega ou para a IA e peça que ela aponte o que faltou.", "Peça à IA três exercícios curtos e tente resolvê-los antes de ler a teoria inteira.", "Estude em dupla: um pergunta, o outro responde, e depois troquem."], "Reflexivo": ["Leia, pare e escreva um resumo de três linhas com as suas palavras antes de abrir a IA.", "Peça à IA perguntas para você pensar, e não respostas prontas.", "Reserve um tempo sozinho(a), depois da aula, para revisar com calma."], "Sensorial": ["Peça à IA exemplos concretos, da mineração e do dia a dia, antes da fórmula.", "Resolva problemas com números reais e confira as unidades no fim.", "Ligue cada conceito a algo que você já viu, mediu ou fez."], "Intuitivo": ["Pergunte à IA o porquê da fórmula: de onde ela vem e o que ela diz.", "Peça à IA que ligue o tema a outros assuntos da Física.", "Cuidado com a pressa: releia o enunciado e confira as contas antes de responder."], "Visual": ["Peça à IA um esquema, um mapa conceitual ou uma tabela do conteúdo.", "Desenhe a situação do problema antes de fazer qualquer conta.", "Use cores, setas e gráficos no caderno."], "Verbal": ["Peça à IA uma explicação em texto, passo a passo, e reescreva com as suas palavras.", "Grave um áudio explicando o conteúdo, ou ouça um resumo em áudio.", "Transforme cada figura do livro numa frase que diga o que ela mostra."], "Sequencial": ["Peça à IA um roteiro do conteúdo em etapas numeradas.", "Resolva os exercícios do mais simples para o mais difícil.", "Antes de passar para a etapa seguinte, confira se entendeu a anterior."], "Global": ["Peça à IA, primeiro, o quadro geral: para que serve o tema e como ele se liga ao resto.", "Leia o resumo do capítulo antes dos detalhes.", "Depois do estalo, volte às etapas para conseguir explicar cada uma."]}};</script>
+<script src="../_js/oia-estilo.js"></script>
   <div class="footer">
     <div class="footer-marcas"><a href="https://ouropreto.ifmg.edu.br/ouropreto" target="_blank" rel="noopener" title="IFMG — Campus Ouro Preto (abre em nova aba)"><svg class="oia-ic" xmlns="http://www.w3.org/2000/svg" viewBox="-36.75 -4 258.5 258.5" role="img" aria-label="Instituto Federal de Minas Gerais"> <title>Instituto Federal de Minas Gerais</title> <circle cx="27" cy="27" r="30" fill="#C8191E"/> <g fill="#32A041"> <rect x="65.5" y="0" width="54" height="54"/> <rect x="131" y="0" width="54" height="54"/> <rect x="0" y="65.5" width="54" height="54"/> <rect x="65.5" y="65.5" width="54" height="54"/> <rect x="0" y="131" width="54" height="54"/> <rect x="65.5" y="131" width="54" height="54"/> <rect x="131" y="131" width="54" height="54"/> <rect x="0" y="196.5" width="54" height="54"/> <rect x="65.5" y="196.5" width="54" height="54"/> </g> </svg></a><svg class="oia-ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="NIDEC — Núcleo de Inovação e Desenvolvimento de Experimentos Científicos"> <title>NIDEC — Núcleo de Inovação e Desenvolvimento de Experimentos Científicos</title> <defs> <linearGradient id="inst-nidec-o1" gradientUnits="userSpaceOnUse" x1="8" y1="100" x2="192" y2="100" gradientTransform="rotate(-30 100 100)"> <stop offset="0" stop-color="#4A1F95"/><stop offset=".38" stop-color="#2C5AA4"/> <stop offset=".70" stop-color="#2CC2A2"/><stop offset="1" stop-color="#2C9E41"/> </linearGradient> <linearGradient id="inst-nidec-o2" gradientUnits="userSpaceOnUse" x1="8" y1="100" x2="192" y2="100" gradientTransform="rotate(-90 100 100)"> <stop offset="0" stop-color="#4A1F95"/><stop offset=".38" stop-color="#2C5AA4"/> <stop offset=".70" stop-color="#2CC2A2"/><stop offset="1" stop-color="#2C9E41"/> </linearGradient> <linearGradient id="inst-nidec-o3" gradientUnits="userSpaceOnUse" x1="8" y1="100" x2="192" y2="100" gradientTransform="rotate(-150 100 100)"> <stop offset="0" stop-color="#4A1F95"/><stop offset=".38" stop-color="#2C5AA4"/> <stop offset=".70" stop-color="#2CC2A2"/><stop offset="1" stop-color="#2C9E41"/> </linearGradient> <radialGradient id="inst-nidec-nucleo" cx="40%" cy="36%" r="70%"> <stop offset="0" stop-color="#A0EBE1"/> <stop offset=".45" stop-color="#2CC8C2"/> <stop offset="1" stop-color="#1E5DA5"/> </radialGradient> </defs> <g fill="none" stroke-width="8"> <g transform="rotate(30 100 100)" stroke="url(#inst-nidec-o1)"> <ellipse cx="100" cy="100" rx="88" ry="31"/> <circle cx="188" cy="100" r="8" fill="url(#inst-nidec-o1)" stroke="none"/> </g> <g transform="rotate(90 100 100)" stroke="url(#inst-nidec-o2)"> <ellipse cx="100" cy="100" rx="88" ry="31"/> <circle cx="12" cy="100" r="8" fill="url(#inst-nidec-o2)" stroke="none"/> </g> <g transform="rotate(150 100 100)" stroke="url(#inst-nidec-o3)"> <ellipse cx="100" cy="100" rx="88" ry="31"/> <circle cx="188" cy="100" r="8" fill="url(#inst-nidec-o3)" stroke="none"/> </g> </g> <circle cx="100" cy="100" r="23" fill="url(#inst-nidec-nucleo)"/> </svg></div>
     <p class="footer-links"><a href="../agradecimentos/index.html">Agradecimentos</a> &middot;
