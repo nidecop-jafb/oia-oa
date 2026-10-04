@@ -3,7 +3,7 @@
   var toggles = [].slice.call(document.querySelectorAll('.aba-toggle'));
   function painel(t) { return document.getElementById(t.id.replace(/T$/, '')); }
   function empilhar() {
-    /* 9 abas: se nao couberem na altura da tela, a letra das linguetas diminui */
+    /* 8 abas: se nao couberem na altura da tela, a letra das linguetas diminui */
     document.body.classList.remove('abas-compactas');
     function pos(gap) { var y = 56; toggles.forEach(function (t) { t.style.top = y + 'px'; y += t.offsetHeight + gap; }); return y; }
     if (pos(10) > window.innerHeight) { document.body.classList.add('abas-compactas'); pos(4); }
