@@ -3,8 +3,9 @@
 :root { color-scheme: dark; --azul: #2E86C1; --azul-esc: #1B2A41; --verde: #3E8E5A; --fundo: #0f1724; --texto: #e8e8e8; --forte: #fff; --t-ddd: #ddd; --t-c4: #c4c4c4; --t-aaa: #aaa; --t-9a: #9a9a9a; --t-888: #888; --b-555: #555; --b-444: #444; --b-333: #333; --caixa: #1b2a41; --caixa2: #16202f; --ciano: #8FE0FF; --verde-claro: #7BE495; }
 [data-tema="claro"] { color-scheme: light; --fundo: #ffffff; --texto: #1c1c1c; --forte: #000000; --t-ddd: #2a2a2a; --t-c4: #3a3a3a; --t-aaa: #505050; --t-9a: #5a5a5a; --t-888: #5f5f5f; --b-555: #8c8c8c; --b-444: #c8c8c8; --b-333: #dddddd; --caixa: #eef2f7; --caixa2: #f6f8fb; --ciano: #1B5E8C; --verde-claro: #2D6E45; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html[data-letra="g"] { font-size: 112.5%; }
-html[data-letra="gg"] { font-size: 125%; }
+html { font-size: 112.5%; }
+html[data-letra="g"] { font-size: 125%; }
+html[data-letra="gg"] { font-size: 137.5%; }
 body { background: var(--fundo); color: var(--texto); font-family: Calibri, Carlito, 'Segoe UI', Roboto, Arial, sans-serif;
        font-size: 1.125rem; line-height: 1.7; overflow-wrap: anywhere; }
 h1, h2, h3, .intro-t, .aba-toggle, .aba-painel h3, .aba-painel .aba-cargo, .letra-btn {
@@ -30,9 +31,9 @@ ol.num li { margin-bottom: 6px; }
 
 /* abas laterais (molde rif-oa/lme-oa); 9 abas: o JS compacta se nao couberem na altura */
 .aba-toggle { position: fixed; left: 0; z-index: 998; background: var(--caixa); border: 1px solid var(--b-444); border-left: none;
-              color: var(--t-aaa); font-size: 12px; padding: 8px 9px; cursor: pointer; writing-mode: vertical-rl;
+              color: var(--t-aaa); font-size: 14px; padding: 8px 9px; cursor: pointer; writing-mode: vertical-rl;
               text-orientation: mixed; letter-spacing: 1px; text-transform: uppercase; }
-body.abas-compactas .aba-toggle { font-size: 10px; padding: 5px 6px; letter-spacing: 0; }
+body.abas-compactas .aba-toggle { font-size: 12px; padding: 5px 6px; letter-spacing: 0; }
 .aba-toggle:hover { color: var(--ciano); }
 .aba-toggle.aqui { color: white; background: var(--azul); border-color: var(--azul); }
 .aba-toggle.ativa { color: rgb(15,23,36); background: rgb(143,224,255); border-color: rgb(143,224,255); font-weight: 700; }
@@ -78,7 +79,7 @@ body.abas-compactas .aba-toggle { font-size: 10px; padding: 5px 6px; letter-spac
             padding: 0; background: var(--caixa); color: var(--ciano); border: 1px solid var(--b-555); cursor: pointer; }
 .tema-btn:hover, .inicio-btn:hover, .letra-btn:hover { border-color: var(--azul); }
 .tema-btn svg, .inicio-btn svg { width: 20px; height: 20px; display: block; }
-.letra-btn { font-size: 16px; font-weight: bold; line-height: 1; letter-spacing: 0; }
+.letra-btn { font-size: 18px; font-weight: bold; line-height: 1; letter-spacing: 0; }
 .letra-btn:disabled { opacity: .4; cursor: default; }
 .tema-btn .lua, [data-tema="claro"] .tema-btn .sol { display: none; }
 [data-tema="claro"] .tema-btn .lua { display: block; }
