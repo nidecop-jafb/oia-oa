@@ -489,14 +489,6 @@
   <div class="qr-box"><img src="../../_icones/oia-qr-instalar.svg" width="170" height="170" alt="QR code que abre https://nidecop-jafb.github.io/oia-oa/instalar/"><div><p>Aponte a câmera do celular para o QR code para abrir o passo a passo.</p><p class="qr-end">nidecop-jafb.github.io/oia-oa/instalar/</p></div></div>
   <a class="aba-btn" href="../../instalar/index.html">Instalar no celular ou no computador</a>
 </aside>
-<button class="aba-toggle aqui" id="abaAvaliacaoT" aria-current="page">Avaliação</button>
-<aside class="aba-painel" id="abaAvaliacao">
-  <h3>Avaliação da oficina</h3>
-  <p>No fim da oficina, conte para a equipe como foi: leva uns 5 minutos e é anônimo, sem RA e sem nome.</p>
-  <div class="qr-box"><img src="../../_icones/oia-qr-avaliacao.svg" width="170" height="170" alt="QR code que abre https://nidecop-jafb.github.io/oia-oa/avaliacao/"><div><p>Aponte a câmera do celular para o QR code para abrir a avaliação.</p><p class="qr-end">nidecop-jafb.github.io/oia-oa/avaliacao/</p></div></div>
-  <a class="aba-btn" href="../../avaliacao/index.html">Avaliar a oficina (~5 min)</a>
-  <p class="aba-nota">Equipe: o <a href="../../avaliacao/painel/index.html">painel ao vivo</a> pede a chave.</p>
-</aside>
 <button class="aba-toggle" id="abaCreditosT">Créditos</button>
 <aside class="aba-painel" id="abaCreditos">
   <h3>Créditos</h3>
@@ -543,6 +535,14 @@
     <p class="nota">A chave fica só nesta aba do navegador e some ao fechá-la.</p>
   </div>
   <div id="avaPainel" hidden>
+    <div class="form-sug">
+      <p id="avaJanela"><strong>Avaliação fechada.</strong></p>
+      <button type="button" id="btnAvaAbrir" class="forte">Abrir a avaliação</button>
+      <button type="button" id="btnAvaFechar" hidden>Fechar a avaliação</button>
+    </div>
+    <div class="qr-box" id="avaQr" hidden><img src="../../_icones/oia-qr-avaliacao.svg" width="320" height="320"
+      alt="QR code que abre a avaliação da oficina"><div><p>Aponte a câmera do celular para o QR code e responda a
+      avaliação.</p><p class="qr-end">nidecop-jafb.github.io/oia-oa/avaliacao/</p></div></div>
     <div class="form-sug">
       <p class="nota" id="avaStatus"></p>
       <p class="chk"><input type="checkbox" id="avaTeste"><span>Incluir os envios de teste da equipe</span></p>

@@ -1,6 +1,6 @@
 /* sw.js — service worker do oia-oa. Gerado por _scripts/gerar_site_oia.py — nao editar a mao.
  * Rede primeiro, cache so para o aparelho sem internet (molde rif-oa). */
-var CACHE = 'oia-oa-20261004193901';
+var CACHE = 'oia-oa-20261004195620';
 
 self.addEventListener('install', function (e) {
   self.skipWaiting();
@@ -9,8 +9,7 @@ self.addEventListener('install', function (e) {
                      './_icones/icon-oia-192.png', './_icones/icon-oia-512.png', './_icones/fisica-1.svg',
                      './_icones/fisica-2.svg', './_icones/fisica-3.svg', './_icones/oia-qr-site.svg',
                      './_icones/oia-qr-instalar.svg', './estilo/index.html', './_js/oia-estilo.js',
-                     './_js/oia-metodo.js', './avaliacao/index.html', './_js/oia-avaliacao.js',
-                     './_icones/oia-qr-avaliacao.svg']);
+                     './_js/oia-metodo.js']);
   }).catch(function () { /* sem rede na instalacao: segue sem cache */ }));
 });
 

@@ -40,14 +40,32 @@
   function postar(d) {
     return fetch(URL_EXEC, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(d) })
       .then(function (r) { return r.json().catch(function () { return confirmar(d.id).then(function () { return { ok: true }; }); }); })
-      .then(function (res) { if (!res.ok) { var e = new Error(res.erro || 'Envio recusado.'); e.recusa = true; throw e; } return res; });
+      .then(function (res) {
+        if (!res.ok) { var e = new Error(res.erro || 'Envio recusado.'); e.recusa = true; e.fechada = !!res.fechada; throw e; }
+        return res;
+      });
   }
   function esvaziarFila() {
     var x = ler(K_FILA);
     if (!x || !online()) { return; }
     var d; try { d = JSON.parse(x); } catch (e) { tirar(K_FILA); return; }
     postar(d).then(function () { tirar(K_FILA); if ($('avaFila')) { $('avaFila').hidden = true; } })
-      .catch(function (e) { if (e && e.recusa) { tirar(K_FILA); } });
+      .catch(function (e) {
+        if (!(e && e.recusa)) { return; }
+        tirar(K_FILA);
+        if (e.fechada && $('avaFila')) { $('avaFila').textContent = 'A avaliação foi fechada antes do envio: esta resposta não chegou à equipe.'; }
+      });
+  }
+  /* Abre como a chamada (F28): o formulario so aparece com a janela aberta pela equipe. */
+  var vigia = null;
+  function estado() {
+    if (ler(K_FEITA) === '1') { return; }
+    if (!online()) { $('avaFechada').innerHTML = '<p><strong>Para responder, abra esta página com internet.</strong></p>'; return; }
+    fetch(URL_EXEC + '?avaliacao_oia_estado=1').then(function (r) { return r.json(); }).then(function (res) {
+      $('avaFechada').hidden = !!res.aberta; $('avaForm').hidden = !res.aberta;
+      if (res.aberta) { clearInterval(vigia); vigia = null; contar(); }
+      else if (!vigia) { vigia = setInterval(estado, 20000); }
+    }).catch(function () { if (!vigia) { vigia = setInterval(estado, 20000); } });
   }
   function enviar() {
     if (enviando) { return; }
@@ -71,11 +89,12 @@
       .then(function () { enviando = false; $('btnAvaEnviar').textContent = 'Enviar a avaliação'; contar(); });
   }
   document.addEventListener('DOMContentLoaded', function () {
-    if (ler(K_FEITA) === '1') { $('avaForm').hidden = true; $('avaOk').hidden = false; $('avaFila').hidden = !ler(K_FILA); }
+    if (ler(K_FEITA) === '1') { $('avaFechada').hidden = true; $('avaOk').hidden = false; $('avaFila').hidden = !ler(K_FILA); }
     $('avaForm').addEventListener('change', contar);
     $('btnAvaEnviar').addEventListener('click', enviar);
     window.addEventListener('online', esvaziarFila);
     contar();
     esvaziarFila();
+    estado();
   });
 })();

@@ -228,6 +228,7 @@ fieldset.questao textarea { width: 100%; min-height: 70px; background: var(--fun
 .ava-bar span { display: block; height: 100%; background: var(--ciano); }
 .ava-bar.b span { background: var(--verde-claro); }
 .ava-sub { color: var(--t-aaa); font-size: .9rem; }
+.ava-p .qr-box img { width: min(320px, 80vw); height: auto; aspect-ratio: 1; }
 .ava-abertas li { margin: 0 0 6px; overflow-wrap: anywhere; }
 .ava-p .form-sug input[type="password"] { width: 100%; background: var(--fundo); color: var(--texto); border: 1px solid var(--b-555); padding: 8px; }
 

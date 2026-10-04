@@ -57,7 +57,7 @@
     fetch(URL_EXEC + '?avaliacao_oia=1&chave=' + encodeURIComponent(k)).then(function (r) { return r.json(); })
       .then(function (res) {
         if (!res.ok) { throw new Error(res.erro || 'Falha'); }
-        linhas = res.linhas; $('avaChaveBox').hidden = true; $('avaPainel').hidden = false; desenhar();
+        linhas = res.linhas; $('avaChaveBox').hidden = true; $('avaPainel').hidden = false; desenhar(); janela(res);
         $('avaStatus').textContent = 'Atualizado às ' + new Date().toLocaleTimeString('pt-BR').slice(0, 5) + ' · a cada 30 s';
       })
       .catch(function (e) {
@@ -68,6 +68,22 @@
         }
         $('avaStatus').textContent = 'Sem conexão agora; tento de novo em 30 s.';
       });
+  }
+  /* Janela da avaliacao (F28): aberta ate a equipe fechar; o QR grande so aparece com ela aberta. */
+  function janela(res) {
+    var h = res.desde ? String(res.desde).slice(11, 16) : '';
+    $('avaJanela').innerHTML = res.aberta ? '<strong>Avaliação aberta</strong>' + (h ? ' desde ' + h : '') + '.'
+                                          : '<strong>Avaliação fechada.</strong> Os participantes veem o aviso de espera.';
+    $('btnAvaAbrir').hidden = !!res.aberta; $('btnAvaFechar').hidden = !res.aberta; $('avaQr').hidden = !res.aberta;
+  }
+  function mudarJanela(acao) {
+    $('btnAvaAbrir').disabled = $('btnAvaFechar').disabled = true;
+    fetch(URL_EXEC, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                      body: JSON.stringify({ tipo: 'AVALIACAO_JANELA', chave: chave(), acao: acao }) })
+      .then(function (r) { return r.json(); })
+      .then(function (res) { if (!res.ok) { throw new Error(res.erro); } janela(res); })
+      .catch(function () { carregar(); })   /* a volta do POST pode vir em HTML: o GET confirma o estado */
+      .then(function () { $('btnAvaAbrir').disabled = $('btnAvaFechar').disabled = false; });
   }
   function entrar() {
     var k = $('avaChave').value.trim();
@@ -92,6 +108,10 @@
     $('btnAvaChave').addEventListener('click', entrar);
     $('avaChave').addEventListener('keydown', function (e) { if (e.key === 'Enter') { entrar(); } });
     $('btnAvaCsv').addEventListener('click', csv);
+    $('btnAvaAbrir').addEventListener('click', function () { mudarJanela('abrir'); });
+    $('btnAvaFechar').addEventListener('click', function () {
+      if (confirm('Fechar a avaliação? Quem ainda não enviou não vai conseguir enviar.')) { mudarJanela('fechar'); }
+    });
     $('btnAvaAtualizar').addEventListener('click', carregar);
     $('avaTeste').addEventListener('change', desenhar);
     if (chave()) { iniciar(); }
