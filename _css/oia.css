@@ -69,6 +69,8 @@ body.abas-compactas .aba-toggle { font-size: 14px; padding: 5px 6px; letter-spac
 /* abas Fisica 1/2/3: letra maior na abertura (autor, 2026-10-04) */
 .aba-painel[id^="abaFisica"] { font-size: 1.1rem; }
 .aba-painel[id^="abaFisica"] .aba-nota { font-size: 1rem; }
+.aba-painel .fis-intro { font-size: 1.3rem; line-height: 1.5; color: var(--texto); }
+.aba-painel .fis-nota { font-size: 1.12rem; color: #b8b8b8; }
 .aba-painel[id^="abaFisica"] .aba-ref { font-size: .95rem; }
 .aba-painel[id^="abaFisica"] ul.marc { font-size: 1.02rem; }
 /* QR preto no branco tambem no tema escuro (senao nao escaneia) */
