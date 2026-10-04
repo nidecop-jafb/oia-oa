@@ -147,6 +147,7 @@ h3.p-dim span { color: var(--t-aaa); font-weight: normal; }
 .prompt p { margin: 0 0 8px; max-width: none; }
 .prompt .copiar { background: var(--caixa); color: var(--ciano); border: 1px solid var(--azul); padding: 6px 12px; cursor: pointer; }
 .aba-painel .met-etapa { color: var(--ciano); margin: 14px 0 4px; }
+.aba-painel ol.met-perg { margin: 0 0 10px; padding-left: 22px; }
 .aba-painel .met-estilo { font-size: .85rem; color: var(--verde-claro); }
 .aba-painel ul.marc .comecar { background: var(--caixa); color: var(--ciano); border: 1px solid var(--azul); padding: 4px 10px;
   margin: 2px 0 2px 6px; cursor: pointer; font: inherit; font-size: .85rem; }
@@ -161,6 +162,11 @@ h3.p-dim span { color: var(--t-aaa); font-weight: normal; }
 .crono .c-etapas span.ok { color: var(--verde-claro); }
 .crono .c-relogio { font-family: 'Courier New', Courier, monospace; font-size: 3.2rem; text-align: center; margin: 6px 0; }
 .crono .c-txt { margin: 0 0 10px; }
+.crono .c-rot { color: var(--ciano); margin: 10px 0 4px; font-weight: bold; }
+.crono .c-perg { margin: 0 0 10px; padding-left: 22px; }
+.crono .c-perg li { margin: 0 0 6px; }
+.crono a.c-livro { display: block; text-align: center; padding: 10px; border: 1px solid var(--azul); color: var(--ciano);
+  background: var(--caixa); text-decoration: none; margin: 0 0 6px; }
 .crono .c-acoes { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0; }
 .crono .c-acoes button { flex: 1; min-width: 110px; padding: 10px; background: var(--caixa); color: var(--texto);
   border: 1px solid var(--b-444); cursor: pointer; font: inherit; }
