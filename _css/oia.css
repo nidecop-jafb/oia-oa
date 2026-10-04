@@ -211,12 +211,12 @@ table.hist th { color: var(--t-aaa); font-weight: normal; }
 .ref { font-size: .85rem; color: var(--t-888); margin-top: 18px; }
 /* Avaliacao da oficina: escala 1-5 em caixas tocaveis; painel ao vivo legivel no projetor */
 .likert { display: flex; gap: 6px; flex-wrap: wrap; margin: 4px 0 2px; }
-.likert label { flex: 1 1 0; min-width: 44px; display: block; text-align: center; border: 1px solid var(--b-555);
+fieldset.questao .likert label { flex: 1 1 0; min-width: 44px; display: flex; justify-content: center; text-align: center; border: 1px solid var(--b-555);
   background: var(--caixa2); padding: 8px 2px; cursor: pointer; }
-.likert label.nu { flex: 2 1 0; min-width: 88px; }
-.likert input { position: absolute; opacity: 0; width: 1px; height: 1px; }
-.likert label:has(input:checked) { border-color: var(--azul); background: var(--caixa); color: var(--ciano); font-weight: bold; }
-.likert label:has(input:focus-visible) { outline: 2px solid var(--ciano); outline-offset: 2px; }
+fieldset.questao .likert label.nu { flex: 2 1 0; min-width: 88px; }
+fieldset.questao .likert input { position: absolute; margin: 0; opacity: 0; width: 1px; height: 1px; }
+fieldset.questao .likert label:has(input:checked) { border-color: var(--azul); background: var(--caixa); color: var(--ciano); font-weight: bold; }
+fieldset.questao .likert label:has(input:focus-visible) { outline: 2px solid var(--ciano); outline-offset: 2px; }
 .likert-leg { display: flex; justify-content: space-between; gap: 8px; color: var(--t-888); font-size: .85rem; }
 fieldset.questao textarea { width: 100%; min-height: 70px; background: var(--fundo); color: var(--texto); border: 1px solid var(--b-555);
   padding: 8px; }
