@@ -54,14 +54,27 @@
 <button class="aba-toggle" id="abaMetodoT">Método</button>
 <aside class="aba-painel" id="abaMetodo">
   <h3>Método</h3>
-  <p class="construcao">Em construção: o conteúdo desta aba chega nas próximas versões do site.</p>
+  <p>Você estuda cada tema do livro em sessões de até 30 min. As abas Física 1, 2 e 3 já dividem cada tema em sessões; em cada uma, o botão Começar abre o cronômetro com as 3 etapas abaixo e o prompt de IA de cada etapa, já preenchido com o tema, as páginas e os subtítulos.</p>
+  <h4 class="met-etapa">Antes · 5 min</h4>
+  <p>Leia o objetivo e os títulos dos marcadores da sessão, sem estudar ainda. A partir da 2.ª sessão do tema, use os 2 primeiros minutos para lembrar, sem olhar o livro, o que estudou na sessão anterior.</p>
+  <div class="prompt"><p>Vou estudar [o tema] no livro Física Identidade, páginas [páginas]. Os subtítulos são: [subtítulos da sessão]. Antes de eu ler, faça 3 perguntas curtas sobre o que eu já sei desse assunto e diga, em 2 linhas, que ideia liga esses subtítulos. Não explique o conteúdo ainda.</p><button type="button" class="copiar">Copiar</button></div>
+  <h4 class="met-etapa">Durante · 20 min</h4>
+  <p>Leitura ativa das páginas da sessão: anote as ideias principais, refaça os exemplos resolvidos e marque o que não entendeu. A IA entra só quando você travar.</p>
+  <div class="prompt"><p>Estou lendo [o tema] (páginas [páginas]). Vou colar um trecho ou exemplo que não entendi: explique com um exemplo da mineração ou do dia a dia e me faça uma pergunta para checar se entendi. Não resolva os exercícios por mim. Trecho: [cole aqui]</p><button type="button" class="copiar">Copiar</button></div>
+  <h4 class="met-etapa">Depois · 5 min</h4>
+  <p>Escreva um resumo de 3 linhas e resolva 1 questão. Na última sessão do tema, faça as Atividades finais do livro.</p>
+  <div class="prompt"><p>Acabei de estudar [o tema] (páginas [páginas]). Meu resumo em 3 linhas: [escreva aqui]. Corrija o que estiver errado ou faltando, sem reescrever tudo, e me dê 1 questão curta para eu resolver agora. Depois confira a minha resposta, com as unidades.</p><button type="button" class="copiar">Copiar</button></div>
+  <p class="met-estilo" hidden></p>
+  <h4 class="met-etapa">Tema com 2 ou 3 sessões</h4>
+  <p>Estude cada sessão em um dia diferente: tema de 2 sessões, 2 dias; de 3 sessões, 3 dias. Lembrar no dia seguinte, sem olhar, é o que fixa o conteúdo.</p>
+  <p class="aba-nota">Use a IA para pensar junto, não para pensar por você: tente primeiro, peça pistas e confira no livro.</p>
 </aside>
 <button class="aba-toggle" id="abaFisica1T">Física 1</button>
 <aside class="aba-painel" id="abaFisica1">
   <h3>Física 1</h3>
   <img class="disc-ic" src="../_icones/fisica-1.svg" width="72" height="72" alt="Ícone de Física 1">
   <p>Os temas de Física 1, do Tema 01 ao Tema 12 do livro didático.</p>
-  <p class="aba-nota">Tempo de estudo = folhas × 3 min, em sessões de até 30 min (corte entre marcadores). Toque no tema para ver os marcadores.</p>
+  <p class="aba-nota">Tempo de estudo = folhas × 3 min, em sessões de até 30 min (corte entre marcadores). Toque no tema para ver os marcadores e, em cada sessão, Começar abre o cronômetro do método (aba Método).</p>
   <ol class="temas">
     <li><details><summary><span class="t-num">Tema 01</span> · A Física · <span class="t-pag">p. 14–22 · 9 folhas · 6 marcadores</span> · <span class="t-tempo">~27 min (1 sessão)</span></summary>
       <ul class="marc">
@@ -71,17 +84,18 @@
         <li class="m-n2">O desenvolvimento da Física <span class="t-pag">p. 19</span></li>
         <li class="m-n2">Trabalho em foco <span class="t-pag">p. 20</span></li>
         <li class="m-n2">Atividades finais <span class="t-pag">p. 21</span></li>
+        <li class="m-sess"><button type="button" class="comecar" data-tema="Tema 01 — A Física" data-pag="14 a 22" data-marc="Pensamento científico; O desenvolvimento da Física; Trabalho em foco; Atividades finais" data-sess="1" data-total="1">Começar</button></li>
       </ul></details></li>
     <li><details><summary><span class="t-num">Tema 02</span> · Grandezas físicas · <span class="t-pag">p. 23–43 · 21 folhas · 10 marcadores</span> · <span class="t-tempo">~63 min (3 sessões)</span></summary>
       <ul class="marc">
-        <li class="m-sess">Sessão 1</li>
+        <li class="m-sess">Sessão 1 · p. 23–29 <button type="button" class="comecar" data-tema="Tema 02 — Grandezas físicas" data-pag="23 a 29" data-marc="Sistema Internacional de Unidades; Notação científica" data-sess="1" data-total="3">Começar a sessão 1</button></li>
         <li class="m-n1">Tema 2 — Grandezas físicas <span class="t-pag">p. 23</span></li>
         <li class="m-n2">Sistema Internacional de Unidades <span class="t-pag">p. 24</span></li>
         <li class="m-n2">Notação científica <span class="t-pag">p. 29</span></li>
-        <li class="m-sess">Sessão 2</li>
+        <li class="m-sess">Sessão 2 · p. 30–36 <button type="button" class="comecar" data-tema="Tema 02 — Grandezas físicas" data-pag="30 a 36" data-marc="Algarismos significativos; Medidas e incertezas" data-sess="2" data-total="3">Começar a sessão 2</button></li>
         <li class="m-n2">Algarismos significativos <span class="t-pag">p. 30</span></li>
         <li class="m-n2">Medidas e incertezas <span class="t-pag">p. 31</span></li>
-        <li class="m-sess">Sessão 3</li>
+        <li class="m-sess">Sessão 3 · p. 37–43 <button type="button" class="comecar" data-tema="Tema 02 — Grandezas físicas" data-pag="37 a 43" data-marc="Ciência na prática; Ordens de grandeza; A pesquisa científica na Física: importância e desafios no século XXI; Atividades finais" data-sess="3" data-total="3">Começar a sessão 3</button></li>
         <li class="m-n2">Ciência na prática <span class="t-pag">p. 37</span></li>
         <li class="m-n2">Ordens de grandeza <span class="t-pag">p. 38</span></li>
         <li class="m-n2">A pesquisa científica na Física: importância e desafios no século XXI <span class="t-pag">p. 39</span></li>
@@ -90,32 +104,32 @@
       </ul></details></li>
     <li><details><summary><span class="t-num">Tema 03</span> · Conceitos fundamentais da Cinemática · <span class="t-pag">p. 44–56 · 13 folhas · 6 marcadores</span> · <span class="t-tempo">~39 min (2 sessões)</span></summary>
       <ul class="marc">
-        <li class="m-sess">Sessão 1</li>
+        <li class="m-sess">Sessão 1 · p. 44–51 <button type="button" class="comecar" data-tema="Tema 03 — Conceitos fundamentais da Cinemática" data-pag="44 a 51" data-marc="Conceitos fundamentais da Cinemática; Movimento uniforme" data-sess="1" data-total="2">Começar a sessão 1</button></li>
         <li class="m-n1">Unidade 2 — Estudo dos movimentos <span class="t-pag">p. 44</span></li>
         <li class="m-n1">Tema 3 — Conceitos fundamentais da Cinemática <span class="t-pag">p. 45</span></li>
         <li class="m-n2">Conceitos fundamentais da Cinemática <span class="t-pag">p. 46</span></li>
         <li class="m-n2">Movimento uniforme <span class="t-pag">p. 49</span></li>
-        <li class="m-sess">Sessão 2</li>
+        <li class="m-sess">Sessão 2 · p. 52–56 <button type="button" class="comecar" data-tema="Tema 03 — Conceitos fundamentais da Cinemática" data-pag="52 a 56" data-marc="Movimento uniformemente variado; Atividades finais" data-sess="2" data-total="2">Começar a sessão 2</button></li>
         <li class="m-n2">Movimento uniformemente variado <span class="t-pag">p. 52</span></li>
         <li class="m-n2">Atividades finais <span class="t-pag">p. 55</span></li>
       </ul></details></li>
     <li><details><summary><span class="t-num">Tema 04</span> · Lançamentos · <span class="t-pag">p. 57–70 · 14 folhas · 4 marcadores</span> · <span class="t-tempo">~42 min (2 sessões)</span></summary>
       <ul class="marc">
-        <li class="m-sess">Sessão 1</li>
+        <li class="m-sess">Sessão 1 · p. 57–68 <button type="button" class="comecar" data-tema="Tema 04 — Lançamentos" data-pag="57 a 68" data-marc="Vetores; Composição de movimentos" data-sess="1" data-total="2">Começar a sessão 1</button></li>
         <li class="m-n1">Tema 4 — Lançamentos <span class="t-pag">p. 57</span></li>
         <li class="m-n2">Vetores <span class="t-pag">p. 58</span></li>
         <li class="m-n2">Composição de movimentos <span class="t-pag">p. 61</span></li>
-        <li class="m-sess">Sessão 2</li>
+        <li class="m-sess">Sessão 2 · p. 69–70 <button type="button" class="comecar" data-tema="Tema 04 — Lançamentos" data-pag="69 a 70" data-marc="Atividades finais" data-sess="2" data-total="2">Começar a sessão 2</button></li>
         <li class="m-n2">Atividades finais <span class="t-pag">p. 69</span></li>
       </ul></details></li>
     <li><details><summary><span class="t-num">Tema 05</span> · Movimento circular e torque · <span class="t-pag">p. 71–83 · 13 folhas · 8 marcadores</span> · <span class="t-tempo">~39 min (2 sessões)</span></summary>
       <ul class="marc">
-        <li class="m-sess">Sessão 1</li>
+        <li class="m-sess">Sessão 1 · p. 71–77 <button type="button" class="comecar" data-tema="Tema 05 — Movimento circular e torque" data-pag="71 a 77" data-marc="Características do movimento circular; Transmissão do movimento circular; Torque" data-sess="1" data-total="2">Começar a sessão 1</button></li>
         <li class="m-n1">Tema 5 — Movimento circular e torque <span class="t-pag">p. 71</span></li>
         <li class="m-n2">Características do movimento circular <span class="t-pag">p. 72</span></li>
         <li class="m-n2">Transmissão do movimento circular <span class="t-pag">p. 76</span></li>
         <li class="m-n2">Torque <span class="t-pag">p. 77</span></li>
-        <li class="m-sess">Sessão 2</li>
+        <li class="m-sess">Sessão 2 · p. 78–83 <button type="button" class="comecar" data-tema="Tema 05 — Movimento circular e torque" data-pag="78 a 83" data-marc="Centro de massa de um corpo; Equilíbrio de um corpo extenso; Atividades finais" data-sess="2" data-total="2">Começar a sessão 2</button></li>
         <li class="m-n2">Centro de massa de um corpo <span class="t-pag">p. 78</span></li>
         <li class="m-n2">Equilíbrio de um corpo extenso <span class="t-pag">p. 79</span></li>
         <li class="m-n2">Atividades finais <span class="t-pag">p. 82</span></li>
@@ -123,38 +137,38 @@
       </ul></details></li>
     <li><details><summary><span class="t-num">Tema 06</span> · Leis de Newton e força · <span class="t-pag">p. 84–105 · 22 folhas · 9 marcadores</span> · <span class="t-tempo">~66 min (3 sessões)</span></summary>
       <ul class="marc">
-        <li class="m-sess">Sessão 1</li>
+        <li class="m-sess">Sessão 1 · p. 84–91 <button type="button" class="comecar" data-tema="Tema 06 — Leis de Newton e força" data-pag="84 a 91" data-marc="Tipos de força" data-sess="1" data-total="3">Começar a sessão 1</button></li>
         <li class="m-n1">Unidade 3 — Dinâmica, leis de conservação e movimento <span class="t-pag">p. 84</span></li>
         <li class="m-n1">Tema 6 — Leis de Newton e força <span class="t-pag">p. 85</span></li>
         <li class="m-n2">Tipos de força <span class="t-pag">p. 87</span></li>
-        <li class="m-sess">Sessão 2</li>
+        <li class="m-sess">Sessão 2 · p. 92–99 <button type="button" class="comecar" data-tema="Tema 06 — Leis de Newton e força" data-pag="92 a 99" data-marc="Leis de Newton e movimento; Aplicações das leis de Newton na resolução de sistemas mecânicos; Pêndulo simples; Máquinas simples" data-sess="2" data-total="3">Começar a sessão 2</button></li>
         <li class="m-n2">Leis de Newton e movimento <span class="t-pag">p. 92</span></li>
         <li class="m-n2">Aplicações das leis de Newton na resolução de sistemas mecânicos <span class="t-pag">p. 95</span></li>
         <li class="m-n2">Pêndulo simples <span class="t-pag">p. 97</span></li>
         <li class="m-n2">Máquinas simples <span class="t-pag">p. 98</span></li>
-        <li class="m-sess">Sessão 3</li>
+        <li class="m-sess">Sessão 3 · p. 100–105 <button type="button" class="comecar" data-tema="Tema 06 — Leis de Newton e força" data-pag="100 a 105" data-marc="Força centrípeta; Atividades finais" data-sess="3" data-total="3">Começar a sessão 3</button></li>
         <li class="m-n2">Força centrípeta <span class="t-pag">p. 100</span></li>
         <li class="m-n2">Atividades finais <span class="t-pag">p. 102</span></li>
       </ul></details></li>
     <li><details><summary><span class="t-num">Tema 07</span> · Gravitação · <span class="t-pag">p. 106–117 · 12 folhas · 5 marcadores</span> · <span class="t-tempo">~36 min (2 sessões)</span></summary>
       <ul class="marc">
-        <li class="m-sess">Sessão 1</li>
+        <li class="m-sess">Sessão 1 · p. 106–115 <button type="button" class="comecar" data-tema="Tema 07 — Gravitação" data-pag="106 a 115" data-marc="Introdução ao estudo da gravitação; As leis de Kepler; Gravitação universal" data-sess="1" data-total="2">Começar a sessão 1</button></li>
         <li class="m-n1">Tema 7 — Gravitação <span class="t-pag">p. 106</span></li>
         <li class="m-n2">Introdução ao estudo da gravitação <span class="t-pag">p. 107</span></li>
         <li class="m-n2">As leis de Kepler <span class="t-pag">p. 107</span></li>
         <li class="m-n2">Gravitação universal <span class="t-pag">p. 111</span></li>
-        <li class="m-sess">Sessão 2</li>
+        <li class="m-sess">Sessão 2 · p. 116–117 <button type="button" class="comecar" data-tema="Tema 07 — Gravitação" data-pag="116 a 117" data-marc="Atividades finais" data-sess="2" data-total="2">Começar a sessão 2</button></li>
         <li class="m-n2">Atividades finais <span class="t-pag">p. 116</span></li>
       </ul></details></li>
     <li><details><summary><span class="t-num">Tema 08</span> · Energia, potência e trabalho · <span class="t-pag">p. 118–132 · 15 folhas · 9 marcadores</span> · <span class="t-tempo">~45 min (2 sessões)</span></summary>
       <ul class="marc">
-        <li class="m-sess">Sessão 1</li>
+        <li class="m-sess">Sessão 1 · p. 118–125 <button type="button" class="comecar" data-tema="Tema 08 — Energia, potência e trabalho" data-pag="118 a 125" data-marc="As várias formas de energia; Fontes de energia; Trabalho; Energia cinética" data-sess="1" data-total="2">Começar a sessão 1</button></li>
         <li class="m-n1">Tema 8 — Energia, potência e trabalho <span class="t-pag">p. 118</span></li>
         <li class="m-n2">As várias formas de energia <span class="t-pag">p. 119</span></li>
         <li class="m-n2">Fontes de energia <span class="t-pag">p. 120</span></li>
         <li class="m-n2">Trabalho <span class="t-pag">p. 122</span></li>
         <li class="m-n2">Energia cinética <span class="t-pag">p. 125</span></li>
-        <li class="m-sess">Sessão 2</li>
+        <li class="m-sess">Sessão 2 · p. 126–132 <button type="button" class="comecar" data-tema="Tema 08 — Energia, potência e trabalho" data-pag="126 a 132" data-marc="Energia potencial; Energia mecânica; Potência mecânica e rendimento; Atividades finais" data-sess="2" data-total="2">Começar a sessão 2</button></li>
         <li class="m-n2">Energia potencial <span class="t-pag">p. 126</span></li>
         <li class="m-n2">Energia mecânica <span class="t-pag">p. 128</span></li>
         <li class="m-n2">Potência mecânica e rendimento <span class="t-pag">p. 130</span></li>
@@ -162,25 +176,25 @@
       </ul></details></li>
     <li><details><summary><span class="t-num">Tema 09</span> · Movimento: do impulso à conservação · <span class="t-pag">p. 133–144 · 12 folhas · 7 marcadores</span> · <span class="t-tempo">~36 min (2 sessões)</span></summary>
       <ul class="marc">
-        <li class="m-sess">Sessão 1</li>
+        <li class="m-sess">Sessão 1 · p. 133–139 <button type="button" class="comecar" data-tema="Tema 09 — Movimento: do impulso à conservação" data-pag="133 a 139" data-marc="Impulso; Quantidade de movimento; Ciência na prática" data-sess="1" data-total="2">Começar a sessão 1</button></li>
         <li class="m-n1">Tema 9 — Movimento: do impulso à conservação <span class="t-pag">p. 133</span></li>
         <li class="m-n2">Impulso <span class="t-pag">p. 134</span></li>
         <li class="m-n2">Quantidade de movimento <span class="t-pag">p. 135</span></li>
         <li class="m-n2">Ciência na prática <span class="t-pag">p. 138</span></li>
-        <li class="m-sess">Sessão 2</li>
+        <li class="m-sess">Sessão 2 · p. 140–144 <button type="button" class="comecar" data-tema="Tema 09 — Movimento: do impulso à conservação" data-pag="140 a 144" data-marc="Colisões mecânicas; Atividades finais" data-sess="2" data-total="2">Começar a sessão 2</button></li>
         <li class="m-n2">Colisões mecânicas <span class="t-pag">p. 140</span></li>
         <li class="m-n2">Atividades finais <span class="t-pag">p. 143</span></li>
         <li class="m-n1">Reunindo conceitos <span class="t-pag">p. 144</span></li>
       </ul></details></li>
     <li><details><summary><span class="t-num">Tema 10</span> · Hidrostática e Hidrodinâmica · <span class="t-pag">p. 145–163 · 19 folhas · 9 marcadores</span> · <span class="t-tempo">~57 min (2 sessões)</span></summary>
       <ul class="marc">
-        <li class="m-sess">Sessão 1</li>
+        <li class="m-sess">Sessão 1 · p. 145–155 <button type="button" class="comecar" data-tema="Tema 10 — Hidrostática e Hidrodinâmica" data-pag="145 a 155" data-marc="Pressão hidrostática; Teorema de Stevin e princípio de Pascal; Princípio de Arquimedes" data-sess="1" data-total="2">Começar a sessão 1</button></li>
         <li class="m-n1">Unidade 4 — Fluidos <span class="t-pag">p. 145</span></li>
         <li class="m-n1">Tema 10 — Hidrostática e Hidrodinâmica <span class="t-pag">p. 146</span></li>
         <li class="m-n2">Pressão hidrostática <span class="t-pag">p. 147</span></li>
         <li class="m-n2">Teorema de Stevin e princípio de Pascal <span class="t-pag">p. 150</span></li>
         <li class="m-n2">Princípio de Arquimedes <span class="t-pag">p. 154</span></li>
-        <li class="m-sess">Sessão 2</li>
+        <li class="m-sess">Sessão 2 · p. 156–163 <button type="button" class="comecar" data-tema="Tema 10 — Hidrostática e Hidrodinâmica" data-pag="156 a 163" data-marc="Tensão superficial e capilaridade; Hidrodinâmica; Atividades finais" data-sess="2" data-total="2">Começar a sessão 2</button></li>
         <li class="m-n2">Tensão superficial e capilaridade <span class="t-pag">p. 156</span></li>
         <li class="m-n2">Hidrodinâmica <span class="t-pag">p. 158</span></li>
         <li class="m-n2">Atividades finais <span class="t-pag">p. 161</span></li>
@@ -188,24 +202,24 @@
       </ul></details></li>
     <li><details><summary><span class="t-num">Tema 11</span> · O Sistema Solar · <span class="t-pag">p. 164–174 · 11 folhas · 6 marcadores</span> · <span class="t-tempo">~33 min (2 sessões)</span></summary>
       <ul class="marc">
-        <li class="m-sess">Sessão 1</li>
+        <li class="m-sess">Sessão 1 · p. 164–172 <button type="button" class="comecar" data-tema="Tema 11 — O Sistema Solar" data-pag="164 a 172" data-marc="A primeira das ciências; Corpos celestes do Sistema Solar" data-sess="1" data-total="2">Começar a sessão 1</button></li>
         <li class="m-n1">Unidade 5 — Astronomia <span class="t-pag">p. 164</span></li>
         <li class="m-n1">Tema 11 — O Sistema Solar <span class="t-pag">p. 165</span></li>
         <li class="m-n2">A primeira das ciências <span class="t-pag">p. 166</span></li>
         <li class="m-n2">Corpos celestes do Sistema Solar <span class="t-pag">p. 168</span></li>
-        <li class="m-sess">Sessão 2</li>
+        <li class="m-sess">Sessão 2 · p. 173–174 <button type="button" class="comecar" data-tema="Tema 11 — O Sistema Solar" data-pag="173 a 174" data-marc="Surgimento do Sistema Solar e do planeta Terra .170 Trabalho em foco; Atividades finais" data-sess="2" data-total="2">Começar a sessão 2</button></li>
         <li class="m-n2">Surgimento do Sistema Solar e do planeta Terra .170 Trabalho em foco <span class="t-pag">p. 173</span></li>
         <li class="m-n2">Atividades finais <span class="t-pag">p. 174</span></li>
       </ul></details></li>
     <li><details><summary><span class="t-num">Tema 12</span> · O Universo · <span class="t-pag">p. 175–191 · 17 folhas · 10 marcadores</span> · <span class="t-tempo">~51 min (2 sessões)</span></summary>
       <ul class="marc">
-        <li class="m-sess">Sessão 1</li>
+        <li class="m-sess">Sessão 1 · p. 175–184 <button type="button" class="comecar" data-tema="Tema 12 — O Universo" data-pag="175 a 184" data-marc="A teoria do big bang; Ciência na prática; Modelos cosmológicos; Evolução estelar e a formação dos elementos químicos" data-sess="1" data-total="2">Começar a sessão 1</button></li>
         <li class="m-n1">Tema 12 — O Universo <span class="t-pag">p. 175</span></li>
         <li class="m-n2">A teoria do big bang <span class="t-pag">p. 176</span></li>
         <li class="m-n2">Ciência na prática <span class="t-pag">p. 177</span></li>
         <li class="m-n2">Modelos cosmológicos <span class="t-pag">p. 178</span></li>
         <li class="m-n2">Evolução estelar e a formação dos elementos químicos <span class="t-pag">p. 182</span></li>
-        <li class="m-sess">Sessão 2</li>
+        <li class="m-sess">Sessão 2 · p. 185–191 <button type="button" class="comecar" data-tema="Tema 12 — O Universo" data-pag="185 a 191" data-marc="Zona habitável e Astrobiologia; Trabalho em foco; Atividades finais" data-sess="2" data-total="2">Começar a sessão 2</button></li>
         <li class="m-n2">Zona habitável e Astrobiologia <span class="t-pag">p. 185</span></li>
         <li class="m-n2">Trabalho em foco <span class="t-pag">p. 186</span></li>
         <li class="m-n2">Atividades finais <span class="t-pag">p. 187</span></li>
@@ -220,25 +234,25 @@
   <h3>Física 2</h3>
   <img class="disc-ic" src="../_icones/fisica-2.svg" width="72" height="72" alt="Ícone de Física 2">
   <p>Os temas de Física 2, do Tema 13 ao Tema 20 do livro didático.</p>
-  <p class="aba-nota">Tempo de estudo = folhas × 3 min, em sessões de até 30 min (corte entre marcadores). Toque no tema para ver os marcadores.</p>
+  <p class="aba-nota">Tempo de estudo = folhas × 3 min, em sessões de até 30 min (corte entre marcadores). Toque no tema para ver os marcadores e, em cada sessão, Começar abre o cronômetro do método (aba Método).</p>
   <ol class="temas">
     <li><details><summary><span class="t-num">Tema 13</span> · Introdução à Termologia · <span class="t-pag">p. 192–203 · 12 folhas · 5 marcadores</span> · <span class="t-tempo">~36 min (2 sessões)</span></summary>
       <ul class="marc">
-        <li class="m-sess">Sessão 1</li>
+        <li class="m-sess">Sessão 1 · p. 192–202 <button type="button" class="comecar" data-tema="Tema 13 — Introdução à Termologia" data-pag="192 a 202" data-marc="Calor e temperatura; Dilatação térmica" data-sess="1" data-total="2">Começar a sessão 1</button></li>
         <li class="m-n1">Unidade 6 — Termologia <span class="t-pag">p. 192</span></li>
         <li class="m-n1">Tema 13 — Introdução à Termologia <span class="t-pag">p. 193</span></li>
         <li class="m-n2">Calor e temperatura <span class="t-pag">p. 194</span></li>
         <li class="m-n2">Dilatação térmica <span class="t-pag">p. 197</span></li>
-        <li class="m-sess">Sessão 2</li>
+        <li class="m-sess">Sessão 2 · p. 203–203 <button type="button" class="comecar" data-tema="Tema 13 — Introdução à Termologia" data-pag="203 a 203" data-marc="Atividades finais" data-sess="2" data-total="2">Começar a sessão 2</button></li>
         <li class="m-n2">Atividades finais <span class="t-pag">p. 203</span></li>
       </ul></details></li>
     <li><details><summary><span class="t-num">Tema 14</span> · Calorimetria · <span class="t-pag">p. 204–221 · 18 folhas · 8 marcadores</span> · <span class="t-tempo">~54 min (2 sessões)</span></summary>
       <ul class="marc">
-        <li class="m-sess">Sessão 1</li>
+        <li class="m-sess">Sessão 1 · p. 204–213 <button type="button" class="comecar" data-tema="Tema 14 — Calorimetria" data-pag="204 a 213" data-marc="Transferência de calor; Calor sensível" data-sess="1" data-total="2">Começar a sessão 1</button></li>
         <li class="m-n1">Tema 14 — Calorimetria <span class="t-pag">p. 204</span></li>
         <li class="m-n2">Transferência de calor <span class="t-pag">p. 205</span></li>
         <li class="m-n2">Calor sensível <span class="t-pag">p. 210</span></li>
-        <li class="m-sess">Sessão 2</li>
+        <li class="m-sess">Sessão 2 · p. 214–221 <button type="button" class="comecar" data-tema="Tema 14 — Calorimetria" data-pag="214 a 221" data-marc="Calor latente; Curvas de aquecimento e resfriamento; Trocas de calor e equilíbrio térmico; Atividades finais" data-sess="2" data-total="2">Começar a sessão 2</button></li>
         <li class="m-n2">Calor latente <span class="t-pag">p. 214</span></li>
         <li class="m-n2">Curvas de aquecimento e resfriamento <span class="t-pag">p. 215</span></li>
         <li class="m-n2">Trocas de calor e equilíbrio térmico <span class="t-pag">p. 217</span></li>
@@ -247,23 +261,23 @@
       </ul></details></li>
     <li><details><summary><span class="t-num">Tema 15</span> · Estudo dos gases · <span class="t-pag">p. 222–235 · 14 folhas · 6 marcadores</span> · <span class="t-tempo">~42 min (2 sessões)</span></summary>
       <ul class="marc">
-        <li class="m-sess">Sessão 1</li>
+        <li class="m-sess">Sessão 1 · p. 222–234 <button type="button" class="comecar" data-tema="Tema 15 — Estudo dos gases" data-pag="222 a 234" data-marc="Gás ideal; Equação de Clapeyron; Leis dos gases" data-sess="1" data-total="2">Começar a sessão 1</button></li>
         <li class="m-n1">Unidade 7 — Termodinâmica <span class="t-pag">p. 222</span></li>
         <li class="m-n1">Tema 15 — Estudo dos gases <span class="t-pag">p. 223</span></li>
         <li class="m-n2">Gás ideal <span class="t-pag">p. 224</span></li>
         <li class="m-n2">Equação de Clapeyron <span class="t-pag">p. 228</span></li>
         <li class="m-n2">Leis dos gases <span class="t-pag">p. 228</span></li>
-        <li class="m-sess">Sessão 2</li>
+        <li class="m-sess">Sessão 2 · p. 235–235 <button type="button" class="comecar" data-tema="Tema 15 — Estudo dos gases" data-pag="235 a 235" data-marc="Atividades finais" data-sess="2" data-total="2">Começar a sessão 2</button></li>
         <li class="m-n2">Atividades finais <span class="t-pag">p. 235</span></li>
       </ul></details></li>
     <li><details><summary><span class="t-num">Tema 16</span> · Termodinâmica: primeira e segunda leis · <span class="t-pag">p. 236–249 · 14 folhas · 8 marcadores</span> · <span class="t-tempo">~42 min (2 sessões)</span></summary>
       <ul class="marc">
-        <li class="m-sess">Sessão 1</li>
+        <li class="m-sess">Sessão 1 · p. 236–243 <button type="button" class="comecar" data-tema="Tema 16 — Termodinâmica: primeira e segunda leis" data-pag="236 a 243" data-marc="Termodinâmica; Transformação adiabática; Ciclo de Carnot" data-sess="1" data-total="2">Começar a sessão 1</button></li>
         <li class="m-n1">Tema 16 — Termodinâmica: primeira e segunda leis <span class="t-pag">p. 236</span></li>
         <li class="m-n2">Termodinâmica <span class="t-pag">p. 237</span></li>
         <li class="m-n2">Transformação adiabática <span class="t-pag">p. 242</span></li>
         <li class="m-n2">Ciclo de Carnot <span class="t-pag">p. 242</span></li>
-        <li class="m-sess">Sessão 2</li>
+        <li class="m-sess">Sessão 2 · p. 244–249 <button type="button" class="comecar" data-tema="Tema 16 — Termodinâmica: primeira e segunda leis" data-pag="244 a 249" data-marc="Entropia; Atividades finais" data-sess="2" data-total="2">Começar a sessão 2</button></li>
         <li class="m-n2">Entropia <span class="t-pag">p. 244</span></li>
         <li class="m-n2">Atividades finais <span class="t-pag">p. 246</span></li>
         <li class="m-n1">Reunindo conceitos <span class="t-pag">p. 247</span></li>
@@ -271,35 +285,35 @@
       </ul></details></li>
     <li><details><summary><span class="t-num">Tema 17</span> · Ondas mecânicas e som · <span class="t-pag">p. 250–272 · 23 folhas · 11 marcadores</span> · <span class="t-tempo">~69 min (3 sessões)</span></summary>
       <ul class="marc">
-        <li class="m-sess">Sessão 1</li>
+        <li class="m-sess">Sessão 1 · p. 250–258 <button type="button" class="comecar" data-tema="Tema 17 — Ondas mecânicas e som" data-pag="250 a 258" data-marc="Natureza das ondas; Classificação das ondas; Algumas propriedades das ondas" data-sess="1" data-total="3">Começar a sessão 1</button></li>
         <li class="m-n1">Unidade 8 — Ondas <span class="t-pag">p. 250</span></li>
         <li class="m-n1">Tema 17 — Ondas mecânicas e som <span class="t-pag">p. 251</span></li>
         <li class="m-n2">Natureza das ondas <span class="t-pag">p. 252</span></li>
         <li class="m-n2">Classificação das ondas <span class="t-pag">p. 254</span></li>
         <li class="m-n2">Algumas propriedades das ondas <span class="t-pag">p. 256</span></li>
-        <li class="m-sess">Sessão 2</li>
+        <li class="m-sess">Sessão 2 · p. 259–266 <button type="button" class="comecar" data-tema="Tema 17 — Ondas mecânicas e som" data-pag="259 a 266" data-marc="Fenômenos ondulatórios; Ciência na prática; Oscilações e ondas estacionárias" data-sess="2" data-total="3">Começar a sessão 2</button></li>
         <li class="m-n2">Fenômenos ondulatórios <span class="t-pag">p. 259</span></li>
         <li class="m-n2">Ciência na prática <span class="t-pag">p. 263</span></li>
         <li class="m-n2">Oscilações e ondas estacionárias <span class="t-pag">p. 265</span></li>
-        <li class="m-sess">Sessão 3</li>
+        <li class="m-sess">Sessão 3 · p. 267–272 <button type="button" class="comecar" data-tema="Tema 17 — Ondas mecânicas e som" data-pag="267 a 272" data-marc="Ondas sonoras; Efeito Doppler; Atividades finais" data-sess="3" data-total="3">Começar a sessão 3</button></li>
         <li class="m-n2">Ondas sonoras <span class="t-pag">p. 267</span></li>
         <li class="m-n2">Efeito Doppler <span class="t-pag">p. 270</span></li>
         <li class="m-n2">Atividades finais <span class="t-pag">p. 272</span></li>
       </ul></details></li>
     <li><details><summary><span class="t-num">Tema 18</span> · Ondas eletromagnéticas · <span class="t-pag">p. 273–285 · 13 folhas · 6 marcadores</span> · <span class="t-tempo">~39 min (2 sessões)</span></summary>
       <ul class="marc">
-        <li class="m-sess">Sessão 1</li>
+        <li class="m-sess">Sessão 1 · p. 273–279 <button type="button" class="comecar" data-tema="Tema 18 — Ondas eletromagnéticas" data-pag="273 a 279" data-marc="Introdução às ondas eletromagnéticas; Radiações ionizantes; Trabalho em foco" data-sess="1" data-total="2">Começar a sessão 1</button></li>
         <li class="m-n1">Tema 18 — Ondas eletromagnéticas <span class="t-pag">p. 273</span></li>
         <li class="m-n2">Introdução às ondas eletromagnéticas <span class="t-pag">p. 274</span></li>
         <li class="m-n2">Radiações ionizantes <span class="t-pag">p. 275</span></li>
         <li class="m-n2">Trabalho em foco <span class="t-pag">p. 279</span></li>
-        <li class="m-sess">Sessão 2</li>
+        <li class="m-sess">Sessão 2 · p. 280–285 <button type="button" class="comecar" data-tema="Tema 18 — Ondas eletromagnéticas" data-pag="280 a 285" data-marc="Radiações não ionizantes; Atividades finais" data-sess="2" data-total="2">Começar a sessão 2</button></li>
         <li class="m-n2">Radiações não ionizantes <span class="t-pag">p. 280</span></li>
         <li class="m-n2">Atividades finais <span class="t-pag">p. 285</span></li>
       </ul></details></li>
     <li><details><summary><span class="t-num">Tema 19</span> · Óptica geométrica · <span class="t-pag">p. 286–303 · 18 folhas · 12 marcadores</span> · <span class="t-tempo">~54 min (2 sessões)</span></summary>
       <ul class="marc">
-        <li class="m-sess">Sessão 1</li>
+        <li class="m-sess">Sessão 1 · p. 286–294 <button type="button" class="comecar" data-tema="Tema 19 — Óptica geométrica" data-pag="286 a 294" data-marc="Luz; Princípios da Óptica geométrica; Reflexão da luz; Espelhos planos; Espelhos esféricos; Raios notáveis" data-sess="1" data-total="2">Começar a sessão 1</button></li>
         <li class="m-n1">Tema 19 — Óptica geométrica <span class="t-pag">p. 286</span></li>
         <li class="m-n2">Luz <span class="t-pag">p. 287</span></li>
         <li class="m-n2">Princípios da Óptica geométrica <span class="t-pag">p. 287</span></li>
@@ -307,7 +321,7 @@
         <li class="m-n2">Espelhos planos <span class="t-pag">p. 289</span></li>
         <li class="m-n2">Espelhos esféricos <span class="t-pag">p. 292</span></li>
         <li class="m-n2">Raios notáveis <span class="t-pag">p. 294</span></li>
-        <li class="m-sess">Sessão 2</li>
+        <li class="m-sess">Sessão 2 · p. 295–303 <button type="button" class="comecar" data-tema="Tema 19 — Óptica geométrica" data-pag="295 a 303" data-marc="Construção geométrica das imagens; Refração da luz; Ciência na prática; Cor; Atividades finais" data-sess="2" data-total="2">Começar a sessão 2</button></li>
         <li class="m-n2">Construção geométrica das imagens <span class="t-pag">p. 295</span></li>
         <li class="m-n2">Refração da luz <span class="t-pag">p. 297</span></li>
         <li class="m-n2">Ciência na prática <span class="t-pag">p. 301</span></li>
@@ -316,11 +330,11 @@
       </ul></details></li>
     <li><details><summary><span class="t-num">Tema 20</span> · Óptica da visão · <span class="t-pag">p. 304–316 · 13 folhas · 7 marcadores</span> · <span class="t-tempo">~39 min (2 sessões)</span></summary>
       <ul class="marc">
-        <li class="m-sess">Sessão 1</li>
+        <li class="m-sess">Sessão 1 · p. 304–310 <button type="button" class="comecar" data-tema="Tema 20 — Óptica da visão" data-pag="304 a 310" data-marc="Lentes; Instrumentos ópticos" data-sess="1" data-total="2">Começar a sessão 1</button></li>
         <li class="m-n1">Tema 20 — Óptica da visão <span class="t-pag">p. 304</span></li>
         <li class="m-n2">Lentes <span class="t-pag">p. 305</span></li>
         <li class="m-n2">Instrumentos ópticos <span class="t-pag">p. 309</span></li>
-        <li class="m-sess">Sessão 2</li>
+        <li class="m-sess">Sessão 2 · p. 311–316 <button type="button" class="comecar" data-tema="Tema 20 — Óptica da visão" data-pag="311 a 316" data-marc="A visão; Ametropias; Atividades finais" data-sess="2" data-total="2">Começar a sessão 2</button></li>
         <li class="m-n2">A visão <span class="t-pag">p. 311</span></li>
         <li class="m-n2">Ametropias <span class="t-pag">p. 313</span></li>
         <li class="m-n2">Atividades finais <span class="t-pag">p. 315</span></li>
@@ -334,29 +348,29 @@
   <h3>Física 3</h3>
   <img class="disc-ic" src="../_icones/fisica-3.svg" width="72" height="72" alt="Ícone de Física 3">
   <p>Os temas de Física 3, do Tema 21 ao Tema 30 do livro didático.</p>
-  <p class="aba-nota">Tempo de estudo = folhas × 3 min, em sessões de até 30 min (corte entre marcadores). Toque no tema para ver os marcadores.</p>
+  <p class="aba-nota">Tempo de estudo = folhas × 3 min, em sessões de até 30 min (corte entre marcadores). Toque no tema para ver os marcadores e, em cada sessão, Começar abre o cronômetro do método (aba Método).</p>
   <ol class="temas">
     <li><details><summary><span class="t-num">Tema 21</span> · Força elétrica e campo elétrico · <span class="t-pag">p. 317–328 · 12 folhas · 7 marcadores</span> · <span class="t-tempo">~36 min (2 sessões)</span></summary>
       <ul class="marc">
-        <li class="m-sess">Sessão 1</li>
+        <li class="m-sess">Sessão 1 · p. 317–323 <button type="button" class="comecar" data-tema="Tema 21 — Força elétrica e campo elétrico" data-pag="317 a 323" data-marc="Carga elétrica; Condutores e isolantes; Força elétrica" data-sess="1" data-total="2">Começar a sessão 1</button></li>
         <li class="m-n1">Unidade 9 — Eletrostática <span class="t-pag">p. 317</span></li>
         <li class="m-n1">Tema 21 — Força elétrica e campo elétrico <span class="t-pag">p. 318</span></li>
         <li class="m-n2">Carga elétrica <span class="t-pag">p. 319</span></li>
         <li class="m-n2">Condutores e isolantes <span class="t-pag">p. 320</span></li>
         <li class="m-n2">Força elétrica <span class="t-pag">p. 322</span></li>
-        <li class="m-sess">Sessão 2</li>
+        <li class="m-sess">Sessão 2 · p. 324–328 <button type="button" class="comecar" data-tema="Tema 21 — Força elétrica e campo elétrico" data-pag="324 a 328" data-marc="Conceito de campo elétrico; Atividades finais" data-sess="2" data-total="2">Começar a sessão 2</button></li>
         <li class="m-n2">Conceito de campo elétrico <span class="t-pag">p. 324</span></li>
         <li class="m-n2">Atividades finais <span class="t-pag">p. 328</span></li>
       </ul></details></li>
     <li><details><summary><span class="t-num">Tema 22</span> · Potencial elétrico · <span class="t-pag">p. 329–342 · 14 folhas · 10 marcadores</span> · <span class="t-tempo">~42 min (2 sessões)</span></summary>
       <ul class="marc">
-        <li class="m-sess">Sessão 1</li>
+        <li class="m-sess">Sessão 1 · p. 329–335 <button type="button" class="comecar" data-tema="Tema 22 — Potencial elétrico" data-pag="329 a 335" data-marc="Energia potencial elétrica; Trabalho em foco; Potencial elétrico; Campo elétrico uniforme e diferença de potencial elétrico" data-sess="1" data-total="2">Começar a sessão 1</button></li>
         <li class="m-n1">Tema 22 — Potencial elétrico <span class="t-pag">p. 329</span></li>
         <li class="m-n2">Energia potencial elétrica <span class="t-pag">p. 330</span></li>
         <li class="m-n2">Trabalho em foco <span class="t-pag">p. 330</span></li>
         <li class="m-n2">Potencial elétrico <span class="t-pag">p. 331</span></li>
         <li class="m-n2">Campo elétrico uniforme e diferença de potencial elétrico <span class="t-pag">p. 333</span></li>
-        <li class="m-sess">Sessão 2</li>
+        <li class="m-sess">Sessão 2 · p. 336–342 <button type="button" class="comecar" data-tema="Tema 22 — Potencial elétrico" data-pag="336 a 342" data-marc="Densidade superficial de cargas; Gaiola de Faraday; Capacitância; Atividades finais" data-sess="2" data-total="2">Começar a sessão 2</button></li>
         <li class="m-n2">Densidade superficial de cargas <span class="t-pag">p. 336</span></li>
         <li class="m-n2">Gaiola de Faraday <span class="t-pag">p. 337</span></li>
         <li class="m-n2">Capacitância <span class="t-pag">p. 338</span></li>
@@ -365,14 +379,14 @@
       </ul></details></li>
     <li><details><summary><span class="t-num">Tema 23</span> · Introdução à Eletrodinâmica · <span class="t-pag">p. 343–360 · 18 folhas · 10 marcadores</span> · <span class="t-tempo">~54 min (2 sessões)</span></summary>
       <ul class="marc">
-        <li class="m-sess">Sessão 1</li>
+        <li class="m-sess">Sessão 1 · p. 343–351 <button type="button" class="comecar" data-tema="Tema 23 — Introdução à Eletrodinâmica" data-pag="343 a 351" data-marc="Corrente elétrica; Resistência elétrica e primeira lei de Ohm; Tensão elétrica; Potência elétrica" data-sess="1" data-total="2">Começar a sessão 1</button></li>
         <li class="m-n1">Unidade 10 — Eletrodinâmica <span class="t-pag">p. 343</span></li>
         <li class="m-n1">Tema 23 — Introdução à Eletrodinâmica <span class="t-pag">p. 344</span></li>
         <li class="m-n2">Corrente elétrica <span class="t-pag">p. 345</span></li>
         <li class="m-n2">Resistência elétrica e primeira lei de Ohm <span class="t-pag">p. 348</span></li>
         <li class="m-n2">Tensão elétrica <span class="t-pag">p. 349</span></li>
         <li class="m-n2">Potência elétrica <span class="t-pag">p. 350</span></li>
-        <li class="m-sess">Sessão 2</li>
+        <li class="m-sess">Sessão 2 · p. 352–360 <button type="button" class="comecar" data-tema="Tema 23 — Introdução à Eletrodinâmica" data-pag="352 a 360" data-marc="Associação de resistores; Reostato e segunda lei de Ohm; Medidores elétricos; Atividades finais" data-sess="2" data-total="2">Começar a sessão 2</button></li>
         <li class="m-n2">Associação de resistores <span class="t-pag">p. 352</span></li>
         <li class="m-n2">Reostato e segunda lei de Ohm <span class="t-pag">p. 356</span></li>
         <li class="m-n2">Medidores elétricos <span class="t-pag">p. 358</span></li>
@@ -385,6 +399,7 @@
         <li class="m-n2">Leis de Kirchhoff <span class="t-pag">p. 365</span></li>
         <li class="m-n2">Ponte de Wheatstone <span class="t-pag">p. 368</span></li>
         <li class="m-n2">Atividades finais <span class="t-pag">p. 369</span></li>
+        <li class="m-sess"><button type="button" class="comecar" data-tema="Tema 24 — Circuitos elétricos" data-pag="361 a 369" data-marc="Circuitos simples; Leis de Kirchhoff; Ponte de Wheatstone; Atividades finais" data-sess="1" data-total="1">Começar</button></li>
       </ul></details></li>
     <li><details><summary><span class="t-num">Tema 25</span> · Geração e consumo de energia elétrica · <span class="t-pag">p. 370–378 · 9 folhas · 6 marcadores</span> · <span class="t-tempo">~27 min (1 sessão)</span></summary>
       <ul class="marc">
@@ -394,6 +409,7 @@
         <li class="m-n2">Consumo de energia elétrica <span class="t-pag">p. 375</span></li>
         <li class="m-n2">Atividades finais <span class="t-pag">p. 377</span></li>
         <li class="m-n1">Reunindo conceitos <span class="t-pag">p. 378</span></li>
+        <li class="m-sess"><button type="button" class="comecar" data-tema="Tema 25 — Geração e consumo de energia elétrica" data-pag="370 a 378" data-marc="Fontes de energia; Matrizes energética e elétrica; Consumo de energia elétrica; Atividades finais" data-sess="1" data-total="1">Começar</button></li>
       </ul></details></li>
     <li><details><summary><span class="t-num">Tema 26</span> · Magnetismo · <span class="t-pag">p. 379–387 · 9 folhas · 6 marcadores</span> · <span class="t-tempo">~27 min (1 sessão)</span></summary>
       <ul class="marc">
@@ -403,15 +419,16 @@
         <li class="m-n2">Ciência na prática <span class="t-pag">p. 383</span></li>
         <li class="m-n2">Campo magnético <span class="t-pag">p. 384</span></li>
         <li class="m-n2">Atividades finais <span class="t-pag">p. 386</span></li>
+        <li class="m-sess"><button type="button" class="comecar" data-tema="Tema 26 — Magnetismo" data-pag="379 a 387" data-marc="Imãs e eletroímãs; Ciência na prática; Campo magnético; Atividades finais" data-sess="1" data-total="1">Começar</button></li>
       </ul></details></li>
     <li><details><summary><span class="t-num">Tema 27</span> · Força eletromagnética e indução eletromagnética · <span class="t-pag">p. 388–404 · 17 folhas · 8 marcadores</span> · <span class="t-tempo">~51 min (2 sessões)</span></summary>
       <ul class="marc">
-        <li class="m-sess">Sessão 1</li>
+        <li class="m-sess">Sessão 1 · p. 388–396 <button type="button" class="comecar" data-tema="Tema 27 — Força eletromagnética e indução eletromagnética" data-pag="388 a 396" data-marc="Força magnética; Eletromagnetismo; Fluxo magnético" data-sess="1" data-total="2">Começar a sessão 1</button></li>
         <li class="m-n1">Tema 27 — Força eletromagnética e indução eletromagnética <span class="t-pag">p. 388</span></li>
         <li class="m-n2">Força magnética <span class="t-pag">p. 389</span></li>
         <li class="m-n2">Eletromagnetismo <span class="t-pag">p. 392</span></li>
         <li class="m-n2">Fluxo magnético <span class="t-pag">p. 395</span></li>
-        <li class="m-sess">Sessão 2</li>
+        <li class="m-sess">Sessão 2 · p. 397–404 <button type="button" class="comecar" data-tema="Tema 27 — Força eletromagnética e indução eletromagnética" data-pag="397 a 404" data-marc="Lei de Lenz; Atividades finais" data-sess="2" data-total="2">Começar a sessão 2</button></li>
         <li class="m-n2">Lei de Lenz <span class="t-pag">p. 397</span></li>
         <li class="m-n2">Atividades finais <span class="t-pag">p. 399</span></li>
         <li class="m-n1">Reunindo conceitos <span class="t-pag">p. 402</span></li>
@@ -419,11 +436,11 @@
       </ul></details></li>
     <li><details><summary><span class="t-num">Tema 28</span> · Tópicos de Física moderna · <span class="t-pag">p. 405–418 · 14 folhas · 8 marcadores</span> · <span class="t-tempo">~42 min (2 sessões)</span></summary>
       <ul class="marc">
-        <li class="m-sess">Sessão 1</li>
+        <li class="m-sess">Sessão 1 · p. 405–411 <button type="button" class="comecar" data-tema="Tema 28 — Tópicos de Física moderna" data-pag="405 a 411" data-marc="Relatividade especial" data-sess="1" data-total="2">Começar a sessão 1</button></li>
         <li class="m-n1">Unidade 12 — Física moderna <span class="t-pag">p. 405</span></li>
         <li class="m-n1">Tema 28 — Tópicos de Física moderna <span class="t-pag">p. 406</span></li>
         <li class="m-n2">Relatividade especial <span class="t-pag">p. 407</span></li>
-        <li class="m-sess">Sessão 2</li>
+        <li class="m-sess">Sessão 2 · p. 412–418 <button type="button" class="comecar" data-tema="Tema 28 — Tópicos de Física moderna" data-pag="412 a 418" data-marc="Relatividade geral; A simultaneidade na Relatividade; A relação entre massa e energia na Relatividade; A Relatividade de Galileu e a Relatividade de Einstein; Atividades finais" data-sess="2" data-total="2">Começar a sessão 2</button></li>
         <li class="m-n2">Relatividade geral <span class="t-pag">p. 412</span></li>
         <li class="m-n2">A simultaneidade na Relatividade <span class="t-pag">p. 413</span></li>
         <li class="m-n2">A relação entre massa e energia na Relatividade <span class="t-pag">p. 415</span></li>
@@ -432,7 +449,7 @@
       </ul></details></li>
     <li><details><summary><span class="t-num">Tema 29</span> · Mecânica quântica · <span class="t-pag">p. 419–433 · 15 folhas · 9 marcadores</span> · <span class="t-tempo">~45 min (2 sessões)</span></summary>
       <ul class="marc">
-        <li class="m-sess">Sessão 1</li>
+        <li class="m-sess">Sessão 1 · p. 419–428 <button type="button" class="comecar" data-tema="Tema 29 — Mecânica quântica" data-pag="419 a 428" data-marc="A radiação do corpo negro; Efeito fotoelétrico; O átomo de Bohr; Ciência na prática; A Lei de Wien; Princípio da dualidade onda-partícula" data-sess="1" data-total="2">Começar a sessão 1</button></li>
         <li class="m-n1">Tema 29 — Mecânica quântica <span class="t-pag">p. 419</span></li>
         <li class="m-n2">A radiação do corpo negro <span class="t-pag">p. 420</span></li>
         <li class="m-n2">Efeito fotoelétrico <span class="t-pag">p. 421</span></li>
@@ -440,7 +457,7 @@
         <li class="m-n2">Ciência na prática <span class="t-pag">p. 424</span></li>
         <li class="m-n2">A Lei de Wien <span class="t-pag">p. 425</span></li>
         <li class="m-n2">Princípio da dualidade onda-partícula <span class="t-pag">p. 426</span></li>
-        <li class="m-sess">Sessão 2</li>
+        <li class="m-sess">Sessão 2 · p. 429–433 <button type="button" class="comecar" data-tema="Tema 29 — Mecânica quântica" data-pag="429 a 433" data-marc="Princípio da incerteza de Heisenberg; Atividades finais" data-sess="2" data-total="2">Começar a sessão 2</button></li>
         <li class="m-n2">Princípio da incerteza de Heisenberg <span class="t-pag">p. 429</span></li>
         <li class="m-n2">Atividades finais <span class="t-pag">p. 433</span></li>
       </ul></details></li>
@@ -453,6 +470,7 @@
         <li class="m-n2">Trabalho em foco <span class="t-pag">p. 440</span></li>
         <li class="m-n2">Atividades finais <span class="t-pag">p. 441</span></li>
         <li class="m-n1">Reunindo conceitos <span class="t-pag">p. 443</span></li>
+        <li class="m-sess"><button type="button" class="comecar" data-tema="Tema 30 — Radioatividade" data-pag="434 a 443" data-marc="Radioatividade e sua história; Decaimento radioativo; Datamento por carbono-14; Trabalho em foco; Atividades finais" data-sess="1" data-total="1">Começar</button></li>
       </ul></details></li>
   </ol>
   <p class="aba-ref">BONJORNO, J. R. et al. <em>Física Identidade</em>: volume único. São Paulo: Saraiva, 2024 (PNLD).</p>
@@ -538,5 +556,6 @@
 <script src="../acessos.js"></script>
 <script>if ('serviceWorker' in navigator && location.protocol.indexOf('http') === 0) { navigator.serviceWorker.register('../sw.js'); }</script>
 <script src="../_js/oia-abas.js"></script>
+<script src="../_js/oia-metodo.js"></script>
 </body>
 </html>
