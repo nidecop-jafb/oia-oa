@@ -1,4 +1,4 @@
-/* oia.css — gerado por _site/gerar_site_oia.py (OIA, PRJ-0004). Nao editar a mao.
+/* oia.css — gerado por _scripts/gerar_site_oia.py (OIA, PRJ-0004). Nao editar a mao.
    Molde: rif-oa. Paleta do icone da Oficina IA: azul-noite, ciano e verde. */
 :root { color-scheme: dark; --azul: #2E86C1; --azul-esc: #1B2A41; --verde: #3E8E5A; --fundo: #0f1724; --texto: #e8e8e8; --forte: #fff; --t-ddd: #ddd; --t-c4: #c4c4c4; --t-aaa: #aaa; --t-9a: #9a9a9a; --t-888: #888; --b-555: #555; --b-444: #444; --b-333: #333; --caixa: #1b2a41; --caixa2: #16202f; --ciano: #8FE0FF; --verde-claro: #7BE495; }
 [data-tema="claro"] { color-scheme: light; --fundo: #ffffff; --texto: #1c1c1c; --forte: #000000; --t-ddd: #2a2a2a; --t-c4: #3a3a3a; --t-aaa: #505050; --t-9a: #5a5a5a; --t-888: #5f5f5f; --b-555: #8c8c8c; --b-444: #c8c8c8; --b-333: #dddddd; --caixa: #eef2f7; --caixa2: #f6f8fb; --ciano: #1B5E8C; --verde-claro: #2D6E45; }

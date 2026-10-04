@@ -1,4 +1,4 @@
-/* oia-abas.js — abas laterais, A-/A+ e tema. Gerado por _site/gerar_site_oia.py. */
+/* oia-abas.js — abas laterais, A-/A+ e tema. Gerado por _scripts/gerar_site_oia.py. */
 (function () {
   var toggles = [].slice.call(document.querySelectorAll('.aba-toggle'));
   function painel(t) { return document.getElementById(t.id.replace(/T$/, '')); }
