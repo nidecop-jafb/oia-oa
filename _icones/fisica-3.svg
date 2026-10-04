@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Disciplina Fisica Conceitual 3 - atomo">
+  <g transform="translate(256 256)">
+    <!-- 3 orbitas elipticas rotacionadas -->
+    <ellipse cx="0" cy="0" rx="200" ry="74" fill="none" stroke="#C8922A" stroke-width="16"/>
+    <ellipse cx="0" cy="0" rx="200" ry="74" fill="none" stroke="#C8922A" stroke-width="16" transform="rotate(60)"/>
+    <ellipse cx="0" cy="0" rx="200" ry="74" fill="none" stroke="#C8922A" stroke-width="16" transform="rotate(-60)"/>
+
+    <!-- Eletrons nas orbitas -->
+    <circle cx="-200" cy="0" r="22" fill="#C8922A"/>
+    <g transform="rotate(60)"><circle cx="200" cy="0" r="22" fill="#C8922A"/></g>
+    <g transform="rotate(-60)"><circle cx="200" cy="0" r="22" fill="#C8922A"/></g>
+
+    <!-- Nucleo (3 particulas) -->
+    <circle cx="-16" cy="-12" r="26" fill="#C8922A"/>
+    <circle cx="18"  cy="-14" r="26" fill="#C8922A"/>
+    <circle cx="0"   cy="20"  r="26" fill="#C8922A"/>
+  </g>
+
+  <!-- Marcador de semestre (3 pontos) -->
+  <g>
+    <circle cx="228.0" cy="485" r="11" fill="#C8922A"/>
+    <circle cx="256.0" cy="485" r="11" fill="#C8922A"/>
+    <circle cx="284.0" cy="485" r="11" fill="#C8922A"/>
+  </g>
+</svg>

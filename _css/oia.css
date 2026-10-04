@@ -51,6 +51,18 @@ body.abas-compactas .aba-toggle { font-size: 10px; padding: 5px 6px; letter-spac
 .aba-painel .aba-cargo { font-size: .95rem; font-weight: 700; letter-spacing: 1px; color: var(--ciano);
                          border-bottom: 1px solid var(--b-444); padding-bottom: 3px; margin: 14px 0 4px; }
 .aba-painel .aba-nome { color: var(--t-ddd); }
+.aba-painel .disc-ic { width: 72px; height: 72px; display: block; margin: 0 0 10px; }
+.aba-painel ol.temas { list-style: none; margin: 0 0 14px; }
+.aba-painel ol.temas li { border-bottom: 1px solid var(--b-333); padding: 6px 0; }
+.aba-painel ol.temas .t-num { font-family: 'Courier New', Courier, monospace; color: var(--ciano); }
+.aba-painel ol.temas .t-pag { color: var(--t-888); white-space: nowrap; }
+.aba-painel .aba-ref { font-size: .85rem; color: var(--t-888); }
+/* QR preto no branco tambem no tema escuro (senao nao escaneia) */
+.qr-box { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin: 12px 0 16px; }
+.qr-box img { width: 170px; height: 170px; background: white; padding: 8px; border-radius: 6px; flex: none; }
+.qr-box > div { flex: 1 1 140px; }
+.qr-box p { margin: 0 0 6px; }
+.qr-box .qr-end { font-family: 'Courier New', Courier, monospace; color: var(--ciano); overflow-wrap: anywhere; }
 
 /* topo: casinha + A-/A+ + sol/lua, fixos no canto superior direito */
 .topo-btns { position: fixed; top: 8px; right: 8px; z-index: 996; display: flex; gap: 6px; }
