@@ -431,6 +431,15 @@ h3.p-dim span { color: var(--t-aaa); font-weight: normal; }
 :root:not([data-tema="claro"]) #abaSite .qr-box img { box-shadow: 0 4px 14px rgba(0,0,0,.5); }
 :root:not([data-tema="claro"]) #abaSite .qr-box p { color: var(--t-aaa); font-size: .95rem; }
 :root:not([data-tema="claro"]) #abaSite a.aba-btn { padding: 13px 14px; }
+/* Referencias no tema escuro: secao com linha embaixo, cada obra em cartao cinza com faixa azul, numero em ciano */
+:root:not([data-tema="claro"]) #abaReferencias .cred-sec { border-bottom: 1px solid var(--b-444); padding-bottom: 6px; margin-top: 22px; }
+:root:not([data-tema="claro"]) #abaReferencias .ref-lista { list-style: none; padding-left: 0; counter-reset: ref; }
+:root:not([data-tema="claro"]) #abaReferencias .ref-lista li { counter-increment: ref; position: relative; background: var(--bloco);
+  border-left: 4px solid var(--azul); padding: 10px 12px 10px 40px; color: #d8d8d8; font-size: .98rem; }
+:root:not([data-tema="claro"]) #abaReferencias .ref-lista li::before { content: counter(ref); position: absolute; left: 12px;
+  top: 10px; font-family: 'Courier New', Courier, monospace; font-weight: 700; color: var(--ciano); }
+:root:not([data-tema="claro"]) #abaReferencias .ref-lista em { color: white; }
+:root:not([data-tema="claro"]) #abaReferencias .ref-lista a { font-size: .9rem; }
 /* Metodo no tema escuro: abertura clara, lista com marcador azul, etapas em cartoes com titulo maior, prompt com contorno */
 :root:not([data-tema="claro"]) #abaMetodo .fis-intro { color: var(--texto); }
 :root:not([data-tema="claro"]) #abaMetodo > p:not(.fis-intro) { color: var(--t-c4); }
