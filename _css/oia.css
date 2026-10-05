@@ -296,6 +296,7 @@ body[data-pagina="estilo"] .form-sug, body[data-pagina="estilo"] .progresso, bod
 body[data-pagina="estilo"] .dim-barra, body[data-pagina="estilo"] .grupo-barra { background: var(--bloco); }
 body[data-pagina="estilo"] h2 { color: var(--ciano); font-size: 1.2rem; border-bottom: 1px solid var(--b-444); padding-bottom: 6px; margin-top: 40px; }
 body[data-pagina="estilo"] .form-sug { border: none; border-left: 4px solid var(--azul); }
+body[data-pagina="estilo"] .form-sug .nota { margin-top: 14px; font-size: .95rem; }
 body[data-pagina="estilo"] .form-sug button { background: var(--painel); border-color: var(--azul); color: var(--ciano); margin-top: 12px; }
 body[data-pagina="estilo"] fieldset.questao { background: var(--painel); border: none; border-left: 4px solid var(--b-555); padding: 14px 14px 10px; margin: 0 0 16px; }
 body[data-pagina="estilo"] fieldset.questao.ok { border-left-color: var(--verde); }
