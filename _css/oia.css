@@ -80,7 +80,7 @@ body.abas-compactas .aba-toggle { font-size: 14px; padding: 5px 6px; letter-spac
 .aba-painel[id^="abaFisica"] ul.marc { font-size: 1.02rem; }
 /* painel Site: mesma letra e respiro das demais; endereco em destaque, QR centrado e botao cheio */
 #abaSite { font-size: 1.1rem; padding-right: 34px; }
-#abaSite .site-end { font-family: 'Courier New', Courier, monospace; font-size: 1rem; color: var(--ciano);
+#abaSite .site-end { font-family: 'Courier New', Courier, monospace; font-size: .9rem; color: var(--ciano);
                      border-left: 4px solid var(--azul); background: var(--caixa2); padding: 8px 12px; overflow-wrap: normal; }
 #abaSite .site-end span { white-space: nowrap; }  /* quebra so na barra, nunca no hifen */
 #abaSite .fis-intro { font-size: 1.2rem; }
