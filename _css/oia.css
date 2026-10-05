@@ -175,14 +175,14 @@ body .aba-painel ul.marc .comecar, body .aba-painel .prompt .copiar { background
 :root:not([data-tema="claro"]) #abaEstilo a.aba-btn:not(:first-of-type) { background: var(--bloco); }
 #abaEstilo .aba-ref { border-top: 1px solid var(--b-444); padding-top: 10px; margin-top: 14px; }
 /* icone Estilo no topo (lampada, depois do sol/lua): abre o painel Estilo */
-.estilo-btn { width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; padding: 0;
+.estilo-btn, .instalar-btn { width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; padding: 0;
               background: var(--bloco); color: var(--ciano); border: 1px solid var(--b-555); cursor: pointer; }
-.estilo-btn svg { width: 20px; height: 20px; display: block; }
-.estilo-btn:hover { border-color: var(--azul); }
-.estilo-btn.aqui { border-color: var(--azul); color: white; }
-.estilo-btn.ativa { background: var(--azul); border-color: var(--azul); color: white; }
-[data-tema="claro"] .estilo-btn { background: white; color: #1B5E8C; border-color: #c8c8c8; }
-[data-tema="claro"] .estilo-btn.ativa { background: var(--azul); color: white; border-color: var(--azul); }
+.estilo-btn svg, .instalar-btn svg { width: 20px; height: 20px; display: block; }
+.estilo-btn:hover, .instalar-btn:hover { border-color: var(--azul); }
+.estilo-btn.aqui, .instalar-btn.aqui { border-color: var(--azul); color: white; }
+.estilo-btn.ativa, .instalar-btn.ativa { background: var(--azul); border-color: var(--azul); color: white; }
+[data-tema="claro"] .estilo-btn, [data-tema="claro"] .instalar-btn { background: white; color: #1B5E8C; border-color: #c8c8c8; }
+[data-tema="claro"] .estilo-btn.ativa, [data-tema="claro"] .instalar-btn.ativa { background: var(--azul); color: white; border-color: var(--azul); }
 /* icone Avaliacao no topo (depois do sol/lua) e o menu que ele abre */
 .ava-menu-box { position: relative; }
 .ava-menu-btn { width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; padding: 0;
