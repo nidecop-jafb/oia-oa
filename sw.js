@@ -1,6 +1,6 @@
 /* sw.js — service worker do oia-oa. Gerado por _scripts/gerar_site_oia.py — nao editar a mao.
  * Rede primeiro, cache so para o aparelho sem internet (molde rif-oa). */
-var CACHE = 'oia-oa-20261005155942';
+var CACHE = 'oia-oa-20261005161423';
 
 self.addEventListener('install', function (e) {
   self.skipWaiting();
