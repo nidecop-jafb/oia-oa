@@ -444,6 +444,15 @@ body.projetando .ava-bar { height: 30px; }
              border: 1px solid var(--azul); cursor: pointer; font: inherit; font-weight: 700; }
 .proj-sair[hidden] { display: none; }
 @media (max-width: 900px) { body.projetando #avaPainel:has(#avaQr:not([hidden])) { grid-template-columns: 1fr; } }
+/* Projetar no tema claro: fundo branco, cartoes brancos com sombra, barras em azul forte (o ciano claro some no projetor) */
+[data-tema="claro"] body.projetando .ava-item, [data-tema="claro"] body.projetando .ava-abertas li,
+[data-tema="claro"] body.projetando #avaQr { background: white; box-shadow: 0 2px 6px rgba(0,0,0,.12), 0 0 0 1px rgba(0,0,0,.06); }
+[data-tema="claro"] body.projetando .ava-bar { background: #e4e6ea; border-color: #c8c8c8; }
+[data-tema="claro"] body.projetando .ava-bar span { background: var(--azul); }
+[data-tema="claro"] body.projetando .ava-bar.b span { background: var(--verde); }
+[data-tema="claro"] body.projetando .ava-item p, [data-tema="claro"] body.projetando .ava-abertas li { color: #1c1c1c; }
+[data-tema="claro"] body.projetando .ava-p .ava-n { color: #1B5E8C; }
+[data-tema="claro"] .proj-sair { background: white; color: #1B5E8C; box-shadow: 0 1px 4px rgba(0,0,0,.15); }
 /* pagina inicial: marcas maiores, titulo e subtitulo com mais presenca, boas-vindas em cartao */
 body[data-pagina="inicio"] .cabeca { margin: 4px 0 26px; gap: 18px; }
 body[data-pagina="inicio"] .cabeca img { width: 84px; height: 84px; }
