@@ -415,6 +415,16 @@ h3.p-dim span { color: var(--t-aaa); font-weight: normal; }
 [data-tema="claro"] #abaMetodo .met-rot { color: #2D6E45; font-weight: 700; }
 [data-tema="claro"] #abaMetodo .met-bloco p:not(.met-rot), [data-tema="claro"] #abaMetodo .met-bloco li { color: #2a2a2a; }
 [data-tema="claro"] #abaMetodo ul.met-lista li::marker { color: var(--azul); }
+/* Creditos no tema escuro: equipe em cartoes com nome em branco; instituicao em cartoes compactos (sem linhas soltas) */
+:root:not([data-tema="claro"]) #abaCreditos .cred-card { background: var(--bloco); padding: 10px 14px 4px; margin-bottom: 12px; }
+:root:not([data-tema="claro"]) #abaCreditos .aba-nome strong { color: white; font-size: 1.05rem; }
+:root:not([data-tema="claro"]) #abaCreditos .cred-desc { color: #b8b8b8; }
+:root:not([data-tema="claro"]) #abaCreditos .cred-sec { border-bottom: 1px solid var(--b-444); padding-bottom: 6px; margin-top: 22px; }
+:root:not([data-tema="claro"]) #abaCreditos > .aba-cargo { background: var(--bloco); margin: 0; padding: 10px 12px 0;
+  border-left: 4px solid var(--b-555); }
+:root:not([data-tema="claro"]) #abaCreditos > .aba-nome { background: var(--bloco); color: var(--texto); padding: 2px 12px 10px;
+  margin: 0 0 8px; border-bottom: none; border-left: 4px solid var(--b-555); }
+:root:not([data-tema="claro"]) #abaCreditos .cred-ed { border-top: 1px solid var(--b-444); padding-top: 12px; }
 /* Creditos no tema claro: cartoes brancos com sombra sobre o painel cinza; instituicao em lista com fundo branco */
 [data-tema="claro"] #abaCreditos .cred-card { background: white; box-shadow: 0 1px 3px rgba(0,0,0,.10), 0 0 0 1px rgba(0,0,0,.05); }
 [data-tema="claro"] #abaCreditos .cred-sec { color: #2D6E45; }
