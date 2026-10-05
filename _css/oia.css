@@ -622,6 +622,19 @@ body[data-pagina="avaliacao"] fieldset.questao .likert label:has(input:checked) 
 body[data-pagina="avaliacao"] fieldset.questao .likert-leg { color: var(--t-aaa); font-size: .9rem; margin-top: 6px; }
 body[data-pagina="avaliacao"] fieldset.questao textarea { background: var(--fundo); }
 body[data-pagina="avaliacao"] section > p { color: var(--t-c4); }
+/* Avaliacao: Sim/Talvez/Nao lado a lado como botoes; barra de envio compacta em uma linha; caixas de texto maiores */
+body[data-pagina="avaliacao"] fieldset.questao > label { display: inline-flex; justify-content: center; align-items: center;
+  width: calc((100% - 16px) / 3); margin: 0 8px 0 0; padding: 12px 4px; font-weight: 700; background: var(--bloco); }
+body[data-pagina="avaliacao"] fieldset.questao > label:nth-of-type(3) { margin-right: 0; }
+body[data-pagina="avaliacao"] fieldset.questao > label input { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; }
+body[data-pagina="avaliacao"] fieldset.questao > label:has(input:checked) { background: var(--azul); border-color: var(--azul); color: white; }
+body[data-pagina="avaliacao"] fieldset.questao > label:has(input:focus-visible) { outline: 2px solid var(--ciano); outline-offset: 2px; }
+body[data-pagina="avaliacao"] fieldset.questao textarea { min-height: 96px; border-color: var(--b-555); padding: 10px; }
+body[data-pagina="avaliacao"] fieldset.questao legend .nota { font-weight: 400; font-size: .9rem; }
+body[data-pagina="avaliacao"] .progresso { display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 10px 12px; }
+body[data-pagina="avaliacao"] .progresso span { font-size: .9rem; line-height: 1.35; }
+body[data-pagina="avaliacao"] .progresso button { white-space: nowrap; flex: none; }
 @media (max-width: 800px) {
   .wrap { padding-left: 46px; }          /* as abas fixas nao cobrem o texto */
 }
