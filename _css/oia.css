@@ -316,6 +316,17 @@ h3.p-dim span { color: var(--t-aaa); font-weight: normal; }
 [data-tema="claro"] .crono .c-ra, [data-tema="claro"] .crono .c-relogio, [data-tema="claro"] .progresso {
   box-shadow: 0 1px 3px rgba(0,0,0,.08), 0 0 0 1px rgba(0,0,0,.05); }
 [data-tema="claro"] .topo-btns { box-shadow: 0 1px 4px rgba(0,0,0,.12); }
+/* paineis Fisica no tema claro: temas em cartoes brancos com sombra; titulos quase pretos; unidade e tempo em cores escuras */
+[data-tema="claro"] .aba-painel[id^="abaFisica"] ol.temas > li { background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,.10), 0 0 0 1px rgba(0,0,0,.05); }
+[data-tema="claro"] .aba-painel[id^="abaFisica"] ol.temas summary,
+[data-tema="claro"] .aba-painel[id^="abaFisica"] ul.marc .m-n1 { color: #1c1c1c; }
+[data-tema="claro"] .aba-painel[id^="abaFisica"] ul.marc .m-n2 { color: #3a3a3a; }
+[data-tema="claro"] .aba-painel[id^="abaFisica"] ul.marc li.m-uni { color: #2D6E45; }
+[data-tema="claro"] .aba-painel[id^="abaFisica"] .t-pag { color: #5f5f5f; }
+[data-tema="claro"] .aba-painel[id^="abaFisica"] ul.marc .m-sess { border-top-color: #d5d8dd; }
+[data-tema="claro"] .aba-painel[id^="abaFisica"] .fis-intro { color: #1c1c1c; }
+[data-tema="claro"] .aba-painel[id^="abaFisica"] .fis-nota { color: #3a3a3a; }
 /* Estilo (painel) no tema claro: as 4 dimensoes em cartoes brancos com sombra, polo em azul-escuro, texto quase preto */
 [data-tema="claro"] #abaEstilo ul.dims li { background: white; color: #2a2a2a;
                                            box-shadow: 0 1px 3px rgba(0,0,0,.10), 0 0 0 1px rgba(0,0,0,.05); }
