@@ -311,6 +311,9 @@ body[data-pagina="inicio"] .intro { background: var(--painel); border: none; bor
                                      padding: 20px 22px 12px; margin: 28px 0 36px; color: var(--t-c4); }
 body[data-pagina="inicio"] .intro-t { font-size: 1.05rem; }
 body[data-pagina="inicio"] .intro strong { color: var(--ciano); }
+body[data-pagina="inicio"] ul.ini-abas { list-style: none; margin: 4px 0 14px; padding: 0; }
+body[data-pagina="inicio"] ul.ini-abas li { background: var(--bloco); border-left: 4px solid var(--azul); padding: 8px 12px; margin-bottom: 8px; }
+body[data-pagina="inicio"] ul.ini-abas strong { display: block; font-weight: 700; }
 @media (max-width: 560px) {
   body[data-pagina="inicio"] h1 { font-size: 1.45rem; }
   body[data-pagina="inicio"] .sub-t { font-size: 1.1rem; }
