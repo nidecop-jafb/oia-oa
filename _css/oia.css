@@ -437,7 +437,9 @@ body[data-pagina="estilo"] #estDicas .prompt { background: var(--painel); border
 body[data-pagina="estilo"] #estDicas .prompt .copiar { background: var(--bloco); padding: 8px 16px; margin-top: 4px; }
 body[data-pagina="estilo"] table.hist { background: var(--painel); }
 body[data-pagina="estilo"] table.hist th { color: var(--ciano); font-weight: 700; border-bottom: 2px solid var(--azul); }
-body[data-pagina="estilo"] table.hist th, body[data-pagina="estilo"] table.hist td { padding: 8px 6px; }
+body[data-pagina="estilo"] table.hist th, body[data-pagina="estilo"] table.hist td { padding: 8px 2px; overflow-wrap: normal; }
+body[data-pagina="estilo"] table.hist th:first-child, body[data-pagina="estilo"] table.hist td:first-child { width: 34%; padding-left: 8px; }
+body[data-pagina="estilo"] table.hist th { font-size: .8rem; }
 body[data-pagina="estilo"] table.hist td:not(:first-child), body[data-pagina="estilo"] table.hist th:not(:first-child) {
   text-align: center; font-family: 'Courier New', Courier, monospace; }
 /* Avaliacao: abertura, aviso de anonimato e escala 1-5 no mesmo padrao */
