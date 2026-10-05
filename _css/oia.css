@@ -87,6 +87,7 @@ body.abas-compactas .aba-toggle { font-size: 14px; padding: 5px 6px; letter-spac
 .aba-painel[id^="abaFisica"] ol.temas details[open] > summary::before { content: '▾'; }
 .aba-painel[id^="abaFisica"] ol.temas .t-meta { font-weight: 400; margin-left: 0; }
 .aba-painel[id^="abaFisica"] ol.temas .t-tit { display: block; margin: 2px 0 0; }
+.aba-painel[id^="abaFisica"] ol.temas .t-meta .t-tempo { display: block; white-space: nowrap; font-weight: 700; }
 .aba-painel[id^="abaFisica"] ul.marc li.m-uni { font-size: .85rem; color: var(--verde-claro); text-transform: none; letter-spacing: .03em; }
 .aba-painel[id^="abaFisica"] ol.temas ul.marc { margin: 10px 0 0; }
 .aba-painel[id^="abaFisica"] ol.temas ul.marc li { border: none; padding: 3px 0; }
