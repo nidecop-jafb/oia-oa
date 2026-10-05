@@ -71,6 +71,11 @@ body.abas-compactas .aba-toggle { font-size: 14px; padding: 5px 6px; letter-spac
 .aba-painel[id^="abaFisica"] .aba-nota { font-size: 1rem; }
 .aba-painel .fis-intro { font-size: 1.3rem; line-height: 1.5; color: var(--texto); }
 .aba-painel .fis-nota { font-size: 1.12rem; color: #b8b8b8; }
+/* respiro a direita e tema em 2 linhas (titulo; paginas, folhas, tempo) sem corte no celular */
+.aba-painel[id^="abaFisica"] { padding-right: 34px; }
+.aba-painel[id^="abaFisica"] ol.temas li { padding: 10px 0; }
+.aba-painel ol.temas .t-meta { display: block; margin: 2px 0 0 1.1em; font-size: .88em; color: var(--t-888); }
+.aba-painel ol.temas .t-meta .t-tempo { white-space: normal; }
 .aba-painel[id^="abaFisica"] .aba-ref { font-size: .95rem; }
 .aba-painel[id^="abaFisica"] ul.marc { font-size: 1.02rem; }
 /* QR preto no branco tambem no tema escuro (senao nao escaneia) */
