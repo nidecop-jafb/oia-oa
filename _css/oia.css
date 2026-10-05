@@ -431,6 +431,18 @@ h3.p-dim span { color: var(--t-aaa); font-weight: normal; }
 :root:not([data-tema="claro"]) #abaSite .qr-box img { box-shadow: 0 4px 14px rgba(0,0,0,.5); }
 :root:not([data-tema="claro"]) #abaSite .qr-box p { color: var(--t-aaa); font-size: .95rem; }
 :root:not([data-tema="claro"]) #abaSite a.aba-btn { padding: 13px 14px; }
+/* Metodo no tema escuro: abertura clara, lista com marcador azul, etapas em cartoes com titulo maior, prompt com contorno */
+:root:not([data-tema="claro"]) #abaMetodo .fis-intro { color: var(--texto); }
+:root:not([data-tema="claro"]) #abaMetodo > p:not(.fis-intro) { color: var(--t-c4); }
+:root:not([data-tema="claro"]) #abaMetodo ul.met-lista li::marker { color: var(--azul); }
+:root:not([data-tema="claro"]) #abaMetodo .met-bloco { background: var(--bloco); padding: 14px 14px 6px; }
+:root:not([data-tema="claro"]) #abaMetodo .met-bloco .met-etapa { font-size: 1.25rem; border-bottom: 1px solid var(--b-444); padding-bottom: 6px; }
+:root:not([data-tema="claro"]) #abaMetodo .met-bloco p:not(.met-rot), :root:not([data-tema="claro"]) #abaMetodo .met-bloco li { color: #d8d8d8; }
+:root:not([data-tema="claro"]) #abaMetodo .met-rot { font-weight: 700; }
+:root:not([data-tema="claro"]) #abaMetodo .prompt { background: var(--painel); border: 1px solid var(--b-444); }
+:root:not([data-tema="claro"]) #abaMetodo .prompt p { color: var(--t-c4); font-size: .98rem; }
+:root:not([data-tema="claro"]) #abaMetodo .prompt .copiar { background: var(--bloco); padding: 8px 16px; }
+:root:not([data-tema="claro"]) #abaMetodo .aba-nota { border-top: 1px solid var(--b-444); padding-top: 10px; }
 /* Instalar no tema escuro: mesmo desenho do painel Site (QR em moldura cinza com sombra, textos claros, botao mais alto) */
 :root:not([data-tema="claro"]) #abaInstalar .fis-intro { color: var(--texto); }
 :root:not([data-tema="claro"]) #abaInstalar .qr-box { background: var(--bloco); padding: 16px 12px 10px; }
