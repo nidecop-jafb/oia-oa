@@ -158,6 +158,21 @@ body .aba-painel ul.marc .comecar, body .aba-painel .prompt .copiar { background
 .footer-marcas a { display: flex; }
 .footer p { max-width: none; text-align: center; }
 .footer-links { margin-bottom: 6px; }
+/* icone Avaliacao no topo (depois do sol/lua) e o menu que ele abre */
+.ava-menu-box { position: relative; }
+.ava-menu-btn { width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; padding: 0;
+                background: var(--caixa); color: var(--ciano); border: 1px solid var(--b-555); cursor: pointer; }
+.ava-menu-btn svg { width: 20px; height: 20px; display: block; }
+.ava-menu-btn:hover, .ava-menu-btn.ativo { border-color: var(--azul); }
+.ava-menu-btn.ativo { background: var(--azul); color: white; }
+.ava-menu { position: absolute; top: 44px; right: 0; min-width: 230px; background: var(--painel); border: 1px solid var(--b-444);
+            border-top: 3px solid var(--azul); box-shadow: 0 6px 18px rgba(0,0,0,.35); padding: 6px 0; z-index: 1001; }
+.ava-menu[hidden] { display: none; }
+.ava-menu a { display: block; padding: 11px 16px; color: var(--texto); text-decoration: none; font-size: 1rem; }
+.ava-menu a:first-child { color: var(--ciano); font-weight: 700; }
+.ava-menu a + a { border-top: 1px solid var(--b-333); }
+.ava-menu a:hover { background: var(--bloco); color: var(--ciano); }
+[data-tema="claro"] .ava-menu { box-shadow: 0 6px 18px rgba(0,0,0,.15); }
 .footer-selo { text-align: center; margin-top: 8px; color: var(--t-9a); }
 
 /* sugestoes e agradecimentos */
@@ -444,6 +459,14 @@ body.projetando .ava-bar { height: 30px; }
              border: 1px solid var(--azul); cursor: pointer; font: inherit; font-weight: 700; }
 .proj-sair[hidden] { display: none; }
 @media (max-width: 900px) { body.projetando #avaPainel:has(#avaQr:not([hidden])) { grid-template-columns: 1fr; } }
+/* pagina inicial no tema claro: subtitulo escuro, boas-vindas em cartao cinza com sombra, abas-guia em cartoes brancos */
+[data-tema="claro"] body[data-pagina="inicio"] .sub-t { color: #2a2a2a; }
+[data-tema="claro"] body[data-pagina="inicio"] .intro { color: #2a2a2a; }
+[data-tema="claro"] body[data-pagina="inicio"] .intro-t { color: #2D6E45; }
+[data-tema="claro"] body[data-pagina="inicio"] ul.ini-abas li { background: white; color: #2a2a2a;
+  box-shadow: 0 1px 3px rgba(0,0,0,.10), 0 0 0 1px rgba(0,0,0,.05); }
+[data-tema="claro"] body[data-pagina="inicio"] .cabeca img:not(.ifmg) { box-shadow: 0 1px 4px rgba(0,0,0,.15); border-radius: 12px; }
+[data-tema="claro"] body[data-pagina="inicio"] .cabeca .ifmg { box-shadow: 0 1px 4px rgba(0,0,0,.15); }
 /* cronometro no tema claro: fundo cinza-claro, cartoes brancos com sombra, relogio em azul-escuro, etapa atual azul cheia */
 [data-tema="claro"] .crono { background: #f3f4f6; }
 [data-tema="claro"] .crono .c-relogio, [data-tema="claro"] .crono .c-q, [data-tema="claro"] .crono .c-duv,

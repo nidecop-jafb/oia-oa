@@ -78,3 +78,14 @@
   });
   rotulo();
 })();
+
+/* Icone Avaliacao: abre/fecha o menu (avaliacao, painel do professor, sugestao, agradecimentos); toque fora ou Esc fecha. */
+(function () {
+  var b = document.getElementById('avaMenuBtn'), m = document.getElementById('avaMenu');
+  if (!b || !m) { return; }
+  function abrir(on) { m.hidden = !on; b.setAttribute('aria-expanded', on ? 'true' : 'false'); b.classList.toggle('ativo', on); }
+  b.addEventListener('click', function (e) { e.stopPropagation(); abrir(m.hidden); });
+  m.addEventListener('click', function (e) { e.stopPropagation(); });
+  document.addEventListener('click', function () { abrir(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { abrir(false); } });
+})();
