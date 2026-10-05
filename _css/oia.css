@@ -291,6 +291,24 @@ fieldset.questao textarea { width: 100%; min-height: 70px; background: var(--fun
 .ava-abertas li { margin: 0 0 6px; overflow-wrap: anywhere; }
 .ava-p .form-sug input[type="password"] { width: 100%; background: var(--fundo); color: var(--texto); border: 1px solid var(--b-555); padding: 8px; }
 
+/* pagina do questionario Estilo: caixas em cinza neutro, perguntas em cartoes, alternativas como botoes de toque */
+body[data-pagina="estilo"] .form-sug, body[data-pagina="estilo"] .progresso, body[data-pagina="estilo"] .regras,
+body[data-pagina="estilo"] .dim-barra, body[data-pagina="estilo"] .grupo-barra { background: var(--bloco); }
+body[data-pagina="estilo"] h2 { color: var(--ciano); font-size: 1.2rem; border-bottom: 1px solid var(--b-444); padding-bottom: 6px; margin-top: 40px; }
+body[data-pagina="estilo"] .form-sug { border: none; border-left: 4px solid var(--azul); }
+body[data-pagina="estilo"] .form-sug button { background: var(--painel); border-color: var(--azul); color: var(--ciano); margin-top: 12px; }
+body[data-pagina="estilo"] fieldset.questao { background: var(--painel); border: none; border-left: 4px solid var(--b-555); padding: 14px 14px 10px; margin: 0 0 16px; }
+body[data-pagina="estilo"] fieldset.questao.ok { border-left-color: var(--verde); }
+body[data-pagina="estilo"] fieldset.questao legend { float: left; width: 100%; padding: 0; margin: 0 0 10px; color: var(--forte); font-weight: 700; line-height: 1.5; }
+body[data-pagina="estilo"] fieldset.questao legend + * { clear: both; }
+body[data-pagina="estilo"] fieldset.questao .q-num { display: inline-block; background: var(--bloco); color: var(--ciano); padding: 0 6px; margin-right: 6px;
+                          font-weight: 400; }
+body[data-pagina="estilo"] fieldset.questao label { border: 1px solid var(--b-444); padding: 10px 12px; margin: 0 0 8px; color: var(--t-ddd); }
+body[data-pagina="estilo"] fieldset.questao label:has(input:checked) { border-color: var(--azul); background: var(--bloco); color: var(--forte); }
+body[data-pagina="estilo"] .progresso { border: none; border-top: 2px solid var(--azul); }
+body[data-pagina="estilo"] .progresso button { background: var(--azul); color: var(--forte); font-weight: 700; border-color: var(--azul); }
+body[data-pagina="estilo"] .progresso button:disabled { background: var(--painel); color: var(--t-888); border-color: var(--b-444); opacity: 1; }
+
 @media (max-width: 800px) {
   .wrap { padding-left: 46px; }          /* as abas fixas nao cobrem o texto */
 }
