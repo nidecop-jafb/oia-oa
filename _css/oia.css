@@ -316,6 +316,14 @@ h3.p-dim span { color: var(--t-aaa); font-weight: normal; }
 [data-tema="claro"] .crono .c-ra, [data-tema="claro"] .crono .c-relogio, [data-tema="claro"] .progresso {
   box-shadow: 0 1px 3px rgba(0,0,0,.08), 0 0 0 1px rgba(0,0,0,.05); }
 [data-tema="claro"] .topo-btns { box-shadow: 0 1px 4px rgba(0,0,0,.12); }
+/* Creditos no tema claro: cartoes brancos com sombra sobre o painel cinza; instituicao em lista com fundo branco */
+[data-tema="claro"] #abaCreditos .cred-card { background: white; box-shadow: 0 1px 3px rgba(0,0,0,.10), 0 0 0 1px rgba(0,0,0,.05); }
+[data-tema="claro"] #abaCreditos .cred-sec { color: #2D6E45; }
+[data-tema="claro"] #abaCreditos .cred-desc { color: #505050; }
+[data-tema="claro"] #abaCreditos .aba-nome strong { color: #000; }
+[data-tema="claro"] #abaCreditos > .aba-cargo { background: white; margin: 0; padding: 10px 12px 0; }
+[data-tema="claro"] #abaCreditos > .aba-nome { background: white; padding: 2px 12px 10px; margin: 0 0 6px;
+                                               border-bottom: none; box-shadow: 0 1px 2px rgba(0,0,0,.08); }
 /* endereco sob o QR: quebra so nas barras, nunca no hifen */
 .qr-end span { white-space: nowrap; }
 .qr-box .qr-end { overflow-wrap: normal; }
