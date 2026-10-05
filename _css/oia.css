@@ -425,6 +425,25 @@ body[data-pagina="avaliacao-painel"] .ava-item strong { color: var(--ciano); fon
 body[data-pagina="avaliacao-painel"] .ava-bar { background: var(--bloco); border-color: var(--b-444); margin-top: 6px; }
 body[data-pagina="avaliacao-painel"] .ava-abertas { list-style: none; padding: 0; }
 body[data-pagina="avaliacao-painel"] .ava-abertas li { background: var(--painel); border-left: 4px solid var(--verde); padding: 8px 12px; margin: 0 0 8px; }
+/* modo Projetar (painel da Avaliacao): so o resultado e o QR, tela larga, letra grande, sem abas/controles/rodape */
+body.projetando .aba-toggle, body.projetando .aba-painel, body.projetando .topo-btns, body.projetando .footer,
+body.projetando .ava-p > p:first-of-type, body.projetando .ava-p .form-sug, body.projetando #avaChaveBox { display: none !important; }
+body.projetando .wrap { max-width: 1400px; padding: 24px 40px 40px; }
+body.projetando .ava-p { font-size: 1.45rem; }
+body.projetando .ava-p h1 { font-size: 2.2rem; }
+body.projetando #avaPainel { display: grid; grid-template-columns: 1fr; gap: 28px; }
+body.projetando #avaPainel:has(#avaQr:not([hidden])) { grid-template-columns: minmax(0, 1fr) 380px; }
+body.projetando #avaQr { order: 2; align-self: start; position: sticky; top: 24px; margin: 0; }
+body.projetando #avaQr img { width: 340px; height: 340px; }
+body.projetando #avaRes { order: 1; }
+body.projetando .ava-p .ava-n { font-size: 5rem; }
+body.projetando #avaRes h2 { font-size: 1.6rem; }
+body.projetando .ava-item { margin-bottom: 14px; }
+body.projetando .ava-bar { height: 30px; }
+.proj-sair { position: fixed; top: 12px; right: 12px; z-index: 1000; padding: 10px 16px; background: var(--bloco); color: var(--ciano);
+             border: 1px solid var(--azul); cursor: pointer; font: inherit; font-weight: 700; }
+.proj-sair[hidden] { display: none; }
+@media (max-width: 900px) { body.projetando #avaPainel:has(#avaQr:not([hidden])) { grid-template-columns: 1fr; } }
 /* pagina inicial: marcas maiores, titulo e subtitulo com mais presenca, boas-vindas em cartao */
 body[data-pagina="inicio"] .cabeca { margin: 4px 0 26px; gap: 18px; }
 body[data-pagina="inicio"] .cabeca img { width: 84px; height: 84px; }

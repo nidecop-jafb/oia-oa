@@ -104,7 +104,22 @@
     a.download = 'oia-avaliacao-' + new Date().toISOString().slice(0, 10) + '.csv';
     document.body.appendChild(a); a.click(); document.body.removeChild(a);
   }
+  /* Projetar: tela cheia so com o resultado (e o QR, se a avaliacao estiver aberta), letra grande; Esc ou o botao saem. */
+  function projetar(on) {
+    document.body.classList.toggle('projetando', on);
+    $('btnAvaSairProj').hidden = !on;
+    var de = document.documentElement;
+    if (on && !document.fullscreenElement && de.requestFullscreen) { de.requestFullscreen().catch(function () { /* sem tela cheia */ }); }
+    if (!on && document.fullscreenElement && document.exitFullscreen) { document.exitFullscreen(); }
+    window.scrollTo(0, 0);
+  }
+  document.addEventListener('fullscreenchange', function () {
+    if (!document.fullscreenElement && document.body.classList.contains('projetando')) { projetar(false); }
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { projetar(false); } });
   document.addEventListener('DOMContentLoaded', function () {
+    $('btnAvaProjetar').addEventListener('click', function () { projetar(true); });
+    $('btnAvaSairProj').addEventListener('click', function () { projetar(false); });
     $('btnAvaChave').addEventListener('click', entrar);
     $('avaChave').addEventListener('keydown', function (e) { if (e.key === 'Enter') { entrar(); } });
     $('btnAvaCsv').addEventListener('click', csv);
