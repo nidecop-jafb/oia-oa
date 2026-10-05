@@ -82,6 +82,7 @@ body.abas-compactas .aba-toggle { font-size: 14px; padding: 5px 6px; letter-spac
 #abaSite { font-size: 1.1rem; padding-right: 34px; }
 #abaSite .site-end { font-family: 'Courier New', Courier, monospace; font-size: 1rem; color: var(--ciano);
                      border-left: 4px solid var(--azul); background: var(--caixa2); padding: 8px 12px; overflow-wrap: normal; }
+#abaSite .site-end span { white-space: nowrap; }  /* quebra so na barra, nunca no hifen */
 #abaSite .fis-intro { font-size: 1.2rem; }
 #abaSite .qr-box { flex-direction: column; align-items: center; text-align: center; margin: 18px 0 6px; }
 #abaSite .qr-box > div { flex: none; }
