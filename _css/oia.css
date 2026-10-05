@@ -321,7 +321,7 @@ h3.p-dim span { color: var(--t-aaa); font-weight: normal; }
 [data-tema="claro"] #abaMetodo .prompt { background: #f3f4f6; border: 1px solid #d5d8dd; }
 [data-tema="claro"] #abaMetodo .prompt .copiar { background: white; }
 [data-tema="claro"] #abaMetodo .met-rot { color: #2D6E45; font-weight: 700; }
-[data-tema="claro"] #abaMetodo .met-bloco p, [data-tema="claro"] #abaMetodo .met-bloco li { color: #2a2a2a; }
+[data-tema="claro"] #abaMetodo .met-bloco p:not(.met-rot), [data-tema="claro"] #abaMetodo .met-bloco li { color: #2a2a2a; }
 [data-tema="claro"] #abaMetodo ul.met-lista li::marker { color: var(--azul); }
 /* Creditos no tema claro: cartoes brancos com sombra sobre o painel cinza; instituicao em lista com fundo branco */
 [data-tema="claro"] #abaCreditos .cred-card { background: white; box-shadow: 0 1px 3px rgba(0,0,0,.10), 0 0 0 1px rgba(0,0,0,.05); }
