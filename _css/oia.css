@@ -302,6 +302,21 @@ body[data-pagina="instalar"] ol.num li::before { content: counter(passo); positi
   height: 30px; border-radius: 50%; background: var(--azul); color: var(--forte); font-weight: 700; display: flex;
   align-items: center; justify-content: center; font-size: .95rem; }
 body[data-pagina="instalar"] ol.num strong { color: var(--ciano); }
+/* pagina inicial: marcas maiores, titulo e subtitulo com mais presenca, boas-vindas em cartao */
+body[data-pagina="inicio"] .cabeca { margin: 4px 0 26px; gap: 18px; }
+body[data-pagina="inicio"] .cabeca img { width: 84px; height: 84px; }
+body[data-pagina="inicio"] h1 { font-size: 1.9rem; letter-spacing: .05em; margin-bottom: 14px; }
+body[data-pagina="inicio"] .sub-t { font-size: 1.25rem; color: var(--texto); line-height: 1.5; margin: 0 0 8px; }
+body[data-pagina="inicio"] .intro { background: var(--painel); border: none; border-left: 4px solid var(--verde);
+                                     padding: 20px 22px 12px; margin: 28px 0 36px; color: var(--t-c4); }
+body[data-pagina="inicio"] .intro-t { font-size: 1.05rem; }
+body[data-pagina="inicio"] .intro strong { color: var(--ciano); }
+@media (max-width: 560px) {
+  body[data-pagina="inicio"] h1 { font-size: 1.45rem; }
+  body[data-pagina="inicio"] .sub-t { font-size: 1.1rem; }
+  body[data-pagina="inicio"] .cabeca img { width: 64px; height: 64px; }
+  body[data-pagina="inicio"] .intro { padding: 16px 16px 8px; }
+}
 /* pagina Agradecimentos: abertura grande; enquanto nao ha respostas, um cartao com o convite e o botao */
 body[data-pagina="agradecimentos"] .agr-lead { font-size: 1.2rem; color: var(--forte); line-height: 1.55; margin: 14px 0 20px; }
 body[data-pagina="agradecimentos"] .agr-vazio { background: var(--painel); border-left: 4px solid var(--verde); padding: 14px 16px 16px; }
