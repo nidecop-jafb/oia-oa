@@ -302,6 +302,24 @@ body[data-pagina="instalar"] ol.num li::before { content: counter(passo); positi
   height: 30px; border-radius: 50%; background: var(--azul); color: var(--forte); font-weight: 700; display: flex;
   align-items: center; justify-content: center; font-size: .95rem; }
 body[data-pagina="instalar"] ol.num strong { color: var(--ciano); }
+/* painel da Avaliacao (projetado no encerramento): caixas neutras, botoes de acao cheios, resultados em cartoes */
+body[data-pagina="avaliacao-painel"] .ava-p > p:first-of-type { font-size: 1.15rem; color: var(--texto); }
+body[data-pagina="avaliacao-painel"] .form-sug { background: var(--painel); border: none; border-left: 4px solid var(--azul); }
+body[data-pagina="avaliacao-painel"] .form-sug > label { color: var(--ciano); font-weight: 700; font-size: 1.05rem; margin-top: 0; }
+body[data-pagina="avaliacao-painel"] .form-sug button { background: var(--bloco); border-color: var(--azul); color: var(--ciano);
+                                                       margin: 10px 8px 0 0; padding: 10px 16px; }
+body[data-pagina="avaliacao-painel"] .form-sug button.forte { background: var(--azul); color: var(--forte); font-weight: 700; }
+body[data-pagina="avaliacao-painel"] .form-sug .nota { margin-top: 12px; }
+body[data-pagina="avaliacao-painel"] #avaJanela { font-size: 1.15rem; margin: 0; }
+body[data-pagina="avaliacao-painel"] .qr-box { flex-direction: column; text-align: center; background: var(--painel); padding: 18px; }
+body[data-pagina="avaliacao-painel"] .qr-box > div { flex: none; }
+body[data-pagina="avaliacao-painel"] #avaRes h2 { color: var(--ciano); font-size: 1.2rem; border-bottom: 1px solid var(--b-444);
+                                                  padding-bottom: 6px; margin-top: 36px; }
+body[data-pagina="avaliacao-painel"] .ava-item { background: var(--painel); border-left: 4px solid var(--azul); padding: 10px 14px 12px; }
+body[data-pagina="avaliacao-painel"] .ava-item strong { color: var(--ciano); font-size: 1.1em; }
+body[data-pagina="avaliacao-painel"] .ava-bar { background: var(--bloco); border-color: var(--b-444); margin-top: 6px; }
+body[data-pagina="avaliacao-painel"] .ava-abertas { list-style: none; padding: 0; }
+body[data-pagina="avaliacao-painel"] .ava-abertas li { background: var(--painel); border-left: 4px solid var(--verde); padding: 8px 12px; margin: 0 0 8px; }
 /* pagina inicial: marcas maiores, titulo e subtitulo com mais presenca, boas-vindas em cartao */
 body[data-pagina="inicio"] .cabeca { margin: 4px 0 26px; gap: 18px; }
 body[data-pagina="inicio"] .cabeca img { width: 84px; height: 84px; }
