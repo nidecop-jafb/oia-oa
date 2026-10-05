@@ -302,6 +302,13 @@ body[data-pagina="instalar"] ol.num li::before { content: counter(passo); positi
   height: 30px; border-radius: 50%; background: var(--azul); color: var(--forte); font-weight: 700; display: flex;
   align-items: center; justify-content: center; font-size: .95rem; }
 body[data-pagina="instalar"] ol.num strong { color: var(--ciano); }
+/* pagina Agradecimentos: abertura grande; enquanto nao ha respostas, um cartao com o convite e o botao */
+body[data-pagina="agradecimentos"] .agr-lead { font-size: 1.2rem; color: var(--forte); line-height: 1.55; margin: 14px 0 20px; }
+body[data-pagina="agradecimentos"] .agr-vazio { background: var(--painel); border-left: 4px solid var(--verde); padding: 14px 16px 16px; }
+body[data-pagina="agradecimentos"] .agr-vazio .nota { color: var(--t-c4); margin: 0 0 14px; }
+body[data-pagina="agradecimentos"] .agr-btn { display: block; text-align: center; padding: 12px; background: var(--azul);
+  color: var(--forte); font-weight: 700; text-decoration: none; }
+body[data-pagina="agradecimentos"] .agr-btn:hover { filter: brightness(1.1); }
 /* pagina Enviar sugestao: abertura grande, aviso de anonimato em destaque, texto e audio em partes separadas */
 body[data-pagina="sugestoes"] .sug-lead { font-size: 1.2rem; color: var(--forte); line-height: 1.55; margin: 14px 0 12px; }
 body[data-pagina="sugestoes"] .sug-lead strong { color: var(--ciano); }
