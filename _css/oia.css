@@ -415,6 +415,14 @@ h3.p-dim span { color: var(--t-aaa); font-weight: normal; }
 [data-tema="claro"] #abaMetodo .met-rot { color: #2D6E45; font-weight: 700; }
 [data-tema="claro"] #abaMetodo .met-bloco p:not(.met-rot), [data-tema="claro"] #abaMetodo .met-bloco li { color: #2a2a2a; }
 [data-tema="claro"] #abaMetodo ul.met-lista li::marker { color: var(--azul); }
+/* Site no tema escuro: endereco em cartao com faixa azul, QR em moldura clara com sombra, textos claros e legenda discreta */
+:root:not([data-tema="claro"]) #abaSite .site-end { background: var(--bloco); color: var(--ciano); padding: 10px 12px; }
+:root:not([data-tema="claro"]) #abaSite .fis-intro { color: var(--texto); }
+:root:not([data-tema="claro"]) #abaSite p { color: var(--t-c4); }
+:root:not([data-tema="claro"]) #abaSite .qr-box { background: var(--bloco); padding: 16px 12px 10px; }
+:root:not([data-tema="claro"]) #abaSite .qr-box img { box-shadow: 0 4px 14px rgba(0,0,0,.5); }
+:root:not([data-tema="claro"]) #abaSite .qr-box p { color: var(--t-aaa); font-size: .95rem; }
+:root:not([data-tema="claro"]) #abaSite a.aba-btn { padding: 13px 14px; }
 /* Creditos no tema escuro: equipe em cartoes com nome em branco; instituicao em cartoes compactos (sem linhas soltas) */
 :root:not([data-tema="claro"]) #abaCreditos .cred-card { background: var(--bloco); padding: 10px 14px 4px; margin-bottom: 12px; }
 :root:not([data-tema="claro"]) #abaCreditos .aba-nome strong { color: white; font-size: 1.05rem; }
