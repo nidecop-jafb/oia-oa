@@ -317,7 +317,7 @@ h3.p-dim span { color: var(--t-aaa); font-weight: normal; }
   box-shadow: 0 1px 3px rgba(0,0,0,.08), 0 0 0 1px rgba(0,0,0,.05); }
 [data-tema="claro"] .topo-btns { box-shadow: 0 1px 4px rgba(0,0,0,.12); }
 /* painel Site no tema claro: endereco em cartao branco, QR com sombra, textos quase pretos */
-[data-tema="claro"] #abaSite .site-end { background: white; color: #1B5E8C; font-weight: 700;
+[data-tema="claro"] #abaSite .site-end { background: white; color: #1B5E8C;
   box-shadow: 0 1px 3px rgba(0,0,0,.10), 0 0 0 1px rgba(0,0,0,.05); }
 [data-tema="claro"] #abaSite .qr-box img { box-shadow: 0 1px 4px rgba(0,0,0,.15), 0 0 0 1px rgba(0,0,0,.06); }
 [data-tema="claro"] #abaSite .fis-intro { color: #1c1c1c; }
