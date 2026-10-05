@@ -80,10 +80,11 @@ body.abas-compactas .aba-toggle { font-size: 14px; padding: 5px 6px; letter-spac
 .aba-painel[id^="abaFisica"] ul.marc { font-size: 1.02rem; }
 /* painel Site: mesma letra e respiro das demais; endereco em destaque, QR centrado e botao cheio */
 #abaSite { font-size: 1.1rem; padding-right: 34px; }
-#abaSite .site-end { font-family: 'Courier New', Courier, monospace; font-size: 1.05rem; color: var(--ciano);
-                     border-left: 4px solid var(--azul); background: var(--caixa2); padding: 8px 12px; overflow-wrap: anywhere; }
+#abaSite .site-end { font-family: 'Courier New', Courier, monospace; font-size: 1rem; color: var(--ciano);
+                     border-left: 4px solid var(--azul); background: var(--caixa2); padding: 8px 12px; overflow-wrap: normal; }
 #abaSite .fis-intro { font-size: 1.2rem; }
-#abaSite .qr-box { flex-direction: column; align-items: center; text-align: center; margin: 18px 0 20px; }
+#abaSite .qr-box { flex-direction: column; align-items: center; text-align: center; margin: 18px 0 6px; }
+#abaSite .qr-box > div { flex: none; }
 #abaSite .qr-box img { width: 200px; height: 200px; }
 #abaSite .qr-box .qr-end { display: none; }  /* o endereco ja esta acima */
 #abaSite a.aba-btn { background: var(--azul); border-color: var(--azul); color: var(--forte); font-weight: 700; text-align: center; }
