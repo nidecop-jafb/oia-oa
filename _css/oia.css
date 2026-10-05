@@ -173,6 +173,19 @@ body .aba-painel ul.marc .comecar, body .aba-painel .prompt .copiar { background
 .ava-menu a + a { border-top: 1px solid var(--b-333); }
 .ava-menu a:hover { background: var(--bloco); color: var(--ciano); }
 [data-tema="claro"] .ava-menu { box-shadow: 0 6px 18px rgba(0,0,0,.15); }
+/* menu Avaliacao no tema claro: mesmo desenho do escuro (1.o item azul, setas, item da equipe separado), caixa branca */
+[data-tema="claro"] .ava-menu { background: white; border-color: #d5d8dd; box-shadow: 0 10px 28px rgba(0,0,0,.18);
+  min-width: 270px; padding: 8px; }
+[data-tema="claro"] .ava-menu a { position: relative; padding: 12px 34px 12px 14px; border-top: none; color: #1c1c1c; }
+[data-tema="claro"] .ava-menu a::after { content: '›'; position: absolute; right: 14px; top: 50%;
+  transform: translateY(-52%); color: var(--azul); font-size: 1.3rem; }
+[data-tema="claro"] .ava-menu a:first-child { background: var(--azul); color: white; margin-bottom: 6px; }
+[data-tema="claro"] .ava-menu a:first-child::after { color: white; }
+[data-tema="claro"] .ava-menu a:nth-child(2) { border-bottom: 1px solid #e0e2e6; margin-bottom: 4px; }
+[data-tema="claro"] .ava-menu a:hover { background: #eef2f7; color: #1B5E8C; }
+[data-tema="claro"] .ava-menu a:first-child:hover { background: #2775aa; color: white; }
+[data-tema="claro"] .ava-menu-btn { background: white; color: #1B5E8C; border-color: #c8c8c8; }
+[data-tema="claro"] .ava-menu-btn.ativo { background: var(--azul); color: white; border-color: var(--azul); }
 /* menu Avaliacao no tema escuro: caixa mais clara que a pagina, 1.o item como botao azul, setas e separacao do item da equipe */
 :root:not([data-tema="claro"]) .ava-menu { background: var(--bloco); border-color: var(--b-555); box-shadow: 0 10px 28px rgba(0,0,0,.6);
   min-width: 270px; padding: 8px; }
