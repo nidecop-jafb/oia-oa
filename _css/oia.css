@@ -1,7 +1,7 @@
 /* oia.css — gerado por _scripts/gerar_site_oia.py (OIA, PRJ-0004). Nao editar a mao.
    Molde: rif-oa. Paleta do icone da Oficina IA: azul-noite, ciano e verde. */
-:root { color-scheme: dark; --azul: #2E86C1; --azul-esc: #1B2A41; --verde: #3E8E5A; --fundo: #0d0d0d; --texto: #e8e8e8; --forte: #fff; --t-ddd: #ddd; --t-c4: #c4c4c4; --t-aaa: #aaa; --t-9a: #9a9a9a; --t-888: #888; --b-555: #555; --b-444: #444; --b-333: #333; --caixa: #1b2a41; --caixa2: #16202f; --painel: #1a1b1f; --ciano: #8FE0FF; --verde-claro: #7BE495; }
-[data-tema="claro"] { color-scheme: light; --fundo: #ffffff; --texto: #1c1c1c; --forte: #000000; --t-ddd: #2a2a2a; --t-c4: #3a3a3a; --t-aaa: #505050; --t-9a: #5a5a5a; --t-888: #5f5f5f; --b-555: #8c8c8c; --b-444: #c8c8c8; --b-333: #dddddd; --caixa: #eef2f7; --caixa2: #f6f8fb; --painel: #eef2f7; --ciano: #1B5E8C; --verde-claro: #2D6E45; }
+:root { color-scheme: dark; --azul: #2E86C1; --azul-esc: #1B2A41; --verde: #3E8E5A; --fundo: #0d0d0d; --texto: #e8e8e8; --forte: #fff; --t-ddd: #ddd; --t-c4: #c4c4c4; --t-aaa: #aaa; --t-9a: #9a9a9a; --t-888: #888; --b-555: #555; --b-444: #444; --b-333: #333; --caixa: #1b2a41; --caixa2: #16202f; --painel: #1a1b1f; --bloco: #26272c; --ciano: #8FE0FF; --verde-claro: #7BE495; }
+[data-tema="claro"] { color-scheme: light; --fundo: #ffffff; --texto: #1c1c1c; --forte: #000000; --t-ddd: #2a2a2a; --t-c4: #3a3a3a; --t-aaa: #505050; --t-9a: #5a5a5a; --t-888: #5f5f5f; --b-555: #8c8c8c; --b-444: #c8c8c8; --b-333: #dddddd; --caixa: #eef2f7; --caixa2: #f6f8fb; --painel: #eef2f7; --bloco: #f6f8fb; --ciano: #1B5E8C; --verde-claro: #2D6E45; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { font-size: 112.5%; }
 html[data-letra="g"] { font-size: 125%; }
@@ -78,6 +78,23 @@ body.abas-compactas .aba-toggle { font-size: 14px; padding: 5px 6px; letter-spac
 .aba-painel ol.temas .t-meta .t-tempo { white-space: normal; }
 .aba-painel[id^="abaFisica"] .aba-ref { font-size: .95rem; }
 .aba-painel[id^="abaFisica"] ul.marc { font-size: 1.02rem; }
+/* blocos dentro dos paineis: cinza neutro (sem o azulado), como o painel da LME */
+/* (prefixo body: estas regras vem antes das originais no arquivo e precisam vencer) */
+body .aba-painel ul.dims li, body #abaMetodo .met-bloco, body #abaSite .site-end, #abaCreditos .cred-card { background: var(--bloco); }
+body #abaMetodo .prompt { background: var(--painel); }
+body .aba-painel ul.marc .comecar, body .aba-painel .prompt .copiar { background: var(--bloco); }
+/* painel Creditos: equipe em blocos, instituicao em lista compacta, botao cheio no fim */
+#abaCreditos { font-size: 1.1rem; padding-right: 34px; }
+#abaCreditos .cred-sec { color: var(--verde-claro); font-size: .95rem; letter-spacing: .04em; margin: 18px 0 10px; }
+#abaCreditos .cred-card { border-left: 4px solid var(--azul); padding: 8px 12px 2px; margin: 0 0 10px; }
+#abaCreditos .cred-card .aba-cargo { border: none; margin: 0 0 2px; padding: 0; font-size: .85rem; }
+#abaCreditos .cred-card p { margin-bottom: 6px; }
+#abaCreditos .cred-desc { font-size: .95rem; color: var(--t-aaa); }
+#abaCreditos .aba-nome strong { color: var(--texto); }
+#abaCreditos > .aba-cargo { font-size: .8rem; margin: 10px 0 0; padding-bottom: 2px; }
+#abaCreditos > .aba-nome { margin-bottom: 4px; }
+#abaCreditos .cred-ed { font-size: .9rem; color: var(--t-888); margin: 18px 0 6px; }
+#abaCreditos a.aba-btn { background: var(--azul); border-color: var(--azul); color: var(--forte); font-weight: 700; text-align: center; }
 /* paineis Site e Instalar: mesma letra e respiro das demais; endereco em destaque, QR centrado e botao cheio */
 #abaSite, #abaInstalar { font-size: 1.1rem; padding-right: 34px; }
 #abaInstalar .fis-intro { font-size: 1.2rem; }
