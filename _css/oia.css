@@ -402,7 +402,12 @@ h3.p-dim span { color: var(--t-aaa); font-weight: normal; }
                                            box-shadow: 0 1px 3px rgba(0,0,0,.10), 0 0 0 1px rgba(0,0,0,.05); }
 [data-tema="claro"] #abaEstilo ul.dims li strong { color: #1B5E8C; }
 [data-tema="claro"] #abaEstilo > p { color: #2a2a2a; }
-[data-tema="claro"] #abaEstilo a.aba-btn:not(:first-of-type) { background: white; }
+[data-tema="claro"] #abaEstilo a.aba-btn:not(:first-of-type) { background: white; color: #1B5E8C; }
+[data-tema="claro"] #abaEstilo .est-lead { font-size: 1.2rem; color: #1c1c1c; line-height: 1.5; }
+[data-tema="claro"] #abaEstilo ul.dims li { padding: 10px 12px; }
+[data-tema="claro"] #abaEstilo ul.dims li strong { font-size: 1.05rem; margin-bottom: 2px; }
+[data-tema="claro"] #abaEstilo a.aba-btn { padding: 13px 14px; }
+[data-tema="claro"] #abaEstilo .aba-ref { border-top-color: #d5d8dd; color: #5f5f5f; }
 /* Metodo no tema claro: etapas em cartoes brancos com sombra; prompt em caixa cinza com contorno; rotulos em verde escuro */
 [data-tema="claro"] #abaMetodo .met-bloco { background: white; box-shadow: 0 1px 3px rgba(0,0,0,.10), 0 0 0 1px rgba(0,0,0,.05); }
 [data-tema="claro"] #abaMetodo .prompt { background: #f3f4f6; border: 1px solid #d5d8dd; }
