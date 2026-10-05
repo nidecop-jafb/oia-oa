@@ -261,7 +261,7 @@ h3.p-dim span { color: var(--t-aaa); font-weight: normal; }
 .crono { padding-top: 22px; }
 .crono h2 { font-size: 1.25rem; color: var(--ciano); line-height: 1.35; }
 .crono .c-sub { font-size: .95rem; color: var(--t-aaa); }
-.crono .c-etapas span { padding: 9px 2px; font-size: .95rem; background: var(--painel); font-weight: 700; }
+.crono .c-etapas span { padding: 9px 2px; font-size: .88rem; background: var(--painel); font-weight: 700; }
 .crono .c-etapas span.on { background: var(--azul); border-color: var(--azul); color: var(--forte); }
 .crono .c-etapas span.ok { border-color: var(--verde); }
 .crono .c-relogio { font-size: 4.2rem; background: var(--painel); border: 1px solid var(--b-444); padding: 6px 0; margin: 10px 0 12px; color: var(--forte);
@@ -277,7 +277,9 @@ h3.p-dim span { color: var(--t-aaa); font-weight: normal; }
 .crono .prompt { background: var(--painel); }
 .crono .prompt .copiar { background: var(--bloco); }
 .crono .c-acoes { position: sticky; bottom: 0; background: var(--fundo); padding: 10px 0; margin: 12px 0 0; border-top: 1px solid var(--b-444); }
-.crono .c-acoes button { background: var(--bloco); border-color: var(--azul); color: var(--ciano); padding: 12px 10px; font-weight: 700; }
+.crono .c-acoes { flex-wrap: nowrap; gap: 6px; }
+.crono .c-acoes button { flex: 1 1 0; min-width: 0; background: var(--bloco); border-color: var(--azul); color: var(--ciano);
+                         padding: 11px 4px; font-weight: 700; font-size: .95rem; }
 .crono .c-acoes .c-sair { border-color: var(--b-555); color: var(--t-aaa); font-weight: 400; }
 .crono.troca { animation: crono-pisca-n .5s 3; }
 @keyframes crono-pisca-n { 50% { background: var(--bloco); } }
