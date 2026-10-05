@@ -106,6 +106,14 @@ body #abaMetodo .prompt { background: var(--painel); }
 body .aba-painel ul.marc .comecar, body .aba-painel .prompt .copiar { background: var(--bloco); }
 /* painel Creditos: equipe em blocos, instituicao em lista compacta, botao cheio no fim */
 #abaCreditos { font-size: 1.1rem; padding-right: 34px; }
+#abaReferencias { font-size: 1.05rem; padding-right: 34px; }
+#abaReferencias .cred-sec { color: var(--verde-claro); font-size: .95rem; letter-spacing: .04em; margin: 18px 0 10px; }
+#abaReferencias .ref-lista { margin: 0 0 6px; padding-left: 1.4em; }
+#abaReferencias .ref-lista li { margin-bottom: 10px; line-height: 1.45; overflow-wrap: anywhere; }
+#abaReferencias .ref-lista a { color: var(--ciano); word-break: break-all; }
+[data-tema="claro"] #abaReferencias .cred-sec { color: #2D6E45; }
+[data-tema="claro"] #abaReferencias .ref-lista li { color: #1c1c1c; }
+[data-tema="claro"] #abaReferencias .ref-lista a { color: #1B5E8C; }
 #abaCreditos .cred-sec { color: var(--verde-claro); font-size: .95rem; letter-spacing: .04em; margin: 18px 0 10px; }
 #abaCreditos .cred-card { border-left: 4px solid var(--azul); padding: 8px 12px 2px; margin: 0 0 10px; }
 #abaCreditos .cred-card .aba-cargo { border: none; margin: 0 0 2px; padding: 0; font-size: .85rem; }
