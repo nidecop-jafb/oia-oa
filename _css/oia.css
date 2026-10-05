@@ -70,7 +70,7 @@ body.abas-compactas .aba-toggle { font-size: 14px; padding: 5px 6px; letter-spac
 .aba-painel[id^="abaFisica"] { font-size: 1.1rem; }
 .aba-painel[id^="abaFisica"] .aba-nota { font-size: 1rem; }
 .aba-painel .fis-intro { font-size: 1.3rem; line-height: 1.5; color: var(--texto); }
-.aba-painel .fis-nota { font-size: 1.12rem; color: #b8b8b8; }
+.aba-painel .fis-nota { font-size: 1.12rem; color: var(--t-aaa); }
 /* respiro a direita e tema em 2 linhas (titulo; paginas, folhas, tempo) sem corte no celular */
 .aba-painel[id^="abaFisica"] { padding-right: 34px; }
 .aba-painel[id^="abaFisica"] ol.temas li { padding: 10px 0; }
