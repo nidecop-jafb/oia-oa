@@ -257,6 +257,30 @@ h3.p-dim span { color: var(--t-aaa); font-weight: normal; }
 .crono .c-gest { color: var(--verde-claro); font-size: .9rem; }
 .crono.troca { animation: crono-pisca .5s 3; }
 @keyframes crono-pisca { 50% { background: var(--caixa); } }
+/* cronometro: cinza neutro (sem azulado), relogio grande em cartao, etapa atual em azul cheio, alvos de toque maiores */
+.crono { padding-top: 22px; }
+.crono h2 { font-size: 1.25rem; color: var(--ciano); line-height: 1.35; }
+.crono .c-sub { font-size: .95rem; color: var(--t-aaa); }
+.crono .c-etapas span { padding: 9px 2px; font-size: .95rem; background: var(--painel); font-weight: 700; }
+.crono .c-etapas span.on { background: var(--azul); border-color: var(--azul); color: var(--forte); }
+.crono .c-etapas span.ok { border-color: var(--verde); }
+.crono .c-relogio { font-size: 4.2rem; background: var(--painel); border: 1px solid var(--b-444); padding: 6px 0; margin: 10px 0 12px; color: var(--forte);
+                    letter-spacing: .04em; }
+.crono .c-txt { font-size: 1.1rem; line-height: 1.6; }
+.crono a.c-livro { background: var(--azul); border-color: var(--azul); color: var(--forte); font-weight: 700; padding: 12px; margin: 0 0 4px; }
+.crono .c-q, .crono .c-duv { background: var(--painel); border: none; border-left: 4px solid var(--b-555); padding: 12px 14px; }
+.crono .c-qt { font-weight: 700; color: var(--forte); }
+.crono .c-alt { background: var(--bloco); border: 1px solid var(--b-444); padding: 11px 12px; color: var(--t-ddd); cursor: pointer; font: inherit; }
+.crono .c-ra { background: var(--painel); border: none; border-left: 4px solid var(--azul); padding: 12px 14px; }
+.crono .c-ra input { background: var(--fundo); }
+.crono .c-ra button, .crono .c-gslot button { background: var(--bloco); }
+.crono .prompt { background: var(--painel); }
+.crono .prompt .copiar { background: var(--bloco); }
+.crono .c-acoes { position: sticky; bottom: 0; background: var(--fundo); padding: 10px 0; margin: 12px 0 0; border-top: 1px solid var(--b-444); }
+.crono .c-acoes button { background: var(--bloco); border-color: var(--azul); color: var(--ciano); padding: 12px 10px; font-weight: 700; }
+.crono .c-acoes .c-sair { border-color: var(--b-555); color: var(--t-aaa); font-weight: 400; }
+.crono.troca { animation: crono-pisca-n .5s 3; }
+@keyframes crono-pisca-n { 50% { background: var(--bloco); } }
 table.hist { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: .9rem; margin: 6px 0 10px; }
 table.hist th, table.hist td { border-bottom: 1px solid var(--b-333); padding: 4px; text-align: left; overflow-wrap: anywhere; }
 table.hist th { color: var(--t-aaa); font-weight: normal; }
