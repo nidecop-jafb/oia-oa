@@ -287,6 +287,17 @@ h3.p-dim span { color: var(--t-aaa); font-weight: normal; }
 [data-tema="claro"] .qr-box img { box-shadow: 0 0 0 1px rgba(0,0,0,.15); }
 [data-tema="claro"] .aba-painel.open { box-shadow: 4px 0 18px rgba(0,0,0,.18); }
 [data-tema="claro"] .aba-toggle.ativa { color: white; background: var(--azul); border-color: var(--azul); }
+/* tema claro nas paginas: cartoes cinza sobre branco ganham um contorno leve para nao se dissolverem no fundo */
+[data-tema="claro"] fieldset.questao, [data-tema="claro"] .form-sug, [data-tema="claro"] .intro,
+[data-tema="claro"] body[data-pagina="instalar"] section, [data-tema="claro"] .agr-vazio, [data-tema="claro"] .sug-anonima,
+[data-tema="claro"] .ava-anonima, [data-tema="claro"] #avaFechada, [data-tema="claro"] .ava-item, [data-tema="claro"] .regras,
+[data-tema="claro"] .ava-abertas li, [data-tema="claro"] .ava-p .qr-box, [data-tema="claro"] .crono .c-q,
+[data-tema="claro"] .crono .c-ra, [data-tema="claro"] .crono .c-relogio, [data-tema="claro"] .progresso {
+  box-shadow: 0 1px 3px rgba(0,0,0,.08), 0 0 0 1px rgba(0,0,0,.05); }
+[data-tema="claro"] .topo-btns { box-shadow: 0 1px 4px rgba(0,0,0,.12); }
+/* endereco sob o QR: quebra so nas barras, nunca no hifen */
+.qr-end span { white-space: nowrap; }
+.qr-box .qr-end { overflow-wrap: normal; }
 table.hist { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: .9rem; margin: 6px 0 10px; }
 table.hist th, table.hist td { border-bottom: 1px solid var(--b-333); padding: 4px; text-align: left; overflow-wrap: anywhere; }
 table.hist th { color: var(--t-aaa); font-weight: normal; }
