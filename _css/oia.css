@@ -316,6 +316,12 @@ h3.p-dim span { color: var(--t-aaa); font-weight: normal; }
 [data-tema="claro"] .crono .c-ra, [data-tema="claro"] .crono .c-relogio, [data-tema="claro"] .progresso {
   box-shadow: 0 1px 3px rgba(0,0,0,.08), 0 0 0 1px rgba(0,0,0,.05); }
 [data-tema="claro"] .topo-btns { box-shadow: 0 1px 4px rgba(0,0,0,.12); }
+/* Estilo (painel) no tema claro: as 4 dimensoes em cartoes brancos com sombra, polo em azul-escuro, texto quase preto */
+[data-tema="claro"] #abaEstilo ul.dims li { background: white; color: #2a2a2a;
+                                           box-shadow: 0 1px 3px rgba(0,0,0,.10), 0 0 0 1px rgba(0,0,0,.05); }
+[data-tema="claro"] #abaEstilo ul.dims li strong { color: #1B5E8C; }
+[data-tema="claro"] #abaEstilo > p { color: #2a2a2a; }
+[data-tema="claro"] #abaEstilo a.aba-btn:not(:first-of-type) { background: white; }
 /* Metodo no tema claro: etapas em cartoes brancos com sombra; prompt em caixa cinza com contorno; rotulos em verde escuro */
 [data-tema="claro"] #abaMetodo .met-bloco { background: white; box-shadow: 0 1px 3px rgba(0,0,0,.10), 0 0 0 1px rgba(0,0,0,.05); }
 [data-tema="claro"] #abaMetodo .prompt { background: #f3f4f6; border: 1px solid #d5d8dd; }
