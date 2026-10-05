@@ -420,6 +420,26 @@ body:is([data-pagina="estilo"], [data-pagina="avaliacao"]) .progresso { border: 
 body:is([data-pagina="estilo"], [data-pagina="avaliacao"]) .progresso button { background: var(--azul); color: white; font-weight: 700; border-color: var(--azul); }
 body:is([data-pagina="estilo"], [data-pagina="avaliacao"]) .progresso button:disabled { background: var(--painel); color: var(--t-888); border-color: var(--b-444); opacity: 1; }
 
+/* resultado do Estilo: cada dimensao em cartao, barra mais alta, prompts agrupados por dimensao, historico legivel */
+body[data-pagina="estilo"] #estRes .dim { background: var(--painel); border-left: 4px solid var(--azul); padding: 12px 14px; margin: 0 0 12px; }
+body[data-pagina="estilo"] .dim-polos { font-weight: 700; color: var(--texto); }
+body[data-pagina="estilo"] .dim-polos span:first-child { color: var(--ciano); }
+body[data-pagina="estilo"] .dim-polos span:last-child { color: var(--verde-claro); }
+body[data-pagina="estilo"] .dim-barra { height: 20px; margin: 8px 0; border-color: var(--b-555); }
+body[data-pagina="estilo"] .dim-grau { color: var(--t-c4); }
+body[data-pagina="estilo"] .regras { border-left-color: var(--verde); padding: 12px 16px; }
+body[data-pagina="estilo"] .regras .p-rot { color: var(--verde-claro); font-weight: 700; margin-top: 0; }
+body[data-pagina="estilo"] #estDicas .p-dim { color: var(--ciano); font-size: 1.15rem; border-top: 2px solid var(--azul);
+                                             padding-top: 12px; margin: 28px 0 4px; }
+body[data-pagina="estilo"] #estDicas .p-dim span { color: var(--t-aaa); font-weight: 400; font-size: .9rem; }
+body[data-pagina="estilo"] #estDicas .p-rot { color: var(--verde-claro); font-weight: 700; font-size: .95rem; margin: 14px 0 6px; }
+body[data-pagina="estilo"] #estDicas .prompt { background: var(--painel); border: none; border-left: 4px solid var(--b-555); padding: 12px 14px; }
+body[data-pagina="estilo"] #estDicas .prompt .copiar { background: var(--bloco); padding: 8px 16px; margin-top: 4px; }
+body[data-pagina="estilo"] table.hist { background: var(--painel); }
+body[data-pagina="estilo"] table.hist th { color: var(--ciano); font-weight: 700; border-bottom: 2px solid var(--azul); }
+body[data-pagina="estilo"] table.hist th, body[data-pagina="estilo"] table.hist td { padding: 8px 6px; }
+body[data-pagina="estilo"] table.hist td:not(:first-child), body[data-pagina="estilo"] table.hist th:not(:first-child) {
+  text-align: center; font-family: 'Courier New', Courier, monospace; }
 /* Avaliacao: abertura, aviso de anonimato e escala 1-5 no mesmo padrao */
 body[data-pagina="avaliacao"] .ava-lead { font-size: 1.2rem; color: var(--forte); line-height: 1.55; margin: 14px 0 12px; }
 body[data-pagina="avaliacao"] .ava-anonima { border-left: 4px solid var(--verde); background: var(--painel); color: var(--t-c4);
