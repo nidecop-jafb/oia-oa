@@ -84,7 +84,7 @@ body.abas-compactas .aba-toggle { font-size: 14px; padding: 5px 6px; letter-spac
 #abaInstalar .qr-box { flex-direction: column; align-items: center; text-align: center; margin: 18px 0 6px; }
 #abaInstalar .qr-box > div { flex: none; }
 #abaInstalar .qr-box img { width: 200px; height: 200px; }
-#abaInstalar .qr-box .qr-end { font-size: .85rem; }
+#abaInstalar .qr-box .qr-end { display: none; }  /* o botao abaixo ja leva ao passo a passo */
 #abaInstalar a.aba-btn { background: var(--azul); border-color: var(--azul); color: var(--forte); font-weight: 700; text-align: center; }
 #abaSite .site-end { font-family: 'Courier New', Courier, monospace; font-size: .9rem; color: var(--ciano);
                      border-left: 4px solid var(--azul); background: var(--caixa2); padding: 8px 12px; overflow-wrap: normal; }
