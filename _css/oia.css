@@ -423,6 +423,12 @@ h3.p-dim span { color: var(--t-aaa); font-weight: normal; }
 :root:not([data-tema="claro"]) #abaSite .qr-box img { box-shadow: 0 4px 14px rgba(0,0,0,.5); }
 :root:not([data-tema="claro"]) #abaSite .qr-box p { color: var(--t-aaa); font-size: .95rem; }
 :root:not([data-tema="claro"]) #abaSite a.aba-btn { padding: 13px 14px; }
+/* Instalar no tema escuro: mesmo desenho do painel Site (QR em moldura cinza com sombra, textos claros, botao mais alto) */
+:root:not([data-tema="claro"]) #abaInstalar .fis-intro { color: var(--texto); }
+:root:not([data-tema="claro"]) #abaInstalar .qr-box { background: var(--bloco); padding: 16px 12px 10px; }
+:root:not([data-tema="claro"]) #abaInstalar .qr-box img { box-shadow: 0 4px 14px rgba(0,0,0,.5); }
+:root:not([data-tema="claro"]) #abaInstalar .qr-box p { color: var(--t-aaa); font-size: .95rem; }
+:root:not([data-tema="claro"]) #abaInstalar a.aba-btn { padding: 13px 14px; }
 /* Creditos no tema escuro: equipe em cartoes com nome em branco; instituicao em cartoes compactos (sem linhas soltas) */
 :root:not([data-tema="claro"]) #abaCreditos .cred-card { background: var(--bloco); padding: 10px 14px 4px; margin-bottom: 12px; }
 :root:not([data-tema="claro"]) #abaCreditos .aba-nome strong { color: white; font-size: 1.05rem; }
