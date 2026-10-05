@@ -1,7 +1,7 @@
 /* oia.css — gerado por _scripts/gerar_site_oia.py (OIA, PRJ-0004). Nao editar a mao.
    Molde: rif-oa. Paleta do icone da Oficina IA: azul-noite, ciano e verde. */
 :root { color-scheme: dark; --azul: #2E86C1; --azul-esc: #1B2A41; --verde: #3E8E5A; --fundo: #0d0d0d; --texto: #e8e8e8; --forte: #fff; --t-ddd: #ddd; --t-c4: #c4c4c4; --t-aaa: #aaa; --t-9a: #9a9a9a; --t-888: #888; --b-555: #555; --b-444: #444; --b-333: #333; --caixa: #1b2a41; --caixa2: #16202f; --painel: #1a1b1f; --bloco: #26272c; --ciano: #8FE0FF; --verde-claro: #7BE495; }
-[data-tema="claro"] { color-scheme: light; --fundo: #ffffff; --texto: #1c1c1c; --forte: #000000; --t-ddd: #2a2a2a; --t-c4: #3a3a3a; --t-aaa: #505050; --t-9a: #5a5a5a; --t-888: #5f5f5f; --b-555: #8c8c8c; --b-444: #c8c8c8; --b-333: #dddddd; --caixa: #eef2f7; --caixa2: #f6f8fb; --painel: #eef2f7; --bloco: #f6f8fb; --ciano: #1B5E8C; --verde-claro: #2D6E45; }
+[data-tema="claro"] { color-scheme: light; --fundo: #ffffff; --texto: #1c1c1c; --forte: #000000; --t-ddd: #2a2a2a; --t-c4: #3a3a3a; --t-aaa: #505050; --t-9a: #5a5a5a; --t-888: #5f5f5f; --b-555: #8c8c8c; --b-444: #c8c8c8; --b-333: #dddddd; --caixa: #eef2f7; --caixa2: #f6f8fb; --painel: #f3f4f6; --bloco: #e4e6ea; --ciano: #1B5E8C; --verde-claro: #2D6E45; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { font-size: 112.5%; }
 html[data-letra="g"] { font-size: 125%; }
@@ -94,7 +94,7 @@ body .aba-painel ul.marc .comecar, body .aba-painel .prompt .copiar { background
 #abaCreditos > .aba-cargo { font-size: .8rem; margin: 10px 0 0; padding-bottom: 0; border-bottom: none; }
 #abaCreditos > .aba-nome { margin-bottom: 0; padding-bottom: 10px; border-bottom: 1px solid var(--b-333); }
 #abaCreditos .cred-ed { font-size: .9rem; color: var(--t-888); margin: 18px 0 6px; }
-#abaCreditos a.aba-btn { background: var(--azul); border-color: var(--azul); color: var(--forte); font-weight: 700; text-align: center; }
+#abaCreditos a.aba-btn { background: var(--azul); border-color: var(--azul); color: white; font-weight: 700; text-align: center; }
 /* paineis Site e Instalar: mesma letra e respiro das demais; endereco em destaque, QR centrado e botao cheio */
 #abaSite, #abaInstalar { font-size: 1.1rem; padding-right: 34px; }
 #abaInstalar .fis-intro { font-size: 1.2rem; }
@@ -102,7 +102,7 @@ body .aba-painel ul.marc .comecar, body .aba-painel .prompt .copiar { background
 #abaInstalar .qr-box > div { flex: none; }
 #abaInstalar .qr-box img { width: 200px; height: 200px; }
 #abaInstalar .qr-box .qr-end { display: none; }  /* o botao abaixo ja leva ao passo a passo */
-#abaInstalar a.aba-btn { background: var(--azul); border-color: var(--azul); color: var(--forte); font-weight: 700; text-align: center; }
+#abaInstalar a.aba-btn { background: var(--azul); border-color: var(--azul); color: white; font-weight: 700; text-align: center; }
 #abaSite .site-end { font-family: 'Courier New', Courier, monospace; font-size: .9rem; color: var(--ciano);
                      border-left: 4px solid var(--azul); background: var(--caixa2); padding: 8px 12px; overflow-wrap: normal; }
 #abaSite .site-end span { white-space: nowrap; }  /* quebra so na barra, nunca no hifen */
@@ -111,7 +111,7 @@ body .aba-painel ul.marc .comecar, body .aba-painel .prompt .copiar { background
 #abaSite .qr-box > div { flex: none; }
 #abaSite .qr-box img { width: 200px; height: 200px; }
 #abaSite .qr-box .qr-end { display: none; }  /* o endereco ja esta acima */
-#abaSite a.aba-btn { background: var(--azul); border-color: var(--azul); color: var(--forte); font-weight: 700; text-align: center; }
+#abaSite a.aba-btn { background: var(--azul); border-color: var(--azul); color: white; font-weight: 700; text-align: center; }
 /* QR preto no branco tambem no tema escuro (senao nao escaneia) */
 .qr-box { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin: 12px 0 16px; }
 .qr-box img { width: 170px; height: 170px; background: white; padding: 8px; border-radius: 6px; flex: none; }
@@ -165,7 +165,7 @@ ul.dims li strong { display: block; color: var(--ciano); font-weight: 700; }
 /* painel Estilo: mesma letra e respiro das abas Metodo e Fisica */
 #abaEstilo { font-size: 1.1rem; padding-right: 34px; }
 #abaEstilo a.aba-btn { border-color: var(--azul); color: var(--ciano); font-weight: 700; text-align: center; }
-#abaEstilo a.aba-btn:first-of-type { background: var(--azul); color: var(--forte); }
+#abaEstilo a.aba-btn:first-of-type { background: var(--azul); color: white; }
 .form-sug input[type="text"], .form-sug select { width: 100%; background: var(--fundo); color: var(--texto);
                                                  border: 1px solid var(--b-555); padding: 8px; }
 .form-sug .duas { display: flex; gap: 10px; flex-wrap: wrap; }
@@ -262,12 +262,12 @@ h3.p-dim span { color: var(--t-aaa); font-weight: normal; }
 .crono h2 { font-size: 1.25rem; color: var(--ciano); line-height: 1.35; }
 .crono .c-sub { font-size: .95rem; color: var(--t-aaa); }
 .crono .c-etapas span { padding: 9px 2px; font-size: .88rem; background: var(--painel); font-weight: 700; }
-.crono .c-etapas span.on { background: var(--azul); border-color: var(--azul); color: var(--forte); }
+.crono .c-etapas span.on { background: var(--azul); border-color: var(--azul); color: white; }
 .crono .c-etapas span.ok { border-color: var(--verde); }
 .crono .c-relogio { font-size: 4.2rem; background: var(--painel); border: 1px solid var(--b-444); padding: 6px 0; margin: 10px 0 12px; color: var(--forte);
                     letter-spacing: .04em; }
 .crono .c-txt { font-size: 1.1rem; line-height: 1.6; }
-.crono a.c-livro { background: var(--azul); border-color: var(--azul); color: var(--forte); font-weight: 700; padding: 12px; margin: 0 0 4px; }
+.crono a.c-livro { background: var(--azul); border-color: var(--azul); color: white; font-weight: 700; padding: 12px; margin: 0 0 4px; }
 .crono .c-q, .crono .c-duv { background: var(--painel); border: none; border-left: 4px solid var(--b-555); padding: 12px 14px; }
 .crono .c-qt { font-weight: 700; color: var(--forte); }
 .crono .c-alt { background: var(--bloco); border: 1px solid var(--b-444); padding: 11px 12px; color: var(--t-ddd); cursor: pointer; font: inherit; }
@@ -283,6 +283,10 @@ h3.p-dim span { color: var(--t-aaa); font-weight: normal; }
 .crono .c-acoes .c-sair { border-color: var(--b-555); color: var(--t-aaa); font-weight: 400; }
 .crono.troca { animation: crono-pisca-n .5s 3; }
 @keyframes crono-pisca-n { 50% { background: var(--bloco); } }
+/* tema claro: QR e painel com contorno (branco sobre branco some), sombra no painel aberto */
+[data-tema="claro"] .qr-box img { box-shadow: 0 0 0 1px rgba(0,0,0,.15); }
+[data-tema="claro"] .aba-painel.open { box-shadow: 4px 0 18px rgba(0,0,0,.18); }
+[data-tema="claro"] .aba-toggle.ativa { color: white; background: var(--azul); border-color: var(--azul); }
 table.hist { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: .9rem; margin: 6px 0 10px; }
 table.hist th, table.hist td { border-bottom: 1px solid var(--b-333); padding: 4px; text-align: left; overflow-wrap: anywhere; }
 table.hist th { color: var(--t-aaa); font-weight: normal; }
@@ -325,7 +329,7 @@ body[data-pagina="instalar"] ol.num { list-style: none; counter-reset: passo; ma
 body[data-pagina="instalar"] ol.num li { counter-increment: passo; position: relative; padding: 2px 0 0 44px;
                                          min-height: 32px; margin-bottom: 12px; }
 body[data-pagina="instalar"] ol.num li::before { content: counter(passo); position: absolute; left: 0; top: 0; width: 30px;
-  height: 30px; border-radius: 50%; background: var(--azul); color: var(--forte); font-weight: 700; display: flex;
+  height: 30px; border-radius: 50%; background: var(--azul); color: white; font-weight: 700; display: flex;
   align-items: center; justify-content: center; font-size: .95rem; }
 body[data-pagina="instalar"] ol.num strong { color: var(--ciano); }
 /* painel da Avaliacao (projetado no encerramento): caixas neutras, botoes de acao cheios, resultados em cartoes */
@@ -334,7 +338,7 @@ body[data-pagina="avaliacao-painel"] .form-sug { background: var(--painel); bord
 body[data-pagina="avaliacao-painel"] .form-sug > label { color: var(--ciano); font-weight: 700; font-size: 1.05rem; margin-top: 0; }
 body[data-pagina="avaliacao-painel"] .form-sug button { background: var(--bloco); border-color: var(--azul); color: var(--ciano);
                                                        margin: 10px 8px 0 0; padding: 10px 16px; }
-body[data-pagina="avaliacao-painel"] .form-sug button.forte { background: var(--azul); color: var(--forte); font-weight: 700; }
+body[data-pagina="avaliacao-painel"] .form-sug button.forte { background: var(--azul); color: white; font-weight: 700; }
 body[data-pagina="avaliacao-painel"] .form-sug .nota { margin-top: 12px; }
 body[data-pagina="avaliacao-painel"] #avaJanela { font-size: 1.15rem; margin: 0; }
 body[data-pagina="avaliacao-painel"] .qr-box { flex-direction: column; text-align: center; background: var(--painel); padding: 18px; }
@@ -369,7 +373,7 @@ body[data-pagina="agradecimentos"] .agr-lead { font-size: 1.2rem; color: var(--f
 body[data-pagina="agradecimentos"] .agr-vazio { background: var(--painel); border-left: 4px solid var(--verde); padding: 14px 16px 16px; }
 body[data-pagina="agradecimentos"] .agr-vazio .nota { color: var(--t-c4); margin: 0 0 14px; }
 body[data-pagina="agradecimentos"] .agr-btn { display: block; text-align: center; padding: 12px; background: var(--azul);
-  color: var(--forte); font-weight: 700; text-decoration: none; }
+  color: white; font-weight: 700; text-decoration: none; }
 body[data-pagina="agradecimentos"] .agr-btn:hover { filter: brightness(1.1); }
 /* pagina Enviar sugestao: abertura grande, aviso de anonimato em destaque, texto e audio em partes separadas */
 body[data-pagina="sugestoes"] .sug-lead { font-size: 1.2rem; color: var(--forte); line-height: 1.55; margin: 14px 0 12px; }
@@ -384,7 +388,7 @@ body[data-pagina="sugestoes"] .form-sug textarea { min-height: 140px; }
 body[data-pagina="sugestoes"] .sug-audio { border-top: 1px solid var(--b-444); margin-top: 20px; padding-top: 14px; }
 body[data-pagina="sugestoes"] .sug-audio button { background: var(--bloco); border-color: var(--azul); color: var(--ciano); margin: 6px 6px 0 0; }
 body[data-pagina="sugestoes"] #btnEnviar { display: block; width: 100%; margin-top: 20px; padding: 12px; background: var(--azul);
-  border-color: var(--azul); color: var(--forte); font-weight: 700; font-size: 1.05rem; }
+  border-color: var(--azul); color: white; font-weight: 700; font-size: 1.05rem; }
 body[data-pagina="sugestoes"] .msg-ok { border-left: 4px solid var(--verde); background: var(--painel); padding: 12px 14px; }
 /* questionarios Estilo e Avaliacao: caixas em cinza neutro, perguntas em cartoes, alternativas como botoes de toque */
 body:is([data-pagina="estilo"], [data-pagina="avaliacao"]) .form-sug, body:is([data-pagina="estilo"], [data-pagina="avaliacao"]) .progresso, body:is([data-pagina="estilo"], [data-pagina="avaliacao"]) .regras,
@@ -402,7 +406,7 @@ body:is([data-pagina="estilo"], [data-pagina="avaliacao"]) fieldset.questao .q-n
 body:is([data-pagina="estilo"], [data-pagina="avaliacao"]) fieldset.questao > label { border: 1px solid var(--b-444); padding: 10px 12px; margin: 0 0 8px; color: var(--t-ddd); }
 body:is([data-pagina="estilo"], [data-pagina="avaliacao"]) fieldset.questao > label:has(input:checked) { border-color: var(--azul); background: var(--bloco); color: var(--forte); }
 body:is([data-pagina="estilo"], [data-pagina="avaliacao"]) .progresso { border: none; border-top: 2px solid var(--azul); }
-body:is([data-pagina="estilo"], [data-pagina="avaliacao"]) .progresso button { background: var(--azul); color: var(--forte); font-weight: 700; border-color: var(--azul); }
+body:is([data-pagina="estilo"], [data-pagina="avaliacao"]) .progresso button { background: var(--azul); color: white; font-weight: 700; border-color: var(--azul); }
 body:is([data-pagina="estilo"], [data-pagina="avaliacao"]) .progresso button:disabled { background: var(--painel); color: var(--t-888); border-color: var(--b-444); opacity: 1; }
 
 /* Avaliacao: abertura, aviso de anonimato e escala 1-5 no mesmo padrao */
@@ -412,7 +416,7 @@ body[data-pagina="avaliacao"] .ava-anonima { border-left: 4px solid var(--verde)
 body[data-pagina="avaliacao"] .ava-anonima strong { color: var(--verde-claro); }
 body[data-pagina="avaliacao"] #avaFechada { border-left: 4px solid var(--azul); background: var(--painel); padding: 12px 14px; }
 body[data-pagina="avaliacao"] fieldset.questao .likert label { border-color: var(--b-444); background: var(--bloco); padding: 10px 2px; }
-body[data-pagina="avaliacao"] fieldset.questao .likert label:has(input:checked) { border-color: var(--azul); background: var(--azul); color: var(--forte); }
+body[data-pagina="avaliacao"] fieldset.questao .likert label:has(input:checked) { border-color: var(--azul); background: var(--azul); color: white; }
 body[data-pagina="avaliacao"] fieldset.questao .likert-leg { color: var(--t-aaa); font-size: .9rem; margin-top: 6px; }
 body[data-pagina="avaliacao"] fieldset.questao textarea { background: var(--fundo); }
 body[data-pagina="avaliacao"] section > p { color: var(--t-c4); }
