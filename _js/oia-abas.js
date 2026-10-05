@@ -19,9 +19,22 @@
       if (abrir) { painel(t).classList.add('open'); t.classList.add('ativa'); }
     });
   });
+  /* celular: tocar em qualquer parte fecha a aba, menos nos controles do painel (links, botoes, temas, campos) */
+  var celular = window.matchMedia('(max-width: 560px)');
+  var CONTROLES = 'a, button, summary, input, select, textarea, label, .prompt';
   [].slice.call(document.querySelectorAll('.aba-painel')).forEach(function (p) {
-    p.addEventListener('click', function (e) { if (!e.target.closest('a')) { e.stopPropagation(); } });
+    p.addEventListener('click', function (e) {
+      if (e.target.closest('a')) { return; }
+      e.stopPropagation();
+      if (celular.matches && !e.target.closest(CONTROLES)) { fechar(); }
+    });
   });
+  /* toque fora com aba aberta: so fecha, sem acionar o que estiver por baixo */
+  document.addEventListener('click', function (e) {
+    var aberta = document.querySelector('.aba-painel.open');
+    if (!aberta || e.target.closest('.aba-painel, .aba-toggle, .topo-btns')) { return; }
+    e.preventDefault(); e.stopPropagation(); fechar();
+  }, true);
   document.addEventListener('click', fechar);
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { fechar(); } });
   empilhar();
