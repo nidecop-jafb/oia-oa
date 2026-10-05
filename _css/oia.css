@@ -302,6 +302,21 @@ body[data-pagina="instalar"] ol.num li::before { content: counter(passo); positi
   height: 30px; border-radius: 50%; background: var(--azul); color: var(--forte); font-weight: 700; display: flex;
   align-items: center; justify-content: center; font-size: .95rem; }
 body[data-pagina="instalar"] ol.num strong { color: var(--ciano); }
+/* pagina Enviar sugestao: abertura grande, aviso de anonimato em destaque, texto e audio em partes separadas */
+body[data-pagina="sugestoes"] .sug-lead { font-size: 1.2rem; color: var(--forte); line-height: 1.55; margin: 14px 0 12px; }
+body[data-pagina="sugestoes"] .sug-lead strong { color: var(--ciano); }
+body[data-pagina="sugestoes"] .sug-anonima { border-left: 4px solid var(--verde); background: var(--painel); color: var(--t-c4);
+                                            padding: 10px 14px; margin: 0 0 20px; }
+body[data-pagina="sugestoes"] .sug-anonima strong { color: var(--verde-claro); }
+body[data-pagina="sugestoes"] .form-sug { background: var(--painel); border: none; border-left: 4px solid var(--azul); padding: 16px; }
+body[data-pagina="sugestoes"] .form-sug > label, body[data-pagina="sugestoes"] .sug-audio > label {
+  color: var(--ciano); font-size: 1.1rem; font-weight: 700; margin: 4px 0 8px; }
+body[data-pagina="sugestoes"] .form-sug textarea { min-height: 140px; }
+body[data-pagina="sugestoes"] .sug-audio { border-top: 1px solid var(--b-444); margin-top: 20px; padding-top: 14px; }
+body[data-pagina="sugestoes"] .sug-audio button { background: var(--bloco); border-color: var(--azul); color: var(--ciano); margin: 6px 6px 0 0; }
+body[data-pagina="sugestoes"] #btnEnviar { display: block; width: 100%; margin-top: 20px; padding: 12px; background: var(--azul);
+  border-color: var(--azul); color: var(--forte); font-weight: 700; font-size: 1.05rem; }
+body[data-pagina="sugestoes"] .msg-ok { border-left: 4px solid var(--verde); background: var(--painel); padding: 12px 14px; }
 /* pagina do questionario Estilo: caixas em cinza neutro, perguntas em cartoes, alternativas como botoes de toque */
 body[data-pagina="estilo"] .form-sug, body[data-pagina="estilo"] .progresso, body[data-pagina="estilo"] .regras,
 body[data-pagina="estilo"] .dim-barra, body[data-pagina="estilo"] .grupo-barra { background: var(--bloco); }
