@@ -90,7 +90,8 @@ body.abas-compactas .aba-toggle { font-size: 14px; padding: 5px 6px; letter-spac
 .aba-painel[id^="abaFisica"] ol.temas ul.marc li { border: none; padding: 3px 0; }
 .aba-painel[id^="abaFisica"] ul.marc .m-n1 { color: var(--texto); }
 .aba-painel[id^="abaFisica"] ul.marc .m-n2 { color: var(--t-c4); }
-.aba-painel[id^="abaFisica"] ul.marc .m-sess { border-top: 1px solid var(--b-444); padding-top: 10px; margin-top: 10px; font-weight: 700; }
+.aba-painel[id^="abaFisica"] ul.marc .m-sess { border-top: 1px solid var(--b-444); padding-top: 10px; margin-top: 10px; font-weight: 700;
+  font-family: Calibri, Carlito, 'Segoe UI', Roboto, Arial, sans-serif; }
 .aba-painel[id^="abaFisica"] ul.marc li.m-sess:first-child { border-top: none; padding-top: 0; margin-top: 0; }
 .aba-painel[id^="abaFisica"] ul.marc .comecar { display: block; width: 100%; margin: 8px 0 4px; padding: 10px; background: var(--azul);
   border-color: var(--azul); color: white; font-weight: 700; font-family: inherit; font-size: 1rem; }
