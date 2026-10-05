@@ -631,9 +631,9 @@ body[data-pagina="avaliacao"] fieldset.questao > label:has(input:checked) { back
 body[data-pagina="avaliacao"] fieldset.questao > label:has(input:focus-visible) { outline: 2px solid var(--ciano); outline-offset: 2px; }
 body[data-pagina="avaliacao"] fieldset.questao textarea { min-height: 96px; border-color: var(--b-555); padding: 10px; }
 body[data-pagina="avaliacao"] fieldset.questao legend .nota { font-weight: 400; font-size: .9rem; }
-body[data-pagina="avaliacao"] .progresso { display: flex; align-items: center; justify-content: space-between; gap: 10px;
-  padding: 10px 12px; }
-body[data-pagina="avaliacao"] .progresso span { font-size: .9rem; line-height: 1.35; }
+body[data-pagina="avaliacao"] .progresso { display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between;
+  gap: 10px; padding: 10px 12px; }
+body[data-pagina="avaliacao"] .progresso span { flex: 1 1 auto; min-width: 0; font-size: .85rem; line-height: 1.35; }
 body[data-pagina="avaliacao"] .progresso button { white-space: nowrap; flex: none; }
 @media (max-width: 800px) {
   .wrap { padding-left: 46px; }          /* as abas fixas nao cobrem o texto */
