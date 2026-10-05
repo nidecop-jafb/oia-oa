@@ -161,6 +161,14 @@ h3.p-dim span { color: var(--t-aaa); font-weight: normal; }
 .prompt .copiar { background: var(--caixa); color: var(--ciano); border: 1px solid var(--azul); padding: 6px 12px; cursor: pointer; }
 .aba-painel .met-etapa { color: var(--ciano); margin: 14px 0 4px; }
 .aba-painel ol.met-perg { margin: 0 0 10px; padding-left: 22px; }
+/* aba Metodo: mesma letra e respiro das abas Fisica; cada etapa num bloco proprio */
+#abaMetodo { font-size: 1.1rem; padding-right: 34px; }
+#abaMetodo ul.met-lista { margin: 0 0 14px; padding-left: 22px; }
+#abaMetodo ul.met-lista li, #abaMetodo ol.met-perg li { margin-bottom: 6px; }
+#abaMetodo .met-bloco { border-left: 4px solid var(--azul); background: var(--caixa2); padding: 12px 14px 4px; margin: 22px 0; }
+#abaMetodo .met-bloco .met-etapa { font-size: 1.2rem; margin: 0 0 8px; }
+#abaMetodo .met-rot { font-size: .85em; color: var(--verde-claro); text-transform: none; letter-spacing: .02em; margin: 12px 0 6px; }
+#abaMetodo .prompt { background: var(--caixa); }
 .aba-painel .met-estilo { font-size: .85rem; color: var(--verde-claro); }
 .aba-painel ul.marc .comecar { background: var(--caixa); color: var(--ciano); border: 1px solid var(--azul); padding: 4px 10px;
   margin: 2px 0 2px 6px; cursor: pointer; font: inherit; font-size: .85rem; }

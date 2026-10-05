@@ -49,26 +49,39 @@
 <button class="aba-toggle" id="abaMetodoT">Método</button>
 <aside class="aba-painel" id="abaMetodo">
   <h3>Método</h3>
-  <p>Você estuda cada tema do livro em sessões de até 30 min. As abas Física 1, 2 e 3 já dividem cada tema em sessões; em cada uma, o botão Começar abre o cronômetro com as 3 etapas abaixo e o prompt de IA de cada etapa, já preenchido com o tema, as páginas e os subtítulos, e o botão que abre o livro digital oficial (acesso pelo cadastro da escola).</p>
+  <p class="fis-intro">Você estuda cada tema do livro em sessões de até 30 min.</p>
+  <p>As abas Física 1, 2 e 3 já dividem cada tema em sessões. Em cada uma, o botão Começar abre:</p>
+  <ul class="met-lista"><li>o cronômetro com as 3 etapas abaixo;</li><li>o prompt de IA de cada etapa, já preenchido com o tema, as páginas e os subtítulos;</li><li>o botão que abre o livro digital oficial (acesso pelo cadastro da escola).</li></ul>
   <p>Na Física 1, cada etapa traz 3 perguntas de múltipla escolha, corrigidas na hora no celular e enviadas com o seu RA. O que você errar no Antes entra no prompt do Durante; o que errar no Durante e no Depois vira um prompt de revisão no fim da sessão e no começo da próxima.</p>
+  <section class="met-bloco">
   <h4 class="met-etapa">Antes · 5 min</h4>
   <p>Leia o objetivo e os títulos dos marcadores da sessão, sem estudar ainda. A partir da 2.ª sessão do tema, use os 2 primeiros minutos para lembrar, sem olhar o livro, o que estudou na sessão anterior.</p>
-  <p>Física 2 e 3: responda no caderno.</p>
+  <p class="met-rot">Física 2 e 3: responda no caderno.</p>
   <ol class="met-perg"><li>O que você lembra da sessão anterior, sem olhar o livro? <em>(da 2.ª sessão em diante)</em></li><li>Pelos subtítulos, sobre o que você acha que esta sessão vai falar?</li><li>O que você já sabe sobre este assunto? Escreva uma situação do seu dia a dia ou da mineração em que ele aparece.</li></ol>
+  <p class="met-rot">Prompt da etapa</p>
   <div class="prompt"><p>Vou estudar [o tema] no livro Física Identidade, páginas [páginas]. Os subtítulos são: [subtítulos da sessão]. Antes de eu ler, faça 3 perguntas curtas sobre o que eu já sei desse assunto e diga, em 2 linhas, que ideia liga esses subtítulos. Não explique o conteúdo ainda.</p><button type="button" class="copiar">Copiar</button></div>
+  </section>
+  <section class="met-bloco">
   <h4 class="met-etapa">Durante · 20 min</h4>
   <p>Leitura ativa das páginas da sessão: anote as ideias principais, refaça os exemplos resolvidos e grave até 3 dúvidas curtas em áudio (20 s cada, uma por gravação, fale com clareza). Mande o mesmo áudio para a IA, pelo modo de voz ou como anexo, junto com o prompt. A IA entra só quando você travar.</p>
-  <p>Física 2 e 3: responda no caderno.</p>
+  <p class="met-rot">Física 2 e 3: responda no caderno.</p>
   <ol class="met-perg"><li>Qual é a ideia principal de cada subtítulo, em uma frase sua?</li><li>Que grandezas aparecem, com que unidades? Se houver equação, o que significa cada letra?</li><li>O que você não entendeu? Anote a página e o trecho para perguntar à IA ou ao professor.</li></ol>
+  <p class="met-rot">Prompt da etapa</p>
   <div class="prompt"><p>Estou lendo [o tema] (páginas [páginas]). Gravei até 3 dúvidas curtas em áudio e vou enviar o áudio a você (ou escrevi aqui: 1) [...] 2) [...] 3) [...]). Explique cada dúvida com um exemplo da mineração ou do dia a dia e me faça uma pergunta para checar se entendi. Não resolva os exercícios por mim.</p><button type="button" class="copiar">Copiar</button></div>
+  </section>
+  <section class="met-bloco">
   <h4 class="met-etapa">Depois · 5 min</h4>
   <p>Escreva um resumo de 3 linhas e resolva 1 questão. Na última sessão do tema, faça as Atividades finais do livro.</p>
-  <p>Física 2 e 3: responda no caderno.</p>
+  <p class="met-rot">Física 2 e 3: responda no caderno.</p>
   <ol class="met-perg"><li>Sem olhar o livro, resuma a sessão em 3 linhas.</li><li>Onde isso aparece na mineração, em Ouro Preto ou no seu dia a dia?</li><li>Resolva uma questão (do livro ou a que a IA propôs) e confira a unidade da resposta.</li><li>Faça as Atividades finais do tema, no fim do capítulo. <em>(na última sessão do tema)</em></li></ol>
+  <p class="met-rot">Prompt da etapa</p>
   <div class="prompt"><p>Acabei de estudar [o tema] (páginas [páginas]). Meu resumo em 3 linhas: [escreva aqui]. Corrija o que estiver errado ou faltando, sem reescrever tudo, e me dê 1 questão curta para eu resolver agora. Depois confira a minha resposta, com as unidades.</p><button type="button" class="copiar">Copiar</button></div>
+  </section>
   <p class="met-estilo" hidden></p>
+  <section class="met-bloco">
   <h4 class="met-etapa">Tema com 2 ou 3 sessões</h4>
   <p>Estude cada sessão em um dia diferente: tema de 2 sessões, 2 dias; de 3 sessões, 3 dias. Lembrar no dia seguinte, sem olhar, é o que fixa o conteúdo.</p>
+  </section>
   <p class="aba-nota">Use a IA para pensar junto, não para pensar por você: tente primeiro, peça pistas e confira no livro.</p>
 </aside>
 <button class="aba-toggle" id="abaFisica1T">Física 1</button>
