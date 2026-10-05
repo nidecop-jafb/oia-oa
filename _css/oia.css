@@ -1,6 +1,6 @@
 /* oia.css — gerado por _scripts/gerar_site_oia.py (OIA, PRJ-0004). Nao editar a mao.
    Molde: rif-oa. Paleta do icone da Oficina IA: azul-noite, ciano e verde. */
-:root { color-scheme: dark; --azul: #2E86C1; --azul-esc: #1B2A41; --verde: #3E8E5A; --fundo: #0f1724; --texto: #e8e8e8; --forte: #fff; --t-ddd: #ddd; --t-c4: #c4c4c4; --t-aaa: #aaa; --t-9a: #9a9a9a; --t-888: #888; --b-555: #555; --b-444: #444; --b-333: #333; --caixa: #1b2a41; --caixa2: #16202f; --ciano: #8FE0FF; --verde-claro: #7BE495; }
+:root { color-scheme: dark; --azul: #2E86C1; --azul-esc: #1B2A41; --verde: #3E8E5A; --fundo: #0d0d0d; --texto: #e8e8e8; --forte: #fff; --t-ddd: #ddd; --t-c4: #c4c4c4; --t-aaa: #aaa; --t-9a: #9a9a9a; --t-888: #888; --b-555: #555; --b-444: #444; --b-333: #333; --caixa: #1b2a41; --caixa2: #16202f; --ciano: #8FE0FF; --verde-claro: #7BE495; }
 [data-tema="claro"] { color-scheme: light; --fundo: #ffffff; --texto: #1c1c1c; --forte: #000000; --t-ddd: #2a2a2a; --t-c4: #3a3a3a; --t-aaa: #505050; --t-9a: #5a5a5a; --t-888: #5f5f5f; --b-555: #8c8c8c; --b-444: #c8c8c8; --b-333: #dddddd; --caixa: #eef2f7; --caixa2: #f6f8fb; --ciano: #1B5E8C; --verde-claro: #2D6E45; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { font-size: 112.5%; }
@@ -36,7 +36,7 @@ ol.num li { margin-bottom: 6px; }
 body.abas-compactas .aba-toggle { font-size: 14px; padding: 5px 6px; letter-spacing: 0; }
 .aba-toggle:hover { color: var(--ciano); }
 .aba-toggle.aqui { color: white; background: var(--azul); border-color: var(--azul); }
-.aba-toggle.ativa { color: rgb(15,23,36); background: rgb(143,224,255); border-color: rgb(143,224,255); font-weight: 700; }
+.aba-toggle.ativa { color: rgb(13,13,13); background: rgb(143,224,255); border-color: rgb(143,224,255); font-weight: 700; }
 .aba-painel { position: fixed; top: 0; left: 0; z-index: 997; width: 400px; max-width: 88vw; height: 100vh;
               overflow-y: auto; background: var(--caixa); border-right: 1px solid var(--b-444); padding: 24px 22px 24px 42px;
               transform: translateX(-100%); transition: transform .25s; font-size: .95rem; color: var(--t-c4); line-height: 1.6; }
@@ -124,9 +124,14 @@ body.abas-compactas .aba-toggle { font-size: 14px; padding: 5px 6px; letter-spac
 .msg-erro[hidden], .msg-ok[hidden] { display: none; }
 
 /* estilo de aprendizagem (questionario, resultado e painel do grupo) */
-ul.dims { margin: 0 0 12px 1.2em; }
-ul.dims li { margin-bottom: 6px; }
-.aba-painel ul.dims { margin-left: 1.1em; }
+/* 4 dimensoes em blocos: polo em destaque na 1.a linha, explicacao embaixo */
+ul.dims { list-style: none; margin: 4px 0 16px; padding: 0; }
+ul.dims li { border-left: 4px solid var(--azul); background: var(--caixa2); padding: 8px 12px; margin-bottom: 8px; }
+ul.dims li strong { display: block; color: var(--ciano); font-weight: 700; }
+/* painel Estilo: mesma letra e respiro das abas Metodo e Fisica */
+#abaEstilo { font-size: 1.1rem; padding-right: 34px; }
+#abaEstilo a.aba-btn { border-color: var(--azul); color: var(--ciano); font-weight: 700; text-align: center; }
+#abaEstilo a.aba-btn:first-of-type { background: var(--azul); color: var(--forte); }
 .form-sug input[type="text"], .form-sug select { width: 100%; background: var(--fundo); color: var(--texto);
                                                  border: 1px solid var(--b-555); padding: 8px; }
 .form-sug .duas { display: flex; gap: 10px; flex-wrap: wrap; }
