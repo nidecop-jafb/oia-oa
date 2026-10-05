@@ -8,8 +8,20 @@
     function pos(gap) { var y = 56; toggles.forEach(function (t) { t.style.top = y + 'px'; y += t.offsetHeight + gap; }); return y; }
     if (pos(10) > window.innerHeight) { document.body.classList.add('abas-compactas'); pos(4); }
   }
+  var estBtn = document.getElementById('estiloBtn'), estPainel = document.getElementById('abaEstilo');
   function fechar() {
     toggles.forEach(function (t) { t.classList.remove('ativa'); painel(t).classList.remove('open'); });
+    if (estPainel) { estPainel.classList.remove('open'); }
+    if (estBtn) { estBtn.classList.remove('ativa'); estBtn.setAttribute('aria-expanded', 'false'); }
+  }
+  /* icone Estilo (topo): abre/fecha o painel Estilo, que nao tem lingueta na lateral */
+  if (estBtn && estPainel) {
+    estBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var abrir = !estPainel.classList.contains('open');
+      fechar();
+      if (abrir) { estPainel.classList.add('open'); estBtn.classList.add('ativa'); estBtn.setAttribute('aria-expanded', 'true'); }
+    });
   }
   toggles.forEach(function (t) {
     t.addEventListener('click', function (e) {

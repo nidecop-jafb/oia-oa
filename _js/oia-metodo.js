@@ -310,6 +310,6 @@
       b.addEventListener('click', function () { copiar(b); });
     });
     var polo = estilo(), el = document.querySelector('#abaMetodo .met-estilo');
-    if (el && polo) { el.textContent = 'Seu estilo (aba Estilo): ' + polo + '. Os prompts do cronômetro ganham uma linha para ele: ' + D.ajuste[polo]; el.hidden = false; }
+    if (el && polo) { el.textContent = 'Seu estilo (ícone Estilo, no topo): ' + polo + '. Os prompts do cronômetro ganham uma linha para ele: ' + D.ajuste[polo]; el.hidden = false; }
   });
 })();
