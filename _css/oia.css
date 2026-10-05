@@ -421,6 +421,14 @@ body:is([data-pagina="estilo"], [data-pagina="avaliacao"]) .progresso button { b
 body:is([data-pagina="estilo"], [data-pagina="avaliacao"]) .progresso button:disabled { background: var(--painel); color: var(--t-888); border-color: var(--b-444); opacity: 1; }
 
 /* resultado do Estilo: cada dimensao em cartao, barra mais alta, prompts agrupados por dimensao, historico legivel */
+/* painel do grupo: total em destaque, cada dimensao em cartao como no resultado, barra mais alta */
+body[data-pagina="estilo"] #estGrupo > p:first-child { font-size: 1.1rem; margin: 6px 0 14px; }
+body[data-pagina="estilo"] #estGrupo > p:first-child strong { font-family: 'Courier New', Courier, monospace; font-size: 2.2rem;
+                                                             color: var(--ciano); margin-right: 4px; }
+body[data-pagina="estilo"] #estGrupo .dim { background: var(--painel); border-left: 4px solid var(--azul); padding: 12px 14px; margin: 0 0 12px; }
+body[data-pagina="estilo"] .grupo-barra { height: 26px; margin: 8px 0; border-color: var(--b-555); }
+body[data-pagina="estilo"] .grupo-leg { font-size: .88rem; margin: 0; line-height: 1.5; }
+body[data-pagina="estilo"] #estGrupo > .nota:last-child { font-size: .9rem; margin-top: 4px; }
 body[data-pagina="estilo"] #estRes .dim { background: var(--painel); border-left: 4px solid var(--azul); padding: 12px 14px; margin: 0 0 12px; }
 body[data-pagina="estilo"] .dim-polos { font-weight: 700; color: var(--texto); }
 body[data-pagina="estilo"] .dim-polos span:first-child { color: var(--ciano); }
