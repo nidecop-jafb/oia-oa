@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Painel ao vivo da avaliação da Oficina IA, só para a equipe.">
+<meta name="description" content="Física 1, Tema 03 — Conceitos fundamentais da Cinemática, sessão 2: aquecimento, estudo focado e atividade final.">
 <meta name="theme-color" content="#1B2A41">
 <link rel="manifest" href="../../manifest.webmanifest">
 <link rel="icon" href="../../_icones/favicon.ico" sizes="any">
@@ -15,9 +15,9 @@
   var l; try { l = localStorage.getItem('oia-letra'); } catch (e) {}
   if (l === 'g' || l === 'gg') { document.documentElement.setAttribute('data-letra', l); } })();</script>
 <link rel="stylesheet" href="../../_css/oia.css">
-<title>Painel da avaliação · Oficina IA nos estudos</title>
+<title>Tema 03 · Sessão 2 · Oficina IA nos estudos</title>
 </head>
-<body data-pagina="avaliacao-painel">
+<body data-pagina="T03-S2">
 <button class="aba-toggle" id="abaSiteT">Site</button>
 <aside class="aba-painel" id="abaSite">
   <h3>Site</h3>
@@ -75,7 +75,7 @@
   </section>
   <p class="aba-nota">Use a IA para pensar junto, não para pensar por você: tente primeiro, peça pistas e confira no livro.</p>
 </aside>
-<button class="aba-toggle" id="abaFisica1T">Física 1</button>
+<button class="aba-toggle aqui" id="abaFisica1T" aria-current="page">Física 1</button>
 <aside class="aba-painel" id="abaFisica1">
   <h3>Física 1</h3>
   <img class="disc-ic" src="../../_icones/fisica-1.svg" width="72" height="72" alt="Ícone de Física 1">
@@ -565,39 +565,25 @@
 </aside>
 <div class="wrap">
 <div class="topo-btns"><a class="inicio-btn" href="../../index.html" aria-label="Início" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5.5h4V20"/></svg></a><button class="crono-btn" id="cronoBtn" type="button" aria-haspopup="dialog" aria-label="Resumo em Áudio" title="Resumo em Áudio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13.5" r="8"/><path d="M12 9.5v4l2.5 2.5M9.5 2.5h5M12 2.5v3"/></svg></button><button class="letra-btn" id="letraMenos" type="button" aria-label="Diminuir a letra" title="Diminuir a letra">A&minus;</button><button class="letra-btn" id="letraMais" type="button" aria-label="Aumentar a letra" title="Aumentar a letra">A+</button><button class="tema-btn" id="temaBtn" type="button" aria-label="Mudar o tema"><svg class="sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v2.5M12 20v2.5M1.5 12h2.5M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg><svg class="lua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg></button><button class="instalar-btn" id="instalarBtn" type="button" aria-controls="abaInstalar" aria-expanded="false" aria-label="Instalar" title="Instalar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M12 7v7"/><path d="M9 11l3 3 3-3"/><path d="M10 18h4"/></svg></button><button class="estilo-btn" id="estiloBtn" type="button" aria-controls="abaEstilo" aria-expanded="false" aria-label="Estilo de aprendizagem" title="Estilo de aprendizagem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1.1 1.3 1.1 2.2h5c0-.9.5-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg></button><div class="ava-menu-box"><button class="ava-menu-btn" id="avaMenuBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Avaliação, sugestões e agradecimentos" title="Avaliação"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M8.5 13l2.5 2.5 4.5-5"/></svg></button><nav class="ava-menu" id="avaMenu" hidden><a href="../../avaliacao/index.html">Responder a avaliação</a><a href="../../avaliacao/painel/index.html">Painel do professor</a><a href="../../sugestoes/index.html">Enviar sugestão</a><a href="../../agradecimentos/index.html">Agradecimentos</a></nav></div></div>
-<div class="ava-p">
-  <h1>Painel da avaliação</h1>
-  <p>Resultado ao vivo da <a href="../index.html">avaliação da oficina</a>, para projetar no encerramento. Só médias,
-  contagens e respostas escritas: a avaliação é anônima.</p>
-  <div class="form-sug" id="avaChaveBox">
-    <label for="avaChave">Chave da equipe</label>
-    <input type="password" id="avaChave" autocomplete="off">
-    <p class="msg-erro" id="avaChaveErro" hidden></p>
-    <button type="button" id="btnAvaChave" class="forte">Abrir o painel</button>
-    <p class="nota">A chave fica só nesta aba do navegador e some ao fechá-la.</p>
-  </div>
-  <div id="avaPainel" hidden>
-    <div class="form-sug">
-      <p id="avaJanela"><strong>Avaliação fechada.</strong></p>
-      <button type="button" id="btnAvaAbrir" class="forte">Abrir a avaliação</button>
-      <button type="button" id="btnAvaFechar" hidden>Fechar a avaliação</button>
-    </div>
-    <div class="qr-box" id="avaQr" hidden><img src="../../_icones/oia-qr-avaliacao.svg" width="320" height="320"
-      alt="QR code que abre a avaliação da oficina"><div><p>Aponte a câmera do celular para o QR code e responda a
-      avaliação.</p><p class="qr-end"><span>nidecop-jafb.github.io</span><wbr>/<span>oia-oa</span><wbr>/<span>avaliacao</span>/</p></div></div>
-    <div class="form-sug">
-      <p class="nota" id="avaStatus"></p>
-      <p class="chk"><input type="checkbox" id="avaTeste"><span>Incluir os envios de teste da equipe</span></p>
-      <button type="button" id="btnAvaProjetar" class="forte">Projetar o resultado</button>
-      <button type="button" id="btnAvaAtualizar">Atualizar agora</button>
-      <button type="button" id="btnAvaCsv" class="forte">Baixar CSV</button>
-    </div>
-    <div id="avaRes"></div>
-  </div>
-  <button type="button" id="btnAvaSairProj" class="proj-sair" hidden>Sair da projeção</button>
+<div class="sessao">
+  <p class="s-volta">Física 1 · Tema 03</p>
+  <h1>Tema 03 — Conceitos fundamentais da Cinemática</h1>
+  <p class="s-sub">Sessão 2 de 2 · páginas 52 a 56 · Movimento uniformemente variado; Atividades finais</p>
+  <div class="s-rev s-caixa" hidden></div>
+  <div class="fase fase-1"><p class="fase-t"><span class="fase-n">Fase 1</span> Aquecimento — até 10 min</p>
+  <p class="s-mat">Comece organizando os materiais de estudo: livro-texto impresso, caderno de Física, caneta, lápis, borracha, régua e calculadora científica. Toque no cronômetro, no alto da tela, e aperte “Começar o aquecimento”.</p>
+  <div class="grad-g" data-g="1"><p class="etapa"><span class="etapa-n" aria-label="Etapa 1">1</span><span><strong>Responda no celular</strong> as 3 perguntas iniciais. Elas são corrigidas na hora.</span></p><div class="c-ra" hidden><label for="cRA">Seu RA (só os números), para enviar as respostas:</label><input id="cRA" inputmode="numeric" autocomplete="off"><button type="button" class="c-ra-ok">Guardar</button></div><div class="c-cards"></div><p class="c-aviso" hidden></p></div>
+  <div class="grad-g" data-g="2"><p class="etapa"><span class="etapa-n" aria-label="Etapa 2">2</span><span><strong>Abra o livro impresso na página 52</strong> e deixe-o aberto ao lado do caderno.</span></p></div>
+  <div class="grad-g" data-g="3"><p class="etapa"><span class="etapa-n" aria-label="Etapa 3">3</span><span><strong>Ouça o Resumo em Áudio</strong> da sessão.</span></p><div class="s-caixa"><span class="s-ref">Em breve: o áudio desta sessão ainda está sendo gravado.</span></div></div>
+  <div class="grad-g" data-g="4"><p class="etapa"><span class="etapa-n" aria-label="Etapa 4">4</span><span><strong>Explore o exemplo resolvido</strong>: tente refazer no caderno, compare com a Resolução em 5 passos e com a condensada e marque em que passo você errou.</span></p><div class="s-caixa"><p><b>Livro, página 53 · exemplo do gráfico v × t</b> <span class="s-ref">(exemplo do texto · Pensamento Quantitativo)</span></p><button type="button" class="s-ex" aria-expanded="false" aria-controls="exPassos">Resolução em 5 passos</button><button type="button" class="s-ex" aria-expanded="false" aria-controls="exCond">Resolução condensada</button><button type="button" class="s-ex" aria-expanded="false" aria-controls="exErrei">Em que passo eu errei?</button><ol class="s-passos s-caixa" id="exPassos" hidden><li><b>O que a questão quer?</b> Qual é a aceleração média do veículo no trecho em que ele acelera (0 a 20 s) e no trecho em que freia (45 a 60 s)?</li><li><b>O que eu tenho?</b> Do gráfico v × t: em t = 0, v = 0; em t = 20 s, v = 15 m/s; em t = 45 s, v = 15 m/s; em t = 60 s, v = 0.</li><li><b>Qual é o desenho?</b> Gráfico v × t em três trechos: subida (acelera), reta horizontal (velocidade constante) e descida (freia). Aceleração média: aₘ = Δv / Δt.</li><li><b>Minha solução</b> 0 a 20 s: aₘ = (15 − 0) / (20 − 0) = 0,75 m/s². 45 a 60 s: aₘ = (0 − 15) / (60 − 45) = −1 m/s².</li><li><b>Confiro e respondo</b> Sinal positivo no trecho em que a velocidade aumenta (acelerado) e negativo no que diminui (retardado); unidade m/s². Resposta: 0,75 m/s² e −1 m/s².</li></ol><p class="s-caixa" id="exCond" hidden>aₘ = Δv/Δt: 15/20 = 0,75 m/s² (acelerado); −15/15 = −1 m/s² (retardado).</p><div class="s-errei s-caixa" id="exErrei" hidden><p>Compare com o que você fez no caderno e marque. Pode marcar mais de um.</p><label><input type="checkbox" class="s-perr" value="1"> 1 · O que a questão quer?</label><label><input type="checkbox" class="s-perr" value="2"> 2 · O que eu tenho?</label><label><input type="checkbox" class="s-perr" value="3"> 3 · Qual é o desenho?</label><label><input type="checkbox" class="s-perr" value="4"> 4 · Minha solução</label><label><input type="checkbox" class="s-perr" value="5"> 5 · Confiro e respondo</label><label><input type="checkbox" class="s-perr" value="0"> Não errei</label></div></div></div></div>
+  <div class="fase fase-2 grad-g" data-g="5"><p class="fase-t"><span class="fase-n">Fase 2</span> Estudo focado — até 15 min</p>
+  <p class="etapa"><span class="etapa-n" aria-label="Etapa 5">5</span><span><strong>Toque no cronômetro e aperte “Começar o estudo”</strong>: até 15 minutos.</span></p>
+  <p class="etapa"><span class="etapa-n" aria-label="Etapa 6">6</span><span><strong>Resolva no caderno, pelos 5 passos</strong>, as 3 questões do livro: da mais simples para a mais exigente, cada uma com a resolução condensada. Travou? Grave a dúvida em áudio.</span></p><ol class="s-focado s-caixa"><li><b>Página 55, questão 2</b> <span class="s-ref">qualitativa · L2 Compreender</span></li><li><b>Página 56, questão 6</b> <span class="s-ref">quantitativa · L3 Aplicar</span></li><li><b>Página 54, questão 1</b> <span class="s-ref">quantitativa · L4 Analisar</span></li></ol><div class="c-duv"></div>
+  <p class="etapa"><span class="etapa-n" aria-label="Etapa 7">7</span><span><strong>Atividade final — até 5 min:</strong> esta é a última sessão do tema. Abra a Folha de Atividades, imprima (ou copie no caderno), resolva à mão pelos 5 passos e entregue na monitoria do Pavilhão de Física.<br><a class="s-fa" href="../../fa/T03.html" target="_blank" rel="noopener">Abrir a Folha de Atividades</a></span></p>
+  <p class="etapa"><span class="etapa-n" aria-label="Etapa 8">8</span><span><strong>Anote no caderno</strong> em que passo você errou: é esse passo que você treina na próxima sessão.</span></p>
+  <p class="etapa fim"><span class="etapa-n" aria-label="Etapa 9">9</span><span>Sucesso no seu estudo!</span></p></div>
 </div>
-<script>window.OIA_COLETA = "https://script.google.com/macros/s/AKfycbxeCb9a0BlRe9LnKuuIw_EjNOnKlEGO_yV4_rzuUWyNbVU4ws_isV-rjjYsl8FZ44nO/exec"; window.OIA_AVA = {"notas": ["s1", "s2", "s3", "s4", "a1", "a2", "m1", "m2", "m3", "m4"], "escolhas": ["continuar", "recomenda"], "grupos": [["Satisfação", "Dê uma nota de 1 a 5 para cada item.", ["muito ruim", "ótimo"], false, [["s1", "A oficina, no geral"], ["s2", "O ritmo das sessões de 30 min"], ["s3", "O material: o site e o livro digital"], ["s4", "A equipe e a monitoria"]]], ["Antes e agora", "Quanto você sabia e quanto sabe agora, de 1 a 5.", ["nada", "muito bem"], false, [["a1", "Antes da oficina, eu sabia usar IA para estudar Física"], ["a2", "Agora, eu sei usar IA para estudar Física"]]], ["O método", "Quanto cada parte ajudou você a estudar? Se você não usou, marque Não usei.", ["não ajudou", "ajudou muito"], true, [["m1", "As 3 etapas da sessão: Antes, Durante e Depois"], ["m2", "O cronômetro da sessão"], ["m3", "Os prompts prontos para a IA"], ["m4", "As dúvidas em áudio"]]]], "opcoes": [["sim", "Sim"], ["talvez", "Talvez"], ["nao", "Não"]], "cursos": ["Mineração", "Metalurgia", "Edificações", "Automação Industrial", "Informática", "Outro"], "anos": [["1", "1.º ano"], ["2", "2.º ano"], ["3", "3.º ano"]], "sessoes": [["1", "1 sessão"], ["2", "2 sessões"], ["3+", "3 ou mais"]], "abertas": [["ajudou", "O que mais ajudou você na oficina?"], ["mudar", "O que você mudaria na oficina?"]]};</script>
-<script src="../../_js/oia-avaliacao-painel.js"></script>
+<script>window.OIA_SESSAO = {"id": "T03-S2", "banco": [{"q": "Lembrando da sessão anterior: o que caracteriza o movimento uniforme?", "a": ["Aceleração constante e não nula.", "Velocidade escalar constante.", "Trajetória sempre reta.", "Corpo sempre parado."], "c": 1, "fb": ["Isso define o uniformemente variado.", "Isso: deslocamentos iguais em tempos iguais.", "Uniforme fala da velocidade, não da forma da trajetória.", "Parado é repouso."], "ref": "Movimento uniforme, p. 49"}, {"q": "Ao frear um carro, o que acontece com a aceleração?", "a": ["Ela é zero.", "Ela tem sentido contrário ao da velocidade.", "Ela tem o mesmo sentido da velocidade.", "Ela deixa de existir."], "c": 1, "fb": ["Se a velocidade muda, há aceleração.", "Isso: frenagem também é aceleração, no sentido oposto.", "Assim a velocidade aumentaria.", "Existe, pois a velocidade varia."], "ref": "Movimento uniformemente variado, p. 52"}, {"q": "Qual unidade do SI mede aceleração?", "a": ["m/s", "m/s²", "km/h", "s/m"], "c": 1, "fb": ["m/s é velocidade.", "Isso: variação de velocidade (m/s) por segundo.", "km/h é velocidade, fora do SI.", "Unidade invertida."], "ref": "Unidades de aceleração, p. 53"}], "url": "https://script.google.com/macros/s/AKfycbwTJpLTj1i72zc5RfPw1JeCVGikjzJD7XpvvqqDTfgmEVBkuV_rxqIOF7yxvToi5aOA/exec", "coleta": "https://script.google.com/macros/s/AKfycbxeCb9a0BlRe9LnKuuIw_EjNOnKlEGO_yV4_rzuUWyNbVU4ws_isV-rjjYsl8FZ44nO/exec", "audios": [["Versão rápida", "../../_audio/OIA-CRONO-MD-rapido.m4a"], ["Versão curta", "../../_audio/OIA-CRONO-MD-curto.m4a"]]};</script>
   <div class="footer">
     <div class="footer-marcas"><a href="https://ouropreto.ifmg.edu.br/ouropreto" target="_blank" rel="noopener" title="IFMG — Campus Ouro Preto (abre em nova aba)"><svg class="oia-ic" xmlns="http://www.w3.org/2000/svg" viewBox="-36.75 -4 258.5 258.5" role="img" aria-label="Instituto Federal de Minas Gerais"> <title>Instituto Federal de Minas Gerais</title> <circle cx="27" cy="27" r="30" fill="#C8191E"/> <g fill="#32A041"> <rect x="65.5" y="0" width="54" height="54"/> <rect x="131" y="0" width="54" height="54"/> <rect x="0" y="65.5" width="54" height="54"/> <rect x="65.5" y="65.5" width="54" height="54"/> <rect x="0" y="131" width="54" height="54"/> <rect x="65.5" y="131" width="54" height="54"/> <rect x="131" y="131" width="54" height="54"/> <rect x="0" y="196.5" width="54" height="54"/> <rect x="65.5" y="196.5" width="54" height="54"/> </g> </svg></a><svg class="oia-ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="NIDEC — Núcleo de Inovação e Desenvolvimento de Experimentos Científicos"> <title>NIDEC — Núcleo de Inovação e Desenvolvimento de Experimentos Científicos</title> <defs> <linearGradient id="inst-nidec-o1" gradientUnits="userSpaceOnUse" x1="8" y1="100" x2="192" y2="100" gradientTransform="rotate(-30 100 100)"> <stop offset="0" stop-color="#4A1F95"/><stop offset=".38" stop-color="#2C5AA4"/> <stop offset=".70" stop-color="#2CC2A2"/><stop offset="1" stop-color="#2C9E41"/> </linearGradient> <linearGradient id="inst-nidec-o2" gradientUnits="userSpaceOnUse" x1="8" y1="100" x2="192" y2="100" gradientTransform="rotate(-90 100 100)"> <stop offset="0" stop-color="#4A1F95"/><stop offset=".38" stop-color="#2C5AA4"/> <stop offset=".70" stop-color="#2CC2A2"/><stop offset="1" stop-color="#2C9E41"/> </linearGradient> <linearGradient id="inst-nidec-o3" gradientUnits="userSpaceOnUse" x1="8" y1="100" x2="192" y2="100" gradientTransform="rotate(-150 100 100)"> <stop offset="0" stop-color="#4A1F95"/><stop offset=".38" stop-color="#2C5AA4"/> <stop offset=".70" stop-color="#2CC2A2"/><stop offset="1" stop-color="#2C9E41"/> </linearGradient> <radialGradient id="inst-nidec-nucleo" cx="40%" cy="36%" r="70%"> <stop offset="0" stop-color="#A0EBE1"/> <stop offset=".45" stop-color="#2CC8C2"/> <stop offset="1" stop-color="#1E5DA5"/> </radialGradient> </defs> <g fill="none" stroke-width="8"> <g transform="rotate(30 100 100)" stroke="url(#inst-nidec-o1)"> <ellipse cx="100" cy="100" rx="88" ry="31"/> <circle cx="188" cy="100" r="8" fill="url(#inst-nidec-o1)" stroke="none"/> </g> <g transform="rotate(90 100 100)" stroke="url(#inst-nidec-o2)"> <ellipse cx="100" cy="100" rx="88" ry="31"/> <circle cx="12" cy="100" r="8" fill="url(#inst-nidec-o2)" stroke="none"/> </g> <g transform="rotate(150 100 100)" stroke="url(#inst-nidec-o3)"> <ellipse cx="100" cy="100" rx="88" ry="31"/> <circle cx="188" cy="100" r="8" fill="url(#inst-nidec-o3)" stroke="none"/> </g> </g> <circle cx="100" cy="100" r="23" fill="url(#inst-nidec-nucleo)"/> </svg></div>
     <p>IFMG <em>Campus</em> Ouro Preto · Coordenadoria da Área de Física (CODAFIS) · Núcleo de Inovação e
@@ -610,6 +596,6 @@
 <script>if ('serviceWorker' in navigator && location.protocol.indexOf('http') === 0) { navigator.serviceWorker.register('../../sw.js'); }</script>
 <script src="../../_js/oia-abas.js"></script>
 <script src="../../_js/oia-metodo.js"></script>
-<script src="../../_js/oia-crono.js"></script>
+<script src="../../_js/oia-sessao.js"></script>
 </body>
 </html>

@@ -99,6 +99,7 @@ body.abas-compactas .aba-toggle { font-size: 14px; padding: 5px 6px; letter-spac
 .aba-painel[id^="abaFisica"] ul.marc .comecar { display: block; width: 100%; margin: 8px 0 4px; padding: 10px; background: var(--azul);
   border-color: var(--azul); color: white; font-weight: 700; font-family: inherit; font-size: 1rem; }
 .aba-painel[id^="abaFisica"] ul.marc { font-size: 1.02rem; }
+.aba-painel ul.marc a.comecar { text-align: center; text-decoration: none; border: 1px solid var(--azul); }
 /* blocos dentro dos paineis: cinza neutro (sem o azulado), como o painel da LME */
 /* (prefixo body: estas regras vem antes das originais no arquivo e precisam vencer) */
 body .aba-painel ul.dims li, body #abaMetodo .met-bloco, body #abaSite .site-end, #abaCreditos .cred-card { background: var(--bloco); }
@@ -356,22 +357,70 @@ h3.p-dim span { color: var(--t-aaa); font-weight: normal; }
 .crono .c-gslot button[disabled] { color: var(--t-888); border-color: var(--b-444); cursor: default; }
 .crono .c-gslot .c-gparar { color: var(--texto); }
 .crono .c-gest { color: var(--verde-claro); font-size: .9rem; }
-/* Fisica 1 com o livro: aquecimento gradativo, exemplo resolvido, estudo focado, Folha de Atividades */
-.crono ol.c-grad, .crono ol.c-focado { margin: 0 0 10px; padding-left: 24px; }
-.crono ol.c-grad > li, .crono ol.c-focado > li { margin: 0 0 12px; padding: 10px 12px; border-left: 4px solid var(--b-444); background: var(--painel); }
-.crono ol.c-grad > li::marker, .crono ol.c-focado > li::marker { color: var(--ciano); font-weight: bold; }
-.crono ol.c-grad audio { display: block; width: 100%; margin: 8px 0 0; }
-.crono .c-prox, .crono .c-ex, .crono a.c-fa { display: inline-block; margin: 8px 6px 0 0; padding: 9px 12px; min-height: 44px;
-  background: var(--bloco); color: var(--ciano); border: 1px solid var(--azul); cursor: pointer; font: inherit; text-decoration: none; }
-.crono .c-ex[aria-expanded="true"] { background: var(--azul); color: white; }
-.crono a.c-fa { background: var(--azul); color: white; font-weight: 700; }
-.crono .c-ex-t { margin: 8px 0 0; }
-.crono .c-ex-btns { display: flex; flex-wrap: wrap; }
-.crono .c-ex-v { margin: 10px 0 0; padding: 10px 12px; background: var(--fundo); border: 1px solid var(--b-444); }
-.crono ol.c-ex-passos { padding-left: 32px; }
-.crono ol.c-ex-passos li { margin: 0 0 6px; }
-.crono .c-ex-errei label { display: block; padding: 6px 0; cursor: pointer; }
-.crono .c-ex-errei input { width: 20px; height: 20px; vertical-align: middle; margin-right: 6px; }
+/* pagina da sessao da Fisica 1, molde da trilha do RIF (PRE-metodo-prj0004-sessao-pagina-rif-fisica1-2026-10-06):
+   ambar = Fase 1 (aquecimento, A no cronometro), azul = Fase 2 (estudo, E) */
+.sessao .s-volta { font-size: .95rem; }
+.sessao h1 { font-size: 1.35rem; color: var(--ciano); margin: 10px 0 4px; line-height: 1.35; }
+.sessao .s-sub { color: var(--t-aaa); margin: 0 0 16px; }
+.sessao .s-mat { margin: 0 0 14px; }
+.sessao .fase-t { font-family: 'Courier New', Courier, monospace; font-weight: bold; font-size: 1.05rem; text-transform: uppercase;
+  letter-spacing: .03em; color: #E3B35C; border: 2px solid #E3B35C; background: rgba(227,179,92,.12); padding: 10px 14px;
+  margin: 8px 0 14px; max-width: none; }
+.sessao .fase-t .fase-n { display: inline-block; background: #E3B35C; color: var(--fundo); padding: 0 8px; margin-right: 6px; }
+.sessao .fase-2 > .fase-t { color: var(--ciano); border-color: var(--azul); background: rgba(74,127,193,.14); margin-top: 34px; }
+.sessao .fase-2 > .fase-t .fase-n { background: var(--azul); color: white; }
+.sessao .etapa { display: flex; gap: 10px; align-items: flex-start; margin: 18px 0 10px; }
+.sessao .etapa-n { flex: none; width: 1.7em; height: 1.7em; line-height: 1.7em; border-radius: 50%; text-align: center;
+  background: var(--verde); color: white; font-weight: bold; }
+.sessao .etapa.fim { font-weight: bold; color: var(--verde-claro); }
+.sessao .grad-g { scroll-margin-top: 64px; }
+.sessao .grad-g[hidden] { display: none; }
+.sessao .grad-btn, .sessao .s-ex, .sessao a.s-fa { display: inline-block; margin: 10px 8px 4px 0; padding: 11px 16px; min-height: 44px;
+  border: 2px solid #E3B35C; background: #151619; color: #E3B35C; font: inherit; font-weight: bold; cursor: pointer;
+  border-radius: 6px; text-decoration: none; }
+.sessao .s-ex { border-color: var(--azul); color: var(--ciano); font-weight: normal; }
+.sessao .s-ex[aria-expanded="true"], .sessao a.s-fa { background: var(--azul); border-color: var(--azul); color: white; }
+.sessao .s-caixa { border-left: 4px solid var(--b-555); background: var(--painel); padding: 12px 14px; margin: 8px 0 12px; }
+.sessao .s-caixa audio { width: 100%; margin-top: 6px; }
+.sessao .s-ref { color: var(--t-888); }
+.sessao ol.s-passos { padding-left: 26px; }
+.sessao ol.s-passos li, .sessao ol.s-focado li { margin: 0 0 8px; }
+.sessao ol.s-focado { padding-left: 26px; }
+.sessao .s-errei label { display: block; padding: 6px 0; cursor: pointer; }
+.sessao .s-errei input { width: 20px; height: 20px; vertical-align: middle; margin-right: 6px; }
+.sessao .c-rot { color: var(--ciano); margin: 10px 0 6px; font-weight: bold; }
+.sessao .c-q { background: var(--painel); border-left: 4px solid var(--b-555); padding: 12px 14px; margin: 0 0 10px; }
+.sessao .c-qt { margin: 0 0 8px; font-weight: 700; color: var(--forte); }
+.sessao .c-alt { display: block; width: 100%; text-align: left; margin: 0 0 6px; padding: 11px 12px; background: var(--bloco);
+  border: 1px solid var(--b-444); color: var(--t-ddd); cursor: pointer; font: inherit; }
+.sessao .c-alt[disabled] { cursor: default; color: var(--t-888); }
+.sessao .c-alt.certa { border-color: var(--verde-claro); color: var(--verde-claro); }
+.sessao .c-alt.errada { border-color: var(--t-c4); color: var(--t-c4); text-decoration: line-through; }
+.sessao .c-fb { margin: 4px 0 0; font-size: .95rem; }
+.sessao .c-fb.ok { color: var(--verde-claro); }
+.sessao .c-fb.nao { color: var(--t-c4); }
+.sessao .c-ref { color: var(--t-888); }
+.sessao .c-aviso { color: var(--ciano); font-size: .95rem; }
+.sessao .c-ra { border-left: 4px solid var(--azul); background: var(--painel); padding: 12px 14px; margin: 0 0 10px; }
+.sessao .c-ra label { display: block; margin: 0 0 6px; }
+.sessao .c-ra input { width: 10em; max-width: 60%; padding: 8px; font: inherit; background: var(--fundo); color: var(--texto); border: 1px solid var(--b-444); }
+.sessao .c-ra button, .sessao .c-gslot button { padding: 8px 12px; margin-left: 6px; background: var(--bloco); color: var(--ciano);
+  border: 1px solid var(--azul); cursor: pointer; font: inherit; min-height: 40px; }
+.sessao .c-duv { background: var(--painel); border-left: 4px solid var(--b-555); padding: 12px 14px; margin: 10px 0; }
+.sessao .c-gslot { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 0 0 8px; }
+.sessao .c-gn { font-family: 'Courier New', Courier, monospace; color: var(--ciano); }
+.sessao .c-gslot audio { max-width: 100%; height: 36px; }
+.sessao .c-gest { color: var(--verde-claro); font-size: .9rem; }
+/* na sessao da Fisica 1 o cronometro do topo conta (A = aquecimento, E = estudo), como o rif-crono.js */
+.crono-btn.rodando, .crono-btn.aquec { width: 46px; padding: 0; font-family: 'Courier New', Courier, monospace;
+  font-weight: bold; font-size: .7rem; white-space: nowrap; letter-spacing: -.02em; }
+.crono-btn.rodando { border-color: var(--azul); color: var(--ciano); }
+.crono-btn.aquec { color: #E3B35C; border-color: #E3B35C; }
+.crono-btn.congelado { border-style: dashed; }
+dialog.sessao-dlg p.meta { font-weight: bold; color: var(--forte); }
+dialog.sessao-dlg .acoes { flex-wrap: wrap; gap: 10px; }
+dialog.sessao-dlg button { min-height: 44px; }
+dialog.sessao-dlg button:not(.principal) { background: #151619; border-color: var(--b-555); color: var(--texto); font-weight: normal; }
 .crono.troca { animation: crono-pisca .5s 3; }
 @keyframes crono-pisca { 50% { background: var(--caixa); } }
 /* cronometro: cinza neutro (sem azulado), relogio grande em cartao, etapa atual em azul cheio, alvos de toque maiores */
@@ -625,13 +674,31 @@ body.projetando .ava-bar { height: 30px; }
 [data-tema="claro"] .crono .c-acoes .c-sair { color: #5f5f5f; border-color: #c8c8c8; }
 [data-tema="claro"] .crono .c-ra input { background: white; border-color: #c8c8c8; }
 [data-tema="claro"] .crono .prompt .copiar, [data-tema="claro"] .crono .c-ra button, [data-tema="claro"] .crono .c-gslot button { background: white; }
-[data-tema="claro"] .crono ol.c-grad > li, [data-tema="claro"] .crono ol.c-focado > li, [data-tema="claro"] .crono .c-ex-v {
-  background: white; color: #1c1c1c; border-color: #d5d8dd; box-shadow: 0 1px 3px rgba(0,0,0,.10); }
-[data-tema="claro"] .crono ol.c-grad > li, [data-tema="claro"] .crono ol.c-focado > li { border-left-color: var(--azul); }
-[data-tema="claro"] .crono ol.c-grad > li::marker, [data-tema="claro"] .crono ol.c-focado > li::marker { color: #1B5E8C; }
-[data-tema="claro"] .crono .c-prox, [data-tema="claro"] .crono .c-ex { background: white; color: #1B5E8C; }
-[data-tema="claro"] .crono .c-ex[aria-expanded="true"] { background: var(--azul); color: white; }
-[data-tema="claro"] .crono .c-ref { color: #5f5f5f; }
+/* pagina da sessao e cronometro do topo no tema claro: cartoes brancos, ambar e azul escurecidos para leitura */
+[data-tema="claro"] .sessao h1, [data-tema="claro"] .sessao .c-rot, [data-tema="claro"] .sessao .c-gn { color: #1B5E8C; }
+[data-tema="claro"] .sessao .s-sub, [data-tema="claro"] .sessao .s-ref, [data-tema="claro"] .sessao .c-ref { color: #5f5f5f; }
+[data-tema="claro"] .sessao .fase-t { color: #8A5A00; border-color: #B7791F; background: #FFF7E6; }
+[data-tema="claro"] .sessao .fase-t .fase-n { background: #B7791F; color: white; }
+[data-tema="claro"] .sessao .fase-2 > .fase-t { color: #1B5E8C; border-color: var(--azul); background: #EAF2FB; }
+[data-tema="claro"] .sessao .fase-2 > .fase-t .fase-n { background: var(--azul); color: white; }
+[data-tema="claro"] .sessao .grad-btn { background: white; color: #8A5A00; border-color: #B7791F; }
+[data-tema="claro"] .sessao .s-ex { background: white; color: #1B5E8C; }
+[data-tema="claro"] .sessao .s-ex[aria-expanded="true"], [data-tema="claro"] .sessao a.s-fa { background: var(--azul); color: white; }
+[data-tema="claro"] .sessao .s-caixa, [data-tema="claro"] .sessao .c-q, [data-tema="claro"] .sessao .c-ra,
+[data-tema="claro"] .sessao .c-duv { background: white; color: #1c1c1c; box-shadow: 0 1px 3px rgba(0,0,0,.10), 0 0 0 1px rgba(0,0,0,.05); }
+[data-tema="claro"] .sessao .c-qt { color: #1c1c1c; }
+[data-tema="claro"] .sessao .c-alt { background: #f3f4f6; color: #1c1c1c; border-color: #c8c8c8; }
+[data-tema="claro"] .sessao .c-alt.certa { color: #2D6E45; border-color: var(--verde); background: #eaf5ee; }
+[data-tema="claro"] .sessao .c-alt.errada { color: #5f5f5f; }
+[data-tema="claro"] .sessao .c-fb.ok, [data-tema="claro"] .sessao .etapa.fim, [data-tema="claro"] .sessao .c-gest { color: #2D6E45; }
+[data-tema="claro"] .sessao .c-fb.nao { color: #5f5f5f; }
+[data-tema="claro"] .sessao .c-aviso { color: #1B5E8C; }
+[data-tema="claro"] .sessao .c-ra input { background: white; color: #1c1c1c; border-color: #c8c8c8; }
+[data-tema="claro"] .sessao .c-ra button, [data-tema="claro"] .sessao .c-gslot button { background: white; color: #1B5E8C; }
+[data-tema="claro"] .crono-btn.rodando { color: #1B5E8C; border-color: var(--azul); }
+[data-tema="claro"] .crono-btn.aquec { color: #8A5A00; border-color: #B7791F; }
+[data-tema="claro"] dialog.sessao-dlg p.meta { color: #1c1c1c; }
+[data-tema="claro"] dialog.sessao-dlg button:not(.principal) { background: #f3f4f6; color: #1c1c1c; border-color: #c8c8c8; }
 [data-tema="claro"] .crono.troca { animation-name: crono-pisca-claro; }
 @keyframes crono-pisca-claro { 50% { background: #d9e8f5; } }
 /* Projetar no tema claro: fundo branco, cartoes brancos com sombra, barras em azul forte (o ciano claro some no projetor) */
