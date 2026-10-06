@@ -208,20 +208,28 @@
   function cronometro() {
     var b = document.getElementById('cronoBtn');
     if (!b) { return; }
+    /* Uma linha do tempo so de 30 min (PRE-metodo-prj0004-fase3-analise-cronometro30-fisica1-2026-10-06):
+       aquecimento 0-10, estudo 10-25, atividade final 25-30, sem novo toque; alerta aos 29; pausa aos 30.
+       Estado: { ini: ms, parado: ms | null, visto: { estudo, final, alerta } }. */
     var rapido = /[?&]rapido=1\b/.test(location.search), MIN = rapido ? 1000 : 60000;
-    var CHAVE = 'oia-crono-' + S.id, DUR = { aquec: 10 * MIN, foco: 15 * MIN };
-    var NOME = { aquec: 'Aquecimento', foco: 'Estudo' }, LET = { aquec: 'A', foco: 'E' };
+    var CHAVE = 'oia-crono-' + S.id, FIM = { aquec: 10 * MIN, foco: 25 * MIN, final: 30 * MIN };
+    var NOME = { aquec: 'Aquecimento', foco: 'Estudo focado', final: 'Atividade final' };
     var ICONE = b.innerHTML, est = null, timer = null, dlg = null;
-    function lerE() { try { return JSON.parse(ler(CHAVE) || 'null'); } catch (x) { return null; } }
+    function lerE() {
+      try { var e = JSON.parse(ler(CHAVE) || 'null'); return e && !e.fase ? e : null; } catch (x) { return null; }   /* formato antigo (com fase) e descartado */
+    }
     function gravarE() { try { if (est) { localStorage.setItem(CHAVE, JSON.stringify(est)); } else { localStorage.removeItem(CHAVE); } } catch (x) { /* sem localStorage */ } }
-    function resta() { return est ? est.dur - ((est.parado || Date.now()) - est.ini) : 0; }
+    function passou() { return est ? (est.parado || Date.now()) - est.ini : 0; }
+    function faseAgora() { var p = passou(); return p < FIM.aquec ? 'aquec' : (p < FIM.foco ? 'foco' : 'final'); }
+    function resta() { return est ? FIM[faseAgora()] - passou() : 0; }
+    function vibrar() { try { if (navigator.vibrate) { navigator.vibrate([300, 150, 300]); } } catch (x) { /* sem vibracao */ } }
     function mmss(ms) { var s = Math.max(0, Math.ceil(ms / 1000)), m = Math.floor(s / 60); s = s % 60; return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s; }
     function rot(r) { b.setAttribute('aria-label', r); b.title = r; }
     function fechar() {
       var d = dlg; dlg = null;
       if (d) { [].forEach.call(d.querySelectorAll('audio'), function (a) { a.pause(); }); if (d.close && d.open) { d.close(); } d.remove(); }
     }
-    function janela(titulo, textos, botoes, forte) {
+    function janela(titulo, textos, botoes, forte, comAudio) {
       fechar();
       var d = document.createElement('dialog');
       d.className = 'crono-dlg sessao-dlg'; d.setAttribute('aria-labelledby', 'cronoTit');
@@ -231,7 +239,7 @@
         var p = document.createElement('p'); p.textContent = t; if (i === 0 && forte) { p.className = 'meta'; }
         d.querySelector('.texto').appendChild(p);
       });
-      if (forte && (S.audios || []).length) {      /* Resumo em Audio do metodo, como a janela do oia-crono.js */
+      if (comAudio && (S.audios || []).length) {   /* Resumo em Audio do metodo, so na janela das metas */
         var au = document.createElement('div'); au.className = 'crono-audio';
         S.audios.forEach(function (x) {
           var r = document.createElement('p'), a = document.createElement('audio');
@@ -253,45 +261,59 @@
       if (d.showModal) { d.showModal(); } else { d.setAttribute('open', ''); }
       (foco || acoes.firstChild).focus();
     }
-    function iniciar(fase) { est = { fase: fase, ini: Date.now(), dur: DUR[fase], parado: null }; gravarE(); pintar(); }
+    function iniciar() { est = { ini: Date.now(), parado: null, visto: {} }; gravarE(); pintar(); }
     function zerar() { est = null; gravarE(); pintar(); }
-    function estudar() { return ['Começar o estudo (15 min)', function () { iniciar('foco'); }, true]; }
-    function avisoAquec() { janela('Aquecimento concluído', 'Os 10 minutos de aquecimento acabaram. Agora, o estudo focado: até 15 minutos.', [['Agora não', null], estudar()]); }
-    function acabou() {
-      if (est.fase === 'aquec') { if (!est.avisado) { est.avisado = true; gravarE(); if (!dlg) { avisoAquec(); } } return; }
-      est = null; gravarE(); pintar();
-      janela('Tempo!', 'Os 15 minutos de estudo focado acabaram. Agora, a Atividade final: até 5 minutos.', [['OK', null, true]]);
+    /* marcos da linha do tempo: cada aviso aparece uma vez so */
+    function marcos() {
+      var p = passou(), v = est.visto;
+      if (p >= FIM.final) {
+        est = null; gravarE(); vibrar();
+        janela('Pausa!', ['30 minutos de foco: missão cumprida.',
+               'Levante, beba água e descanse. A próxima sessão deste tema fica para outro dia.'], [['Fechar', null, true]], true);
+        return true;
+      }
+      if (p >= FIM.final - MIN && !v.alerta) {
+        v.alerta = v.final = v.estudo = true; gravarE(); vibrar();   /* avisos ja passados nao reaparecem */
+        janela('Falta 1 minuto', 'Falta 1 minuto para fechar os 30 minutos. Termine o raciocínio da questão.', [['OK', null, true]]);
+      } else if (p >= FIM.foco && !v.final) {
+        v.final = v.estudo = true; gravarE(); vibrar();
+        janela('Atividade final', 'Agora, a Fase 3: analise e refine a questão em que mais travou. Até 5 minutos.', [['OK', null, true]]);
+      } else if (p >= FIM.aquec && !v.estudo) {
+        v.estudo = true; gravarE(); vibrar();
+        janela('Estudo focado', 'Aquecimento concluído. Agora, a Fase 2: as 3 questões do livro, até 15 minutos.', [['OK', null, true]]);
+      }
+      return false;
     }
     function pintar() {
       clearInterval(timer); timer = null;
-      b.classList.remove('rodando', 'aquec', 'congelado');
-      if (!est) { b.innerHTML = ICONE; rot('Cronômetro da sessão: aquecimento de 10 minutos e estudo de 15 minutos'); return; }
-      var r = resta();
-      b.textContent = mmss(r);   /* a cor diz a fase: ambar = aquecimento, azul = estudo */
-      b.classList.add(est.fase === 'foco' ? 'rodando' : 'aquec');
+      b.classList.remove('rodando', 'aquec', 'final', 'congelado');
+      if (!est) { b.innerHTML = ICONE; rot('Cronômetro da sessão: 30 minutos (aquecimento 10, estudo 15, atividade final 5)'); return; }
+      if (!est.parado && marcos()) { pintar(); return; }
+      var f = faseAgora(), r = resta();
+      b.textContent = mmss(r);   /* a cor diz a fase: ambar = aquecimento, azul = estudo, verde = atividade final */
+      b.classList.add(f === 'foco' ? 'rodando' : f);
       if (est.parado) { b.classList.add('congelado'); }
-      rot(NOME[est.fase] + (est.parado ? ' parado' : '') + ': faltam ' + mmss(r));
-      if (r <= 0 && !est.parado) { acabou(); return; }
+      rot(NOME[f] + (est.parado ? ' parado' : '') + ': faltam ' + mmss(r));
       if (!est.parado) { timer = setInterval(pintar, rapido ? 250 : 1000); }
     }
     b.addEventListener('click', function (e) {
       e.stopPropagation();
       if (!est) {
-        janela('Metas desta sessão', ['Aquecimento: até 10 minutos. Estudo focado: até 15 minutos. Atividade final: até 5 minutos.',
+        janela('Metas desta sessão', ['30 minutos: aquecimento até 10, estudo focado até 15 e atividade final até 5. O '
+               + 'cronômetro passa de uma fase para a outra sozinho e avisa quando faltar 1 minuto.',
                'Desligue as notificações do celular e deixe as redes sociais de lado durante a sessão.'],
-               [['Agora não', null], ['Começar o aquecimento', function () { iniciar('aquec'); }, true]], true);
+               [['Agora não', null], ['Começar o aquecimento', iniciar, true]], true, true);
         return;
       }
-      if (est.fase === 'aquec' && resta() <= 0) { avisoAquec(); return; }
-      var aq = est.fase === 'aquec';
       var alt = est.parado
-        ? ['Continuar', function () { est.ini += Date.now() - est.parado; est.parado = null; gravarE(); pintar(); }, !aq]
-        : ['Pausar', function () { est.parado = Date.now(); gravarE(); pintar(); }, !aq];
-      janela(NOME[est.fase] + ': faltam ' + mmss(resta()), est.parado ? 'O cronômetro está parado.' : 'O cronômetro está contando.',
-             aq ? [['Zerar', zerar], alt, estudar()] : [['Zerar', zerar], alt]);
+        ? ['Continuar', function () { est.ini += Date.now() - est.parado; est.parado = null; gravarE(); pintar(); }, true]
+        : ['Pausar', function () { est.parado = Date.now(); gravarE(); pintar(); }, true];
+      janela(NOME[faseAgora()] + ': faltam ' + mmss(resta()), est.parado ? 'O cronômetro está parado.' : 'O cronômetro está contando.',
+             [['Zerar', zerar], alt]);
     });
     est = lerE();
-    if (est && !est.parado && Date.now() - (est.ini + est.dur) > 12 * 3600 * 1000) { est = null; gravarE(); }
+    if (est && !est.parado && Date.now() - (est.ini + FIM.final) > 12 * 3600 * 1000) { est = null; gravarE(); }
+    if (est && !est.visto) { est.visto = {}; }
     pintar();
     document.addEventListener('visibilitychange', function () { if (!document.hidden && !dlg) { pintar(); } });
   }
@@ -320,6 +342,17 @@
         alvo.hidden = !abre; t.setAttribute('aria-expanded', abre ? 'true' : 'false');
       }
       else if (c.contains('s-perr')) { passoErrado(t); }
+      else if (c.contains('s-copiar')) {
+        var txt = t.previousElementSibling.textContent;
+        var ok = function () { t.textContent = 'Copiado!'; setTimeout(function () { t.textContent = 'Copiar o prompt'; }, 1800); };
+        var velho = function () {
+          var ta = document.createElement('textarea'); ta.value = txt; ta.setAttribute('readonly', '');
+          ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select();
+          try { document.execCommand('copy'); ok(); } catch (x) { t.textContent = 'Selecione e copie'; }
+          document.body.removeChild(ta);
+        };
+        if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(txt).then(ok, velho); } else { velho(); }
+      }
       else if (c.contains('c-gravar')) { gravar(+t.getAttribute('data-i')); }
       else if (c.contains('c-gparar')) { if (gravador) { gravador.rec.stop(); } }
       else if (c.contains('c-gapagar')) { duv[+t.getAttribute('data-i')] = null; desenharDuvidas(); }
