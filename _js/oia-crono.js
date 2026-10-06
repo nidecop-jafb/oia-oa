@@ -2,7 +2,7 @@
 (function () {
   var b = document.getElementById('cronoBtn');
   if (!b) { return; }
-  var AUDIOS = [];
+  var AUDIOS = [["Versão rápida", "../_audio/OIA-CRONO-MD-rapido.m4a"], ["Versão curta", "../_audio/OIA-CRONO-MD-curto.m4a"]];
   var base = (document.currentScript && document.currentScript.src) || location.href;
   b.addEventListener('click', function () {
     var d = document.createElement('dialog');
