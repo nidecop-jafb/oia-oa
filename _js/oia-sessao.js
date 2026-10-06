@@ -290,13 +290,25 @@
     document.addEventListener('visibilitychange', function () { if (!document.hidden && !dlg) { pintar(); } });
   }
 
+  /* "Estou sem o livro" (passo 2): abre de uma vez as versoes sem livro do exemplo e das questoes; so nesta sessao */
+  function semLivro(liga, gravar) {
+    [].forEach.call(document.querySelectorAll('.s-sl'), function (el) { el.hidden = !liga; });
+    [].forEach.call(document.querySelectorAll('.s-semlivro'), function (b) {
+      b.setAttribute('aria-pressed', liga ? 'true' : 'false');
+      b.textContent = liga ? 'Estou com o livro' : 'Estou sem o livro';
+    });
+    if (gravar) { guardar('oia-semlivro-' + S.id, liga ? '1' : ''); }
+  }
+
   function iniciarPagina() {
+    semLivro(ler('oia-semlivro-' + S.id) === '1', false);
     blocoRA(); revisao(); cartoes(); marcarPassos(); desenharDuvidas(); gradativo(); cronometro();
     enviarFila(); enviarDuvidas();
     document.addEventListener('click', function (ev) {
       var t = ev.target, c = t.classList;
       if (!c) { return; }
       if (c.contains('c-alt')) { responder(t); }
+      else if (c.contains('s-semlivro')) { semLivro(t.getAttribute('aria-pressed') !== 'true', true); }
       else if (c.contains('s-ex')) {
         var alvo = document.getElementById(t.getAttribute('aria-controls')), abre = alvo.hidden;
         alvo.hidden = !abre; t.setAttribute('aria-expanded', abre ? 'true' : 'false');

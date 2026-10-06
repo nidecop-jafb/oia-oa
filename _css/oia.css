@@ -379,7 +379,7 @@ h3.p-dim span { color: var(--t-aaa); font-weight: normal; }
   border: 2px solid #E3B35C; background: #151619; color: #E3B35C; font: inherit; font-weight: bold; cursor: pointer;
   border-radius: 6px; text-decoration: none; }
 .sessao .s-ex { border-color: var(--azul); color: var(--ciano); font-weight: normal; }
-.sessao .s-ex[aria-expanded="true"], .sessao a.s-fa { background: var(--azul); border-color: var(--azul); color: white; }
+.sessao .s-ex[aria-expanded="true"], .sessao .s-semlivro[aria-pressed="true"], .sessao a.s-fa { background: var(--azul); border-color: var(--azul); color: white; }
 .sessao .s-caixa { border-left: 4px solid var(--b-555); background: var(--painel); padding: 12px 14px; margin: 8px 0 12px; }
 .sessao .s-caixa audio { width: 100%; margin-top: 6px; }
 .sessao .s-ref { color: var(--t-888); }
@@ -389,7 +389,7 @@ h3.p-dim span { color: var(--t-aaa); font-weight: normal; }
 .sessao .s-errei label { display: block; padding: 6px 0; cursor: pointer; }
 .sessao .s-errei input { width: 20px; height: 20px; vertical-align: middle; margin-right: 6px; }
 /* versao "sem o livro" (PRE-metodo-prj0004-questoes-sem-livro-fisica1-2026-10-06): figura SVG em currentColor */
-.sessao .s-sem { margin-top: 6px; }
+.sessao .s-semlivro { display: inline-block; }
 .sessao .s-sl { border-left: 4px solid #E3B35C; background: #151619; padding: 10px 12px; margin: 8px 0 10px; }
 .sessao .s-sl[hidden] { display: none; }
 .sessao .s-fig { margin: 8px 0; color: var(--texto); }
@@ -691,7 +691,8 @@ body.projetando .ava-bar { height: 30px; }
 [data-tema="claro"] .sessao .fase-2 > .fase-t .fase-n { background: var(--azul); color: white; }
 [data-tema="claro"] .sessao .grad-btn { background: white; color: #8A5A00; border-color: #B7791F; }
 [data-tema="claro"] .sessao .s-ex { background: white; color: #1B5E8C; }
-[data-tema="claro"] .sessao .s-ex[aria-expanded="true"], [data-tema="claro"] .sessao a.s-fa { background: var(--azul); color: white; }
+[data-tema="claro"] .sessao .s-ex[aria-expanded="true"], [data-tema="claro"] .sessao .s-semlivro[aria-pressed="true"],
+[data-tema="claro"] .sessao a.s-fa { background: var(--azul); color: white; }
 [data-tema="claro"] .sessao .s-caixa, [data-tema="claro"] .sessao .c-q, [data-tema="claro"] .sessao .c-ra,
 [data-tema="claro"] .sessao .c-duv { background: white; color: #1c1c1c; box-shadow: 0 1px 3px rgba(0,0,0,.10), 0 0 0 1px rgba(0,0,0,.05); }
 [data-tema="claro"] .sessao .c-qt { color: #1c1c1c; }
