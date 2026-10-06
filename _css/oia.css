@@ -388,6 +388,14 @@ h3.p-dim span { color: var(--t-aaa); font-weight: normal; }
 .sessao ol.s-focado { padding-left: 26px; }
 .sessao .s-errei label { display: block; padding: 6px 0; cursor: pointer; }
 .sessao .s-errei input { width: 20px; height: 20px; vertical-align: middle; margin-right: 6px; }
+/* versao "sem o livro" (PRE-metodo-prj0004-questoes-sem-livro-fisica1-2026-10-06): figura SVG em currentColor */
+.sessao .s-sem { margin-top: 6px; }
+.sessao .s-sl { border-left: 4px solid #E3B35C; background: #151619; padding: 10px 12px; margin: 8px 0 10px; }
+.sessao .s-sl[hidden] { display: none; }
+.sessao .s-fig { margin: 8px 0; color: var(--texto); }
+.sessao .s-fig svg { display: block; width: 100%; max-width: 360px; height: auto; }
+.sessao ol.s-alts { padding-left: 26px; margin: 6px 0 0; }
+.sessao .s-nota { margin: 10px 0 0; font-size: .95rem; }
 .sessao .c-rot { color: var(--ciano); margin: 10px 0 6px; font-weight: bold; }
 .sessao .c-q { background: var(--painel); border-left: 4px solid var(--b-555); padding: 12px 14px; margin: 0 0 10px; }
 .sessao .c-qt { margin: 0 0 8px; font-weight: 700; color: var(--forte); }
@@ -687,6 +695,8 @@ body.projetando .ava-bar { height: 30px; }
 [data-tema="claro"] .sessao .s-caixa, [data-tema="claro"] .sessao .c-q, [data-tema="claro"] .sessao .c-ra,
 [data-tema="claro"] .sessao .c-duv { background: white; color: #1c1c1c; box-shadow: 0 1px 3px rgba(0,0,0,.10), 0 0 0 1px rgba(0,0,0,.05); }
 [data-tema="claro"] .sessao .c-qt { color: #1c1c1c; }
+[data-tema="claro"] .sessao .s-sl { background: #FFF7E6; border-left-color: #B7791F; color: #1c1c1c; }
+[data-tema="claro"] .sessao .s-fig { color: #1c1c1c; }
 [data-tema="claro"] .sessao .c-alt { background: #f3f4f6; color: #1c1c1c; border-color: #c8c8c8; }
 [data-tema="claro"] .sessao .c-alt.certa { color: #2D6E45; border-color: var(--verde); background: #eaf5ee; }
 [data-tema="claro"] .sessao .c-alt.errada { color: #5f5f5f; }
