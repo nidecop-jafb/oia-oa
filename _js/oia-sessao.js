@@ -105,7 +105,10 @@
     function mostrar() {
       grupos.forEach(function (el) { el.hidden = +el.getAttribute('data-g') > g; });
       if (b.parentNode) { b.parentNode.removeChild(b); }
-      if (g < grupos.length) { grupos[g - 1].appendChild(b); }
+      if (g < grupos.length) {   /* o proximo grupo e uma fase nova (Fase 2 ou Fase 3)? */
+        b.textContent = grupos[g].classList.contains('fase') ? 'Pronto, próxima fase' : 'Pronto, próxima etapa';
+        grupos[g - 1].appendChild(b);
+      }
     }
     b.addEventListener('click', function () {
       g += 1; guardar(chave, JSON.stringify({ g: g })); mostrar();
@@ -150,20 +153,23 @@
       var fr = new FileReader(); fr.onload = function () { ok(String(fr.result).split(',')[1] || ''); }; fr.onerror = falha; fr.readAsDataURL(blob);
     });
   }
+  /* uma gravacao por questao, logo depois do enunciado (.c-duv[data-i] = questao 0, 1, 2) */
   function desenharDuvidas() {
-    var el = $('.c-duv');
-    if (!el) { return; }
-    el.innerHTML = '<p class="c-rot">Minhas dúvidas em áudio (até 3, 20 s cada):</p>' + [0, 1, 2].map(function (i) {
-      var d = duv[i], acoes;
-      if (gravador && gravador.i === i) { acoes = '<button type="button" class="c-gparar">Parar (' + gravador.resta + ' s)</button>'; }
-      else if (!d) { acoes = '<button type="button" class="c-gravar" data-i="' + i + '"' + (gravador ? ' disabled' : '') + '>Gravar</button>'; }
-      else {
-        acoes = '<audio controls src="' + d.url + '"></audio>' +
-          (d.estado === 'nova' ? '<button type="button" class="c-genviar" data-i="' + i + '">Enviar</button><button type="button" class="c-gapagar" data-i="' + i + '">Apagar</button>'
-                               : '<span class="c-gest">' + ({ fila: 'Na fila…', enviada: 'Enviada ✓', recusada: 'Recusada' })[d.estado] + '</span>');
-      }
-      return '<div class="c-gslot"><span class="c-gn">' + (i + 1) + '</span>' + acoes + '</div>';
-    }).join('');
+    [].forEach.call(document.querySelectorAll('.c-duv[data-i]'), function (el) {
+      var i = +el.getAttribute('data-i');
+      el.innerHTML = '<p class="c-rot">Minha dúvida nesta questão (áudio de até 20 s):</p>' + slotDuvida(i);
+    });
+  }
+  function slotDuvida(i) {
+    var d = duv[i], acoes;
+    if (gravador && gravador.i === i) { acoes = '<button type="button" class="c-gparar">Parar (' + gravador.resta + ' s)</button>'; }
+    else if (!d) { acoes = '<button type="button" class="c-gravar" data-i="' + i + '"' + (gravador ? ' disabled' : '') + '>Gravar</button>'; }
+    else {
+      acoes = '<audio controls src="' + d.url + '"></audio>' +
+        (d.estado === 'nova' ? '<button type="button" class="c-genviar" data-i="' + i + '">Enviar</button><button type="button" class="c-gapagar" data-i="' + i + '">Apagar</button>'
+                             : '<span class="c-gest">' + ({ fila: 'Na fila…', enviada: 'Enviada ✓', recusada: 'Recusada' })[d.estado] + '</span>');
+    }
+    return '<div class="c-gslot">' + acoes + '</div>';
   }
   function gravar(i) {
     if (!navigator.mediaDevices || !window.MediaRecorder) { aviso('Este aparelho não grava áudio aqui: anote as dúvidas no caderno.'); return; }
