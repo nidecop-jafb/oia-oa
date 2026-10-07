@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Física 3, Tema 29 — Mecânica quântica, sessão 1: aquecimento, estudo focado e atividade final.">
+<meta name="theme-color" content="#1B2A41">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="icon" href="../../_icones/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="../../_icones/icon-oia-192.png">
+<link rel="apple-touch-icon" href="../../_icones/apple-touch-icon-180.png">
+<script>(function () { var t; try { t = localStorage.getItem('oia-tema'); } catch (e) {}
+  if (t !== 'claro' && t !== 'escuro') { t = window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches ? 'claro' : 'escuro'; }
+  document.documentElement.setAttribute('data-tema', t);
+  var l; try { l = localStorage.getItem('oia-letra'); } catch (e) {}
+  if (l === 'g' || l === 'gg') { document.documentElement.setAttribute('data-letra', l); } })();</script>
+<link rel="stylesheet" href="../../_css/oia.css">
+<title>Tema 29 · Sessão 1 · Oficina IA nos estudos</title>
+</head>
+<body data-pagina="T29-S1">
+<button class="aba-toggle" id="abaSiteT">Site</button>
+<aside class="aba-painel" id="abaSite">
+  <h3>Site</h3>
+  <p>O endereço do site é</p>
+  <p class="site-end"><span>nidecop-jafb.github.io</span><wbr>/<span>oia-oa</span></p>
+  <p class="fis-intro">Ele abre direto: não pede senha, cadastro nem o seu nome.</p>
+  <div class="qr-box"><img src="../../_icones/oia-qr-site.svg" width="170" height="170" alt="QR code que abre https://nidecop-jafb.github.io/oia-oa/"><div><p>Aponte a câmera do celular para o QR code para abrir o site.</p><p class="qr-end"><span>nidecop-jafb.github.io</span><wbr>/<span>oia-oa</span>/</p></div></div>
+  <p>Funciona no celular e no computador. Para instalar, toque no ícone <strong>Instalar</strong>, no topo.</p>
+  <a class="aba-btn" href="../../sugestoes/index.html">Enviar uma sugestão</a>
+</aside>
+<button class="aba-toggle" id="abaMetodoT">Método</button>
+<aside class="aba-painel" id="abaMetodo">
+  <h3>Método</h3>
+  <p class="fis-intro">Você estuda cada tema do livro em sessões de até 30 min, com o livro impresso aberto e o caderno ao lado.</p>
+  <p>As abas Física 1, 2 e 3 dividem cada tema em sessões. Em todas, o botão Começar abre a página da sessão, com as três fases abaixo; no alto da tela, o cronômetro marca os 30 minutos. As questões são do próprio livro e você as resolve pelos 5 passos da Resolução Científica do Problema. Nos temas com poucas contas (como os Temas 01, 11, 12, 18, 26, 29 e 30), as questões do estudo focado são qualitativas.</p>
+  <section class="met-bloco">
+  <h4 class="met-etapa">Fase 1 · Aquecimento — até 10 min</h4>
+  <p>Comece organizando os materiais de estudo: livro-texto impresso, caderno de Física, caneta, lápis, borracha, régua e calculadora científica. Toque no cronômetro, no alto da tela, e aperte “Começar o aquecimento”. Sucesso no seu estudo!</p>
+  <ol class="met-perg"><li><b>Responda no celular</b> as 3 perguntas iniciais, corrigidas na hora e enviadas com o seu RA.</li><li><b>Abra o livro impresso</b> na primeira página da sessão. Está sem o livro? Toque em “Estou sem o livro”: o exemplo e as questões da sessão aparecem em versões para resolver sem ele.</li><li><b>Ouça o Resumo em Áudio</b> da sessão.</li><li><b>Explore o exemplo resolvido</b>: tente refazer no caderno e compare com a Resolução em 5 passos; logo abaixo dela, marque em que passo você errou. Depois, veja a resolução condensada.</li></ol>
+  </section>
+  <section class="met-bloco">
+  <h4 class="met-etapa">Fase 2 · Estudo focado — até 15 min</h4>
+  <ol class="met-perg"><li><b>O cronômetro passa sozinho</b> para o estudo focado: até 15 minutos.</li><li><b>Resolva no caderno, pelos 5 passos</b>, as 3 questões do livro, cada uma com a resolução condensada. Travou? Grave a dúvida em áudio logo abaixo da questão.</li></ol>
+  </section>
+  <section class="met-bloco">
+  <h4 class="met-etapa">Fase 3 · Atividade final — até 5 min</h4>
+  <ol class="met-perg"><li><b>Analise e refine:</b> refaça no caderno a questão em que mais travou, fotografe e use o prompt da página para a IA apoiar o seu raciocínio, sem dar a resposta. Na última sessão do tema, faça também a Folha de Atividades e entregue na monitoria do Pavilhão de Física. Faltando 1 minuto para os 30, o cronômetro avisa; aos 30, é hora da pausa.</li></ol>
+  </section>
+  <section class="met-bloco">
+  <h4 class="met-etapa">Tema com 2 ou 3 sessões</h4>
+  <p>Estude cada sessão em um dia diferente: tema de 2 sessões, 2 dias; de 3 sessões, 3 dias. Lembrar no dia seguinte, sem olhar, é o que fixa o conteúdo.</p>
+  </section>
+  <p class="aba-nota">Use a IA para pensar junto, não para pensar por você: tente primeiro, peça pistas e confira no livro.</p>
+</aside>
+<button class="aba-toggle" id="abaFisica1T">Física 1</button>
+<aside class="aba-painel" id="abaFisica1">
+  <h3>Física 1</h3>
+  <img class="disc-ic" src="../../_icones/fisica-1.svg" width="72" height="72" alt="Ícone de Física 1">
+  <p class="fis-intro">Aqui estão os temas de Física 1: do Tema 01 ao Tema 12 do livro didático. Você estuda cada tema em sessões de até 30 min.</p>
+  <p class="aba-nota fis-nota">Toque em um tema para ver os marcadores e as páginas. Em cada sessão, o botão Começar abre a página da sessão, com o aquecimento, o estudo focado e a atividade final. O tempo previsto conta 3 min por folha do livro, e a sessão sempre termina entre dois marcadores.</p>
+  <ol class="temas">
+    <li><details><summary><span class="t-num">Tema 01</span><span class="t-tit">A Física</span><span class="t-meta">p. 14–22 · 9 folhas · 6 marcadores<span class="t-tempo">~27 min (1 sessão)</span></span></summary>
+      <ul class="marc">
+        <li class="m-n1 m-uni">Unidade 1 — Introdução à Física <span class="t-pag">p. 14</span></li>
+        <li class="m-n1">Tema 1 — A Física <span class="t-pag">p. 15</span></li>
+        <li class="m-n2">Pensamento científico <span class="t-pag">p. 16</span></li>
+        <li class="m-n2">O desenvolvimento da Física <span class="t-pag">p. 19</span></li>
+        <li class="m-n2">Trabalho em foco <span class="t-pag">p. 20</span></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 21</span></li>
+        <li class="m-sess"><a class="comecar" href="../../fisica1/T01-S1/index.html">Começar</a></li>
+      </ul></details></li>
+    <li><details><summary><span class="t-num">Tema 02</span><span class="t-tit">Grandezas físicas</span><span class="t-meta">p. 23–43 · 21 folhas · 10 marcadores<span class="t-tempo">~63 min (3 sessões)</span></span></summary>
+      <ul class="marc">
+        <li class="m-sess">Sessão 1 · p. 23–29 <a class="comecar" href="../../fisica1/T02-S1/index.html">Começar a sessão 1</a></li>
+        <li class="m-n1">Tema 2 — Grandezas físicas <span class="t-pag">p. 23</span></li>
+        <li class="m-n2">Sistema Internacional de Unidades <span class="t-pag">p. 24</span></li>
+        <li class="m-n2">Notação científica <span class="t-pag">p. 29</span></li>
+        <li class="m-sess">Sessão 2 · p. 30–36 <a class="comecar" href="../../fisica1/T02-S2/index.html">Começar a sessão 2</a></li>
+        <li class="m-n2">Algarismos significativos <span class="t-pag">p. 30</span></li>
+        <li class="m-n2">Medidas e incertezas <span class="t-pag">p. 31</span></li>
+        <li class="m-sess">Sessão 3 · p. 37–43 <a class="comecar" href="../../fisica1/T02-S3/index.html">Começar a sessão 3</a></li>
+        <li class="m-n2">Ciência na prática <span class="t-pag">p. 37</span></li>
+        <li class="m-n2">Ordens de grandeza <span class="t-pag">p. 38</span></li>
+        <li class="m-n2">A pesquisa científica na Física: importância e desafios no século XXI <span class="t-pag">p. 39</span></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 42</span></li>
+        <li class="m-n1">Reunindo conceitos <span class="t-pag">p. 43</span></li>
+      </ul></details></li>
+    <li><details><summary><span class="t-num">Tema 03</span><span class="t-tit">Conceitos fundamentais da Cinemática</span><span class="t-meta">p. 44–56 · 13 folhas · 6 marcadores<span class="t-tempo">~39 min (2 sessões)</span></span></summary>
+      <ul class="marc">
+        <li class="m-sess">Sessão 1 · p. 44–51 <a class="comecar" href="../../fisica1/T03-S1/index.html">Começar a sessão 1</a></li>
+        <li class="m-n1 m-uni">Unidade 2 — Estudo dos movimentos <span class="t-pag">p. 44</span></li>
+        <li class="m-n1">Tema 3 — Conceitos fundamentais da Cinemática <span class="t-pag">p. 45</span></li>
+        <li class="m-n2">Conceitos fundamentais da Cinemática <span class="t-pag">p. 46</span></li>
+        <li class="m-n2">Movimento uniforme <span class="t-pag">p. 49</span></li>
+        <li class="m-sess">Sessão 2 · p. 52–56 <a class="comecar" href="../../fisica1/T03-S2/index.html">Começar a sessão 2</a></li>
+        <li class="m-n2">Movimento uniformemente variado <span class="t-pag">p. 52</span></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 55</span></li>
+      </ul></details></li>
+    <li><details><summary><span class="t-num">Tema 04</span><span class="t-tit">Lançamentos</span><span class="t-meta">p. 57–70 · 14 folhas · 4 marcadores<span class="t-tempo">~42 min (2 sessões)</span></span></summary>
+      <ul class="marc">
+        <li class="m-sess">Sessão 1 · p. 57–68 <a class="comecar" href="../../fisica1/T04-S1/index.html">Começar a sessão 1</a></li>
+        <li class="m-n1">Tema 4 — Lançamentos <span class="t-pag">p. 57</span></li>
+        <li class="m-n2">Vetores <span class="t-pag">p. 58</span></li>
+        <li class="m-n2">Composição de movimentos <span class="t-pag">p. 61</span></li>
+        <li class="m-sess">Sessão 2 · p. 69–70 <a class="comecar" href="../../fisica1/T04-S2/index.html">Começar a sessão 2</a></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 69</span></li>
+      </ul></details></li>
+    <li><details><summary><span class="t-num">Tema 05</span><span class="t-tit">Movimento circular e torque</span><span class="t-meta">p. 71–83 · 13 folhas · 8 marcadores<span class="t-tempo">~39 min (2 sessões)</span></span></summary>
+      <ul class="marc">
+        <li class="m-sess">Sessão 1 · p. 71–77 <a class="comecar" href="../../fisica1/T05-S1/index.html">Começar a sessão 1</a></li>
+        <li class="m-n1">Tema 5 — Movimento circular e torque <span class="t-pag">p. 71</span></li>
+        <li class="m-n2">Características do movimento circular <span class="t-pag">p. 72</span></li>
+        <li class="m-n2">Transmissão do movimento circular <span class="t-pag">p. 76</span></li>
+        <li class="m-n2">Torque <span class="t-pag">p. 77</span></li>
+        <li class="m-sess">Sessão 2 · p. 78–83 <a class="comecar" href="../../fisica1/T05-S2/index.html">Começar a sessão 2</a></li>
+        <li class="m-n2">Centro de massa de um corpo <span class="t-pag">p. 78</span></li>
+        <li class="m-n2">Equilíbrio de um corpo extenso <span class="t-pag">p. 79</span></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 82</span></li>
+        <li class="m-n1">Reunindo conceitos <span class="t-pag">p. 83</span></li>
+      </ul></details></li>
+    <li><details><summary><span class="t-num">Tema 06</span><span class="t-tit">Leis de Newton e força</span><span class="t-meta">p. 84–105 · 22 folhas · 9 marcadores<span class="t-tempo">~66 min (3 sessões)</span></span></summary>
+      <ul class="marc">
+        <li class="m-sess">Sessão 1 · p. 84–91 <a class="comecar" href="../../fisica1/T06-S1/index.html">Começar a sessão 1</a></li>
+        <li class="m-n1 m-uni">Unidade 3 — Dinâmica, leis de conservação e movimento <span class="t-pag">p. 84</span></li>
+        <li class="m-n1">Tema 6 — Leis de Newton e força <span class="t-pag">p. 85</span></li>
+        <li class="m-n2">Tipos de força <span class="t-pag">p. 87</span></li>
+        <li class="m-sess">Sessão 2 · p. 92–99 <a class="comecar" href="../../fisica1/T06-S2/index.html">Começar a sessão 2</a></li>
+        <li class="m-n2">Leis de Newton e movimento <span class="t-pag">p. 92</span></li>
+        <li class="m-n2">Aplicações das leis de Newton na resolução de sistemas mecânicos <span class="t-pag">p. 95</span></li>
+        <li class="m-n2">Pêndulo simples <span class="t-pag">p. 97</span></li>
+        <li class="m-n2">Máquinas simples <span class="t-pag">p. 98</span></li>
+        <li class="m-sess">Sessão 3 · p. 100–105 <a class="comecar" href="../../fisica1/T06-S3/index.html">Começar a sessão 3</a></li>
+        <li class="m-n2">Força centrípeta <span class="t-pag">p. 100</span></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 102</span></li>
+      </ul></details></li>
+    <li><details><summary><span class="t-num">Tema 07</span><span class="t-tit">Gravitação</span><span class="t-meta">p. 106–117 · 12 folhas · 5 marcadores<span class="t-tempo">~36 min (2 sessões)</span></span></summary>
+      <ul class="marc">
+        <li class="m-sess">Sessão 1 · p. 106–115 <a class="comecar" href="../../fisica1/T07-S1/index.html">Começar a sessão 1</a></li>
+        <li class="m-n1">Tema 7 — Gravitação <span class="t-pag">p. 106</span></li>
+        <li class="m-n2">Introdução ao estudo da gravitação <span class="t-pag">p. 107</span></li>
+        <li class="m-n2">As leis de Kepler <span class="t-pag">p. 107</span></li>
+        <li class="m-n2">Gravitação universal <span class="t-pag">p. 111</span></li>
+        <li class="m-sess">Sessão 2 · p. 116–117 <a class="comecar" href="../../fisica1/T07-S2/index.html">Começar a sessão 2</a></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 116</span></li>
+      </ul></details></li>
+    <li><details><summary><span class="t-num">Tema 08</span><span class="t-tit">Energia, potência e trabalho</span><span class="t-meta">p. 118–132 · 15 folhas · 9 marcadores<span class="t-tempo">~45 min (2 sessões)</span></span></summary>
+      <ul class="marc">
+        <li class="m-sess">Sessão 1 · p. 118–125 <a class="comecar" href="../../fisica1/T08-S1/index.html">Começar a sessão 1</a></li>
+        <li class="m-n1">Tema 8 — Energia, potência e trabalho <span class="t-pag">p. 118</span></li>
+        <li class="m-n2">As várias formas de energia <span class="t-pag">p. 119</span></li>
+        <li class="m-n2">Fontes de energia <span class="t-pag">p. 120</span></li>
+        <li class="m-n2">Trabalho <span class="t-pag">p. 122</span></li>
+        <li class="m-n2">Energia cinética <span class="t-pag">p. 125</span></li>
+        <li class="m-sess">Sessão 2 · p. 126–132 <a class="comecar" href="../../fisica1/T08-S2/index.html">Começar a sessão 2</a></li>
+        <li class="m-n2">Energia potencial <span class="t-pag">p. 126</span></li>
+        <li class="m-n2">Energia mecânica <span class="t-pag">p. 128</span></li>
+        <li class="m-n2">Potência mecânica e rendimento <span class="t-pag">p. 130</span></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 132</span></li>
+      </ul></details></li>
+    <li><details><summary><span class="t-num">Tema 09</span><span class="t-tit">Movimento: do impulso à conservação</span><span class="t-meta">p. 133–144 · 12 folhas · 7 marcadores<span class="t-tempo">~36 min (2 sessões)</span></span></summary>
+      <ul class="marc">
+        <li class="m-sess">Sessão 1 · p. 133–139 <a class="comecar" href="../../fisica1/T09-S1/index.html">Começar a sessão 1</a></li>
+        <li class="m-n1">Tema 9 — Movimento: do impulso à conservação <span class="t-pag">p. 133</span></li>
+        <li class="m-n2">Impulso <span class="t-pag">p. 134</span></li>
+        <li class="m-n2">Quantidade de movimento <span class="t-pag">p. 135</span></li>
+        <li class="m-n2">Ciência na prática <span class="t-pag">p. 138</span></li>
+        <li class="m-sess">Sessão 2 · p. 140–144 <a class="comecar" href="../../fisica1/T09-S2/index.html">Começar a sessão 2</a></li>
+        <li class="m-n2">Colisões mecânicas <span class="t-pag">p. 140</span></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 143</span></li>
+        <li class="m-n1">Reunindo conceitos <span class="t-pag">p. 144</span></li>
+      </ul></details></li>
+    <li><details><summary><span class="t-num">Tema 10</span><span class="t-tit">Hidrostática e Hidrodinâmica</span><span class="t-meta">p. 145–163 · 19 folhas · 9 marcadores<span class="t-tempo">~57 min (2 sessões)</span></span></summary>
+      <ul class="marc">
+        <li class="m-sess">Sessão 1 · p. 145–155 <a class="comecar" href="../../fisica1/T10-S1/index.html">Começar a sessão 1</a></li>
+        <li class="m-n1 m-uni">Unidade 4 — Fluidos <span class="t-pag">p. 145</span></li>
+        <li class="m-n1">Tema 10 — Hidrostática e Hidrodinâmica <span class="t-pag">p. 146</span></li>
+        <li class="m-n2">Pressão hidrostática <span class="t-pag">p. 147</span></li>
+        <li class="m-n2">Teorema de Stevin e princípio de Pascal <span class="t-pag">p. 150</span></li>
+        <li class="m-n2">Princípio de Arquimedes <span class="t-pag">p. 154</span></li>
+        <li class="m-sess">Sessão 2 · p. 156–163 <a class="comecar" href="../../fisica1/T10-S2/index.html">Começar a sessão 2</a></li>
+        <li class="m-n2">Tensão superficial e capilaridade <span class="t-pag">p. 156</span></li>
+        <li class="m-n2">Hidrodinâmica <span class="t-pag">p. 158</span></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 161</span></li>
+        <li class="m-n1">Reunindo conceitos <span class="t-pag">p. 163</span></li>
+      </ul></details></li>
+    <li><details><summary><span class="t-num">Tema 11</span><span class="t-tit">O Sistema Solar</span><span class="t-meta">p. 164–174 · 11 folhas · 6 marcadores<span class="t-tempo">~33 min (2 sessões)</span></span></summary>
+      <ul class="marc">
+        <li class="m-sess">Sessão 1 · p. 164–172 <a class="comecar" href="../../fisica1/T11-S1/index.html">Começar a sessão 1</a></li>
+        <li class="m-n1 m-uni">Unidade 5 — Astronomia <span class="t-pag">p. 164</span></li>
+        <li class="m-n1">Tema 11 — O Sistema Solar <span class="t-pag">p. 165</span></li>
+        <li class="m-n2">A primeira das ciências <span class="t-pag">p. 166</span></li>
+        <li class="m-n2">Corpos celestes do Sistema Solar <span class="t-pag">p. 168</span></li>
+        <li class="m-sess">Sessão 2 · p. 173–174 <a class="comecar" href="../../fisica1/T11-S2/index.html">Começar a sessão 2</a></li>
+        <li class="m-n2">Surgimento do Sistema Solar e do planeta Terra .170 Trabalho em foco <span class="t-pag">p. 173</span></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 174</span></li>
+      </ul></details></li>
+    <li><details><summary><span class="t-num">Tema 12</span><span class="t-tit">O Universo</span><span class="t-meta">p. 175–191 · 17 folhas · 10 marcadores<span class="t-tempo">~51 min (2 sessões)</span></span></summary>
+      <ul class="marc">
+        <li class="m-sess">Sessão 1 · p. 175–184 <a class="comecar" href="../../fisica1/T12-S1/index.html">Começar a sessão 1</a></li>
+        <li class="m-n1">Tema 12 — O Universo <span class="t-pag">p. 175</span></li>
+        <li class="m-n2">A teoria do big bang <span class="t-pag">p. 176</span></li>
+        <li class="m-n2">Ciência na prática <span class="t-pag">p. 177</span></li>
+        <li class="m-n2">Modelos cosmológicos <span class="t-pag">p. 178</span></li>
+        <li class="m-n2">Evolução estelar e a formação dos elementos químicos <span class="t-pag">p. 182</span></li>
+        <li class="m-sess">Sessão 2 · p. 185–191 <a class="comecar" href="../../fisica1/T12-S2/index.html">Começar a sessão 2</a></li>
+        <li class="m-n2">Zona habitável e Astrobiologia <span class="t-pag">p. 185</span></li>
+        <li class="m-n2">Trabalho em foco <span class="t-pag">p. 186</span></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 187</span></li>
+        <li class="m-n1">Reunindo conceitos <span class="t-pag">p. 189</span></li>
+        <li class="m-n1">Em ação <span class="t-pag">p. 190</span></li>
+      </ul></details></li>
+  </ol>
+  <p class="aba-ref">BONJORNO, J. R. <em>Identidade Saraiva: Física</em>. São Paulo: Saraiva, 2024.</p>
+</aside>
+<button class="aba-toggle" id="abaFisica2T">Física 2</button>
+<aside class="aba-painel" id="abaFisica2">
+  <h3>Física 2</h3>
+  <img class="disc-ic" src="../../_icones/fisica-2.svg" width="72" height="72" alt="Ícone de Física 2">
+  <p class="fis-intro">Aqui estão os temas de Física 2: do Tema 13 ao Tema 20 do livro didático. Você estuda cada tema em sessões de até 30 min.</p>
+  <p class="aba-nota fis-nota">Toque em um tema para ver os marcadores e as páginas. Em cada sessão, o botão Começar abre a página da sessão, com o aquecimento, o estudo focado e a atividade final. O tempo previsto conta 3 min por folha do livro, e a sessão sempre termina entre dois marcadores.</p>
+  <ol class="temas">
+    <li><details><summary><span class="t-num">Tema 13</span><span class="t-tit">Introdução à Termologia</span><span class="t-meta">p. 192–203 · 12 folhas · 5 marcadores<span class="t-tempo">~36 min (2 sessões)</span></span></summary>
+      <ul class="marc">
+        <li class="m-sess">Sessão 1 · p. 192–202 <a class="comecar" href="../../fisica2/T13-S1/index.html">Começar a sessão 1</a></li>
+        <li class="m-n1 m-uni">Unidade 6 — Termologia <span class="t-pag">p. 192</span></li>
+        <li class="m-n1">Tema 13 — Introdução à Termologia <span class="t-pag">p. 193</span></li>
+        <li class="m-n2">Calor e temperatura <span class="t-pag">p. 194</span></li>
+        <li class="m-n2">Dilatação térmica <span class="t-pag">p. 197</span></li>
+        <li class="m-sess">Sessão 2 · p. 203–203 <a class="comecar" href="../../fisica2/T13-S2/index.html">Começar a sessão 2</a></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 203</span></li>
+      </ul></details></li>
+    <li><details><summary><span class="t-num">Tema 14</span><span class="t-tit">Calorimetria</span><span class="t-meta">p. 204–221 · 18 folhas · 8 marcadores<span class="t-tempo">~54 min (2 sessões)</span></span></summary>
+      <ul class="marc">
+        <li class="m-sess">Sessão 1 · p. 204–213 <a class="comecar" href="../../fisica2/T14-S1/index.html">Começar a sessão 1</a></li>
+        <li class="m-n1">Tema 14 — Calorimetria <span class="t-pag">p. 204</span></li>
+        <li class="m-n2">Transferência de calor <span class="t-pag">p. 205</span></li>
+        <li class="m-n2">Calor sensível <span class="t-pag">p. 210</span></li>
+        <li class="m-sess">Sessão 2 · p. 214–221 <a class="comecar" href="../../fisica2/T14-S2/index.html">Começar a sessão 2</a></li>
+        <li class="m-n2">Calor latente <span class="t-pag">p. 214</span></li>
+        <li class="m-n2">Curvas de aquecimento e resfriamento <span class="t-pag">p. 215</span></li>
+        <li class="m-n2">Trocas de calor e equilíbrio térmico <span class="t-pag">p. 217</span></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 220</span></li>
+        <li class="m-n1">Reunindo conceitos <span class="t-pag">p. 221</span></li>
+      </ul></details></li>
+    <li><details><summary><span class="t-num">Tema 15</span><span class="t-tit">Estudo dos gases</span><span class="t-meta">p. 222–235 · 14 folhas · 6 marcadores<span class="t-tempo">~42 min (2 sessões)</span></span></summary>
+      <ul class="marc">
+        <li class="m-sess">Sessão 1 · p. 222–234 <a class="comecar" href="../../fisica2/T15-S1/index.html">Começar a sessão 1</a></li>
+        <li class="m-n1 m-uni">Unidade 7 — Termodinâmica <span class="t-pag">p. 222</span></li>
+        <li class="m-n1">Tema 15 — Estudo dos gases <span class="t-pag">p. 223</span></li>
+        <li class="m-n2">Gás ideal <span class="t-pag">p. 224</span></li>
+        <li class="m-n2">Equação de Clapeyron <span class="t-pag">p. 228</span></li>
+        <li class="m-n2">Leis dos gases <span class="t-pag">p. 228</span></li>
+        <li class="m-sess">Sessão 2 · p. 235–235 <a class="comecar" href="../../fisica2/T15-S2/index.html">Começar a sessão 2</a></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 235</span></li>
+      </ul></details></li>
+    <li><details><summary><span class="t-num">Tema 16</span><span class="t-tit">Termodinâmica: primeira e segunda leis</span><span class="t-meta">p. 236–249 · 14 folhas · 8 marcadores<span class="t-tempo">~42 min (2 sessões)</span></span></summary>
+      <ul class="marc">
+        <li class="m-sess">Sessão 1 · p. 236–243 <a class="comecar" href="../../fisica2/T16-S1/index.html">Começar a sessão 1</a></li>
+        <li class="m-n1">Tema 16 — Termodinâmica: primeira e segunda leis <span class="t-pag">p. 236</span></li>
+        <li class="m-n2">Termodinâmica <span class="t-pag">p. 237</span></li>
+        <li class="m-n2">Transformação adiabática <span class="t-pag">p. 242</span></li>
+        <li class="m-n2">Ciclo de Carnot <span class="t-pag">p. 242</span></li>
+        <li class="m-sess">Sessão 2 · p. 244–249 <a class="comecar" href="../../fisica2/T16-S2/index.html">Começar a sessão 2</a></li>
+        <li class="m-n2">Entropia <span class="t-pag">p. 244</span></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 246</span></li>
+        <li class="m-n1">Reunindo conceitos <span class="t-pag">p. 247</span></li>
+        <li class="m-n1">Em ação <span class="t-pag">p. 248</span></li>
+      </ul></details></li>
+    <li><details><summary><span class="t-num">Tema 17</span><span class="t-tit">Ondas mecânicas e som</span><span class="t-meta">p. 250–272 · 23 folhas · 11 marcadores<span class="t-tempo">~69 min (3 sessões)</span></span></summary>
+      <ul class="marc">
+        <li class="m-sess">Sessão 1 · p. 250–258 <a class="comecar" href="../../fisica2/T17-S1/index.html">Começar a sessão 1</a></li>
+        <li class="m-n1 m-uni">Unidade 8 — Ondas <span class="t-pag">p. 250</span></li>
+        <li class="m-n1">Tema 17 — Ondas mecânicas e som <span class="t-pag">p. 251</span></li>
+        <li class="m-n2">Natureza das ondas <span class="t-pag">p. 252</span></li>
+        <li class="m-n2">Classificação das ondas <span class="t-pag">p. 254</span></li>
+        <li class="m-n2">Algumas propriedades das ondas <span class="t-pag">p. 256</span></li>
+        <li class="m-sess">Sessão 2 · p. 259–266 <a class="comecar" href="../../fisica2/T17-S2/index.html">Começar a sessão 2</a></li>
+        <li class="m-n2">Fenômenos ondulatórios <span class="t-pag">p. 259</span></li>
+        <li class="m-n2">Ciência na prática <span class="t-pag">p. 263</span></li>
+        <li class="m-n2">Oscilações e ondas estacionárias <span class="t-pag">p. 265</span></li>
+        <li class="m-sess">Sessão 3 · p. 267–272 <a class="comecar" href="../../fisica2/T17-S3/index.html">Começar a sessão 3</a></li>
+        <li class="m-n2">Ondas sonoras <span class="t-pag">p. 267</span></li>
+        <li class="m-n2">Efeito Doppler <span class="t-pag">p. 270</span></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 272</span></li>
+      </ul></details></li>
+    <li><details><summary><span class="t-num">Tema 18</span><span class="t-tit">Ondas eletromagnéticas</span><span class="t-meta">p. 273–285 · 13 folhas · 6 marcadores<span class="t-tempo">~39 min (2 sessões)</span></span></summary>
+      <ul class="marc">
+        <li class="m-sess">Sessão 1 · p. 273–279 <a class="comecar" href="../../fisica2/T18-S1/index.html">Começar a sessão 1</a></li>
+        <li class="m-n1">Tema 18 — Ondas eletromagnéticas <span class="t-pag">p. 273</span></li>
+        <li class="m-n2">Introdução às ondas eletromagnéticas <span class="t-pag">p. 274</span></li>
+        <li class="m-n2">Radiações ionizantes <span class="t-pag">p. 275</span></li>
+        <li class="m-n2">Trabalho em foco <span class="t-pag">p. 279</span></li>
+        <li class="m-sess">Sessão 2 · p. 280–285 <a class="comecar" href="../../fisica2/T18-S2/index.html">Começar a sessão 2</a></li>
+        <li class="m-n2">Radiações não ionizantes <span class="t-pag">p. 280</span></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 285</span></li>
+      </ul></details></li>
+    <li><details><summary><span class="t-num">Tema 19</span><span class="t-tit">Óptica geométrica</span><span class="t-meta">p. 286–303 · 18 folhas · 12 marcadores<span class="t-tempo">~54 min (2 sessões)</span></span></summary>
+      <ul class="marc">
+        <li class="m-sess">Sessão 1 · p. 286–294 <a class="comecar" href="../../fisica2/T19-S1/index.html">Começar a sessão 1</a></li>
+        <li class="m-n1">Tema 19 — Óptica geométrica <span class="t-pag">p. 286</span></li>
+        <li class="m-n2">Luz <span class="t-pag">p. 287</span></li>
+        <li class="m-n2">Princípios da Óptica geométrica <span class="t-pag">p. 287</span></li>
+        <li class="m-n2">Reflexão da luz <span class="t-pag">p. 288</span></li>
+        <li class="m-n2">Espelhos planos <span class="t-pag">p. 289</span></li>
+        <li class="m-n2">Espelhos esféricos <span class="t-pag">p. 292</span></li>
+        <li class="m-n2">Raios notáveis <span class="t-pag">p. 294</span></li>
+        <li class="m-sess">Sessão 2 · p. 295–303 <a class="comecar" href="../../fisica2/T19-S2/index.html">Começar a sessão 2</a></li>
+        <li class="m-n2">Construção geométrica das imagens <span class="t-pag">p. 295</span></li>
+        <li class="m-n2">Refração da luz <span class="t-pag">p. 297</span></li>
+        <li class="m-n2">Ciência na prática <span class="t-pag">p. 301</span></li>
+        <li class="m-n2">Cor <span class="t-pag">p. 302</span></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 303</span></li>
+      </ul></details></li>
+    <li><details><summary><span class="t-num">Tema 20</span><span class="t-tit">Óptica da visão</span><span class="t-meta">p. 304–316 · 13 folhas · 7 marcadores<span class="t-tempo">~39 min (2 sessões)</span></span></summary>
+      <ul class="marc">
+        <li class="m-sess">Sessão 1 · p. 304–310 <a class="comecar" href="../../fisica2/T20-S1/index.html">Começar a sessão 1</a></li>
+        <li class="m-n1">Tema 20 — Óptica da visão <span class="t-pag">p. 304</span></li>
+        <li class="m-n2">Lentes <span class="t-pag">p. 305</span></li>
+        <li class="m-n2">Instrumentos ópticos <span class="t-pag">p. 309</span></li>
+        <li class="m-sess">Sessão 2 · p. 311–316 <a class="comecar" href="../../fisica2/T20-S2/index.html">Começar a sessão 2</a></li>
+        <li class="m-n2">A visão <span class="t-pag">p. 311</span></li>
+        <li class="m-n2">Ametropias <span class="t-pag">p. 313</span></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 315</span></li>
+        <li class="m-n1">Reunindo conceitos <span class="t-pag">p. 316</span></li>
+      </ul></details></li>
+  </ol>
+  <p class="aba-ref">BONJORNO, J. R. <em>Identidade Saraiva: Física</em>. São Paulo: Saraiva, 2024.</p>
+</aside>
+<button class="aba-toggle aqui" id="abaFisica3T" aria-current="page">Física 3</button>
+<aside class="aba-painel" id="abaFisica3">
+  <h3>Física 3</h3>
+  <img class="disc-ic" src="../../_icones/fisica-3.svg" width="72" height="72" alt="Ícone de Física 3">
+  <p class="fis-intro">Aqui estão os temas de Física 3: do Tema 21 ao Tema 30 do livro didático. Você estuda cada tema em sessões de até 30 min.</p>
+  <p class="aba-nota fis-nota">Toque em um tema para ver os marcadores e as páginas. Em cada sessão, o botão Começar abre a página da sessão, com o aquecimento, o estudo focado e a atividade final. O tempo previsto conta 3 min por folha do livro, e a sessão sempre termina entre dois marcadores.</p>
+  <ol class="temas">
+    <li><details><summary><span class="t-num">Tema 21</span><span class="t-tit">Força elétrica e campo elétrico</span><span class="t-meta">p. 317–328 · 12 folhas · 7 marcadores<span class="t-tempo">~36 min (2 sessões)</span></span></summary>
+      <ul class="marc">
+        <li class="m-sess">Sessão 1 · p. 317–323 <a class="comecar" href="../../fisica3/T21-S1/index.html">Começar a sessão 1</a></li>
+        <li class="m-n1 m-uni">Unidade 9 — Eletrostática <span class="t-pag">p. 317</span></li>
+        <li class="m-n1">Tema 21 — Força elétrica e campo elétrico <span class="t-pag">p. 318</span></li>
+        <li class="m-n2">Carga elétrica <span class="t-pag">p. 319</span></li>
+        <li class="m-n2">Condutores e isolantes <span class="t-pag">p. 320</span></li>
+        <li class="m-n2">Força elétrica <span class="t-pag">p. 322</span></li>
+        <li class="m-sess">Sessão 2 · p. 324–328 <a class="comecar" href="../../fisica3/T21-S2/index.html">Começar a sessão 2</a></li>
+        <li class="m-n2">Conceito de campo elétrico <span class="t-pag">p. 324</span></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 328</span></li>
+      </ul></details></li>
+    <li><details><summary><span class="t-num">Tema 22</span><span class="t-tit">Potencial elétrico</span><span class="t-meta">p. 329–342 · 14 folhas · 10 marcadores<span class="t-tempo">~42 min (2 sessões)</span></span></summary>
+      <ul class="marc">
+        <li class="m-sess">Sessão 1 · p. 329–335 <a class="comecar" href="../../fisica3/T22-S1/index.html">Começar a sessão 1</a></li>
+        <li class="m-n1">Tema 22 — Potencial elétrico <span class="t-pag">p. 329</span></li>
+        <li class="m-n2">Energia potencial elétrica <span class="t-pag">p. 330</span></li>
+        <li class="m-n2">Trabalho em foco <span class="t-pag">p. 330</span></li>
+        <li class="m-n2">Potencial elétrico <span class="t-pag">p. 331</span></li>
+        <li class="m-n2">Campo elétrico uniforme e diferença de potencial elétrico <span class="t-pag">p. 333</span></li>
+        <li class="m-sess">Sessão 2 · p. 336–342 <a class="comecar" href="../../fisica3/T22-S2/index.html">Começar a sessão 2</a></li>
+        <li class="m-n2">Densidade superficial de cargas <span class="t-pag">p. 336</span></li>
+        <li class="m-n2">Gaiola de Faraday <span class="t-pag">p. 337</span></li>
+        <li class="m-n2">Capacitância <span class="t-pag">p. 338</span></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 340</span></li>
+        <li class="m-n1">Reunindo conceitos <span class="t-pag">p. 342</span></li>
+      </ul></details></li>
+    <li><details><summary><span class="t-num">Tema 23</span><span class="t-tit">Introdução à Eletrodinâmica</span><span class="t-meta">p. 343–360 · 18 folhas · 10 marcadores<span class="t-tempo">~54 min (2 sessões)</span></span></summary>
+      <ul class="marc">
+        <li class="m-sess">Sessão 1 · p. 343–351 <a class="comecar" href="../../fisica3/T23-S1/index.html">Começar a sessão 1</a></li>
+        <li class="m-n1 m-uni">Unidade 10 — Eletrodinâmica <span class="t-pag">p. 343</span></li>
+        <li class="m-n1">Tema 23 — Introdução à Eletrodinâmica <span class="t-pag">p. 344</span></li>
+        <li class="m-n2">Corrente elétrica <span class="t-pag">p. 345</span></li>
+        <li class="m-n2">Resistência elétrica e primeira lei de Ohm <span class="t-pag">p. 348</span></li>
+        <li class="m-n2">Tensão elétrica <span class="t-pag">p. 349</span></li>
+        <li class="m-n2">Potência elétrica <span class="t-pag">p. 350</span></li>
+        <li class="m-sess">Sessão 2 · p. 352–360 <a class="comecar" href="../../fisica3/T23-S2/index.html">Começar a sessão 2</a></li>
+        <li class="m-n2">Associação de resistores <span class="t-pag">p. 352</span></li>
+        <li class="m-n2">Reostato e segunda lei de Ohm <span class="t-pag">p. 356</span></li>
+        <li class="m-n2">Medidores elétricos <span class="t-pag">p. 358</span></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 360</span></li>
+      </ul></details></li>
+    <li><details><summary><span class="t-num">Tema 24</span><span class="t-tit">Circuitos elétricos</span><span class="t-meta">p. 361–369 · 9 folhas · 5 marcadores<span class="t-tempo">~27 min (1 sessão)</span></span></summary>
+      <ul class="marc">
+        <li class="m-n1">Tema 24 — Circuitos elétricos <span class="t-pag">p. 361</span></li>
+        <li class="m-n2">Circuitos simples <span class="t-pag">p. 362</span></li>
+        <li class="m-n2">Leis de Kirchhoff <span class="t-pag">p. 365</span></li>
+        <li class="m-n2">Ponte de Wheatstone <span class="t-pag">p. 368</span></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 369</span></li>
+        <li class="m-sess"><a class="comecar" href="../../fisica3/T24-S1/index.html">Começar</a></li>
+      </ul></details></li>
+    <li><details><summary><span class="t-num">Tema 25</span><span class="t-tit">Geração e consumo de energia elétrica</span><span class="t-meta">p. 370–378 · 9 folhas · 6 marcadores<span class="t-tempo">~27 min (1 sessão)</span></span></summary>
+      <ul class="marc">
+        <li class="m-n1">Tema 25 — Geração e consumo de energia elétrica <span class="t-pag">p. 370</span></li>
+        <li class="m-n2">Fontes de energia <span class="t-pag">p. 371</span></li>
+        <li class="m-n2">Matrizes energética e elétrica <span class="t-pag">p. 373</span></li>
+        <li class="m-n2">Consumo de energia elétrica <span class="t-pag">p. 375</span></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 377</span></li>
+        <li class="m-n1">Reunindo conceitos <span class="t-pag">p. 378</span></li>
+        <li class="m-sess"><a class="comecar" href="../../fisica3/T25-S1/index.html">Começar</a></li>
+      </ul></details></li>
+    <li><details><summary><span class="t-num">Tema 26</span><span class="t-tit">Magnetismo</span><span class="t-meta">p. 379–387 · 9 folhas · 6 marcadores<span class="t-tempo">~27 min (1 sessão)</span></span></summary>
+      <ul class="marc">
+        <li class="m-n1 m-uni">Unidade 11 — Eletromagnetismo <span class="t-pag">p. 379</span></li>
+        <li class="m-n1">Tema 26 — Magnetismo <span class="t-pag">p. 380</span></li>
+        <li class="m-n2">Imãs e eletroímãs <span class="t-pag">p. 381</span></li>
+        <li class="m-n2">Ciência na prática <span class="t-pag">p. 383</span></li>
+        <li class="m-n2">Campo magnético <span class="t-pag">p. 384</span></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 386</span></li>
+        <li class="m-sess"><a class="comecar" href="../../fisica3/T26-S1/index.html">Começar</a></li>
+      </ul></details></li>
+    <li><details><summary><span class="t-num">Tema 27</span><span class="t-tit">Força eletromagnética e indução eletromagnética</span><span class="t-meta">p. 388–404 · 17 folhas · 8 marcadores<span class="t-tempo">~51 min (2 sessões)</span></span></summary>
+      <ul class="marc">
+        <li class="m-sess">Sessão 1 · p. 388–396 <a class="comecar" href="../../fisica3/T27-S1/index.html">Começar a sessão 1</a></li>
+        <li class="m-n1">Tema 27 — Força eletromagnética e indução eletromagnética <span class="t-pag">p. 388</span></li>
+        <li class="m-n2">Força magnética <span class="t-pag">p. 389</span></li>
+        <li class="m-n2">Eletromagnetismo <span class="t-pag">p. 392</span></li>
+        <li class="m-n2">Fluxo magnético <span class="t-pag">p. 395</span></li>
+        <li class="m-sess">Sessão 2 · p. 397–404 <a class="comecar" href="../../fisica3/T27-S2/index.html">Começar a sessão 2</a></li>
+        <li class="m-n2">Lei de Lenz <span class="t-pag">p. 397</span></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 399</span></li>
+        <li class="m-n1">Reunindo conceitos <span class="t-pag">p. 402</span></li>
+        <li class="m-n1">Em ação <span class="t-pag">p. 403</span></li>
+      </ul></details></li>
+    <li><details><summary><span class="t-num">Tema 28</span><span class="t-tit">Tópicos de Física moderna</span><span class="t-meta">p. 405–418 · 14 folhas · 8 marcadores<span class="t-tempo">~42 min (2 sessões)</span></span></summary>
+      <ul class="marc">
+        <li class="m-sess">Sessão 1 · p. 405–411 <a class="comecar" href="../../fisica3/T28-S1/index.html">Começar a sessão 1</a></li>
+        <li class="m-n1 m-uni">Unidade 12 — Física moderna <span class="t-pag">p. 405</span></li>
+        <li class="m-n1">Tema 28 — Tópicos de Física moderna <span class="t-pag">p. 406</span></li>
+        <li class="m-n2">Relatividade especial <span class="t-pag">p. 407</span></li>
+        <li class="m-sess">Sessão 2 · p. 412–418 <a class="comecar" href="../../fisica3/T28-S2/index.html">Começar a sessão 2</a></li>
+        <li class="m-n2">Relatividade geral <span class="t-pag">p. 412</span></li>
+        <li class="m-n2">A simultaneidade na Relatividade <span class="t-pag">p. 413</span></li>
+        <li class="m-n2">A relação entre massa e energia na Relatividade <span class="t-pag">p. 415</span></li>
+        <li class="m-n2">A Relatividade de Galileu e a Relatividade de Einstein <span class="t-pag">p. 417</span></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 418</span></li>
+      </ul></details></li>
+    <li><details><summary><span class="t-num">Tema 29</span><span class="t-tit">Mecânica quântica</span><span class="t-meta">p. 419–433 · 15 folhas · 9 marcadores<span class="t-tempo">~45 min (2 sessões)</span></span></summary>
+      <ul class="marc">
+        <li class="m-sess">Sessão 1 · p. 419–428 <a class="comecar" href="../../fisica3/T29-S1/index.html">Começar a sessão 1</a></li>
+        <li class="m-n1">Tema 29 — Mecânica quântica <span class="t-pag">p. 419</span></li>
+        <li class="m-n2">A radiação do corpo negro <span class="t-pag">p. 420</span></li>
+        <li class="m-n2">Efeito fotoelétrico <span class="t-pag">p. 421</span></li>
+        <li class="m-n2">O átomo de Bohr <span class="t-pag">p. 423</span></li>
+        <li class="m-n2">Ciência na prática <span class="t-pag">p. 424</span></li>
+        <li class="m-n2">A Lei de Wien <span class="t-pag">p. 425</span></li>
+        <li class="m-n2">Princípio da dualidade onda-partícula <span class="t-pag">p. 426</span></li>
+        <li class="m-sess">Sessão 2 · p. 429–433 <a class="comecar" href="../../fisica3/T29-S2/index.html">Começar a sessão 2</a></li>
+        <li class="m-n2">Princípio da incerteza de Heisenberg <span class="t-pag">p. 429</span></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 433</span></li>
+      </ul></details></li>
+    <li><details><summary><span class="t-num">Tema 30</span><span class="t-tit">Radioatividade</span><span class="t-meta">p. 434–443 · 10 folhas · 7 marcadores<span class="t-tempo">~30 min (1 sessão)</span></span></summary>
+      <ul class="marc">
+        <li class="m-n1">Tema 30 — Radioatividade <span class="t-pag">p. 434</span></li>
+        <li class="m-n2">Radioatividade e sua história <span class="t-pag">p. 435</span></li>
+        <li class="m-n2">Decaimento radioativo <span class="t-pag">p. 438</span></li>
+        <li class="m-n2">Datamento por carbono-14 <span class="t-pag">p. 439</span></li>
+        <li class="m-n2">Trabalho em foco <span class="t-pag">p. 440</span></li>
+        <li class="m-n2">Atividades finais <span class="t-pag">p. 441</span></li>
+        <li class="m-n1">Reunindo conceitos <span class="t-pag">p. 443</span></li>
+        <li class="m-sess"><a class="comecar" href="../../fisica3/T30-S1/index.html">Começar</a></li>
+      </ul></details></li>
+  </ol>
+  <p class="aba-ref">BONJORNO, J. R. <em>Identidade Saraiva: Física</em>. São Paulo: Saraiva, 2024.</p>
+</aside>
+<button class="aba-toggle" id="abaReferenciasT">Referências</button>
+<aside class="aba-painel" id="abaReferencias">
+  <h3>Referências</h3>
+  <h4 class="cred-sec">Bibliografia básica</h4>
+  <ol class="ref-lista">
+    <li>BONJORNO, J. R. <em>Identidade Saraiva: Física</em>. São Paulo: Saraiva, 2024.</li>
+  </ol>
+  <h4 class="cred-sec">Bibliografia complementar</h4>
+  <ol class="ref-lista">
+    <li>HEWITT, Paul G. <em>Física conceitual</em>. 12. ed. Porto Alegre: Bookman, 2015.</li>
+    <li>VAŠČÁK, V. <em>Physics at school: I. Mechanics</em>. Morávia: Vladimír Vaščák, [20–]. Disponível em: <a href="https://www.vascak.cz/?id=1&amp;language=it#kapitola3" target="_blank" rel="noopener">https://www.vascak.cz/?id=1&amp;language=it#kapitola3</a>. Acesso em: 13 set. 2026.</li>
+    <li>UNIVERSITY OF COLORADO BOULDER. <em>PhET Interactive Simulations</em>: movimento; trabalho, energia e potência; fenômenos quânticos; matemática e estatística. Boulder: University of Colorado Boulder, 2002-. Disponível em: <a href="https://phet.colorado.edu/pt_BR/simulations/filter?subjects=motion,work-energy-and-power,quantum-phenomena,math-and-statistics&amp;type=html" target="_blank" rel="noopener">https://phet.colorado.edu/pt_BR/simulations/filter?subjects=motion,work-energy-and-power,quantum-phenomena,math-and-statistics&amp;type=html</a>. Acesso em: 13 set. 2026.</li>
+  </ol>
+  <h4 class="cred-sec">Bibliografia pedagógica científica</h4>
+  <ol class="ref-lista">
+    <li>BLOOM, Benjamin S. (org.). <em>O desenvolvimento de talentos na juventude</em>. Porto Alegre: Globo, 1988.</li>
+    <li>PÓLYA, George. <em>A arte de resolver problemas</em>: um novo aspecto do método matemático. Tradução de Heitor Lisboa de Araújo. 2. ed. Rio de Janeiro: Interciência, 2006.</li>
+    <li>NICOLELIS, Miguel. <em>O verdadeiro criador de tudo</em>: como o cérebro humano esculpiu o universo que conhecemos. São Paulo: Planeta, 2020.</li>
+    <li>PIAZZI, Pierluigi. <em>Aprendendo inteligência</em>: manual de instruções do cérebro para estudantes em geral. São Paulo: Aleph, 2008.</li>
+    <li>FELDER, R. M.; SOLOMAN, B. A. <em>Index of Learning Styles Questionnaire</em>. Raleigh: North Carolina State University. Versão reduzida (20 itens) e traduzida.</li>
+  </ol>
+</aside>
+<button class="aba-toggle" id="abaCreditosT">Créditos</button>
+<aside class="aba-painel" id="abaCreditos">
+  <h3>Créditos</h3>
+  <h4 class="cred-sec">Equipe da oficina</h4>
+  <div class="cred-card"><p class="aba-cargo">Coordenador do projeto</p>
+  <p class="aba-nome"><strong>Julio Azevedo</strong></p>
+  <p class="cred-desc">Professor do Ensino Técnico e Tecnológico do IFMG, na Área de Física do <em>Campus</em>
+  Ouro Preto desde 1985. Criador do Núcleo de Inovação e Desenvolvimento de Experimentos Científicos (NIDEC) em 2016.</p></div>
+  <div class="cred-card"><p class="aba-cargo">Colaborador</p>
+  <p class="aba-nome"><strong>Felipe Beato</strong></p>
+  <p class="cred-desc">Professor, pesquisador e colaborador do NIDEC. Licenciado em Física e mestre em Física
+  dos Materiais.</p></div>
+  <div class="cred-card"><p class="aba-cargo">Monitoria</p>
+  <p class="aba-nome"><strong>Gabriela Padula Marcilio</strong></p>
+  <p class="aba-nome"><strong>Jhennifer Lara Bartolomeu</strong></p></div>
+  <h4 class="cred-sec">IFMG — <em>Campus</em> Ouro Preto</h4>
+  <p class="aba-cargo">Reitor</p>
+  <p class="aba-nome">Rafael Bastos Teixeira</p>
+  <p class="aba-cargo">Pró-Reitor de Ensino</p>
+  <p class="aba-nome">Mário Luiz Viana Alvarenga</p>
+  <p class="aba-cargo">Diretor-Geral do IFMG – <em>Campus</em> Ouro Preto</p>
+  <p class="aba-nome">Reginato Fernandes dos Santos</p>
+  <p class="aba-cargo">Diretora de Ensino (DE)</p>
+  <p class="aba-nome">Talita Valadares</p>
+  <p class="aba-cargo">Diretora de Pesquisa, Inovação e Pós-Graduação (DPIPG)</p>
+  <p class="aba-nome">Venúncia Emília Coelho</p>
+  <p class="aba-cargo">Diretor de Extensão, Esporte e Cultura (DEXT)</p>
+  <p class="aba-nome">Paulo Graça Castanheira Júnior</p>
+  <p class="aba-cargo">Diretor de Administração e Planejamento (DAP)</p>
+  <p class="aba-nome">Arquimedes Martins Góis</p>
+  <p class="aba-cargo">Coordenador da Área de Física</p>
+  <p class="aba-nome">Lázaro Souza Lima</p>
+  <p class="cred-ed">1.ª edição — Ouro Preto, 2026</p>
+  <a class="aba-btn" href="../../agradecimentos/index.html">Ver os agradecimentos</a>
+</aside>
+<aside class="aba-painel" id="abaInstalar">
+  <h3>Instalar</h3>
+  <p class="fis-intro">Instale o site no celular ou no computador e abra com um toque, pelo ícone, como um aplicativo.</p>
+  <div class="qr-box"><img src="../../_icones/oia-qr-instalar.svg" width="170" height="170" alt="QR code que abre https://nidecop-jafb.github.io/oia-oa/instalar/"><div><p>Aponte a câmera do celular para o QR code para abrir o passo a passo.</p><p class="qr-end"><span>nidecop-jafb.github.io</span><wbr>/<span>oia-oa</span><wbr>/<span>instalar</span>/</p></div></div>
+  <a class="aba-btn" href="../../instalar/index.html">Instalar no celular ou no computador</a>
+</aside>
+<aside class="aba-painel" id="abaEstilo">
+  <h3>Estilo de aprendizagem</h3>
+  <p class="est-lead">Conhecer o seu estilo de aprendizagem é descobrir como você prefere receber, processar e organizar o que
+  estuda. O questionário de estilos, baseado no Índice de Estilos de Aprendizagem de Felder e Soloman, olha para
+  quatro dimensões, cada uma com dois polos:</p>
+  <ul class="dims">
+    <li><strong>Ativo ou Reflexivo</strong>Aprender fazendo e discutindo, ou pensando sozinho primeiro.</li>
+    <li><strong>Sensorial ou Intuitivo</strong>Partir de fatos e exemplos concretos, ou de ideias e teorias.</li>
+    <li><strong>Visual ou Verbal</strong>Lembrar melhor de figuras e gráficos, ou de palavras escritas e faladas.</li>
+    <li><strong>Sequencial ou Global</strong>Avançar passo a passo, ou ver o quadro geral e entender de uma vez.</li>
+  </ul>
+  <p>Ninguém é um polo só: o resultado mostra para que lado você pende hoje, e com que força. Não existe estilo
+  melhor nem pior, e ele não é um rótulo — muda com a prática e com o que você estuda.</p>
+  <p>Com esse retrato, você escolhe estratégias (e usos da IA) que combinam com o seu jeito e treina, de propósito,
+  o polo que usa menos. Ao longo da oficina, responda de novo e acompanhe como o seu perfil muda.</p>
+  <a class="aba-btn" href="../../estilo/index.html">Responder o questionário (20 perguntas, ~5 min)</a>
+  <a class="aba-btn" href="../../estilo/index.html#grupo">Ver o painel do grupo</a>
+  <p class="aba-ref">FELDER, R. M.; SOLOMAN, B. A. <em>Index of Learning Styles Questionnaire</em>. Raleigh: North Carolina State University. Versão reduzida (20 itens) e traduzida.</p>
+</aside>
+<div class="wrap">
+<div class="topo-btns"><a class="inicio-btn" href="../../index.html" aria-label="Início" title="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5.5h4V20"/></svg></a><button class="crono-btn" id="cronoBtn" type="button" aria-haspopup="dialog" aria-label="Resumo em Áudio" title="Resumo em Áudio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13.5" r="8"/><path d="M12 9.5v4l2.5 2.5M9.5 2.5h5M12 2.5v3"/></svg></button><button class="letra-btn" id="letraMenos" type="button" aria-label="Diminuir a letra" title="Diminuir a letra">A&minus;</button><button class="letra-btn" id="letraMais" type="button" aria-label="Aumentar a letra" title="Aumentar a letra">A+</button><button class="tema-btn" id="temaBtn" type="button" aria-label="Mudar o tema"><svg class="sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v2.5M12 20v2.5M1.5 12h2.5M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg><svg class="lua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg></button><button class="instalar-btn" id="instalarBtn" type="button" aria-controls="abaInstalar" aria-expanded="false" aria-label="Instalar" title="Instalar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M12 7v7"/><path d="M9 11l3 3 3-3"/><path d="M10 18h4"/></svg></button><button class="estilo-btn" id="estiloBtn" type="button" aria-controls="abaEstilo" aria-expanded="false" aria-label="Estilo de aprendizagem" title="Estilo de aprendizagem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1.1 1.3 1.1 2.2h5c0-.9.5-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg></button><div class="ava-menu-box"><button class="ava-menu-btn" id="avaMenuBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Avaliação, sugestões e agradecimentos" title="Avaliação"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M8.5 13l2.5 2.5 4.5-5"/></svg></button><nav class="ava-menu" id="avaMenu" hidden><a href="../../avaliacao/index.html">Responder a avaliação</a><a href="../../avaliacao/painel/index.html">Painel do professor</a><a href="../../sugestoes/index.html">Enviar sugestão</a><a href="../../agradecimentos/index.html">Agradecimentos</a></nav></div></div>
+<div class="sessao">
+  <p class="s-volta">Física 3 · Tema 29</p>
+  <h1>Tema 29 — Mecânica quântica</h1>
+  <p class="s-sub">Sessão 1 de 2 · páginas 419 a 428 · A radiação do corpo negro; Efeito fotoelétrico; O átomo de Bohr; Ciência na prática; A Lei de Wien; Princípio da dualidade onda-partícula</p>
+  <div class="s-rev s-caixa" hidden></div>
+  <div class="fase fase-1"><p class="fase-t"><span class="fase-n">Fase 1</span> Aquecimento — até 10 min</p>
+  <p class="s-mat">Comece organizando os materiais de estudo: livro-texto impresso, caderno de Física, caneta, lápis, borracha, régua e calculadora científica. Toque no cronômetro, no alto da tela, e aperte “Começar o aquecimento”.</p>
+  <p class="etapa fim s-sucesso">Sucesso no seu estudo!</p>
+  <div class="grad-g" data-g="1"><p class="etapa"><span class="etapa-n" aria-label="Etapa 1">1</span><span><strong>Responda no celular</strong> as 3 perguntas iniciais. Elas são corrigidas na hora.</span></p><div class="c-ra" hidden><label for="cRA">Seu RA (só os números), para enviar as respostas:</label><input id="cRA" inputmode="numeric" autocomplete="off"><button type="button" class="c-ra-ok">Guardar</button></div><div class="c-cards"></div><p class="c-aviso" hidden></p></div>
+  <div class="grad-g" data-g="2"><p class="etapa"><span class="etapa-n" aria-label="Etapa 2">2</span><span><strong>Abra o livro impresso na página 419</strong> e deixe-o aberto ao lado do caderno. Está sem o livro? Toque no botão abaixo: o exemplo e as questões da sessão aparecem em versões para resolver sem ele.<br><button type="button" class="s-ex s-semlivro" aria-pressed="false">Estou sem o livro</button></span></p></div>
+  <div class="grad-g" data-g="3"><p class="etapa"><span class="etapa-n" aria-label="Etapa 3">3</span><span><strong>Ouça o Resumo em Áudio</strong> da sessão.</span></p><div class="s-caixa"><span class="s-ref">Em breve: o áudio desta sessão ainda está sendo gravado.</span></div></div>
+  <div class="grad-g" data-g="4"><p class="etapa"><span class="etapa-n" aria-label="Etapa 4">4</span><span><strong>Explore o exemplo resolvido</strong>: tente refazer no caderno e compare com a Resolução em 5 passos; logo abaixo dela, marque em que passo você errou. Depois, veja a resolução condensada.</span></p><div class="s-caixa"><p><b>Livro, página 422 · Atividade resolvida 1</b> <span class="s-ref">(resolvida no livro · Pensamento Quantitativo)</span></p><div class="s-sl" id="slEx" hidden><p class="s-ref"><b>Sem o livro:</b> resolva esta versão.</p><p>Luz de frequência 1,2 · 10¹⁵ Hz incide num metal cuja função trabalho é 4,0 eV. Com que energia cinética o elétron é ejetado? (h = 4,1 · 10⁻¹⁵ eV·s; Ec = h·f − ϕ)</p></div><p class="s-ref s-nota">A Resolução em 5 passos e a condensada abaixo resolvem a versão sem o livro.</p><button type="button" class="s-ex" aria-expanded="false" aria-controls="exPassos">Resolução em 5 passos</button><div id="exPassos" hidden><ol class="s-passos s-caixa"><li><b>O que a questão quer?</b> Com que energia cinética o elétron é ejetado do metal?</li><li><b>O que eu tenho?</b> Função trabalho do metal: ϕ = 4,0 eV; frequência da luz f = 1,2 · 10¹⁵ Hz; constante de Planck h = 4,1 · 10⁻¹⁵ eV·s; efeito fotoelétrico: Ec = h·f − ϕ.</li><li><b>Qual é o desenho?</b> Desenho: fóton chegando à superfície metálica e o elétron saindo. A energia do fóton paga a “saída” (ϕ), e o que sobra vira energia cinética.</li><li><b>Minha solução</b> E = h·f = 4,1 · 10⁻¹⁵ · 1,2 · 10¹⁵ = 4,92 eV. Ec = 4,92 − 4,0 = 0,92 eV.</li><li><b>Confiro e respondo</b> A energia do fóton é maior que ϕ: o elétron sai; a unidade eV confere. Resposta: Ec = 0,92 eV.</li></ol><div class="s-errei s-caixa"><p><b>Em que passo eu errei?</b> Compare com o que você fez no caderno e marque. Pode marcar mais de um.</p><label><input type="checkbox" class="s-perr" value="1"> 1 · O que a questão quer?</label><label><input type="checkbox" class="s-perr" value="2"> 2 · O que eu tenho?</label><label><input type="checkbox" class="s-perr" value="3"> 3 · Qual é o desenho?</label><label><input type="checkbox" class="s-perr" value="4"> 4 · Minha solução</label><label><input type="checkbox" class="s-perr" value="5"> 5 · Confiro e respondo</label><label><input type="checkbox" class="s-perr" value="0"> Não errei</label></div><button type="button" class="s-ex" aria-expanded="false" aria-controls="exCond">Resolução condensada</button><p class="s-caixa" id="exCond" hidden>E = h·f = 4,92 eV; Ec = 4,92 − 4,0 = 0,92 eV.</p></div></div></div></div>
+  <div class="fase fase-2 grad-g" data-g="5"><p class="fase-t"><span class="fase-n">Fase 2</span> Estudo focado — até 15 min</p>
+  <p class="etapa"><span class="etapa-n" aria-label="Etapa 1">1</span><span><strong>O cronômetro passa sozinho para o estudo focado</strong>: até 15 minutos.</span></p>
+  <p class="etapa"><span class="etapa-n" aria-label="Etapa 2">2</span><span><strong>Resolva no caderno, pelos 5 passos</strong>, as 3 questões do livro: da mais simples para a mais exigente, cada uma com a resolução condensada. Travou? Grave a dúvida em áudio logo abaixo da questão.</span></p><ol class="s-focado s-caixa"><li><b>Página 423, questão 1</b> <span class="s-ref">qualitativa · L2 Compreender</span><div class="s-sl" id="slF1" hidden><p class="s-ref"><b>Sem o livro:</b> resolva esta versão.</p><p>Explique, em poucas linhas, o que é a radiação de corpo negro e por que ela foi importante para o nascimento da Física quântica.</p></div><div class="c-duv" data-i="0"></div></li><li><b>Página 433, questão 3</b> <span class="s-ref">qualitativa e quantitativa · L3 Aplicar</span><div class="s-sl" id="slF2" hidden><p class="s-ref"><b>Sem o livro:</b> resolva esta versão.</p><p>O objeto A emite radiação de corpo negro a 1 000 K, e o objeto B, a 2 000 K. a) Qual emite radiação mais energética? Justifique. b) Pela lei de Wien, λmáx = b/T (b = 2,9 · 10⁻³ m·K): em que comprimento de onda cada um emite com mais intensidade?</p></div><div class="c-duv" data-i="1"></div></li><li><b>Página 424, questão Conclusão 1 (Ciência na prática)</b> <span class="s-ref">qualitativa · L4 Analisar</span><div class="s-sl" id="slF3" hidden><p class="s-ref"><b>Sem o livro:</b> resolva esta versão.</p><p>Num espectroscópio caseiro, feito com uma caixa e um pedaço de CD, a luz branca de uma lâmpada aparece separada em cores. O que explica essa separação? Por que lâmpadas diferentes produzem faixas de cores diferentes?</p></div><div class="c-duv" data-i="2"></div></li></ol></div>
+  <div class="fase fase-3 grad-g" data-g="6"><p class="fase-t"><span class="fase-n">Fase 3</span> Atividade final — até 5 min</p>
+  <p class="etapa"><span class="etapa-n" aria-label="Etapa 1">1</span><span><strong>Analise e refine:</strong> refaça no caderno a questão do estudo focado em que você mais travou. Fotografe e use este prompt para ter a IA apoiando o desenvolvimento do seu pensamento quantitativo.<span class="s-prompt"><span class="s-prompt-t">Refiz no caderno uma questão do livro Física Identidade (Bonjorno), sobre Tema 29 — Mecânica quântica, pelos 5 passos da Resolução Científica do Problema (1 O que a questão quer?; 2 O que eu tenho?; 3 Qual é o desenho?; 4 Minha solução; 5 Confiro e respondo). Vou te mandar a foto. Não me dê a resposta nem resolva por mim. Diga em que passo está o primeiro erro, faça uma pergunta que me ajude a corrigir sozinho e, no fim, me diga um ponto forte do meu raciocínio.</span><button type="button" class="s-copiar">Copiar o prompt</button></span></span></p></div>
+</div>
+<script>window.OIA_SESSAO = {"id": "T29-S1", "banco": [{"q": "Planck propôs que a energia é emitida em pacotes, cada um com energia:", "a": ["E = h·f", "E = m·g·h", "E = F·d", "E = m·v²/2"], "c": 0, "fb": ["Isso: é o quantum de energia.", "Isso é energia potencial gravitacional.", "Isso é trabalho.", "Isso é energia cinética."], "ref": "A radiação do corpo negro, p. 420"}, {"q": "No efeito fotoelétrico, o que decide se um elétron sai do metal é:", "a": ["a frequência da luz", "só o brilho da luz", "a cor do metal", "a massa do metal"], "c": 0, "fb": ["Isso: cada fóton precisa ter h·f maior que a função trabalho.", "Luz forte de frequência baixa não arranca elétrons.", "Não.", "Não."], "ref": "Efeito fotoelétrico, p. 421"}, {"q": "Pela lei de Wien, um corpo mais quente emite com mais intensidade em comprimentos de onda:", "a": ["menores", "maiores", "iguais", "que não dependem da temperatura"], "c": 0, "fb": ["Isso: λmáx = b/T; por isso as estrelas mais quentes são azuladas.", "É o contrário.", "Mudam com a temperatura.", "Dependem, sim."], "ref": "A Lei de Wien, p. 425"}], "url": "https://script.google.com/macros/s/AKfycbwTJpLTj1i72zc5RfPw1JeCVGikjzJD7XpvvqqDTfgmEVBkuV_rxqIOF7yxvToi5aOA/exec", "coleta": "https://script.google.com/macros/s/AKfycbxeCb9a0BlRe9LnKuuIw_EjNOnKlEGO_yV4_rzuUWyNbVU4ws_isV-rjjYsl8FZ44nO/exec", "audios": [["Versão rápida", "../../_audio/OIA-CRONO-MD-rapido.m4a"], ["Versão curta", "../../_audio/OIA-CRONO-MD-curto.m4a"]]};</script>
+  <div class="footer">
+    <div class="footer-marcas"><a href="https://ouropreto.ifmg.edu.br/ouropreto" target="_blank" rel="noopener" title="IFMG — Campus Ouro Preto (abre em nova aba)"><svg class="oia-ic" xmlns="http://www.w3.org/2000/svg" viewBox="-36.75 -4 258.5 258.5" role="img" aria-label="Instituto Federal de Minas Gerais"> <title>Instituto Federal de Minas Gerais</title> <circle cx="27" cy="27" r="30" fill="#C8191E"/> <g fill="#32A041"> <rect x="65.5" y="0" width="54" height="54"/> <rect x="131" y="0" width="54" height="54"/> <rect x="0" y="65.5" width="54" height="54"/> <rect x="65.5" y="65.5" width="54" height="54"/> <rect x="0" y="131" width="54" height="54"/> <rect x="65.5" y="131" width="54" height="54"/> <rect x="131" y="131" width="54" height="54"/> <rect x="0" y="196.5" width="54" height="54"/> <rect x="65.5" y="196.5" width="54" height="54"/> </g> </svg></a><svg class="oia-ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="NIDEC — Núcleo de Inovação e Desenvolvimento de Experimentos Científicos"> <title>NIDEC — Núcleo de Inovação e Desenvolvimento de Experimentos Científicos</title> <defs> <linearGradient id="inst-nidec-o1" gradientUnits="userSpaceOnUse" x1="8" y1="100" x2="192" y2="100" gradientTransform="rotate(-30 100 100)"> <stop offset="0" stop-color="#4A1F95"/><stop offset=".38" stop-color="#2C5AA4"/> <stop offset=".70" stop-color="#2CC2A2"/><stop offset="1" stop-color="#2C9E41"/> </linearGradient> <linearGradient id="inst-nidec-o2" gradientUnits="userSpaceOnUse" x1="8" y1="100" x2="192" y2="100" gradientTransform="rotate(-90 100 100)"> <stop offset="0" stop-color="#4A1F95"/><stop offset=".38" stop-color="#2C5AA4"/> <stop offset=".70" stop-color="#2CC2A2"/><stop offset="1" stop-color="#2C9E41"/> </linearGradient> <linearGradient id="inst-nidec-o3" gradientUnits="userSpaceOnUse" x1="8" y1="100" x2="192" y2="100" gradientTransform="rotate(-150 100 100)"> <stop offset="0" stop-color="#4A1F95"/><stop offset=".38" stop-color="#2C5AA4"/> <stop offset=".70" stop-color="#2CC2A2"/><stop offset="1" stop-color="#2C9E41"/> </linearGradient> <radialGradient id="inst-nidec-nucleo" cx="40%" cy="36%" r="70%"> <stop offset="0" stop-color="#A0EBE1"/> <stop offset=".45" stop-color="#2CC8C2"/> <stop offset="1" stop-color="#1E5DA5"/> </radialGradient> </defs> <g fill="none" stroke-width="8"> <g transform="rotate(30 100 100)" stroke="url(#inst-nidec-o1)"> <ellipse cx="100" cy="100" rx="88" ry="31"/> <circle cx="188" cy="100" r="8" fill="url(#inst-nidec-o1)" stroke="none"/> </g> <g transform="rotate(90 100 100)" stroke="url(#inst-nidec-o2)"> <ellipse cx="100" cy="100" rx="88" ry="31"/> <circle cx="12" cy="100" r="8" fill="url(#inst-nidec-o2)" stroke="none"/> </g> <g transform="rotate(150 100 100)" stroke="url(#inst-nidec-o3)"> <ellipse cx="100" cy="100" rx="88" ry="31"/> <circle cx="188" cy="100" r="8" fill="url(#inst-nidec-o3)" stroke="none"/> </g> </g> <circle cx="100" cy="100" r="23" fill="url(#inst-nidec-nucleo)"/> </svg></div>
+    <p>IFMG <em>Campus</em> Ouro Preto · Coordenadoria da Área de Física (CODAFIS) · Núcleo de Inovação e
+    Desenvolvimento de Experimentos Científicos (NIDEC)</p>
+    <div class="footer-selo"><span id="seloAcessos" data-escopo="pagina" style="display:none;"></span></div>
+  </div>
+</div>
+<script src="../../contador-config.js"></script>
+<script src="../../acessos.js"></script>
+<script>if ('serviceWorker' in navigator && location.protocol.indexOf('http') === 0) { navigator.serviceWorker.register('../../sw.js'); }</script>
+<script src="../../_js/oia-abas.js"></script>
+<script src="../../_js/oia-sessao.js"></script>
+</body>
+</html>

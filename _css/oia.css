@@ -306,57 +306,9 @@ h3.p-dim span { color: var(--t-aaa); font-weight: normal; }
 #abaMetodo ul.met-lista li, #abaMetodo ol.met-perg li { margin-bottom: 6px; }
 #abaMetodo .met-bloco { border-left: 4px solid var(--azul); background: var(--caixa2); padding: 12px 14px 4px; margin: 22px 0; }
 #abaMetodo .met-bloco .met-etapa { font-size: 1.2rem; margin: 0 0 8px; }
-#abaMetodo .met-rot { font-size: .85em; color: var(--verde-claro); text-transform: none; letter-spacing: .02em; margin: 12px 0 6px; }
-#abaMetodo .prompt { background: var(--caixa); }
-#abaMetodo details.met-outras { margin: 22px 0; border-top: 1px solid var(--b-444); padding-top: 10px; }
-#abaMetodo details.met-outras > summary { cursor: pointer; font-weight: bold; color: var(--ciano); min-height: 44px; padding: 8px 0; }
 .aba-painel .met-estilo { font-size: .85rem; color: var(--verde-claro); }
 .aba-painel ul.marc .comecar { background: var(--caixa); color: var(--ciano); border: 1px solid var(--azul); padding: 4px 10px;
   margin: 2px 0 2px 6px; cursor: pointer; font: inherit; font-size: .85rem; }
-.crono { position: fixed; inset: 0; z-index: 9999; background: var(--fundo); color: var(--texto); overflow-y: auto;
-  padding: 16px; box-sizing: border-box; }
-.crono-in { max-width: 640px; margin: 0 auto; }
-.crono h2 { font-size: 1.05rem; margin: 0 0 4px; overflow-wrap: anywhere; }
-.crono .c-sub { color: var(--t-888); font-size: .9rem; margin: 0 0 12px; overflow-wrap: anywhere; }
-.crono .c-etapas { display: flex; gap: 6px; margin: 0 0 10px; }
-.crono .c-etapas span { flex: 1; text-align: center; border: 1px solid var(--b-444); padding: 6px 2px; font-size: .85rem; color: var(--t-888); }
-.crono .c-etapas span.on { border-color: var(--azul); color: var(--ciano); background: var(--caixa); }
-.crono .c-etapas span.ok { color: var(--verde-claro); }
-.crono .c-relogio { font-family: 'Courier New', Courier, monospace; font-size: 3.2rem; text-align: center; margin: 6px 0; }
-.crono .c-txt { margin: 0 0 10px; }
-.crono .c-rot { color: var(--ciano); margin: 10px 0 4px; font-weight: bold; }
-.crono .c-perg { margin: 0 0 10px; padding-left: 22px; }
-.crono .c-perg li { margin: 0 0 6px; }
-.crono a.c-livro { display: block; text-align: center; padding: 10px; border: 1px solid var(--azul); color: var(--ciano);
-  background: var(--caixa); text-decoration: none; margin: 0 0 6px; }
-.crono .c-acoes { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0; }
-.crono .c-acoes button { flex: 1; min-width: 110px; padding: 10px; background: var(--caixa); color: var(--texto);
-  border: 1px solid var(--b-444); cursor: pointer; font: inherit; }
-.crono .c-q { border: 1px solid var(--b-444); padding: 10px; margin: 0 0 10px; }
-.crono .c-qt { margin: 0 0 8px; overflow-wrap: anywhere; }
-.crono .c-alt { display: block; width: 100%; text-align: left; margin: 0 0 6px; padding: 9px 10px; background: var(--caixa2);
-  color: var(--texto); border: 1px solid var(--b-444); cursor: pointer; font: inherit; overflow-wrap: anywhere; }
-.crono .c-alt[disabled] { cursor: default; color: var(--t-888); }
-.crono .c-alt.certa { border-color: var(--verde-claro); color: var(--verde-claro); }
-.crono .c-alt.errada { border-color: var(--t-c4); color: var(--t-c4); text-decoration: line-through; }
-.crono .c-fb { margin: 4px 0 0; font-size: .9rem; }
-.crono .c-fb.ok { color: var(--verde-claro); }
-.crono .c-fb.nao { color: var(--t-c4); }
-.crono .c-ref { color: var(--t-888); }
-.crono .c-aviso { color: var(--ciano); font-size: .9rem; }
-.crono .c-ra { border: 1px solid var(--azul); padding: 10px; margin: 0 0 10px; }
-.crono .c-ra label { display: block; margin: 0 0 6px; }
-.crono .c-ra input { width: 10em; max-width: 60%; padding: 8px; font: inherit; background: var(--caixa2); color: var(--texto); border: 1px solid var(--b-444); }
-.crono .c-ra button { padding: 8px 12px; margin-left: 6px; background: var(--caixa); color: var(--ciano); border: 1px solid var(--azul); cursor: pointer; font: inherit; }
-.crono .c-rev { margin: 0 0 10px; }
-.crono .c-duv { border: 1px solid var(--b-444); padding: 10px; margin: 0 0 10px; }
-.crono .c-gslot { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 0 0 8px; }
-.crono .c-gn { font-family: 'Courier New', Courier, monospace; color: var(--ciano); }
-.crono .c-gslot audio { max-width: 100%; height: 36px; }
-.crono .c-gslot button { padding: 8px 12px; background: var(--caixa); color: var(--ciano); border: 1px solid var(--azul); cursor: pointer; font: inherit; }
-.crono .c-gslot button[disabled] { color: var(--t-888); border-color: var(--b-444); cursor: default; }
-.crono .c-gslot .c-gparar { color: var(--texto); }
-.crono .c-gest { color: var(--verde-claro); font-size: .9rem; }
 /* pagina da sessao da Fisica 1, molde da trilha do RIF (PRE-metodo-prj0004-sessao-pagina-rif-fisica1-2026-10-06):
    ambar = Fase 1 (aquecimento, A no cronometro), azul = Fase 2 (estudo, E) */
 .sessao .s-volta { font-size: .95rem; }
@@ -438,34 +390,6 @@ dialog.sessao-dlg p.meta { font-weight: bold; color: var(--forte); }
 dialog.sessao-dlg .acoes { flex-wrap: wrap; gap: 10px; }
 dialog.sessao-dlg button { min-height: 44px; }
 dialog.sessao-dlg button:not(.principal) { background: #151619; border-color: var(--b-555); color: var(--texto); font-weight: normal; }
-.crono.troca { animation: crono-pisca .5s 3; }
-@keyframes crono-pisca { 50% { background: var(--caixa); } }
-/* cronometro: cinza neutro (sem azulado), relogio grande em cartao, etapa atual em azul cheio, alvos de toque maiores */
-.crono { padding-top: 22px; }
-.crono h2 { font-size: 1.25rem; color: var(--ciano); line-height: 1.35; }
-.crono .c-sub { font-size: .95rem; color: var(--t-aaa); }
-.crono .c-etapas span { padding: 9px 2px; font-size: .88rem; background: var(--painel); font-weight: 700; }
-.crono .c-etapas span.on { background: var(--azul); border-color: var(--azul); color: white; }
-.crono .c-etapas span.ok { border-color: var(--verde); }
-.crono .c-relogio { font-size: 4.2rem; background: var(--painel); border: 1px solid var(--b-444); padding: 6px 0; margin: 10px 0 12px; color: var(--forte);
-                    letter-spacing: .04em; }
-.crono .c-txt { font-size: 1.1rem; line-height: 1.6; }
-.crono a.c-livro { background: var(--azul); border-color: var(--azul); color: white; font-weight: 700; padding: 12px; margin: 0 0 4px; }
-.crono .c-q, .crono .c-duv { background: var(--painel); border: none; border-left: 4px solid var(--b-555); padding: 12px 14px; }
-.crono .c-qt { font-weight: 700; color: var(--forte); }
-.crono .c-alt { background: var(--bloco); border: 1px solid var(--b-444); padding: 11px 12px; color: var(--t-ddd); cursor: pointer; font: inherit; }
-.crono .c-ra { background: var(--painel); border: none; border-left: 4px solid var(--azul); padding: 12px 14px; }
-.crono .c-ra input { background: var(--fundo); }
-.crono .c-ra button, .crono .c-gslot button { background: var(--bloco); }
-.crono .prompt { background: var(--painel); }
-.crono .prompt .copiar { background: var(--bloco); }
-.crono .c-acoes { position: sticky; bottom: 0; background: var(--fundo); padding: 10px 0; margin: 12px 0 0; border-top: 1px solid var(--b-444); }
-.crono .c-acoes { flex-wrap: nowrap; gap: 6px; }
-.crono .c-acoes button { flex: 1 1 0; min-width: 0; background: var(--bloco); border-color: var(--azul); color: var(--ciano);
-                         padding: 11px 4px; font-weight: 700; font-size: .95rem; }
-.crono .c-acoes .c-sair { border-color: var(--b-555); color: var(--t-aaa); font-weight: 400; }
-.crono.troca { animation: crono-pisca-n .5s 3; }
-@keyframes crono-pisca-n { 50% { background: var(--bloco); } }
 /* tema claro: QR e painel com contorno (branco sobre branco some), sombra no painel aberto */
 [data-tema="claro"] .qr-box img { box-shadow: 0 0 0 1px rgba(0,0,0,.15); }
 [data-tema="claro"] .aba-painel.open { box-shadow: 4px 0 18px rgba(0,0,0,.18); }
@@ -474,8 +398,7 @@ dialog.sessao-dlg button:not(.principal) { background: #151619; border-color: va
 [data-tema="claro"] fieldset.questao, [data-tema="claro"] .form-sug, [data-tema="claro"] .intro,
 [data-tema="claro"] body[data-pagina="instalar"] section, [data-tema="claro"] .agr-vazio, [data-tema="claro"] .sug-anonima,
 [data-tema="claro"] .ava-anonima, [data-tema="claro"] #avaFechada, [data-tema="claro"] .ava-item, [data-tema="claro"] .regras,
-[data-tema="claro"] .ava-abertas li, [data-tema="claro"] .ava-p .qr-box, [data-tema="claro"] .crono .c-q,
-[data-tema="claro"] .crono .c-ra, [data-tema="claro"] .crono .c-relogio, [data-tema="claro"] .progresso {
+[data-tema="claro"] .ava-abertas li, [data-tema="claro"] .ava-p .qr-box, [data-tema="claro"] .progresso {
   box-shadow: 0 1px 3px rgba(0,0,0,.08), 0 0 0 1px rgba(0,0,0,.05); }
 [data-tema="claro"] .topo-btns { box-shadow: 0 1px 4px rgba(0,0,0,.12); }
 /* painel Site no tema claro: endereco em cartao branco, QR com sombra, textos quase pretos */
@@ -515,8 +438,7 @@ dialog.sessao-dlg button:not(.principal) { background: #151619; border-color: va
 [data-tema="claro"] #abaMetodo .met-bloco { background: white; box-shadow: 0 1px 3px rgba(0,0,0,.10), 0 0 0 1px rgba(0,0,0,.05); }
 [data-tema="claro"] #abaMetodo .prompt { background: #f3f4f6; border: 1px solid #d5d8dd; }
 [data-tema="claro"] #abaMetodo .prompt .copiar { background: white; }
-[data-tema="claro"] #abaMetodo .met-rot { color: #2D6E45; font-weight: 700; }
-[data-tema="claro"] #abaMetodo .met-bloco p:not(.met-rot), [data-tema="claro"] #abaMetodo .met-bloco li { color: #2a2a2a; }
+[data-tema="claro"] #abaMetodo .met-bloco p, [data-tema="claro"] #abaMetodo .met-bloco li { color: #2a2a2a; }
 [data-tema="claro"] #abaMetodo ul.met-lista li::marker { color: var(--azul); }
 /* Site no tema escuro: endereco em cartao com faixa azul, QR em moldura clara com sombra, textos claros e legenda discreta */
 :root:not([data-tema="claro"]) #abaSite .site-end { background: var(--bloco); color: var(--ciano); padding: 10px 12px; }
@@ -551,8 +473,7 @@ dialog.sessao-dlg button:not(.principal) { background: #151619; border-color: va
 :root:not([data-tema="claro"]) #abaMetodo ul.met-lista li::marker { color: var(--azul); }
 :root:not([data-tema="claro"]) #abaMetodo .met-bloco { background: var(--bloco); padding: 14px 14px 6px; }
 :root:not([data-tema="claro"]) #abaMetodo .met-bloco .met-etapa { font-size: 1.25rem; border-bottom: 1px solid var(--b-444); padding-bottom: 6px; }
-:root:not([data-tema="claro"]) #abaMetodo .met-bloco p:not(.met-rot), :root:not([data-tema="claro"]) #abaMetodo .met-bloco li { color: #d8d8d8; }
-:root:not([data-tema="claro"]) #abaMetodo .met-rot { font-weight: 700; }
+:root:not([data-tema="claro"]) #abaMetodo .met-bloco p, :root:not([data-tema="claro"]) #abaMetodo .met-bloco li { color: #d8d8d8; }
 :root:not([data-tema="claro"]) #abaMetodo .prompt { background: var(--painel); border: 1px solid var(--b-444); }
 :root:not([data-tema="claro"]) #abaMetodo .prompt p { color: var(--t-c4); font-size: .98rem; }
 :root:not([data-tema="claro"]) #abaMetodo .prompt .copiar { background: var(--bloco); padding: 8px 16px; }
@@ -674,23 +595,6 @@ body.projetando .ava-bar { height: 30px; }
   box-shadow: 0 1px 3px rgba(0,0,0,.10), 0 0 0 1px rgba(0,0,0,.05); }
 [data-tema="claro"] body[data-pagina="inicio"] .cabeca img:not(.ifmg) { box-shadow: 0 1px 4px rgba(0,0,0,.15); border-radius: 12px; }
 [data-tema="claro"] body[data-pagina="inicio"] .cabeca .ifmg { box-shadow: 0 1px 4px rgba(0,0,0,.15); }
-/* cronometro no tema claro: fundo cinza-claro, cartoes brancos com sombra, relogio em azul-escuro, etapa atual azul cheia */
-[data-tema="claro"] .crono { background: #f3f4f6; }
-[data-tema="claro"] .crono .c-relogio, [data-tema="claro"] .crono .c-q, [data-tema="claro"] .crono .c-duv,
-[data-tema="claro"] .crono .c-ra, [data-tema="claro"] .crono .prompt {
-  background: white; border-color: #d5d8dd; box-shadow: 0 1px 3px rgba(0,0,0,.10), 0 0 0 1px rgba(0,0,0,.05); }
-[data-tema="claro"] .crono .c-relogio { color: #1B5E8C; }
-[data-tema="claro"] .crono .c-etapas span { background: white; color: #5f5f5f; border-color: #c8c8c8; }
-[data-tema="claro"] .crono .c-etapas span.on { background: var(--azul); color: white; border-color: var(--azul); }
-[data-tema="claro"] .crono .c-etapas span.ok { color: #2D6E45; border-color: var(--verde); }
-[data-tema="claro"] .crono .c-alt { background: #f3f4f6; color: #1c1c1c; border-color: #c8c8c8; }
-[data-tema="claro"] .crono .c-alt.certa { color: #2D6E45; border-color: var(--verde); background: #eaf5ee; }
-[data-tema="claro"] .crono .c-qt, [data-tema="claro"] .crono .c-txt { color: #1c1c1c; }
-[data-tema="claro"] .crono .c-acoes { background: #f3f4f6; border-top-color: #c8c8c8; }
-[data-tema="claro"] .crono .c-acoes button { background: white; }
-[data-tema="claro"] .crono .c-acoes .c-sair { color: #5f5f5f; border-color: #c8c8c8; }
-[data-tema="claro"] .crono .c-ra input { background: white; border-color: #c8c8c8; }
-[data-tema="claro"] .crono .prompt .copiar, [data-tema="claro"] .crono .c-ra button, [data-tema="claro"] .crono .c-gslot button { background: white; }
 /* pagina da sessao e cronometro do topo no tema claro: cartoes brancos, ambar e azul escurecidos para leitura */
 [data-tema="claro"] .sessao h1, [data-tema="claro"] .sessao .c-rot, [data-tema="claro"] .sessao .c-gn { color: #1B5E8C; }
 [data-tema="claro"] .sessao .s-sub, [data-tema="claro"] .sessao .s-ref, [data-tema="claro"] .sessao .c-ref { color: #5f5f5f; }
@@ -725,8 +629,6 @@ body.projetando .ava-bar { height: 30px; }
 [data-tema="claro"] .crono-btn.final { color: #2D6E45; border-color: var(--verde); }
 [data-tema="claro"] dialog.sessao-dlg p.meta { color: #1c1c1c; }
 [data-tema="claro"] dialog.sessao-dlg button:not(.principal) { background: #f3f4f6; color: #1c1c1c; border-color: #c8c8c8; }
-[data-tema="claro"] .crono.troca { animation-name: crono-pisca-claro; }
-@keyframes crono-pisca-claro { 50% { background: #d9e8f5; } }
 /* Projetar no tema claro: fundo branco, cartoes brancos com sombra, barras em azul forte (o ciano claro some no projetor) */
 [data-tema="claro"] body.projetando .ava-item, [data-tema="claro"] body.projetando .ava-abertas li,
 [data-tema="claro"] body.projetando #avaQr { background: white; box-shadow: 0 2px 6px rgba(0,0,0,.12), 0 0 0 1px rgba(0,0,0,.06); }

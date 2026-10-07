@@ -101,7 +101,7 @@
   function mostrar(e, h) {
     $('estRes').innerHTML = barras(e);
     ultimo = e;
-    guardar('oia-estilo', JSON.stringify(e));   /* lido pelo cronometro do Metodo (oia-metodo.js) */
+    guardar('oia-estilo', JSON.stringify(e));
     $('estDicas').innerHTML = dicas(e);
     $('estHist').innerHTML = historico(h);
     $('resultado').hidden = false;
