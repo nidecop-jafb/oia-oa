@@ -306,6 +306,17 @@ h3.p-dim span { color: var(--t-aaa); font-weight: normal; }
 #abaMetodo ul.met-lista li, #abaMetodo ol.met-perg li { margin-bottom: 6px; }
 #abaMetodo .met-bloco { border-left: 4px solid var(--azul); background: var(--caixa2); padding: 12px 14px 4px; margin: 22px 0; }
 #abaMetodo .met-bloco .met-etapa { font-size: 1.2rem; margin: 0 0 8px; }
+/* Os 5 passos: azul = Pensamento Quantitativo, verde = Qualitativo (molde .ramo do rif-oa); uma coluna, a aba e estreita */
+#abaMetodo .met-ramos { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 12px 0 14px; }
+#abaMetodo .met-ramo { border: 1px solid var(--b-444); border-top: 5px solid var(--azul); background: var(--painel); padding: 10px 12px 2px; }
+#abaMetodo .met-ramo.qual { border-top-color: var(--verde); }
+#abaMetodo .met-bloco .met-ramos .met-ramo p.met-ramo-t { margin: 0; font-weight: 700; color: var(--ciano); text-transform: uppercase; letter-spacing: .04em; font-size: .95rem; }
+#abaMetodo .met-bloco .met-ramos .met-ramo.qual p.met-ramo-t { color: var(--verde-claro); }
+#abaMetodo .met-bloco .met-ramos .met-ramo p.met-ramo-a { margin: 2px 0 10px; font-size: .9rem; color: var(--t-9a); }
+#abaMetodo .met-ramo ol { margin: 0 0 6px; padding-left: 22px; }
+#abaMetodo .met-ramo li { margin-bottom: 8px; }
+#abaMetodo .met-bloco .met-ramo li b { display: block; color: var(--forte); }
+#abaMetodo .met-bloco .met-ramo li span { color: var(--t-c4); font-size: .95rem; }
 .aba-painel .met-estilo { font-size: .85rem; color: var(--verde-claro); }
 .aba-painel ul.marc .comecar { background: var(--caixa); color: var(--ciano); border: 1px solid var(--azul); padding: 4px 10px;
   margin: 2px 0 2px 6px; cursor: pointer; font: inherit; font-size: .85rem; }
@@ -440,6 +451,12 @@ dialog.sessao-dlg button:not(.principal) { background: #151619; border-color: va
 [data-tema="claro"] #abaMetodo .prompt .copiar { background: white; }
 [data-tema="claro"] #abaMetodo .met-bloco p, [data-tema="claro"] #abaMetodo .met-bloco li { color: #2a2a2a; }
 [data-tema="claro"] #abaMetodo ul.met-lista li::marker { color: var(--azul); }
+[data-tema="claro"] #abaMetodo .met-ramo { background: #f7f8fa; border-right-color: #d5d8dd; border-bottom-color: #d5d8dd; border-left-color: #d5d8dd; }
+[data-tema="claro"] #abaMetodo .met-ramos .met-ramo p.met-ramo-t { color: #1B5E8C; }
+[data-tema="claro"] #abaMetodo .met-ramos .met-ramo.qual p.met-ramo-t { color: #2D6E45; }
+[data-tema="claro"] #abaMetodo .met-ramos .met-ramo p.met-ramo-a { color: #5f5f5f; }
+[data-tema="claro"] #abaMetodo .met-bloco .met-ramo li b { color: #1c1c1c; }
+[data-tema="claro"] #abaMetodo .met-bloco .met-ramo li span { color: #3a3a3a; }
 /* Site no tema escuro: endereco em cartao com faixa azul, QR em moldura clara com sombra, textos claros e legenda discreta */
 :root:not([data-tema="claro"]) #abaSite .site-end { background: var(--bloco); color: var(--ciano); padding: 10px 12px; }
 :root:not([data-tema="claro"]) #abaSite .fis-intro { color: var(--texto); }
