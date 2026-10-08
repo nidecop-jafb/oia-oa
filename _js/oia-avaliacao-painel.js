@@ -1,10 +1,14 @@
 /* oia-avaliacao-painel.js — painel ao vivo da avaliacao (equipe). Gerado por gerar_site_oia.py.
-   A chave da equipe e digitada aqui e fica so na aba do navegador (sessionStorage): nunca vai no site. */
+   A chave da equipe e digitada aqui (ou chega 1 vez por #chave=, do instalador do pen drive) e fica salva
+   neste aparelho (localStorage), como na chamada do professor: nunca vai no site. 'sair' limpa. */
 (function () {
   var URL_EXEC = window.OIA_COLETA || '', D = window.OIA_AVA || {}, linhas = [], timer = null;
   function $(id) { return document.getElementById(id); }
   function esc(s) { var d = document.createElement('div'); d.textContent = String(s == null ? '' : s); return d.innerHTML; }
-  function chave() { try { return sessionStorage.getItem('oia-chave') || ''; } catch (e) { return ''; } }
+  function chave() { try { return sessionStorage.getItem('oia-chave') || localStorage.getItem('oia-chave') || ''; } catch (e) { return ''; } }
+  function provisoria(k) { try { sessionStorage.setItem('oia-chave', k); } catch (e) { /* sem sessionStorage */ } }
+  function gravar(k) { try { localStorage.setItem('oia-chave', k); } catch (e) { /* sem localStorage */ } }
+  function limpar() { try { localStorage.removeItem('oia-chave'); sessionStorage.removeItem('oia-chave'); } catch (e) { /* nada */ } }
   function media(xs) { return xs.length ? xs.reduce(function (a, b) { return a + b; }, 0) / xs.length : 0; }
   function f1(x) { return x.toFixed(1).replace('.', ','); }
   function validas() { return linhas.filter(function (l) { return $('avaTeste').checked || !l.teste; }); }
@@ -57,12 +61,14 @@
     fetch(URL_EXEC + '?avaliacao_oia=1&chave=' + encodeURIComponent(k)).then(function (r) { return r.json(); })
       .then(function (res) {
         if (!res.ok) { throw new Error(res.erro || 'Falha'); }
-        linhas = res.linhas; $('avaChaveBox').hidden = true; $('avaPainel').hidden = false; desenhar(); janela(res);
+        gravar(k); linhas = res.linhas; $('avaChaveBox').hidden = true; $('avaPainel').hidden = false; desenhar(); janela(res);
         $('avaStatus').textContent = 'Atualizado às ' + new Date().toLocaleTimeString('pt-BR').slice(0, 5) + ' · a cada 30 s';
       })
       .catch(function (e) {
         if (String(e.message).indexOf('Chave') === 0) {
-          try { sessionStorage.removeItem('oia-chave'); } catch (x) { /* nada */ }
+          var salva = ''; try { salva = localStorage.getItem('oia-chave') || ''; sessionStorage.removeItem('oia-chave'); } catch (x) { /* nada */ }
+          if (salva && salva !== k) { carregar(); return; }
+          limpar();
           clearInterval(timer); $('avaPainel').hidden = true; $('avaChaveBox').hidden = false;
           $('avaChaveErro').textContent = 'Chave inválida.'; $('avaChaveErro').hidden = false; return;
         }
@@ -88,8 +94,7 @@
   function entrar() {
     var k = $('avaChave').value.trim();
     if (!k) { return; }
-    try { sessionStorage.setItem('oia-chave', k); } catch (e) { /* sem sessionStorage */ }
-    $('avaChaveErro').hidden = true; iniciar();
+    provisoria(k); $('avaChaveErro').hidden = true; iniciar();
   }
   function iniciar() { clearInterval(timer); carregar(); timer = setInterval(carregar, 30000); }
   function csv() {
@@ -129,6 +134,14 @@
     });
     $('btnAvaAtualizar').addEventListener('click', carregar);
     $('avaTeste').addEventListener('change', desenhar);
+    $('btnAvaSair').addEventListener('click', function (e) { e.preventDefault(); limpar(); location.reload(); });
+    /* 1.o acesso pelo instalador do pen drive: #chave=... (o fragmento nao vai ao servidor); limpa o endereco */
+    var hc = (location.hash.match(/[#&]chave=([^&]+)/) || [])[1];
+    if (hc) {
+      try { history.replaceState(null, '', location.pathname + location.search); } catch (e) { /* nada */ }
+      try { hc = decodeURIComponent(hc).trim(); } catch (e) { hc = ''; }
+      if (hc) { provisoria(hc); }
+    }
     if (chave()) { iniciar(); }
   });
 })();
