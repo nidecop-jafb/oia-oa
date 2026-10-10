@@ -13,11 +13,29 @@
   function $(sel) { return document.querySelector(sel); }
   function aviso(m) { var a = $('.c-aviso'); if (a) { a.textContent = m; a.hidden = !m; } }
   var TEMA = S.id.split('-')[0];
+  /* destino: oia-oa (padrao) ou fc1-oa (PRE-site-fc1-oa-sessoes-livro-t11-t18-2026-10-10). Os dois sites estao na
+     mesma origem (github.io): as chaves do aparelho levam o prefixo do destino para nao colidir. */
+  var P = S.pref || 'oia-', DISC = S.disc || 'OIA';
+  /* RA: na FC1, o mesmo RA ja digitado em qualquer OA da FC1 (ifmg_fc1_*aluno); na OIA, o da aba Estilo */
+  function lerRA() {
+    if (DISC !== 'FC1') { return ler('oia-estilo-ra'); }
+    var o = null, i, k;
+    try { o = JSON.parse(ler('ifmg_fc1_aluno') || 'null'); } catch (x) { o = null; }
+    if (o && o.ra) { return String(o.ra).replace(/\D/g, ''); }
+    try {
+      for (i = 0; i < localStorage.length; i++) {
+        k = localStorage.key(i);
+        if (/^ifmg_fc1_.*aluno$/.test(k)) { o = JSON.parse(localStorage.getItem(k) || 'null'); if (o && o.ra) { return String(o.ra).replace(/\D/g, ''); } }
+      }
+    } catch (x) { /* sem localStorage */ }
+    return '';
+  }
+  function guardarRA(ra) { if (DISC === 'FC1') { guardar('ifmg_fc1_aluno', JSON.stringify({ ra: ra })); } else { guardar('oia-estilo-ra', ra); } }
 
   /* ---- envio: fila no aparelho ---- */
   var enviando = false;
   function online() { return S.url && location.protocol.indexOf('http') === 0; }
-  function fila() { try { return JSON.parse(ler('oia-metodo-fila') || '[]'); } catch (x) { return []; } }
+  function fila() { try { return JSON.parse(ler(P + 'metodo-fila') || '[]'); } catch (x) { return []; } }
   function enviarFila() {
     var f = fila();
     if (enviando || !f.length || !online()) { return; }
@@ -25,7 +43,7 @@
     fetch(S.url, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(f[0]) })
       .then(function (r) { return r.json(); })
       .then(function (res) {
-        var g = fila(); g.shift(); guardar('oia-metodo-fila', JSON.stringify(g)); enviando = false;
+        var g = fila(); g.shift(); guardar(P + 'metodo-fila', JSON.stringify(g)); enviando = false;
         if (!res.ok) { aviso('Envio recusado: ' + (res.erro || 'tente de novo.')); } else { aviso('Respostas enviadas.'); enviarFila(); }
       })
       .catch(function () { enviando = false; aviso('Sem conexão: suas respostas ficaram guardadas e vão quando a internet voltar.'); });
@@ -44,12 +62,12 @@
     return { n: n, a: a, total: S.banco.length };
   }
   function registrar() {
-    var ra = ler('oia-estilo-ra'), p = placar(), f;
+    var ra = lerRA(), p = placar(), f;
     if (!ra) { aviso('Digite o seu RA acima para enviar as respostas.'); return; }
     f = fila();
-    f.push({ tipo_msg: 'METODO', disciplina: 'OIA', ra: ra, sessao: S.id, etapa: 'antes',
+    f.push({ tipo_msg: 'METODO', disciplina: DISC, trilha: S.trilha || '', ra: ra, sessao: S.id, etapa: 'antes',
              respostas: resp.map(function (x) { return LETRA.charAt(x.escolha); }).join(''), acertos: p.a });
-    guardar('oia-metodo-fila', JSON.stringify(f));
+    guardar(P + 'metodo-fila', JSON.stringify(f));
     enviarFila();
   }
   function cartoes() {
@@ -77,14 +95,14 @@
     if (p.n === p.total) {
       registrar();
       /* erros desta sessao: aparecem no comeco da proxima sessao do tema (so neste aparelho) */
-      guardar('oia-f1-revisao-' + TEMA, erros.length ? JSON.stringify({ de: S.id, erros: erros }) : '');
+      guardar(P + 'f1-revisao-' + TEMA, erros.length ? JSON.stringify({ de: S.id, erros: erros }) : '');
     }
     cartoes();
   }
   function revisao() {
     var el = $('.s-rev'), r = null;
     if (!el) { return; }
-    try { r = JSON.parse(ler('oia-f1-revisao-' + TEMA) || 'null'); } catch (x) { r = null; }
+    try { r = JSON.parse(ler(P + 'f1-revisao-' + TEMA) || 'null'); } catch (x) { r = null; }
     if (!r || r.de === S.id || !r.erros || !r.erros.length) { return; }
     el.innerHTML = '<p class="c-rot">Revise antes de começar: na sessão anterior deste tema você errou</p><ul>' +
       r.erros.map(function (e) { return '<li>' + esc(e.q) + ' <span class="c-ref">Resposta certa: ' + esc(e.certa) + '</span></li>'; }).join('') + '</ul>';
@@ -92,12 +110,12 @@
   }
   function blocoRA() {
     var el = $('.c-ra');
-    if (el) { el.hidden = !!ler('oia-estilo-ra'); }
+    if (el) { el.hidden = !!lerRA(); }
   }
 
   /* ---- aquecimento gradativo: .grad-g 1..5; progresso no aparelho ---- */
   function gradativo() {
-    var grupos = [].slice.call(document.querySelectorAll('.grad-g')), chave = 'oia-grad-' + S.id, g = 1;
+    var grupos = [].slice.call(document.querySelectorAll('.grad-g')), chave = P + 'grad-' + S.id, g = 1;
     if (!grupos.length) { return; }
     try { g = Math.min(Math.max((JSON.parse(ler(chave) || '{}').g) || 1, 1), grupos.length); } catch (x) { g = 1; }
     var b = document.createElement('button');
@@ -124,16 +142,16 @@
     sel = cxs.filter(function (x) { return x.checked; }).map(function (x) { return +x.value; });
     if (v === 0 && alvo.checked) { sel = [0]; } else if (v > 0) { sel = sel.filter(function (k) { return k > 0; }); }
     cxs.forEach(function (x) { x.checked = sel.indexOf(+x.value) >= 0; });
-    guardar('oia-passo-' + S.id, JSON.stringify(sel));
+    guardar(P + 'passo-' + S.id, JSON.stringify(sel));
   }
   function marcarPassos() {
-    var sel = []; try { sel = JSON.parse(ler('oia-passo-' + S.id) || '[]'); } catch (x) { sel = []; }
+    var sel = []; try { sel = JSON.parse(ler(P + 'passo-' + S.id) || '[]'); } catch (x) { sel = []; }
     [].forEach.call(document.querySelectorAll('.s-perr'), function (x) { x.checked = sel.indexOf(+x.value) >= 0; });
   }
 
   /* ---- duvidas em audio (Fase 2): ate 3 gravacoes de 20 s; coletor do FC1 (tipo DUVIDA, F26) ---- */
   var duv = [], gravador = null, cronoGrav = null, enviandoDuv = false;
-  function filaDuv() { try { return JSON.parse(ler('oia-duvida-fila') || '[]'); } catch (x) { return []; } }
+  function filaDuv() { try { return JSON.parse(ler(P + 'duvida-fila') || '[]'); } catch (x) { return []; } }
   function enviarDuvidas() {
     var f = filaDuv();
     if (enviandoDuv || !f.length || !S.coleta || location.protocol.indexOf('http') !== 0) { return; }
@@ -141,7 +159,7 @@
     fetch(S.coleta, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(f[0]) })
       .then(function (r) { return r.json(); })
       .then(function (res) {
-        var g = filaDuv(), it = g.shift(); guardar('oia-duvida-fila', JSON.stringify(g)); enviandoDuv = false;
+        var g = filaDuv(), it = g.shift(); guardar(P + 'duvida-fila', JSON.stringify(g)); enviandoDuv = false;
         duv.forEach(function (d) { if (d && d.id === it.id) { d.estado = res.ok ? 'enviada' : 'recusada'; } });
         desenharDuvidas();
         if (res.ok) { enviarDuvidas(); } else { aviso('Áudio recusado: ' + (res.erro || 'tente de novo.')); }
@@ -194,12 +212,12 @@
     }).catch(function () { aviso('Sem acesso ao microfone: autorize o microfone ou anote as dúvidas no caderno.'); });
   }
   function enviarDuvida(i) {
-    var ra = ler('oia-estilo-ra'), d = duv[i];
+    var ra = lerRA(), d = duv[i];
     if (!ra) { aviso('Digite o seu RA no começo da página para enviar o áudio.'); return; }
     b64(d.blob).then(function (x) {
       var f = filaDuv();
-      f.push({ tipo: 'DUVIDA', origem: 'OIA', ra: ra, sessao: S.id, n: i + 1, audio_b64: x, audio_mime: (d.mime || 'audio/webm').split(';')[0], id: d.id });
-      guardar('oia-duvida-fila', JSON.stringify(f));
+      f.push({ tipo: 'DUVIDA', origem: DISC, trilha: S.trilha || '', ra: ra, sessao: S.id, n: i + 1, audio_b64: x, audio_mime: (d.mime || 'audio/webm').split(';')[0], id: d.id });
+      guardar(P + 'duvida-fila', JSON.stringify(f));
       d.estado = 'fila'; desenharDuvidas(); enviarDuvidas();
     });
   }
@@ -212,7 +230,7 @@
        aquecimento 0-10, estudo 10-25, atividade final 25-30, sem novo toque; alerta aos 29; pausa aos 30.
        Estado: { ini: ms, parado: ms | null, visto: { estudo, final, alerta } }. */
     var rapido = /[?&]rapido=1\b/.test(location.search), MIN = rapido ? 1000 : 60000;
-    var CHAVE = 'oia-crono-' + S.id, FIM = { aquec: 10 * MIN, foco: 25 * MIN, final: 30 * MIN };
+    var CHAVE = P + 'crono-' + S.id, FIM = { aquec: 10 * MIN, foco: 25 * MIN, final: 30 * MIN };
     var NOME = { aquec: 'Aquecimento', foco: 'Estudo focado', final: 'Atividade final' };
     var ICONE = b.innerHTML, est = null, timer = null, dlg = null;
     function lerE() {
@@ -325,11 +343,11 @@
       b.setAttribute('aria-pressed', liga ? 'true' : 'false');
       b.textContent = liga ? 'Estou com o livro' : 'Estou sem o livro';
     });
-    if (gravar) { guardar('oia-semlivro-' + S.id, liga ? '1' : ''); }
+    if (gravar) { guardar(P + 'semlivro-' + S.id, liga ? '1' : ''); }
   }
 
   function iniciarPagina() {
-    semLivro(ler('oia-semlivro-' + S.id) === '1', false);
+    semLivro(ler(P + 'semlivro-' + S.id) === '1', false);
     blocoRA(); revisao(); cartoes(); marcarPassos(); desenharDuvidas(); gradativo(); cronometro();
     enviarFila(); enviarDuvidas();
     document.addEventListener('click', function (ev) {
@@ -360,7 +378,7 @@
       else if (c.contains('c-ra-ok')) {
         var ra = $('#cRA').value.replace(/\D/g, '');
         if (ra.length < 4) { aviso('Digite o seu RA (só os números).'); return; }
-        guardar('oia-estilo-ra', ra); blocoRA(); aviso('');
+        guardarRA(ra); blocoRA(); aviso('');
         if (placar().n === placar().total) { registrar(); }
       }
     });
